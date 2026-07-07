@@ -15,7 +15,7 @@ const Logo = ({ iconOnly = false, size = 36, onClick }) => {
         @keyframes zeroGravityDrift {
           0% {
             transform: translate3d(0px, 0px, 0px) rotate(-3.5deg) scale(1);
-            filter: drop-shadow(0 4px 12px rgba(0, 229, 255, 0.45));
+            filter: drop-shadow(0 4px 12px rgba(1,62,55, 0.45));
           }
           20% {
             transform: translate3d(3px, -6px, 0px) rotate(2deg) scale(1.04);
@@ -23,7 +23,7 @@ const Logo = ({ iconOnly = false, size = 36, onClick }) => {
           }
           40% {
             transform: translate3d(-5px, -10px, 0px) rotate(-1.5deg) scale(1.07);
-            filter: drop-shadow(0 14px 24px rgba(0, 229, 255, 0.65));
+            filter: drop-shadow(0 14px 24px rgba(1,62,55, 0.65));
           }
           60% {
             transform: translate3d(-4px, -4px, 0px) rotate(3deg) scale(1.03);
@@ -31,11 +31,11 @@ const Logo = ({ iconOnly = false, size = 36, onClick }) => {
           }
           80% {
             transform: translate3d(2px, -2px, 0px) rotate(-2deg) scale(1.02);
-            filter: drop-shadow(0 6px 14px rgba(0, 229, 255, 0.45));
+            filter: drop-shadow(0 6px 14px rgba(1,62,55, 0.45));
           }
           100% {
             transform: translate3d(0px, 0px, 0px) rotate(-3.5deg) scale(1);
-            filter: drop-shadow(0 4px 12px rgba(0, 229, 255, 0.45));
+            filter: drop-shadow(0 4px 12px rgba(1,62,55, 0.45));
           }
         }
 
@@ -47,7 +47,7 @@ const Logo = ({ iconOnly = false, size = 36, onClick }) => {
 
         .anti-gravity-floating:hover {
           transform: scale(1.12) rotate(0deg) translate3d(0px, -4px, 0px) !important;
-          filter: drop-shadow(0 16px 28px rgba(0, 229, 255, 0.8)) drop-shadow(0 0 15px rgba(118, 255, 3, 0.6)) !important;
+          filter: drop-shadow(0 16px 28px rgba(1,62,55, 0.8)) drop-shadow(0 0 15px rgba(118, 255, 3, 0.6)) !important;
           animation-play-state: paused;
         }
       `;
@@ -83,13 +83,13 @@ const Logo = ({ iconOnly = false, size = 36, onClick }) => {
       >
         <svg width={h * 1.35} height={h} viewBox="0 0 44 28" fill="none" xmlns="http://www.w3.org/2000/svg">
           {/* Left Lens Circle - Cyan/Blue */}
-          <circle cx="13" cy="14" r="9" stroke="#00E5FF" strokeWidth="3" fill="rgba(0, 229, 255, 0.15)" />
+          <circle cx="13" cy="14" r="9" stroke="#013E37" strokeWidth="3" fill="rgba(1,62,55, 0.15)" />
           {/* Right Lens Circle - Lime Green */}
-          <circle cx="31" cy="14" r="9" stroke="#9CCC65" strokeWidth="3" fill="rgba(156, 204, 101, 0.15)" />
+          <circle cx="31" cy="14" r="9" stroke="#013E37" strokeWidth="3" fill="rgba(156, 204, 101, 0.15)" />
           {/* Bridge Connecting Circles */}
-          <path d="M22 14 C 22.5 11, 23.5 11, 24 14" stroke="#00E5FF" strokeWidth="2.5" strokeLinecap="round" />
+          <path d="M22 14 C 22.5 11, 23.5 11, 24 14" stroke="#013E37" strokeWidth="2.5" strokeLinecap="round" />
           {/* Outer Temples/Arms */}
-          <path d="M4 13 L 2 10 M 40 13 L 42 10" stroke="#9CCC65" strokeWidth="2.5" strokeLinecap="round" />
+          <path d="M4 13 L 2 10 M 40 13 L 42 10" stroke="#013E37" strokeWidth="2.5" strokeLinecap="round" />
         </svg>
       </div>
 

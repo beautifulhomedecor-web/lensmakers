@@ -288,11 +288,11 @@ window.App = function App() {
       {/* GLOBAL LOCATION SELECTOR MODAL */}
       {showLocationModal && (
         <div className="modal-backdrop" onClick={() => setShowLocationModal(false)} style={{ zIndex: 99999 }}>
-          <div className="modal-sheet" onClick={(e) => e.stopPropagation()} style={{ background: '#FAFAF9', color: '#1C1917', zIndex: 100000 }}>
+          <div className="modal-sheet" onClick={(e) => e.stopPropagation()} style={{ background: '#FFFFFF', color: '#013E37', zIndex: 100000 }}>
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '16px' }}>
-              <h3 style={{ fontSize: '18px', fontWeight: '700', color: '#1C1917', margin: 0 }}>Select Delivery Location</h3>
+              <h3 style={{ fontSize: '18px', fontWeight: '700', color: '#013E37', margin: 0 }}>Select Delivery Location</h3>
               <button
-                style={{ background: 'transparent', border: 'none', color: '#64748B', fontSize: '20px', cursor: 'pointer' }}
+                style={{ background: 'transparent', border: 'none', color: 'rgba(1, 62, 55, 0.5)', fontSize: '20px', cursor: 'pointer' }}
                 onClick={() => setShowLocationModal(false)}
               >
                 ✕
@@ -317,7 +317,7 @@ window.App = function App() {
                     alignItems: 'center',
                     justifyContent: 'space-between',
                     background: selectedLocation.startsWith(loc.split(' ')[0]) ? 'rgba(156, 204, 101, 0.15)' : '#FFFFFF',
-                    border: selectedLocation.startsWith(loc.split(' ')[0]) ? '1.5px solid #9CCC65' : '1px solid #EAEAEA',
+                    border: selectedLocation.startsWith(loc.split(' ')[0]) ? '1.5px solid #013E37' : '1px solid #EAEAEA',
                     borderRadius: '16px',
                     boxShadow: '0 2px 8px rgba(0,0,0,0.04)'
                   }}
@@ -327,11 +327,11 @@ window.App = function App() {
                   }}
                 >
                   <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                    <i data-lucide="map-pin" style={{ width: '18px', height: '18px', color: selectedLocation.startsWith(loc.split(' ')[0]) ? '#9CCC65' : '#64748B' }} />
-                    <span style={{ fontSize: '14px', fontWeight: '600', color: '#1C1917' }}>{loc}</span>
+                    <i data-lucide="map-pin" style={{ width: '18px', height: '18px', color: selectedLocation.startsWith(loc.split(' ')[0]) ? '#013E37' : '#64748B' }} />
+                    <span style={{ fontSize: '14px', fontWeight: '600', color: '#013E37' }}>{loc}</span>
                   </div>
                   {selectedLocation.startsWith(loc.split(' ')[0]) && (
-                    <span style={{ background: '#9CCC65', color: '#000000', fontSize: '10px', fontWeight: '800', padding: '4px 8px', borderRadius: '999px' }}>ACTIVE</span>
+                    <span style={{ background: '#013E37', color: '#000000', fontSize: '10px', fontWeight: '800', padding: '4px 8px', borderRadius: '999px' }}>ACTIVE</span>
                   )}
                 </div>
               ))}
@@ -339,7 +339,7 @@ window.App = function App() {
 
             <button
               className="btn-primary-pill"
-              style={{ width: '100%', background: '#FFF5EC', color: '#FFFFFF', border: 'none', height: '48px', borderRadius: '999px', fontSize: '14px', fontWeight: '700', cursor: 'pointer' }}
+              style={{ width: '100%', background: '#FFF6DA', color: '#013E37', border: 'none', height: '48px', borderRadius: '999px', fontSize: '14px', fontWeight: '700', cursor: 'pointer' }}
               onClick={() => {
                 alert('📍 GPS Auto-detection enabled! Using current device coordinates.');
                 setShowLocationModal(false);

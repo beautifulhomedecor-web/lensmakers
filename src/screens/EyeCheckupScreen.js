@@ -123,8 +123,8 @@ const EyeCheckupScreen = ({ onSelectTab, initialViewMode = 'landing' }) => {
               type="button"
               style={{
                 padding: '8px 16px', borderRadius: '999px', fontSize: '13px', fontWeight: '700', flexShrink: 0,
-                background: isActive ? 'linear-gradient(135deg, #FF7873 0%, #E22F80 100%)' : 'rgba(255,240,224,0.65)',
-                color: isActive ? '#FFFFFF' : '#A0A4C8',
+                background: isActive ? 'linear-gradient(135deg, #A94A4A 0%, #013E37 100%)' : 'rgba(255,240,224,0.65)',
+                color: isActive ? '#FFFFFF' : 'rgba(1,62,55,0.5)',
                 border: isActive ? 'none' : '1px solid rgba(255,255,255,0.15)',
                 display: 'flex', alignItems: 'center', gap: '6px', cursor: 'pointer', transition: 'all 200ms ease'
               }}
@@ -135,7 +135,7 @@ const EyeCheckupScreen = ({ onSelectTab, initialViewMode = 'landing' }) => {
             >
               <span>{tab.label}</span>
               {tab.badge && (
-                <span style={{ background: isActive ? 'rgba(0,0,0,0.25)' : '#43A047', color: '#FFFFFF', padding: '2px 6px', borderRadius: '999px', fontSize: '9px', fontWeight: '900' }}>
+                <span style={{ background: isActive ? 'rgba(0,0,0,0.25)' : '#013E37', color: '#013E37', padding: '2px 6px', borderRadius: '999px', fontSize: '9px', fontWeight: '900' }}>
                   {tab.badge}
                 </span>
               )}
@@ -154,12 +154,12 @@ const EyeCheckupScreen = ({ onSelectTab, initialViewMode = 'landing' }) => {
             <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
               <button
                 type="button"
-                style={{ width: '36px', height: '36px', borderRadius: '50%', background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.15)', color: '#FFFFFF', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer' }}
+                style={{ width: '36px', height: '36px', borderRadius: '50%', background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.15)', color: '#013E37', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer' }}
                 onClick={() => { if (onSelectTab) onSelectTab('home'); }}
               >
                 ←
               </button>
-              <h1 style={{ fontSize: '22px', fontWeight: '800', color: '#FFFFFF' }}>Free Eye Check-Up</h1>
+              <h1 style={{ fontSize: '22px', fontWeight: '800', color: '#013E37' }}>Free Eye Check-Up</h1>
             </div>
             <span className="badge-pill badge-green">AIOC CERTIFIED</span>
           </div>
@@ -167,28 +167,28 @@ const EyeCheckupScreen = ({ onSelectTab, initialViewMode = 'landing' }) => {
           {/* HERO CARD (Cyan Glow Variant) */}
           <div className="glass-card-glow-cyan mb-3" style={{ padding: '32px 20px', textAlign: 'center', position: 'relative' }}>
             {/* 100% FREE pill badge */}
-            <span style={{ background: '#43A047', color: '#FFFFFF', padding: '6px 16px', borderRadius: '999px', fontSize: '13px', fontWeight: '900', boxShadow: '0 4px 12px rgba(67,160,71,0.4)', display: 'inline-block', marginBottom: '20px' }}>
+            <span style={{ background: '#013E37', color: '#013E37', padding: '6px 16px', borderRadius: '999px', fontSize: '13px', fontWeight: '900', boxShadow: '0 4px 12px rgba(67,160,71,0.4)', display: 'inline-block', marginBottom: '20px' }}>
               100% FREE FOREVER
             </span>
 
             {/* Illustration: Laptop Screen + Doctor Avatar Circle */}
-            <div style={{ position: 'relative', width: '180px', height: '120px', margin: '0 auto 24px', background: 'rgba(41,182,246,0.1)', border: '2px solid rgba(41,182,246,0.4)', borderRadius: '12px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', boxShadow: '0 8px 24px rgba(41,182,246,0.2)' }}>
+            <div style={{ position: 'relative', width: '180px', height: '120px', margin: '0 auto 24px', background: 'rgba(1,62,55,0.1)', border: '2px solid rgba(1,62,55,0.4)', borderRadius: '12px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', boxShadow: '0 8px 24px rgba(1,62,55,0.2)' }}>
               {/* Snellen Eye Chart Simulation */}
-              <div style={{ fontSize: '20px', fontWeight: '900', color: '#FFFFFF', letterSpacing: '8px' }}>E</div>
-              <div style={{ fontSize: '15px', fontWeight: '800', color: '#29B6F6', letterSpacing: '6px', margin: '2px 0' }}>F P</div>
-              <div style={{ fontSize: '11px', fontWeight: '700', color: '#A0A4C8', letterSpacing: '4px' }}>T O Z</div>
-              <div style={{ fontSize: '9px', fontWeight: '600', color: '#6B6E9A', letterSpacing: '2px' }}>L P E D</div>
+              <div style={{ fontSize: '20px', fontWeight: '900', color: '#013E37', letterSpacing: '8px' }}>E</div>
+              <div style={{ fontSize: '15px', fontWeight: '800', color: '#013E37', letterSpacing: '6px', margin: '2px 0' }}>F P</div>
+              <div style={{ fontSize: '11px', fontWeight: '700', color: 'rgba(1,62,55,0.5)', letterSpacing: '4px' }}>T O Z</div>
+              <div style={{ fontSize: '9px', fontWeight: '600', color: 'rgba(1,62,55,0.5)', letterSpacing: '2px' }}>L P E D</div>
 
               {/* Doctor Avatar Circle Badge */}
-              <div style={{ position: 'absolute', bottom: '-14px', right: '-14px', width: '44px', height: '44px', borderRadius: '50%', background: 'linear-gradient(135deg, #43A047, #1E88E5)', border: '2.5px solid #FFFFFF', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '22px', boxShadow: '0 4px 12px rgba(0,0,0,0.4)' }}>
+              <div style={{ position: 'absolute', bottom: '-14px', right: '-14px', width: '44px', height: '44px', borderRadius: '50%', background: 'linear-gradient(135deg, #013E37, #013E37)', border: '2.5px solid #FFFFFF', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '22px', boxShadow: '0 4px 12px rgba(0,0,0,0.4)' }}>
                 👨‍⚕️
               </div>
             </div>
 
-            <h2 style={{ fontSize: '24px', fontWeight: '800', color: '#FFFFFF', marginBottom: '10px', letterSpacing: '-0.5px' }}>
+            <h2 style={{ fontSize: '24px', fontWeight: '800', color: '#013E37', marginBottom: '10px', letterSpacing: '-0.5px' }}>
               Check Your Vision From Home
             </h2>
-            <p style={{ fontSize: '14px', color: '#A0A4C8', lineHeight: '1.6', maxWidth: '320px', margin: '0 auto' }}>
+            <p style={{ fontSize: '14px', color: 'rgba(1,62,55,0.5)', lineHeight: '1.6', maxWidth: '320px', margin: '0 auto' }}>
               Our certified optometrists conduct your eye test via video call. Takes only 15-20 minutes. Get your digital prescription instantly.
             </p>
           </div>
@@ -203,8 +203,8 @@ const EyeCheckupScreen = ({ onSelectTab, initialViewMode = 'landing' }) => {
             ].map((tile, idx) => (
               <div key={idx} className="glass-card-standard" style={{ padding: '16px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
                 <span style={{ fontSize: '30px' }}>{tile.icon}</span>
-                <div style={{ fontSize: '13px', fontWeight: '800', color: '#FFFFFF' }}>{tile.title}</div>
-                <div style={{ fontSize: '11px', color: '#A0A4C8', lineHeight: '1.4' }}>{tile.desc}</div>
+                <div style={{ fontSize: '13px', fontWeight: '800', color: '#013E37' }}>{tile.title}</div>
+                <div style={{ fontSize: '11px', color: 'rgba(1,62,55,0.5)', lineHeight: '1.4' }}>{tile.desc}</div>
               </div>
             ))}
           </div>
@@ -222,7 +222,7 @@ const EyeCheckupScreen = ({ onSelectTab, initialViewMode = 'landing' }) => {
           >
             <span>Book My Free Eye Test</span>
           </button>
-          <div style={{ textAlign: 'center', fontSize: '11px', color: '#6B6E9A', fontWeight: '600' }}>
+          <div style={{ textAlign: 'center', fontSize: '11px', color: 'rgba(1,62,55,0.5)', fontWeight: '600' }}>
             No credit card required · Completely free forever
           </div>
         </div>
@@ -237,7 +237,7 @@ const EyeCheckupScreen = ({ onSelectTab, initialViewMode = 'landing' }) => {
           <div className="flex-between mb-3">
             <button
               type="button"
-              style={{ width: '36px', height: '36px', borderRadius: '50%', background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.15)', color: '#FFFFFF', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer' }}
+              style={{ width: '36px', height: '36px', borderRadius: '50%', background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.15)', color: '#013E37', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer' }}
               onClick={() => {
                 if (bookingStep === 1) setViewMode('landing');
                 else if (bookingStep === 'success') setViewMode('landing');
@@ -246,7 +246,7 @@ const EyeCheckupScreen = ({ onSelectTab, initialViewMode = 'landing' }) => {
             >
               ←
             </button>
-            <h1 style={{ fontSize: '18px', fontWeight: '800', color: '#FFFFFF' }}>
+            <h1 style={{ fontSize: '18px', fontWeight: '800', color: '#013E37' }}>
               {bookingStep === 'success' ? 'Appointment Confirmed' : `Step ${bookingStep} of 3`}
             </h1>
             <span style={{ width: '36px' }} />
@@ -262,7 +262,7 @@ const EyeCheckupScreen = ({ onSelectTab, initialViewMode = 'landing' }) => {
               ].map((item, idx) => {
                 const isCompleted = bookingStep > item.step;
                 const isCurrent = bookingStep === item.step;
-                const color = (isCompleted || isCurrent) ? '#FF7873' : 'rgba(255,255,255,0.25)';
+                const color = (isCompleted || isCurrent) ? '#A94A4A' : 'rgba(255,255,255,0.25)';
 
                 return (
                   <React.Fragment key={item.step}>
@@ -271,11 +271,11 @@ const EyeCheckupScreen = ({ onSelectTab, initialViewMode = 'landing' }) => {
                       <div
                         style={{
                           width: '24px', height: '24px', borderRadius: '50%',
-                          background: (isCompleted || isCurrent) ? '#FF7873' : 'rgba(11, 42, 107, 0.15)',
+                          background: (isCompleted || isCurrent) ? '#A94A4A' : 'rgba(11, 42, 107, 0.15)',
                           border: `2px solid ${color}`,
                           display: 'flex', alignItems: 'center', justifyContent: 'center',
-                          color: '#FFFFFF', fontSize: '11px', fontWeight: '800',
-                          boxShadow: isCurrent ? '0 0 16px rgba(226,47,128,0.8)' : 'none',
+                          color: '#013E37', fontSize: '11px', fontWeight: '800',
+                          boxShadow: isCurrent ? '0 0 16px rgba(1,62,55,0.8)' : 'none',
                           animation: isCurrent ? 'pulseGlowAnim 1.5s infinite ease-in-out' : 'none'
                         }}
                       >
@@ -288,7 +288,7 @@ const EyeCheckupScreen = ({ onSelectTab, initialViewMode = 'landing' }) => {
 
                     {/* Connecting Line between dots */}
                     {idx < 2 && (
-                      <div style={{ flex: 1, height: '3px', background: bookingStep > idx + 1 ? '#FF7873' : 'rgba(255,255,255,0.15)', margin: '0 8px', transform: 'translateY(-10px)', transition: 'background 300ms ease' }} />
+                      <div style={{ flex: 1, height: '3px', background: bookingStep > idx + 1 ? '#A94A4A' : 'rgba(255,255,255,0.15)', margin: '0 8px', transform: 'translateY(-10px)', transition: 'background 300ms ease' }} />
                     )}
                   </React.Fragment>
                 );
@@ -299,7 +299,7 @@ const EyeCheckupScreen = ({ onSelectTab, initialViewMode = 'landing' }) => {
           {/* STEP 1: CHOOSE DATE & TIME */}
           {bookingStep === 1 && (
             <div className="fade-up-item">
-              <h2 style={{ fontSize: '16px', fontWeight: '800', color: '#FFFFFF', marginBottom: '12px' }}>
+              <h2 style={{ fontSize: '16px', fontWeight: '800', color: '#013E37', marginBottom: '12px' }}>
                 Select Date (Next 14 Days)
               </h2>
               {/* Horizontal Scrollable Date Chips */}
@@ -320,23 +320,23 @@ const EyeCheckupScreen = ({ onSelectTab, initialViewMode = 'landing' }) => {
                       }}
                     >
                       {dt.isToday && (
-                        <span style={{ fontSize: '9px', fontWeight: '900', color: isSel ? '#FFFFFF' : '#29B6F6', marginBottom: '2px', textTransform: 'uppercase' }}>
+                        <span style={{ fontSize: '9px', fontWeight: '900', color: isSel ? '#FFFFFF' : '#013E37', marginBottom: '2px', textTransform: 'uppercase' }}>
                           Today
                         </span>
                       )}
-                      <span style={{ fontSize: '10px', fontWeight: '700', color: isSel ? '#FFFFFF' : '#A0A4C8' }}>{dt.dayName}</span>
-                      <span style={{ fontSize: '18px', fontWeight: '900', color: '#FFFFFF', margin: '2px 0' }}>{dt.dateNum}</span>
-                      <span style={{ fontSize: '10px', fontWeight: '600', color: isSel ? '#FFFFFF' : '#A0A4C8' }}>{dt.monthName}</span>
+                      <span style={{ fontSize: '10px', fontWeight: '700', color: isSel ? '#FFFFFF' : 'rgba(1,62,55,0.5)' }}>{dt.dayName}</span>
+                      <span style={{ fontSize: '18px', fontWeight: '900', color: '#013E37', margin: '2px 0' }}>{dt.dateNum}</span>
+                      <span style={{ fontSize: '10px', fontWeight: '600', color: isSel ? '#FFFFFF' : 'rgba(1,62,55,0.5)' }}>{dt.monthName}</span>
                     </div>
                   );
                 })}
               </div>
 
               <div className="flex-between mb-2">
-                <h2 style={{ fontSize: '16px', fontWeight: '800', color: '#FFFFFF' }}>
+                <h2 style={{ fontSize: '16px', fontWeight: '800', color: '#013E37' }}>
                   Select Time Slot ({selectedDateObj.dayName}, {selectedDateObj.monthName} {selectedDateObj.dateNum})
                 </h2>
-                <span style={{ fontSize: '11px', color: '#43A047', fontWeight: '700' }}>● All times in IST</span>
+                <span style={{ fontSize: '11px', color: '#013E37', fontWeight: '700' }}>● All times in IST</span>
               </div>
 
               {/* Time Slot Grid (3 columns) */}
@@ -384,14 +384,14 @@ const EyeCheckupScreen = ({ onSelectTab, initialViewMode = 'landing' }) => {
             <div className="fade-up-item">
               <div className="glass-card-elevated" style={{ padding: '22px 18px', marginBottom: '24px' }}>
                 <div className="flex-between mb-3">
-                  <h2 style={{ fontSize: '16px', fontWeight: '800', color: '#FFFFFF' }}>Patient Information</h2>
+                  <h2 style={{ fontSize: '16px', fontWeight: '800', color: '#013E37' }}>Patient Information</h2>
                   <span className="badge-pill badge-purple">PRE-FILLED</span>
                 </div>
 
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
                   {/* Full Name */}
                   <div>
-                    <label style={{ fontSize: '12px', fontWeight: '700', color: '#A0A4C8', display: 'block', marginBottom: '6px' }}>Full Name</label>
+                    <label style={{ fontSize: '12px', fontWeight: '700', color: 'rgba(1,62,55,0.5)', display: 'block', marginBottom: '6px' }}>Full Name</label>
                     <div className="input-group">
                       <input
                         type="text"
@@ -406,7 +406,7 @@ const EyeCheckupScreen = ({ onSelectTab, initialViewMode = 'landing' }) => {
                   {/* Mobile Number & Age row */}
                   <div style={{ display: 'grid', gridTemplateColumns: '1.5fr 1fr', gap: '12px' }}>
                     <div>
-                      <label style={{ fontSize: '12px', fontWeight: '700', color: '#A0A4C8', display: 'block', marginBottom: '6px' }}>Mobile Number</label>
+                      <label style={{ fontSize: '12px', fontWeight: '700', color: 'rgba(1,62,55,0.5)', display: 'block', marginBottom: '6px' }}>Mobile Number</label>
                       <input
                         type="tel"
                         className="glass-input"
@@ -416,7 +416,7 @@ const EyeCheckupScreen = ({ onSelectTab, initialViewMode = 'landing' }) => {
                       />
                     </div>
                     <div>
-                      <label style={{ fontSize: '12px', fontWeight: '700', color: '#A0A4C8', display: 'block', marginBottom: '6px' }}>Age 📅</label>
+                      <label style={{ fontSize: '12px', fontWeight: '700', color: 'rgba(1,62,55,0.5)', display: 'block', marginBottom: '6px' }}>Age 📅</label>
                       <input
                         type="number"
                         className="glass-input"
@@ -429,7 +429,7 @@ const EyeCheckupScreen = ({ onSelectTab, initialViewMode = 'landing' }) => {
 
                   {/* Email */}
                   <div>
-                    <label style={{ fontSize: '12px', fontWeight: '700', color: '#A0A4C8', display: 'block', marginBottom: '6px' }}>Email Address (For Google Meet link)</label>
+                    <label style={{ fontSize: '12px', fontWeight: '700', color: 'rgba(1,62,55,0.5)', display: 'block', marginBottom: '6px' }}>Email Address (For Google Meet link)</label>
                     <input
                       type="email"
                       className="glass-input"
@@ -442,12 +442,12 @@ const EyeCheckupScreen = ({ onSelectTab, initialViewMode = 'landing' }) => {
                   {/* Wear Glasses Toggle */}
                   <div className="flex-between" style={{ background: 'rgba(255,240,224,0.5)', padding: '12px 14px', borderRadius: '14px', border: '1px solid rgba(255,255,255,0.1)' }}>
                     <div>
-                      <div style={{ fontSize: '13px', fontWeight: '800', color: '#FFFFFF' }}>Do you currently wear glasses?</div>
-                      <div style={{ fontSize: '11px', color: '#A0A4C8' }}>Helps optometrist calibrate baseline power</div>
+                      <div style={{ fontSize: '13px', fontWeight: '800', color: '#013E37' }}>Do you currently wear glasses?</div>
+                      <div style={{ fontSize: '11px', color: 'rgba(1,62,55,0.5)' }}>Helps optometrist calibrate baseline power</div>
                     </div>
                     <button
                       type="button"
-                      style={{ padding: '6px 14px', borderRadius: '999px', fontSize: '12px', fontWeight: '800', background: formData.wearGlasses ? '#FF7873' : 'rgba(255,255,255,0.1)', color: '#FFFFFF', border: 'none', cursor: 'pointer', transition: 'all 200ms ease' }}
+                      style={{ padding: '6px 14px', borderRadius: '999px', fontSize: '12px', fontWeight: '800', background: formData.wearGlasses ? '#A94A4A' : 'rgba(255,255,255,0.1)', color: '#013E37', border: 'none', cursor: 'pointer', transition: 'all 200ms ease' }}
                       onClick={() => setFormData({ ...formData, wearGlasses: !formData.wearGlasses })}
                     >
                       {formData.wearGlasses ? 'YES ✓' : 'NO ✕'}
@@ -456,8 +456,8 @@ const EyeCheckupScreen = ({ onSelectTab, initialViewMode = 'landing' }) => {
 
                   {/* Expandable Current Prescription field */}
                   {formData.wearGlasses && (
-                    <div style={{ background: 'rgba(255,235,210,0.6)', padding: '14px', borderRadius: '14px', border: '1px dashed rgba(226,47,128,0.4)', animation: 'slideInRight 300ms ease' }}>
-                      <label style={{ fontSize: '12px', fontWeight: '700', color: '#FF7873', display: 'block', marginBottom: '6px' }}>Current Prescription (Optional)</label>
+                    <div style={{ background: 'rgba(255,235,210,0.6)', padding: '14px', borderRadius: '14px', border: '1px dashed rgba(1,62,55,0.4)', animation: 'slideInRight 300ms ease' }}>
+                      <label style={{ fontSize: '12px', fontWeight: '700', color: '#A94A4A', display: 'block', marginBottom: '6px' }}>Current Prescription (Optional)</label>
                       <input
                         type="text"
                         className="glass-input mb-2"
@@ -478,7 +478,7 @@ const EyeCheckupScreen = ({ onSelectTab, initialViewMode = 'landing' }) => {
 
                   {/* Reason for Eye Test Segmented Radio */}
                   <div>
-                    <label style={{ fontSize: '12px', fontWeight: '700', color: '#A0A4C8', display: 'block', marginBottom: '8px' }}>Reason for Eye Test</label>
+                    <label style={{ fontSize: '12px', fontWeight: '700', color: 'rgba(1,62,55,0.5)', display: 'block', marginBottom: '8px' }}>Reason for Eye Test</label>
                     <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
                       {["Routine check-up", "Vision seems blurry", "Eye strain / headaches", "Updating prescription", "First time check"].map((rs, idx) => {
                         const isSel = formData.reason === rs;
@@ -486,7 +486,7 @@ const EyeCheckupScreen = ({ onSelectTab, initialViewMode = 'landing' }) => {
                           <button
                             key={idx}
                             type="button"
-                            style={{ padding: '8px 14px', borderRadius: '999px', fontSize: '12px', fontWeight: '700', background: isSel ? '#FF7873' : 'rgba(255,255,255,0.06)', color: '#FFFFFF', border: isSel ? 'none' : '1px solid rgba(255,255,255,0.15)', cursor: 'pointer' }}
+                            style={{ padding: '8px 14px', borderRadius: '999px', fontSize: '12px', fontWeight: '700', background: isSel ? '#A94A4A' : 'rgba(255,255,255,0.06)', color: '#013E37', border: isSel ? 'none' : '1px solid rgba(255,255,255,0.15)', cursor: 'pointer' }}
                             onClick={() => setFormData({ ...formData, reason: rs })}
                           >
                             {rs}
@@ -498,10 +498,10 @@ const EyeCheckupScreen = ({ onSelectTab, initialViewMode = 'landing' }) => {
 
                   {/* Preferred Language Dropdown */}
                   <div>
-                    <label style={{ fontSize: '12px', fontWeight: '700', color: '#A0A4C8', display: 'block', marginBottom: '6px' }}>Preferred Consultation Language</label>
+                    <label style={{ fontSize: '12px', fontWeight: '700', color: 'rgba(1,62,55,0.5)', display: 'block', marginBottom: '6px' }}>Preferred Consultation Language</label>
                     <select
                       className="glass-input"
-                      style={{ background: 'rgba(255, 255, 255, 0.95)', color: '#FFFFFF', cursor: 'pointer' }}
+                      style={{ background: 'rgba(255, 255, 255, 0.95)', color: '#013E37', cursor: 'pointer' }}
                       value={formData.language}
                       onChange={(e) => setFormData({ ...formData, language: e.target.value })}
                     >
@@ -536,44 +536,44 @@ const EyeCheckupScreen = ({ onSelectTab, initialViewMode = 'landing' }) => {
           {bookingStep === 3 && (
             <div className="fade-up-item">
               {/* Summary Card */}
-              <div className="glass-card-elevated mb-3" style={{ padding: '22px 18px', borderLeft: '4px solid #43A047' }}>
+              <div className="glass-card-elevated mb-3" style={{ padding: '22px 18px', borderLeft: '4px solid #013E37' }}>
                 <div className="flex-between mb-2">
-                  <span style={{ fontSize: '12px', fontWeight: '700', color: '#A0A4C8', textTransform: 'uppercase', letterSpacing: '0.8px' }}>
+                  <span style={{ fontSize: '12px', fontWeight: '700', color: 'rgba(1,62,55,0.5)', textTransform: 'uppercase', letterSpacing: '0.8px' }}>
                     APPOINTMENT SUMMARY
                   </span>
                   <span className="badge-pill badge-green">VERIFIED SLOT</span>
                 </div>
 
-                <div style={{ fontSize: '18px', fontWeight: '900', color: '#FFFFFF', marginBottom: '8px' }}>
+                <div style={{ fontSize: '18px', fontWeight: '900', color: '#013E37', marginBottom: '8px' }}>
                   📅 {selectedDateObj.fullString} at {selectedTimeSlot}
                 </div>
 
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', fontSize: '13px', color: '#A0A4C8', borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '12px', marginTop: '10px' }}>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', fontSize: '13px', color: 'rgba(1,62,55,0.5)', borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '12px', marginTop: '10px' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <span style={{ color: '#FFFFFF', fontWeight: 'bold' }}>Patient:</span> {formData.fullName} ({formData.age} yrs)
+                    <span style={{ color: '#013E37', fontWeight: 'bold' }}>Patient:</span> {formData.fullName} ({formData.age} yrs)
                   </div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <span style={{ color: '#FFFFFF', fontWeight: 'bold' }}>Doctor:</span> Dr. Ananya Sharma, AIOC Certified Optometrist
+                    <span style={{ color: '#013E37', fontWeight: 'bold' }}>Doctor:</span> Dr. Ananya Sharma, AIOC Certified Optometrist
                   </div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <span style={{ color: '#FFFFFF', fontWeight: 'bold' }}>Mode:</span> 🎥 Video Call (Google Meet link via SMS & Email)
+                    <span style={{ color: '#013E37', fontWeight: 'bold' }}>Mode:</span> 🎥 Video Call (Google Meet link via SMS & Email)
                   </div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <span style={{ color: '#FFFFFF', fontWeight: 'bold' }}>Language:</span> {formData.language}
+                    <span style={{ color: '#013E37', fontWeight: 'bold' }}>Language:</span> {formData.language}
                   </div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '4px' }}>
-                    <span style={{ color: '#FFFFFF', fontWeight: 'bold' }}>Total Consultation Fee:</span>
-                    <span style={{ fontSize: '20px', fontWeight: '900', color: '#43A047' }}>FREE ₹0</span>
+                    <span style={{ color: '#013E37', fontWeight: 'bold' }}>Total Consultation Fee:</span>
+                    <span style={{ fontSize: '20px', fontWeight: '900', color: '#013E37' }}>FREE ₹0</span>
                   </div>
                 </div>
               </div>
 
               {/* What to prepare accordion */}
               <div className="glass-card-standard mb-3" style={{ padding: '18px' }}>
-                <h3 style={{ fontSize: '15px', fontWeight: '800', color: '#FFFFFF', marginBottom: '12px' }}>
+                <h3 style={{ fontSize: '15px', fontWeight: '800', color: '#013E37', marginBottom: '12px' }}>
                   💡 What to Prepare Before Your Call
                 </h3>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', fontSize: '13px', color: '#A0A4C8' }}>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', fontSize: '13px', color: 'rgba(1,62,55,0.5)' }}>
                   <div>✓ Be in a well-lit room without window glare behind you</div>
                   <div>✓ Have your existing glasses and previous prescriptions ready</div>
                   <div>✓ Use a computer/laptop or stable tablet stand for best experience</div>
@@ -587,9 +587,9 @@ const EyeCheckupScreen = ({ onSelectTab, initialViewMode = 'landing' }) => {
                   type="checkbox"
                   checked={termsChecked}
                   onChange={(e) => setTermsChecked(e.target.checked)}
-                  style={{ width: '18px', height: '18px', accentColor: '#FF7873', marginTop: '2px', cursor: 'pointer' }}
+                  style={{ width: '18px', height: '18px', accentColor: '#A94A4A', marginTop: '2px', cursor: 'pointer' }}
                 />
-                <span style={{ fontSize: '12px', color: '#A0A4C8', lineHeight: '1.5' }}>
+                <span style={{ fontSize: '12px', color: 'rgba(1,62,55,0.5)', lineHeight: '1.5' }}>
                   I agree to receive reminders via SMS/Email and understand this is a free digital screening and consultation, not a substitute for an emergency hospital visit.
                 </span>
               </label>
@@ -613,22 +613,22 @@ const EyeCheckupScreen = ({ onSelectTab, initialViewMode = 'landing' }) => {
           {bookingStep === 'success' && (
             <div className="fade-up-item" style={{ textAlign: 'center', padding: '20px 0' }}>
               {/* Checkmark Animation Circle */}
-              <div style={{ width: '96px', height: '96px', borderRadius: '48px', background: 'linear-gradient(135deg, #43A047, #1E88E5)', margin: '0 auto 20px', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '48px', color: '#FFFFFF', boxShadow: '0 8px 32px rgba(67,160,71,0.5)', animation: 'pulseGlowAnim 2s infinite ease-in-out' }}>
+              <div style={{ width: '96px', height: '96px', borderRadius: '48px', background: 'linear-gradient(135deg, #013E37, #013E37)', margin: '0 auto 20px', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '48px', color: '#013E37', boxShadow: '0 8px 32px rgba(67,160,71,0.5)', animation: 'pulseGlowAnim 2s infinite ease-in-out' }}>
                 ✓
               </div>
 
-              <h1 style={{ fontSize: '26px', fontWeight: '900', color: '#FFFFFF', marginBottom: '8px' }}>
+              <h1 style={{ fontSize: '26px', fontWeight: '900', color: '#013E37', marginBottom: '8px' }}>
                 Booking Confirmed! 🎉
               </h1>
-              <p style={{ fontSize: '14px', color: '#A0A4C8', marginBottom: '24px' }}>
+              <p style={{ fontSize: '14px', color: 'rgba(1,62,55,0.5)', marginBottom: '24px' }}>
                 Your appointment is locked in with Dr. Ananya Sharma.
               </p>
 
               {/* Booking Reference Card */}
               <div className="glass-card-elevated mb-3" style={{ padding: '18px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', border: '1px solid rgba(255,255,255,0.2)' }}>
                 <div>
-                  <div style={{ fontSize: '11px', fontWeight: '700', color: '#A0A4C8', textAlign: 'left' }}>BOOKING REFERENCE</div>
-                  <div style={{ fontSize: '18px', fontWeight: '900', color: '#FFFFFF', letterSpacing: '1px', marginTop: '2px' }}>Ref: LM-EC-20482</div>
+                  <div style={{ fontSize: '11px', fontWeight: '700', color: 'rgba(1,62,55,0.5)', textAlign: 'left' }}>BOOKING REFERENCE</div>
+                  <div style={{ fontSize: '18px', fontWeight: '900', color: '#013E37', letterSpacing: '1px', marginTop: '2px' }}>Ref: LM-EC-20482</div>
                 </div>
                 <button
                   type="button"
@@ -643,17 +643,17 @@ const EyeCheckupScreen = ({ onSelectTab, initialViewMode = 'landing' }) => {
               {/* Meeting Link Card */}
               <div className="glass-card-glow-cyan mb-4" style={{ padding: '20px', textAlign: 'left' }}>
                 <div className="flex-between mb-2">
-                  <span style={{ fontSize: '14px', fontWeight: '800', color: '#FFFFFF' }}>🎥 Video Consultation Room</span>
+                  <span style={{ fontSize: '14px', fontWeight: '800', color: '#013E37' }}>🎥 Video Consultation Room</span>
                   <span className="badge-pill badge-green">ACTIVE LINK</span>
                 </div>
-                <div style={{ fontSize: '13px', color: '#29B6F6', fontWeight: '700', wordBreak: 'break-all', background: 'rgba(0,0,0,0.3)', padding: '10px', borderRadius: '10px', marginBottom: '14px' }}>
+                <div style={{ fontSize: '13px', color: '#013E37', fontWeight: '700', wordBreak: 'break-all', background: 'rgba(0,0,0,0.3)', padding: '10px', borderRadius: '10px', marginBottom: '14px' }}>
                   https://meet.google.com/lms-eye-2026
                 </div>
                 <div style={{ display: 'flex', gap: '10px' }}>
                   <button
                     type="button"
                     className="btn-primary-pill"
-                    style={{ flex: 1, height: '42px', fontSize: '13px', background: 'linear-gradient(135deg, #1E88E5, #1565C0)' }}
+                    style={{ flex: 1, height: '42px', fontSize: '13px', background: 'linear-gradient(135deg, #013E37, #1565C0)' }}
                     onClick={() => showToast('📅 Added July 10 at 10:00 AM to your Apple/Google Calendar!')}
                   >
                     📅 Add to Calendar
@@ -669,7 +669,7 @@ const EyeCheckupScreen = ({ onSelectTab, initialViewMode = 'landing' }) => {
                 </div>
               </div>
 
-              <div style={{ fontSize: '12px', color: '#6B6E9A', marginBottom: '30px' }}>
+              <div style={{ fontSize: '12px', color: 'rgba(1,62,55,0.5)', marginBottom: '30px' }}>
                 * You will receive an automated reminder SMS and email 30 mins prior.
               </div>
 
@@ -713,12 +713,12 @@ const EyeCheckupScreen = ({ onSelectTab, initialViewMode = 'landing' }) => {
             <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
               <button
                 type="button"
-                style={{ width: '36px', height: '36px', borderRadius: '50%', background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.15)', color: '#FFFFFF', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer' }}
+                style={{ width: '36px', height: '36px', borderRadius: '50%', background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.15)', color: '#013E37', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer' }}
                 onClick={() => setViewMode('landing')}
               >
                 ←
               </button>
-              <h1 style={{ fontSize: '18px', fontWeight: '800', color: '#FFFFFF' }}>Track Order #LM-20482</h1>
+              <h1 style={{ fontSize: '18px', fontWeight: '800', color: '#013E37' }}>Track Order #LM-20482</h1>
             </div>
             <span className="badge-pill badge-pink">OUT FOR DELIVERY</span>
           </div>
@@ -729,13 +729,13 @@ const EyeCheckupScreen = ({ onSelectTab, initialViewMode = 'landing' }) => {
               🕶️
             </div>
             <div style={{ flex: 1 }}>
-              <div style={{ fontSize: '10px', fontWeight: '700', color: '#A0A4C8', uppercase: 'true' }}>LENS MAKERS CLASSIC</div>
-              <div style={{ fontSize: '15px', fontWeight: '800', color: '#FFFFFF', margin: '2px 0' }}>Milan Aviator Gold #204</div>
-              <div className="flex-between" style={{ fontSize: '12px', color: '#6B6E9A', marginTop: '4px' }}>
+              <div style={{ fontSize: '10px', fontWeight: '700', color: 'rgba(1,62,55,0.5)', uppercase: 'true' }}>LENS MAKERS CLASSIC</div>
+              <div style={{ fontSize: '15px', fontWeight: '800', color: '#013E37', margin: '2px 0' }}>Milan Aviator Gold #204</div>
+              <div className="flex-between" style={{ fontSize: '12px', color: 'rgba(1,62,55,0.5)', marginTop: '4px' }}>
                 <span>Ordered: June 28, 2026</span>
-                <span style={{ fontSize: '14px', fontWeight: '900', color: '#FFFFFF' }}>₹3,499</span>
+                <span style={{ fontSize: '14px', fontWeight: '900', color: '#013E37' }}>₹3,499</span>
               </div>
-              <div style={{ fontSize: '12px', fontWeight: '700', color: '#29B6F6', marginTop: '6px' }}>
+              <div style={{ fontSize: '12px', fontWeight: '700', color: '#013E37', marginTop: '6px' }}>
                 🚚 Estimated delivery: Today by 6:00 PM
               </div>
             </div>
@@ -743,7 +743,7 @@ const EyeCheckupScreen = ({ onSelectTab, initialViewMode = 'landing' }) => {
 
           {/* LIVE TRACKING TIMELINE CARD */}
           <div className="glass-card-standard mb-4" style={{ padding: '24px 20px', position: 'relative' }}>
-            <h3 style={{ fontSize: '16px', fontWeight: '800', color: '#FFFFFF', marginBottom: '20px' }}>
+            <h3 style={{ fontSize: '16px', fontWeight: '800', color: '#013E37', marginBottom: '20px' }}>
               Real-Time Shipment Progress
             </h3>
 
@@ -757,8 +757,8 @@ const EyeCheckupScreen = ({ onSelectTab, initialViewMode = 'landing' }) => {
               <div style={{ display: 'flex', alignItems: 'flex-start', marginBottom: '24px', position: 'relative' }}>
                 <div className="tracking-dot completed" style={{ position: 'absolute', left: '-32px', top: '-2px' }}>✓</div>
                 <div>
-                  <div style={{ fontSize: '14px', fontWeight: '800', color: '#FFFFFF' }}>Order Placed</div>
-                  <div style={{ fontSize: '12px', color: '#A0A4C8' }}>June 28 · 9:30 AM</div>
+                  <div style={{ fontSize: '14px', fontWeight: '800', color: '#013E37' }}>Order Placed</div>
+                  <div style={{ fontSize: '12px', color: 'rgba(1,62,55,0.5)' }}>June 28 · 9:30 AM</div>
                 </div>
               </div>
 
@@ -766,8 +766,8 @@ const EyeCheckupScreen = ({ onSelectTab, initialViewMode = 'landing' }) => {
               <div style={{ display: 'flex', alignItems: 'flex-start', marginBottom: '24px', position: 'relative' }}>
                 <div className="tracking-dot completed" style={{ position: 'absolute', left: '-32px', top: '-2px' }}>✓</div>
                 <div>
-                  <div style={{ fontSize: '14px', fontWeight: '800', color: '#FFFFFF' }}>Order Confirmed & Lenses Crafted</div>
-                  <div style={{ fontSize: '12px', color: '#A0A4C8' }}>June 28 · 2:15 PM</div>
+                  <div style={{ fontSize: '14px', fontWeight: '800', color: '#013E37' }}>Order Confirmed & Lenses Crafted</div>
+                  <div style={{ fontSize: '12px', color: 'rgba(1,62,55,0.5)' }}>June 28 · 2:15 PM</div>
                 </div>
               </div>
 
@@ -775,8 +775,8 @@ const EyeCheckupScreen = ({ onSelectTab, initialViewMode = 'landing' }) => {
               <div style={{ display: 'flex', alignItems: 'flex-start', marginBottom: '24px', position: 'relative' }}>
                 <div className="tracking-dot completed" style={{ position: 'absolute', left: '-32px', top: '-2px' }}>✓</div>
                 <div>
-                  <div style={{ fontSize: '14px', fontWeight: '800', color: '#FFFFFF' }}>Picked Up by Courier Facility</div>
-                  <div style={{ fontSize: '12px', color: '#A0A4C8' }}>June 29 · 10:00 AM</div>
+                  <div style={{ fontSize: '14px', fontWeight: '800', color: '#013E37' }}>Picked Up by Courier Facility</div>
+                  <div style={{ fontSize: '12px', color: 'rgba(1,62,55,0.5)' }}>June 29 · 10:00 AM</div>
                 </div>
               </div>
 
@@ -784,28 +784,28 @@ const EyeCheckupScreen = ({ onSelectTab, initialViewMode = 'landing' }) => {
               <div style={{ display: 'flex', alignItems: 'flex-start', marginBottom: '28px', position: 'relative' }}>
                 <div className="tracking-dot current" style={{ position: 'absolute', left: '-32px', top: '-2px' }}>●</div>
                 <div style={{ width: '100%' }}>
-                  <div style={{ fontSize: '15px', fontWeight: '900', color: '#FF7873' }}>Out for Delivery 🚀</div>
-                  <div style={{ fontSize: '12px', color: '#FFFFFF', fontWeight: '600', marginBottom: '12px' }}>
+                  <div style={{ fontSize: '15px', fontWeight: '900', color: '#A94A4A' }}>Out for Delivery 🚀</div>
+                  <div style={{ fontSize: '12px', color: '#013E37', fontWeight: '600', marginBottom: '12px' }}>
                     July 3 · Expected arrival between 2:00 PM - 6:00 PM
                   </div>
 
                   {/* Courier Info Sub-Card */}
                   <div style={{ background: 'rgba(255,240,224,0.8)', padding: '14px', borderRadius: '14px', border: '1px solid rgba(255,255,255,0.15)', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '10px' }}>
                     <div>
-                      <div style={{ fontSize: '13px', fontWeight: '800', color: '#FFFFFF' }}>Courier: Bluedart Express</div>
-                      <div style={{ fontSize: '11px', color: '#A0A4C8' }}>Tracking ID: BD-7829310</div>
+                      <div style={{ fontSize: '13px', fontWeight: '800', color: '#013E37' }}>Courier: Bluedart Express</div>
+                      <div style={{ fontSize: '11px', color: 'rgba(1,62,55,0.5)' }}>Tracking ID: BD-7829310</div>
                     </div>
                     <div style={{ display: 'flex', gap: '8px' }}>
                       <button
                         type="button"
-                        style={{ padding: '6px 12px', borderRadius: '999px', background: '#1E88E5', color: '#FFFFFF', border: 'none', fontSize: '11px', fontWeight: '800', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '4px' }}
+                        style={{ padding: '6px 12px', borderRadius: '999px', background: '#013E37', color: '#013E37', border: 'none', fontSize: '11px', fontWeight: '800', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '4px' }}
                         onClick={() => alert('📞 Calling delivery executive Vikram (9876543210)...')}
                       >
                         📞 Call Courier
                       </button>
                       <button
                         type="button"
-                        style={{ padding: '6px 12px', borderRadius: '999px', background: 'rgba(255,255,255,0.1)', color: '#FFFFFF', border: '1px solid rgba(255,255,255,0.2)', fontSize: '11px', fontWeight: '700', cursor: 'pointer' }}
+                        style={{ padding: '6px 12px', borderRadius: '999px', background: 'rgba(255,255,255,0.1)', color: '#013E37', border: '1px solid rgba(255,255,255,0.2)', fontSize: '11px', fontWeight: '700', cursor: 'pointer' }}
                         onClick={() => handleCopyText('BD-7829310', 'Tracking Number')}
                       >
                         🔗 Copy ID
@@ -819,8 +819,8 @@ const EyeCheckupScreen = ({ onSelectTab, initialViewMode = 'landing' }) => {
               <div style={{ display: 'flex', alignItems: 'flex-start', position: 'relative' }}>
                 <div className="tracking-dot upcoming" style={{ position: 'absolute', left: '-32px', top: '-2px' }}>○</div>
                 <div>
-                  <div style={{ fontSize: '14px', fontWeight: '600', color: '#A0A4C8' }}>Delivered</div>
-                  <div style={{ fontSize: '12px', color: '#6B6E9A' }}>Expected: Today by evening</div>
+                  <div style={{ fontSize: '14px', fontWeight: '600', color: 'rgba(1,62,55,0.5)' }}>Delivered</div>
+                  <div style={{ fontSize: '12px', color: 'rgba(1,62,55,0.5)' }}>Expected: Today by evening</div>
                 </div>
               </div>
             </div>
@@ -828,7 +828,7 @@ const EyeCheckupScreen = ({ onSelectTab, initialViewMode = 'landing' }) => {
 
           {/* NEED HELP CARD */}
           <div className="glass-card-elevated" style={{ padding: '20px', textAlign: 'center' }}>
-            <h3 style={{ fontSize: '15px', fontWeight: '800', color: '#FFFFFF', marginBottom: '14px' }}>
+            <h3 style={{ fontSize: '15px', fontWeight: '800', color: '#013E37', marginBottom: '14px' }}>
               Need Help With This Order?
             </h3>
             <div style={{ display: 'flex', gap: '8px', justifyContent: 'center', marginBottom: '16px', flexWrap: 'wrap' }}>
@@ -841,14 +841,14 @@ const EyeCheckupScreen = ({ onSelectTab, initialViewMode = 'landing' }) => {
               </button>
               <button
                 type="button"
-                style={{ padding: '8px 14px', borderRadius: '999px', background: 'rgba(201, 168, 118, 0.15)', border: '1px solid rgba(201, 168, 118, 0.4)', color: '#C9A876', fontSize: '12px', fontWeight: '700', cursor: 'pointer' }}
+                style={{ padding: '8px 14px', borderRadius: '999px', background: 'rgba(201, 168, 118, 0.15)', border: '1px solid rgba(201, 168, 118, 0.4)', color: 'rgba(1,62,55,0.6)', fontSize: '12px', fontWeight: '700', cursor: 'pointer' }}
                 onClick={() => showToast('🛠️ Issue reported to priority escalation team')}
               >
                 Report Issue
               </button>
               <button
                 type="button"
-                style={{ padding: '8px 14px', borderRadius: '999px', background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.2)', color: '#A0A4C8', fontSize: '12px', fontWeight: '700', cursor: 'pointer' }}
+                style={{ padding: '8px 14px', borderRadius: '999px', background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.2)', color: 'rgba(1,62,55,0.5)', fontSize: '12px', fontWeight: '700', cursor: 'pointer' }}
                 onClick={() => showToast('🔄 14-Day Free Exchange portal opening...')}
               >
                 Return / Exchange
@@ -857,7 +857,7 @@ const EyeCheckupScreen = ({ onSelectTab, initialViewMode = 'landing' }) => {
             <button
               type="button"
               className="btn-secondary-pill w-100"
-              style={{ height: '46px', fontSize: '14px', border: '1.5px solid #FF7873', color: '#FFFFFF' }}
+              style={{ height: '46px', fontSize: '14px', border: '1.5px solid #A94A4A', color: '#013E37' }}
               onClick={() => showToast('💬 Opening live chat with Lens Makers Support Agent...')}
             >
               💬 Chat with Support (24/7)
@@ -876,26 +876,26 @@ const EyeCheckupScreen = ({ onSelectTab, initialViewMode = 'landing' }) => {
             <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
               <button
                 type="button"
-                style={{ width: '36px', height: '36px', borderRadius: '50%', background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.15)', color: '#FFFFFF', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer' }}
+                style={{ width: '36px', height: '36px', borderRadius: '50%', background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.15)', color: '#013E37', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer' }}
                 onClick={() => setViewMode('landing')}
               >
                 ←
               </button>
-              <h1 style={{ fontSize: '18px', fontWeight: '800', color: '#FFFFFF' }}>Appointment #LM-EC-20482</h1>
+              <h1 style={{ fontSize: '18px', fontWeight: '800', color: '#013E37' }}>Appointment #LM-EC-20482</h1>
             </div>
             <span className="badge-pill badge-green">LIVE ROOM READY</span>
           </div>
 
           {/* DOCTOR & MEET CARD */}
           <div className="glass-card-glow-cyan mb-4" style={{ padding: '20px', display: 'flex', alignItems: 'center', gap: '16px' }}>
-            <div style={{ width: '64px', height: '64px', borderRadius: '32px', background: 'linear-gradient(135deg, #43A047, #1E88E5)', border: '2.5px solid #FFFFFF', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '32px', flexShrink: 0, boxShadow: '0 4px 16px rgba(0,0,0,0.4)' }}>
+            <div style={{ width: '64px', height: '64px', borderRadius: '32px', background: 'linear-gradient(135deg, #013E37, #013E37)', border: '2.5px solid #FFFFFF', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '32px', flexShrink: 0, boxShadow: '0 4px 16px rgba(0,0,0,0.4)' }}>
               👨‍⚕️
             </div>
             <div style={{ flex: 1 }}>
-              <div style={{ fontSize: '11px', fontWeight: '700', color: '#29B6F6', uppercase: 'true' }}>OPTOMETRY SPECIALIST</div>
-              <div style={{ fontSize: '16px', fontWeight: '800', color: '#FFFFFF', margin: '2px 0' }}>Dr. Ananya Sharma</div>
-              <div style={{ fontSize: '12px', color: '#A0A4C8' }}>AIOC Certified · 12 yrs clinical exp</div>
-              <div style={{ color: '#C9A876', fontSize: '12px', marginTop: '4px' }}>★ 4.9 (1,420 consults)</div>
+              <div style={{ fontSize: '11px', fontWeight: '700', color: '#013E37', uppercase: 'true' }}>OPTOMETRY SPECIALIST</div>
+              <div style={{ fontSize: '16px', fontWeight: '800', color: '#013E37', margin: '2px 0' }}>Dr. Ananya Sharma</div>
+              <div style={{ fontSize: '12px', color: 'rgba(1,62,55,0.5)' }}>AIOC Certified · 12 yrs clinical exp</div>
+              <div style={{ color: 'rgba(1,62,55,0.6)', fontSize: '12px', marginTop: '4px' }}>★ 4.9 (1,420 consults)</div>
             </div>
           </div>
 
@@ -903,7 +903,7 @@ const EyeCheckupScreen = ({ onSelectTab, initialViewMode = 'landing' }) => {
           <button
             type="button"
             className="btn-primary-pill w-100 mb-4"
-            style={{ height: '54px', fontSize: '16px', fontWeight: '800', background: 'linear-gradient(135deg, #43A047, #1E88E5)', boxShadow: '0 8px 24px rgba(67,160,71,0.5)', animation: 'pulseGlowAnim 2s infinite ease-in-out' }}
+            style={{ height: '54px', fontSize: '16px', fontWeight: '800', background: 'linear-gradient(135deg, #013E37, #013E37)', boxShadow: '0 8px 24px rgba(67,160,71,0.5)', animation: 'pulseGlowAnim 2s infinite ease-in-out' }}
             onClick={() => {
               showToast("🎥 Joining Google Meet encrypted consultation room...");
               window.open("https://meet.google.com/lms-eye-2026", "_blank");
@@ -914,7 +914,7 @@ const EyeCheckupScreen = ({ onSelectTab, initialViewMode = 'landing' }) => {
 
           {/* APPOINTMENT TRACKING TIMELINE CARD */}
           <div className="glass-card-standard mb-4" style={{ padding: '24px 20px', position: 'relative' }}>
-            <h3 style={{ fontSize: '16px', fontWeight: '800', color: '#FFFFFF', marginBottom: '20px' }}>
+            <h3 style={{ fontSize: '16px', fontWeight: '800', color: '#013E37', marginBottom: '20px' }}>
               Consultation Status Timeline
             </h3>
 
@@ -926,8 +926,8 @@ const EyeCheckupScreen = ({ onSelectTab, initialViewMode = 'landing' }) => {
               <div style={{ display: 'flex', alignItems: 'flex-start', marginBottom: '24px', position: 'relative' }}>
                 <div className="tracking-dot completed" style={{ position: 'absolute', left: '-32px', top: '-2px' }}>✓</div>
                 <div>
-                  <div style={{ fontSize: '14px', fontWeight: '800', color: '#FFFFFF' }}>Booking Confirmed</div>
-                  <div style={{ fontSize: '12px', color: '#A0A4C8' }}>July 1, 2026 · 11:00 AM</div>
+                  <div style={{ fontSize: '14px', fontWeight: '800', color: '#013E37' }}>Booking Confirmed</div>
+                  <div style={{ fontSize: '12px', color: 'rgba(1,62,55,0.5)' }}>July 1, 2026 · 11:00 AM</div>
                 </div>
               </div>
 
@@ -935,8 +935,8 @@ const EyeCheckupScreen = ({ onSelectTab, initialViewMode = 'landing' }) => {
               <div style={{ display: 'flex', alignItems: 'flex-start', marginBottom: '24px', position: 'relative' }}>
                 <div className="tracking-dot completed" style={{ position: 'absolute', left: '-32px', top: '-2px' }}>✓</div>
                 <div>
-                  <div style={{ fontSize: '14px', fontWeight: '800', color: '#FFFFFF' }}>Automated Reminder SMS & Email Sent</div>
-                  <div style={{ fontSize: '12px', color: '#A0A4C8' }}>Today · 9:30 AM (30 mins prior)</div>
+                  <div style={{ fontSize: '14px', fontWeight: '800', color: '#013E37' }}>Automated Reminder SMS & Email Sent</div>
+                  <div style={{ fontSize: '12px', color: 'rgba(1,62,55,0.5)' }}>Today · 9:30 AM (30 mins prior)</div>
                 </div>
               </div>
 
@@ -944,8 +944,8 @@ const EyeCheckupScreen = ({ onSelectTab, initialViewMode = 'landing' }) => {
               <div style={{ display: 'flex', alignItems: 'flex-start', marginBottom: '24px', position: 'relative' }}>
                 <div className="tracking-dot current" style={{ position: 'absolute', left: '-32px', top: '-2px' }}>●</div>
                 <div>
-                  <div style={{ fontSize: '15px', fontWeight: '900', color: '#FF7873' }}>Video Call Room Active 🎥</div>
-                  <div style={{ fontSize: '12px', color: '#FFFFFF', fontWeight: '600' }}>
+                  <div style={{ fontSize: '15px', fontWeight: '900', color: '#A94A4A' }}>Video Call Room Active 🎥</div>
+                  <div style={{ fontSize: '12px', color: '#013E37', fontWeight: '600' }}>
                     Doctor is in the room waiting for you to join.
                   </div>
                 </div>
@@ -955,8 +955,8 @@ const EyeCheckupScreen = ({ onSelectTab, initialViewMode = 'landing' }) => {
               <div style={{ display: 'flex', alignItems: 'flex-start', marginBottom: '24px', position: 'relative' }}>
                 <div className="tracking-dot upcoming" style={{ position: 'absolute', left: '-32px', top: '-2px' }}>○</div>
                 <div>
-                  <div style={{ fontSize: '14px', fontWeight: '600', color: '#A0A4C8' }}>Consultation Assessment Complete</div>
-                  <div style={{ fontSize: '12px', color: '#6B6E9A' }}>Pending video check-up</div>
+                  <div style={{ fontSize: '14px', fontWeight: '600', color: 'rgba(1,62,55,0.5)' }}>Consultation Assessment Complete</div>
+                  <div style={{ fontSize: '12px', color: 'rgba(1,62,55,0.5)' }}>Pending video check-up</div>
                 </div>
               </div>
 
@@ -964,8 +964,8 @@ const EyeCheckupScreen = ({ onSelectTab, initialViewMode = 'landing' }) => {
               <div style={{ display: 'flex', alignItems: 'flex-start', position: 'relative' }}>
                 <div className="tracking-dot upcoming" style={{ position: 'absolute', left: '-32px', top: '-2px' }}>○</div>
                 <div>
-                  <div style={{ fontSize: '14px', fontWeight: '600', color: '#A0A4C8' }}>Digital Prescription Issued</div>
-                  <div style={{ fontSize: '12px', color: '#FF7873', fontWeight: '700', cursor: 'pointer', marginTop: '2px', textDecoration: 'underline' }} onClick={() => showToast('📋 Prescription will appear here immediately after your call!')}>
+                  <div style={{ fontSize: '14px', fontWeight: '600', color: 'rgba(1,62,55,0.5)' }}>Digital Prescription Issued</div>
+                  <div style={{ fontSize: '12px', color: '#A94A4A', fontWeight: '700', cursor: 'pointer', marginTop: '2px', textDecoration: 'underline' }} onClick={() => showToast('📋 Prescription will appear here immediately after your call!')}>
                     View Digital Prescription →
                   </div>
                 </div>

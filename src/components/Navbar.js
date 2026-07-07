@@ -36,7 +36,7 @@ window.Navbar = function Navbar({ searchQuery, setSearchQuery, onSearchFocus, on
   };
 
   return (
-    <header className="w-full px-5 pt-6 pb-4 sticky top-0 z-40 bg-[#150E30]/80 backdrop-blur-xl border-b border-white/5 transition-all">
+    <header className="w-full px-5 pt-6 pb-4 sticky top-0 z-40 bg-[#FFFFFF]/80 backdrop-blur-xl border-b border-white/5 transition-all">
       {/* Top Bar Row */}
       <div className="flex items-center justify-between mb-4">
         {/* Brand Logo & Wordmark */}
@@ -74,7 +74,7 @@ window.Navbar = function Navbar({ searchQuery, setSearchQuery, onSearchFocus, on
             </svg>
             {/* Small Red Unread Dot */}
             {unreadCount > 0 && (
-              <span className="absolute top-2.5 right-2.5 w-2.5 h-2.5 rounded-full bg-[#F43F5E] border-2 border-[#150E30] animate-pulse"></span>
+              <span className="absolute top-2.5 right-2.5 w-2.5 h-2.5 rounded-full bg-[#F43F5E] border-2 border-[#FFFFFF] animate-pulse"></span>
             )}
           </button>
 

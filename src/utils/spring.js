@@ -178,7 +178,7 @@ function animateAddToCart(sourceElement, cartBadge) {
     position: fixed;
     width: 48px; height: 48px;
     border-radius: 12px;
-    background: ${thumbSrc ? thumbSrc : 'linear-gradient(135deg,#FF7873,#8140DC)'};
+    background: ${thumbSrc ? thumbSrc : 'linear-gradient(135deg,#FF7873,#013E37)'};
     background-size: cover;
     background-position: center;
     left: ${sourceRect.left + sourceRect.width/2 - 24}px;

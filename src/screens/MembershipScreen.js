@@ -89,8 +89,8 @@ const MembershipScreen = ({ onSelectTab, initialViewMode = 'landing', onUpdateMe
               type="button"
               style={{
                 padding: '8px 16px', borderRadius: '999px', fontSize: '13px', fontWeight: '700', flexShrink: 0,
-                background: isActive ? 'linear-gradient(135deg, #8140DC 0%, #FF7873 100%)' : 'rgba(255,240,224,0.65)',
-                color: isActive ? '#FFFFFF' : '#A0A4C8',
+                background: isActive ? 'linear-gradient(135deg, #013E37 0%, #A94A4A 100%)' : 'rgba(255,240,224,0.65)',
+                color: isActive ? '#FFFFFF' : 'rgba(1,62,55,0.5)',
                 border: isActive ? 'none' : '1px solid rgba(255,255,255,0.15)',
                 display: 'flex', alignItems: 'center', gap: '6px', cursor: 'pointer', transition: 'all 200ms ease'
               }}
@@ -98,7 +98,7 @@ const MembershipScreen = ({ onSelectTab, initialViewMode = 'landing', onUpdateMe
             >
               <span>{tab.label}</span>
               {tab.badge && (
-                <span style={{ background: isActive ? 'rgba(0,0,0,0.25)' : '#8140DC', color: '#FFFFFF', padding: '2px 6px', borderRadius: '999px', fontSize: '9px', fontWeight: '900' }}>
+                <span style={{ background: isActive ? 'rgba(0,0,0,0.25)' : '#013E37', color: '#013E37', padding: '2px 6px', borderRadius: '999px', fontSize: '9px', fontWeight: '900' }}>
                   {tab.badge}
                 </span>
               )}
@@ -117,12 +117,12 @@ const MembershipScreen = ({ onSelectTab, initialViewMode = 'landing', onUpdateMe
             <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
               <button
                 type="button"
-                style={{ width: '36px', height: '36px', borderRadius: '50%', background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.15)', color: '#FFFFFF', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer' }}
+                style={{ width: '36px', height: '36px', borderRadius: '50%', background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.15)', color: '#013E37', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer' }}
                 onClick={() => { if (onSelectTab) onSelectTab('home'); }}
               >
                 ←
               </button>
-              <h1 style={{ fontSize: '22px', fontWeight: '800', color: '#FFFFFF' }}>Lens Makers Club</h1>
+              <h1 style={{ fontSize: '22px', fontWeight: '800', color: '#013E37' }}>Lens Makers Club</h1>
             </div>
             <span className="badge-pill badge-purple">VIP PRIVILEGE</span>
           </div>
@@ -142,19 +142,19 @@ const MembershipScreen = ({ onSelectTab, initialViewMode = 'landing', onUpdateMe
             <div className="flex-between" style={{ position: 'relative', zIndex: 2 }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                 <div style={{ width: '28px', height: '16px', position: 'relative' }}>
-                  <div style={{ position: 'absolute', left: 0, width: '16px', height: '16px', borderRadius: '50%', border: '2.5px solid #1E88E5' }} />
-                  <div style={{ position: 'absolute', right: 0, width: '16px', height: '16px', borderRadius: '50%', border: '2.5px solid #43A047' }} />
+                  <div style={{ position: 'absolute', left: 0, width: '16px', height: '16px', borderRadius: '50%', border: '2.5px solid #013E37' }} />
+                  <div style={{ position: 'absolute', right: 0, width: '16px', height: '16px', borderRadius: '50%', border: '2.5px solid #013E37' }} />
                 </div>
-                <span style={{ fontSize: '13px', fontWeight: '800', color: '#FFFFFF', letterSpacing: '1px' }}>LENS MAKERS</span>
+                <span style={{ fontSize: '13px', fontWeight: '800', color: '#013E37', letterSpacing: '1px' }}>LENS MAKERS</span>
               </div>
-              <span style={{ fontSize: '12px', fontWeight: '900', color: '#8140DC', letterSpacing: '3px', textTransform: 'uppercase' }}>CLUB VIP</span>
+              <span style={{ fontSize: '12px', fontWeight: '900', color: '#013E37', letterSpacing: '3px', textTransform: 'uppercase' }}>CLUB VIP</span>
             </div>
 
             {/* Center: Large Pricing Display */}
             <div style={{ position: 'relative', zIndex: 2, margin: '14px 0' }}>
               <div style={{ display: 'flex', alignItems: 'baseline', gap: '6px' }}>
-                <span style={{ fontSize: '46px', fontWeight: '900', color: '#FFFFFF', letterSpacing: '-1px' }}>₹99</span>
-                <span style={{ fontSize: '20px', color: '#A0A4C8', fontWeight: '600' }}>/ month</span>
+                <span style={{ fontSize: '46px', fontWeight: '900', color: '#013E37', letterSpacing: '-1px' }}>₹99</span>
+                <span style={{ fontSize: '20px', color: 'rgba(1,62,55,0.5)', fontWeight: '600' }}>/ month</span>
               </div>
             </div>
 
@@ -165,19 +165,19 @@ const MembershipScreen = ({ onSelectTab, initialViewMode = 'landing', onUpdateMe
 
             {/* Bottom Row: Benefit Highlight & Status */}
             <div className="flex-between" style={{ position: 'relative', zIndex: 2 }}>
-              <span style={{ fontSize: '13px', fontWeight: '800', color: '#29B6F6', background: 'rgba(41,182,246,0.15)', padding: '4px 12px', borderRadius: '999px', border: '1px solid rgba(41,182,246,0.3)' }}>
+              <span style={{ fontSize: '13px', fontWeight: '800', color: '#013E37', background: 'rgba(1,62,55,0.15)', padding: '4px 12px', borderRadius: '999px', border: '1px solid rgba(1,62,55,0.3)' }}>
                 ⚡ 25% OFF EVERYTHING
               </span>
-              <span style={{ fontSize: '11px', fontWeight: '700', color: '#A0A4C8' }}>VALID WORLDWIDE</span>
+              <span style={{ fontSize: '11px', fontWeight: '700', color: 'rgba(1,62,55,0.5)' }}>VALID WORLDWIDE</span>
             </div>
           </div>
 
           {/* Headline Below Card */}
           <div style={{ textAlign: 'center', marginBottom: '28px' }}>
-            <h2 style={{ fontSize: '26px', fontWeight: '900', color: '#FFFFFF', marginBottom: '8px', letterSpacing: '-0.5px' }}>
+            <h2 style={{ fontSize: '26px', fontWeight: '900', color: '#013E37', marginBottom: '8px', letterSpacing: '-0.5px' }}>
               Everything You Love, 25% Cheaper.
             </h2>
-            <p style={{ fontSize: '14px', color: '#A0A4C8', lineHeight: '1.5', maxWidth: '330px', margin: '0 auto' }}>
+            <p style={{ fontSize: '14px', color: 'rgba(1,62,55,0.5)', lineHeight: '1.5', maxWidth: '330px', margin: '0 auto' }}>
               Join thousands of Lens Makers members who save big on every purchase, get free clinical eye tests, and priority try-on access.
             </p>
           </div>
@@ -185,11 +185,11 @@ const MembershipScreen = ({ onSelectTab, initialViewMode = 'landing', onUpdateMe
           {/* BENEFIT LIST (Stacked rows with left accents) */}
           <div className="glass-card-standard mb-4" style={{ padding: '8px 16px' }}>
             {[
-              { icon: '🏷️', color: '#FF7873', title: 'Flat 25% Off All Eyewear', desc: 'Every frame, every order — no minimum, no exceptions.' },
-              { icon: '👁️', color: '#29B6F6', title: '1 Free Online Eye Check-Up/Month', desc: 'Book your monthly vision check — completely free.' },
-              { icon: '📸', color: '#8140DC', title: 'Priority AR Try-On Slots', desc: 'Get first access to new frames before general release.' },
-              { icon: '🎁', color: '#FF7A30', title: 'Exclusive Member-Only Offers', desc: 'Special BOGO deals, flash sales, and birthday offers.' },
-              { icon: '📞', color: '#43A047', title: 'Dedicated Support Line', desc: 'Skip the queue — member-only priority 24/7 support.' }
+              { icon: '🏷️', color: '#A94A4A', title: 'Flat 25% Off All Eyewear', desc: 'Every frame, every order — no minimum, no exceptions.' },
+              { icon: '👁️', color: '#013E37', title: '1 Free Online Eye Check-Up/Month', desc: 'Book your monthly vision check — completely free.' },
+              { icon: '📸', color: '#013E37', title: 'Priority AR Try-On Slots', desc: 'Get first access to new frames before general release.' },
+              { icon: '🎁', color: '#013E37', title: 'Exclusive Member-Only Offers', desc: 'Special BOGO deals, flash sales, and birthday offers.' },
+              { icon: '📞', color: '#013E37', title: 'Dedicated Support Line', desc: 'Skip the queue — member-only priority 24/7 support.' }
             ].map((ben, idx) => (
               <div
                 key={idx}
@@ -199,34 +199,34 @@ const MembershipScreen = ({ onSelectTab, initialViewMode = 'landing', onUpdateMe
                   {ben.icon}
                 </div>
                 <div style={{ flex: 1 }}>
-                  <div style={{ fontSize: '15px', fontWeight: '800', color: '#FFFFFF', marginBottom: '3px' }}>{ben.title}</div>
-                  <div style={{ fontSize: '12px', color: '#A0A4C8', lineHeight: '1.4' }}>{ben.desc}</div>
+                  <div style={{ fontSize: '15px', fontWeight: '800', color: '#013E37', marginBottom: '3px' }}>{ben.title}</div>
+                  <div style={{ fontSize: '12px', color: 'rgba(1,62,55,0.5)', lineHeight: '1.4' }}>{ben.desc}</div>
                 </div>
-                <div style={{ color: '#43A047', fontSize: '18px', fontWeight: '900' }}>✓</div>
+                <div style={{ color: '#013E37', fontSize: '18px', fontWeight: '900' }}>✓</div>
               </div>
             ))}
           </div>
 
           {/* PRICING SECTION (2 Side-by-Side Options) */}
-          <h3 style={{ fontSize: '18px', fontWeight: '800', color: '#FFFFFF', marginBottom: '14px', textAlign: 'center' }}>
+          <h3 style={{ fontSize: '18px', fontWeight: '800', color: '#013E37', marginBottom: '14px', textAlign: 'center' }}>
             Choose Your Savings Plan
           </h3>
           <div className="grid-2 mb-3" style={{ gap: '14px' }}>
             {/* Left: Monthly Plan */}
-            <div className="glass-card-standard" style={{ padding: '18px 14px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', border: selectedPlan === 'monthly' ? '2px solid #FF7873' : '1px solid rgba(255,255,255,0.15)', cursor: 'pointer' }} onClick={() => setSelectedPlan('monthly')}>
+            <div className="glass-card-standard" style={{ padding: '18px 14px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', border: selectedPlan === 'monthly' ? '2px solid #A94A4A' : '1px solid rgba(255,255,255,0.15)', cursor: 'pointer' }} onClick={() => setSelectedPlan('monthly')}>
               <div>
-                <div style={{ fontSize: '13px', fontWeight: '800', color: '#A0A4C8', uppercase: 'true' }}>MONTHLY PLAN</div>
+                <div style={{ fontSize: '13px', fontWeight: '800', color: 'rgba(1,62,55,0.5)', uppercase: 'true' }}>MONTHLY PLAN</div>
                 <div style={{ display: 'flex', alignItems: 'baseline', gap: '4px', margin: '8px 0' }}>
-                  <span style={{ fontSize: '28px', fontWeight: '900', color: '#FFFFFF' }}>₹99</span>
-                  <span style={{ fontSize: '13px', color: '#A0A4C8' }}>/ month</span>
+                  <span style={{ fontSize: '28px', fontWeight: '900', color: '#013E37' }}>₹99</span>
+                  <span style={{ fontSize: '13px', color: 'rgba(1,62,55,0.5)' }}>/ month</span>
                 </div>
-                <div style={{ fontSize: '11px', color: '#6B6E9A', marginBottom: '4px' }}>Billed monthly</div>
-                <div style={{ fontSize: '11px', color: '#43A047', fontWeight: '700' }}>✓ Cancel anytime</div>
+                <div style={{ fontSize: '11px', color: 'rgba(1,62,55,0.5)', marginBottom: '4px' }}>Billed monthly</div>
+                <div style={{ fontSize: '11px', color: '#013E37', fontWeight: '700' }}>✓ Cancel anytime</div>
               </div>
               <button
                 type="button"
                 className="btn-secondary-pill w-100 mt-3"
-                style={{ height: '40px', fontSize: '12px', borderColor: '#FF7873', color: '#FF7873' }}
+                style={{ height: '40px', fontSize: '12px', borderColor: '#A94A4A', color: '#A94A4A' }}
                 onClick={(e) => { e.stopPropagation(); handleStartPayment('monthly'); }}
               >
                 Join Monthly →
@@ -234,44 +234,44 @@ const MembershipScreen = ({ onSelectTab, initialViewMode = 'landing', onUpdateMe
             </div>
 
             {/* Right: Annual Plan (BEST VALUE) */}
-            <div className="glass-card-glow-pink" style={{ padding: '18px 14px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', border: '2px solid #FF7873', position: 'relative', cursor: 'pointer' }} onClick={() => setSelectedPlan('annual')}>
-              <span style={{ position: 'absolute', top: '10px', right: '10px', background: '#FF7A30', color: '#FFFFFF', padding: '3px 8px', borderRadius: '999px', fontSize: '9px', fontWeight: '900', letterSpacing: '0.5px' }}>
+            <div className="glass-card-glow-pink" style={{ padding: '18px 14px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', border: '2px solid #A94A4A', position: 'relative', cursor: 'pointer' }} onClick={() => setSelectedPlan('annual')}>
+              <span style={{ position: 'absolute', top: '10px', right: '10px', background: '#013E37', color: '#013E37', padding: '3px 8px', borderRadius: '999px', fontSize: '9px', fontWeight: '900', letterSpacing: '0.5px' }}>
                 BEST VALUE 🔥
               </span>
               <div>
-                <div style={{ fontSize: '13px', fontWeight: '800', color: '#FF7873', uppercase: 'true' }}>ANNUAL PLAN</div>
+                <div style={{ fontSize: '13px', fontWeight: '800', color: '#A94A4A', uppercase: 'true' }}>ANNUAL PLAN</div>
                 <div style={{ display: 'flex', alignItems: 'baseline', gap: '4px', margin: '8px 0' }}>
-                  <span style={{ fontSize: '28px', fontWeight: '900', color: '#FFFFFF' }}>₹799</span>
-                  <span style={{ fontSize: '13px', color: '#A0A4C8' }}>/ year</span>
+                  <span style={{ fontSize: '28px', fontWeight: '900', color: '#013E37' }}>₹799</span>
+                  <span style={{ fontSize: '13px', color: 'rgba(1,62,55,0.5)' }}>/ year</span>
                 </div>
-                <div style={{ fontSize: '12px', color: '#43A047', fontWeight: '800', marginBottom: '2px' }}>Save ₹389 vs monthly!</div>
-                <div style={{ fontSize: '11px', color: '#A0A4C8' }}>Effective ₹66.58 / month</div>
+                <div style={{ fontSize: '12px', color: '#013E37', fontWeight: '800', marginBottom: '2px' }}>Save ₹389 vs monthly!</div>
+                <div style={{ fontSize: '11px', color: 'rgba(1,62,55,0.5)' }}>Effective ₹66.58 / month</div>
               </div>
               <button
                 type="button"
                 className="btn-primary-pill w-100 mt-3"
-                style={{ height: '40px', fontSize: '12px', background: 'linear-gradient(135deg, #FF7A30, #FF7873)' }}
+                style={{ height: '40px', fontSize: '12px', background: 'linear-gradient(135deg, #013E37, #A94A4A)' }}
                 onClick={(e) => { e.stopPropagation(); handleStartPayment('annual'); }}
               >
                 Join Annual →
               </button>
             </div>
           </div>
-          <div style={{ textAlign: 'center', fontSize: '11px', color: '#6B6E9A', marginBottom: '32px' }}>
+          <div style={{ textAlign: 'center', fontSize: '11px', color: 'rgba(1,62,55,0.5)', marginBottom: '32px' }}>
             No lock-in on monthly plan · Cancel anytime directly in app settings
           </div>
 
           {/* COMPARISON TABLE */}
           <div className="glass-card-standard mb-4" style={{ padding: '20px' }}>
-            <h3 style={{ fontSize: '16px', fontWeight: '800', color: '#FFFFFF', marginBottom: '16px' }}>
+            <h3 style={{ fontSize: '16px', fontWeight: '800', color: '#013E37', marginBottom: '16px' }}>
               Why Members Save 5x More
             </h3>
             <div style={{ display: 'flex', flexDirection: 'column', fontSize: '13px' }}>
               {/* Table Header */}
-              <div style={{ display: 'grid', gridTemplateColumns: '2fr 1.2fr 1.2fr', paddingBottom: '10px', borderBottom: '1.5px solid rgba(255,255,255,0.15)', fontWeight: '800', color: '#FF7873' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: '2fr 1.2fr 1.2fr', paddingBottom: '10px', borderBottom: '1.5px solid rgba(255,255,255,0.15)', fontWeight: '800', color: '#A94A4A' }}>
                 <span>Feature</span>
                 <span>Non-Member</span>
-                <span style={{ color: '#43A047' }}>VIP Member</span>
+                <span style={{ color: '#013E37' }}>VIP Member</span>
               </div>
               {/* Rows */}
               {[
@@ -284,38 +284,38 @@ const MembershipScreen = ({ onSelectTab, initialViewMode = 'landing', onUpdateMe
                   key={idx}
                   style={{ display: 'grid', gridTemplateColumns: '2fr 1.2fr 1.2fr', padding: '12px 0', borderBottom: idx < 3 ? '1px solid rgba(255,255,255,0.06)' : 'none', background: idx % 2 === 1 ? 'rgba(255,255,255,0.02)' : 'transparent', alignItems: 'center' }}
                 >
-                  <span style={{ color: '#FFFFFF', fontWeight: '700' }}>{row.feat}</span>
-                  <span style={{ color: '#A0A4C8' }}>{row.std}</span>
-                  <span style={{ color: row.highlight ? '#43A047' : '#FF7873', fontWeight: '900' }}>{row.vip}</span>
+                  <span style={{ color: '#013E37', fontWeight: '700' }}>{row.feat}</span>
+                  <span style={{ color: 'rgba(1,62,55,0.5)' }}>{row.std}</span>
+                  <span style={{ color: row.highlight ? '#013E37' : '#A94A4A', fontWeight: '900' }}>{row.vip}</span>
                 </div>
               ))}
             </div>
           </div>
 
           {/* TESTIMONIALS (Scrollable Quotes) */}
-          <h3 style={{ fontSize: '16px', fontWeight: '800', color: '#FFFFFF', marginBottom: '14px' }}>
+          <h3 style={{ fontSize: '16px', fontWeight: '800', color: '#013E37', marginBottom: '14px' }}>
             Loved by 15,000+ Club Members
           </h3>
           <div style={{ display: 'flex', gap: '14px', overflowX: 'auto', paddingBottom: '12px', marginBottom: '32px', scrollbarWidth: 'none' }}>
             {[
-              { quote: "I save ₹600+ every order on my family's glasses. The free monthly eye checkup is a blessing!", author: "Priya R.", since: "Member since 2025", initials: "PR", color: "#FF7873" },
-              { quote: "Got 2 premium titanium frames at 25% off plus BOGO. Paid less than half of what optical shops charge.", author: "Rahul M.", since: "Member since 2024", initials: "RM", color: "#8140DC" },
-              { quote: "Priority AR Try-on and instant delivery tracking makes Lens Makers feel like an Apple product.", author: "Vikram S.", since: "Member since 2026", initials: "VS", color: "#29B6F6" }
+              { quote: "I save ₹600+ every order on my family's glasses. The free monthly eye checkup is a blessing!", author: "Priya R.", since: "Member since 2025", initials: "PR", color: "#A94A4A" },
+              { quote: "Got 2 premium titanium frames at 25% off plus BOGO. Paid less than half of what optical shops charge.", author: "Rahul M.", since: "Member since 2024", initials: "RM", color: "#013E37" },
+              { quote: "Priority AR Try-on and instant delivery tracking makes Lens Makers feel like an Apple product.", author: "Vikram S.", since: "Member since 2026", initials: "VS", color: "#013E37" }
             ].map((t, idx) => (
               <div key={idx} className="glass-card-standard" style={{ minWidth: '260px', padding: '18px', flexShrink: 0, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
                 <div>
-                  <div style={{ color: '#C9A876', fontSize: '14px', marginBottom: '8px' }}>★★★★★</div>
-                  <p style={{ fontSize: '13px', color: '#FFFFFF', fontStyle: 'italic', lineHeight: '1.5', marginBottom: '16px' }}>
+                  <div style={{ color: 'rgba(1,62,55,0.6)', fontSize: '14px', marginBottom: '8px' }}>★★★★★</div>
+                  <p style={{ fontSize: '13px', color: '#013E37', fontStyle: 'italic', lineHeight: '1.5', marginBottom: '16px' }}>
                     "{t.quote}"
                   </p>
                 </div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                  <div style={{ width: '36px', height: '36px', borderRadius: '18px', background: t.color, color: '#FFFFFF', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '12px', fontWeight: '800' }}>
+                  <div style={{ width: '36px', height: '36px', borderRadius: '18px', background: t.color, color: '#013E37', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '12px', fontWeight: '800' }}>
                     {t.initials}
                   </div>
                   <div>
-                    <div style={{ fontSize: '13px', fontWeight: '800', color: '#FFFFFF' }}>{t.author}</div>
-                    <div style={{ fontSize: '11px', color: '#A0A4C8' }}>{t.since}</div>
+                    <div style={{ fontSize: '13px', fontWeight: '800', color: '#013E37' }}>{t.author}</div>
+                    <div style={{ fontSize: '11px', color: 'rgba(1,62,55,0.5)' }}>{t.since}</div>
                   </div>
                 </div>
               </div>
@@ -323,7 +323,7 @@ const MembershipScreen = ({ onSelectTab, initialViewMode = 'landing', onUpdateMe
           </div>
 
           {/* FAQ ACCORDION */}
-          <h3 style={{ fontSize: '16px', fontWeight: '800', color: '#FFFFFF', marginBottom: '14px' }}>
+          <h3 style={{ fontSize: '16px', fontWeight: '800', color: '#013E37', marginBottom: '14px' }}>
             Frequently Asked Questions
           </h3>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', marginBottom: '36px' }}>
@@ -343,11 +343,11 @@ const MembershipScreen = ({ onSelectTab, initialViewMode = 'landing', onUpdateMe
                   onClick={() => setOpenFaqIdx(isOpen ? null : idx)}
                 >
                   <div className="flex-between">
-                    <span style={{ fontSize: '14px', fontWeight: '800', color: isOpen ? '#FF7873' : '#FFFFFF' }}>{faq.q}</span>
-                    <span style={{ fontSize: '16px', color: '#A0A4C8', transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 200ms ease' }}>▼</span>
+                    <span style={{ fontSize: '14px', fontWeight: '800', color: isOpen ? '#A94A4A' : '#FFFFFF' }}>{faq.q}</span>
+                    <span style={{ fontSize: '16px', color: 'rgba(1,62,55,0.5)', transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 200ms ease' }}>▼</span>
                   </div>
                   {isOpen && (
-                    <div style={{ fontSize: '13px', color: '#A0A4C8', lineHeight: '1.5', marginTop: '10px', paddingTop: '10px', borderTop: '1px solid rgba(255,255,255,0.06)', animation: 'fadeIn 200ms ease' }}>
+                    <div style={{ fontSize: '13px', color: 'rgba(1,62,55,0.5)', lineHeight: '1.5', marginTop: '10px', paddingTop: '10px', borderTop: '1px solid rgba(255,255,255,0.06)', animation: 'fadeIn 200ms ease' }}>
                       {faq.a}
                     </div>
                   )}
@@ -361,7 +361,7 @@ const MembershipScreen = ({ onSelectTab, initialViewMode = 'landing', onUpdateMe
             <button
               type="button"
               className="btn-primary-pill w-100"
-              style={{ height: '56px', fontSize: '16px', fontWeight: '900', background: 'linear-gradient(135deg, #8140DC, #FF7873)', boxShadow: '0 8px 28px rgba(226,47,128,0.6)' }}
+              style={{ height: '56px', fontSize: '16px', fontWeight: '900', background: 'linear-gradient(135deg, #013E37, #A94A4A)', boxShadow: '0 8px 28px rgba(1,62,55,0.6)' }}
               onClick={() => handleStartPayment(selectedPlan)}
             >
               <span>🚀 Join Club for {selectedPlan === 'annual' ? '₹799/year' : '₹99/month'} →</span>
@@ -379,35 +379,35 @@ const MembershipScreen = ({ onSelectTab, initialViewMode = 'landing', onUpdateMe
           <div className="flex-between mb-4">
             <button
               type="button"
-              style={{ width: '36px', height: '36px', borderRadius: '50%', background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.15)', color: '#FFFFFF', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer' }}
+              style={{ width: '36px', height: '36px', borderRadius: '50%', background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.15)', color: '#013E37', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer' }}
               onClick={() => setViewMode('landing')}
             >
               ←
             </button>
-            <h1 style={{ fontSize: '18px', fontWeight: '800', color: '#FFFFFF' }}>Activate VIP Club</h1>
+            <h1 style={{ fontSize: '18px', fontWeight: '800', color: '#013E37' }}>Activate VIP Club</h1>
             <span style={{ width: '36px' }} />
           </div>
 
           {/* Pre-filled Order Context Card */}
-          <div className="glass-card-glow-pink mb-4" style={{ padding: '20px', borderLeft: '4px solid #FF7873' }}>
+          <div className="glass-card-glow-pink mb-4" style={{ padding: '20px', borderLeft: '4px solid #A94A4A' }}>
             <div className="flex-between mb-1">
-              <span style={{ fontSize: '11px', fontWeight: '700', color: '#A0A4C8', uppercase: 'true' }}>SUBSCRIPTION ORDER SUMMARY</span>
+              <span style={{ fontSize: '11px', fontWeight: '700', color: 'rgba(1,62,55,0.5)', uppercase: 'true' }}>SUBSCRIPTION ORDER SUMMARY</span>
               <span className="badge-pill badge-green">INSTANT ACCESS</span>
             </div>
-            <div style={{ fontSize: '18px', fontWeight: '900', color: '#FFFFFF' }}>
+            <div style={{ fontSize: '18px', fontWeight: '900', color: '#013E37' }}>
               Lens Makers Club — {selectedPlan === 'annual' ? 'Annual Plan' : 'Monthly Plan'}
             </div>
-            <div style={{ fontSize: '13px', color: '#A0A4C8', margin: '4px 0 12px' }}>
+            <div style={{ fontSize: '13px', color: 'rgba(1,62,55,0.5)', margin: '4px 0 12px' }}>
               {selectedPlan === 'annual' ? 'Billed once at ₹799/year (Save ₹389!)' : 'Billed monthly at ₹99/month. Cancel anytime.'}
             </div>
-            <div className="flex-between" style={{ borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '12px', fontSize: '16px', fontWeight: '800', color: '#FFFFFF' }}>
+            <div className="flex-between" style={{ borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '12px', fontSize: '16px', fontWeight: '800', color: '#013E37' }}>
               <span>Total Amount Due:</span>
-              <span style={{ fontSize: '24px', fontWeight: '900', color: '#FF7873' }}>{selectedPlan === 'annual' ? '₹799' : '₹99'}</span>
+              <span style={{ fontSize: '24px', fontWeight: '900', color: '#A94A4A' }}>{selectedPlan === 'annual' ? '₹799' : '₹99'}</span>
             </div>
           </div>
 
           {/* Payment Method Selector */}
-          <h3 style={{ fontSize: '16px', fontWeight: '800', color: '#FFFFFF', marginBottom: '12px' }}>
+          <h3 style={{ fontSize: '16px', fontWeight: '800', color: '#013E37', marginBottom: '12px' }}>
             Select Payment Method
           </h3>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', marginBottom: '28px' }}>
@@ -421,15 +421,15 @@ const MembershipScreen = ({ onSelectTab, initialViewMode = 'landing', onUpdateMe
                 <div
                   key={m.id}
                   className="glass-card-standard"
-                  style={{ padding: '16px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', border: isSel ? '1.5px solid #FF7873' : '1px solid rgba(255,255,255,0.15)', background: isSel ? 'rgba(226,47,128,0.08)' : 'transparent', cursor: 'pointer' }}
+                  style={{ padding: '16px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', border: isSel ? '1.5px solid #A94A4A' : '1px solid rgba(255,255,255,0.15)', background: isSel ? 'rgba(1,62,55,0.08)' : 'transparent', cursor: 'pointer' }}
                   onClick={() => setPaymentMethod(m.id)}
                 >
                   <div>
-                    <div style={{ fontSize: '14px', fontWeight: '800', color: '#FFFFFF' }}>{m.label}</div>
-                    <div style={{ fontSize: '12px', color: '#A0A4C8' }}>{m.desc}</div>
+                    <div style={{ fontSize: '14px', fontWeight: '800', color: '#013E37' }}>{m.label}</div>
+                    <div style={{ fontSize: '12px', color: 'rgba(1,62,55,0.5)' }}>{m.desc}</div>
                   </div>
-                  <div style={{ width: '20px', height: '20px', borderRadius: '10px', border: `2px solid ${isSel ? '#FF7873' : '#A0A4C8'}`, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                    {isSel && <div style={{ width: '10px', height: '10px', borderRadius: '5px', background: '#FF7873' }} />}
+                  <div style={{ width: '20px', height: '20px', borderRadius: '10px', border: `2px solid ${isSel ? '#A94A4A' : 'rgba(1,62,55,0.5)'}`, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                    {isSel && <div style={{ width: '10px', height: '10px', borderRadius: '5px', background: '#A94A4A' }} />}
                   </div>
                 </div>
               );
@@ -459,7 +459,7 @@ const MembershipScreen = ({ onSelectTab, initialViewMode = 'landing', onUpdateMe
           {/* Confetti Particles */}
           <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none', zIndex: 5 }}>
             {[...Array(24)].map((_, i) => {
-              const colors = ['#FF7873', '#8140DC', '#29B6F6', '#43A047', '#C9A876'];
+              const colors = ['#A94A4A', '#013E37', '#013E37', '#013E37', 'rgba(1,62,55,0.6)'];
               const col = colors[i % colors.length];
               const left = Math.random() * 95;
               const delay = Math.random() * 0.8;
@@ -476,35 +476,35 @@ const MembershipScreen = ({ onSelectTab, initialViewMode = 'landing', onUpdateMe
           {/* Animated Membership Card (Flips in from above) */}
           <div
             className="vip-card-visual mb-4"
-            style={{ width: '320px', height: '190px', padding: '20px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', animation: 'slideInDown 600ms var(--spring-bezier)', boxShadow: '0 20px 50px rgba(129,64,220,0.6)' }}
+            style={{ width: '320px', height: '190px', padding: '20px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', animation: 'slideInDown 600ms var(--spring-bezier)', boxShadow: '0 20px 50px rgba(1,62,55,0.6)' }}
           >
             <div className="flex-between">
-              <span style={{ fontSize: '12px', fontWeight: '900', color: '#FFFFFF', letterSpacing: '1px' }}>LENS MAKERS CLUB</span>
+              <span style={{ fontSize: '12px', fontWeight: '900', color: '#013E37', letterSpacing: '1px' }}>LENS MAKERS CLUB</span>
               <span className="badge-pill badge-green" style={{ padding: '4px 10px', fontSize: '10px' }}>ACTIVE MEMBER ✓</span>
             </div>
 
             <div style={{ textAlign: 'left', margin: '10px 0' }}>
-              <div style={{ fontSize: '11px', color: '#A0A4C8', uppercase: 'true' }}>MEMBER NAME</div>
-              <div style={{ fontSize: '20px', fontWeight: '900', color: '#FFFFFF', letterSpacing: '0.5px' }}>Alex Rivera</div>
+              <div style={{ fontSize: '11px', color: 'rgba(1,62,55,0.5)', uppercase: 'true' }}>MEMBER NAME</div>
+              <div style={{ fontSize: '20px', fontWeight: '900', color: '#013E37', letterSpacing: '0.5px' }}>Alex Rivera</div>
             </div>
 
             <div className="flex-between">
-              <span style={{ fontSize: '12px', fontWeight: '800', color: '#29B6F6' }}>⚡ 25% OFF ALL ORDERS</span>
-              <span style={{ fontSize: '11px', color: '#A0A4C8' }}>ID: LM-VIP-9821</span>
+              <span style={{ fontSize: '12px', fontWeight: '800', color: '#013E37' }}>⚡ 25% OFF ALL ORDERS</span>
+              <span style={{ fontSize: '11px', color: 'rgba(1,62,55,0.5)' }}>ID: LM-VIP-9821</span>
             </div>
           </div>
 
-          <h1 style={{ fontSize: '28px', fontWeight: '900', color: '#FFFFFF', marginBottom: '8px', zIndex: 10 }}>
+          <h1 style={{ fontSize: '28px', fontWeight: '900', color: '#013E37', marginBottom: '8px', zIndex: 10 }}>
             Welcome to Lens Makers Club! 🎉
           </h1>
-          <p style={{ fontSize: '15px', color: '#A0A4C8', maxWidth: '300px', margin: '0 auto 28px', lineHeight: '1.5', zIndex: 10 }}>
+          <p style={{ fontSize: '15px', color: 'rgba(1,62,55,0.5)', maxWidth: '300px', margin: '0 auto 28px', lineHeight: '1.5', zIndex: 10 }}>
             Your 25% flat discount is now active across all eyewear collections, plus your free monthly eye checkup is ready to book!
           </p>
 
           <button
             type="button"
             className="btn-primary-pill"
-            style={{ width: '280px', height: '54px', fontSize: '16px', fontWeight: '900', background: 'linear-gradient(135deg, #8140DC, #FF7873)', zIndex: 10 }}
+            style={{ width: '280px', height: '54px', fontSize: '16px', fontWeight: '900', background: 'linear-gradient(135deg, #013E37, #A94A4A)', zIndex: 10 }}
             onClick={() => {
               showToast("🛍️ Applying 25% VIP savings to shop catalog...");
               if (onSelectTab) onSelectTab('shop');
@@ -524,27 +524,27 @@ const MembershipScreen = ({ onSelectTab, initialViewMode = 'landing', onUpdateMe
           <div className="flex-between mb-4">
             <button
               type="button"
-              style={{ width: '36px', height: '36px', borderRadius: '50%', background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.15)', color: '#FFFFFF', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer' }}
+              style={{ width: '36px', height: '36px', borderRadius: '50%', background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.15)', color: '#013E37', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer' }}
               onClick={() => { if (onSelectTab) onSelectTab('profile'); else setViewMode('landing'); }}
             >
               ←
             </button>
-            <h1 style={{ fontSize: '18px', fontWeight: '800', color: '#FFFFFF' }}>Manage Club Membership</h1>
+            <h1 style={{ fontSize: '18px', fontWeight: '800', color: '#013E37' }}>Manage Club Membership</h1>
             <span style={{ width: '36px' }} />
           </div>
 
           {/* Active Status Card */}
           <div className="glass-card-glow-purple mb-4" style={{ padding: '20px' }}>
             <div className="flex-between mb-2">
-              <span style={{ fontSize: '12px', fontWeight: '800', color: '#8140DC', letterSpacing: '1px' }}>VIP PRIVILEGE STATUS</span>
+              <span style={{ fontSize: '12px', fontWeight: '800', color: '#013E37', letterSpacing: '1px' }}>VIP PRIVILEGE STATUS</span>
               <span className={`badge-pill ${window.userIsMember ? 'badge-green' : 'badge-orange'}`}>
                 {window.userIsMember ? 'ACTIVE MEMBER ✓' : 'INACTIVE ✕'}
               </span>
             </div>
-            <div style={{ fontSize: '20px', fontWeight: '900', color: '#FFFFFF', marginBottom: '4px' }}>
+            <div style={{ fontSize: '20px', fontWeight: '900', color: '#013E37', marginBottom: '4px' }}>
               Lens Makers Club — {selectedPlan === 'annual' ? 'Annual Tier' : 'Monthly Tier'}
             </div>
-            <div style={{ fontSize: '13px', color: '#A0A4C8', marginBottom: '14px' }}>
+            <div style={{ fontSize: '13px', color: 'rgba(1,62,55,0.5)', marginBottom: '14px' }}>
               {window.userIsMember ? 'Next renewal: July 28, 2026 · Auto-billing active' : 'Your VIP discount is currently disabled.'}
             </div>
 
@@ -552,7 +552,7 @@ const MembershipScreen = ({ onSelectTab, initialViewMode = 'landing', onUpdateMe
               <button
                 type="button"
                 className="btn-primary-pill"
-                style={{ flex: 1, height: '40px', fontSize: '13px', background: window.userIsMember ? 'rgba(255,255,255,0.1)' : '#8140DC', border: window.userIsMember ? '1px solid rgba(255,255,255,0.2)' : 'none' }}
+                style={{ flex: 1, height: '40px', fontSize: '13px', background: window.userIsMember ? 'rgba(255,255,255,0.1)' : '#013E37', border: window.userIsMember ? '1px solid rgba(255,255,255,0.2)' : 'none' }}
                 onClick={() => {
                   window.userIsMember = !window.userIsMember;
                   if (onUpdateMembership) onUpdateMembership(window.userIsMember);
@@ -565,7 +565,7 @@ const MembershipScreen = ({ onSelectTab, initialViewMode = 'landing', onUpdateMe
               <button
                 type="button"
                 className="btn-secondary-pill"
-                style={{ flex: 1, height: '40px', fontSize: '13px', borderColor: '#FF7873', color: '#FF7873' }}
+                style={{ flex: 1, height: '40px', fontSize: '13px', borderColor: '#A94A4A', color: '#A94A4A' }}
                 onClick={() => showToast('💳 Opening encrypted payment method updater...')}
               >
                 💳 Change Card
@@ -575,14 +575,14 @@ const MembershipScreen = ({ onSelectTab, initialViewMode = 'landing', onUpdateMe
 
           {/* Member Benefits Accordion */}
           <div className="glass-card-standard mb-4" style={{ padding: '18px' }}>
-            <h3 style={{ fontSize: '15px', fontWeight: '800', color: '#FFFFFF', marginBottom: '14px' }}>
+            <h3 style={{ fontSize: '15px', fontWeight: '800', color: '#013E37', marginBottom: '14px' }}>
               Your Active Member Privileges
             </h3>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', fontSize: '13px', color: '#A0A4C8' }}>
-              <div className="flex-between"><span>🏷️ Flat 25% Off All Eyewear</span><span style={{ color: '#43A047', fontWeight: '800' }}>ACTIVE ✓</span></div>
-              <div className="flex-between"><span>👁️ 1 Free Monthly Eye Check-Up</span><span style={{ color: '#43A047', fontWeight: '800' }}>1 SLOT READY</span></div>
-              <div className="flex-between"><span>📸 Priority AR Try-On Slots</span><span style={{ color: '#43A047', fontWeight: '800' }}>ACTIVE ✓</span></div>
-              <div className="flex-between"><span>🎁 Buy 1 Get 1 Free Offers</span><span style={{ color: '#43A047', fontWeight: '800' }}>ELIGIBLE ✓</span></div>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', fontSize: '13px', color: 'rgba(1,62,55,0.5)' }}>
+              <div className="flex-between"><span>🏷️ Flat 25% Off All Eyewear</span><span style={{ color: '#013E37', fontWeight: '800' }}>ACTIVE ✓</span></div>
+              <div className="flex-between"><span>👁️ 1 Free Monthly Eye Check-Up</span><span style={{ color: '#013E37', fontWeight: '800' }}>1 SLOT READY</span></div>
+              <div className="flex-between"><span>📸 Priority AR Try-On Slots</span><span style={{ color: '#013E37', fontWeight: '800' }}>ACTIVE ✓</span></div>
+              <div className="flex-between"><span>🎁 Buy 1 Get 1 Free Offers</span><span style={{ color: '#013E37', fontWeight: '800' }}>ELIGIBLE ✓</span></div>
             </div>
           </div>
 
@@ -591,7 +591,7 @@ const MembershipScreen = ({ onSelectTab, initialViewMode = 'landing', onUpdateMe
             <h3 style={{ fontSize: '15px', fontWeight: '800', color: '#FF5252', marginBottom: '6px' }}>
               Danger Zone
             </h3>
-            <p style={{ fontSize: '12px', color: '#A0A4C8', marginBottom: '14px' }}>
+            <p style={{ fontSize: '12px', color: 'rgba(1,62,55,0.5)', marginBottom: '14px' }}>
               Cancelling will immediately terminate your 25% store discount and free optometry slots.
             </p>
             <button

@@ -41,7 +41,7 @@ window.EyeglassesSection = function EyeglassesSection({ categories, onSelectCate
               />
               
               {/* Gradient overlay for readability */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#150E30] via-[#150E30]/40 to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-[#FFFFFF] via-[#FFFFFF]/40 to-transparent"></div>
 
               {/* Distinct colored glow accent halo inside */}
               <div 

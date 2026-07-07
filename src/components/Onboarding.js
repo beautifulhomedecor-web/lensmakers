@@ -15,22 +15,22 @@ const Onboarding = ({ onComplete }) => {
         <div className="onboarding-illustration-box">
           <svg width="220" height="220" viewBox="0 0 220 220" fill="none" xmlns="http://www.w3.org/2000/svg">
             {/* AR Scan Brackets */}
-            <path d="M 40 70 L 40 40 L 70 40" stroke="#FF7873" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
-            <path d="M 180 70 L 180 40 L 150 40" stroke="#FF7873" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
-            <path d="M 40 150 L 40 180 L 70 180" stroke="#FF7873" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
-            <path d="M 180 150 L 180 180 L 150 180" stroke="#FF7873" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
+            <path d="M 40 70 L 40 40 L 70 40" stroke="#A94A4A" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
+            <path d="M 180 70 L 180 40 L 150 40" stroke="#A94A4A" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
+            <path d="M 40 150 L 40 180 L 70 180" stroke="#A94A4A" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
+            <path d="M 180 150 L 180 180 L 150 180" stroke="#A94A4A" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
             {/* Face Outline Line-art */}
             <ellipse cx="110" cy="115" rx="50" ry="60" stroke="#FFFFFF" strokeWidth="3" strokeDasharray="6 6" opacity="0.6" />
             {/* Stylish Eyeglasses on Face */}
             <g transform="translate(68, 95)">
-              <rect x="0" y="0" width="36" height="26" rx="8" stroke="#FF7873" strokeWidth="3.5" fill="rgba(226,47,128, 0.15)" />
-              <rect x="48" y="0" width="36" height="26" rx="8" stroke="#1E88E5" strokeWidth="3.5" fill="rgba(30, 136, 229, 0.15)" />
+              <rect x="0" y="0" width="36" height="26" rx="8" stroke="#A94A4A" strokeWidth="3.5" fill="rgba(1,62,55, 0.15)" />
+              <rect x="48" y="0" width="36" height="26" rx="8" stroke="#013E37" strokeWidth="3.5" fill="rgba(30, 136, 229, 0.15)" />
               <path d="M 36 10 C 42 6, 44 6, 48 10" stroke="#FFFFFF" strokeWidth="3" strokeLinecap="round" />
               <path d="M -14 6 L 0 8" stroke="#FFFFFF" strokeWidth="3" strokeLinecap="round" />
               <path d="M 84 8 L 98 6" stroke="#FFFFFF" strokeWidth="3" strokeLinecap="round" />
             </g>
             {/* Scanning Laser Line */}
-            <line x1="50" y1="110" x2="170" y2="110" stroke="#29B6F6" strokeWidth="2" strokeDasharray="4 4">
+            <line x1="50" y1="110" x2="170" y2="110" stroke="#013E37" strokeWidth="2" strokeDasharray="4 4">
               <animate attributeName="y1" values="60;160;60" dur="3s" repeatCount="indefinite" />
               <animate attributeName="y2" values="60;160;60" dur="3s" repeatCount="indefinite" />
             </line>
@@ -51,24 +51,24 @@ const Onboarding = ({ onComplete }) => {
               width: '230px',
               height: '145px',
               borderRadius: '20px',
-              background: 'linear-gradient(135deg, rgba(129,64,220, 0.4) 0%, rgba(255,240,224, 0.8) 100%)',
+              background: 'linear-gradient(135deg, rgba(1,62,55, 0.4) 0%, rgba(255,240,224, 0.8) 100%)',
               display: 'flex',
               flexDirection: 'column',
               justifyContent: 'space-between',
               padding: '18px',
-              boxShadow: '0 12px 36px rgba(129,64,220, 0.3)',
+              boxShadow: '0 12px 36px rgba(1,62,55, 0.3)',
               transform: 'rotate(-4deg)'
             }}
           >
             <div className="flex-between">
-              <span style={{ fontSize: '12px', fontWeight: '800', letterSpacing: '1.5px', color: '#FFFFFF' }}>LENS MAKERS CLUB</span>
+              <span style={{ fontSize: '12px', fontWeight: '800', letterSpacing: '1.5px', color: '#013E37' }}>LENS MAKERS CLUB</span>
               <span className="badge-pill badge-green" style={{ fontSize: '10px' }}>ACTIVE</span>
             </div>
             <div style={{ textAlign: 'left' }}>
-              <div style={{ fontSize: '24px', fontWeight: '800', color: '#FF7873', textShadow: '0 0 12px rgba(226,47,128,0.5)' }}>FLAT 25% OFF</div>
-              <div style={{ fontSize: '11px', color: '#A0A4C8', marginTop: '4px' }}>VIP ALL-ACCESS PASS • ₹99/MO</div>
+              <div style={{ fontSize: '24px', fontWeight: '800', color: '#A94A4A', textShadow: '0 0 12px rgba(1,62,55,0.5)' }}>FLAT 25% OFF</div>
+              <div style={{ fontSize: '11px', color: 'rgba(1,62,55,0.5)', marginTop: '4px' }}>VIP ALL-ACCESS PASS • ₹99/MO</div>
             </div>
-            <div className="flex-between" style={{ fontSize: '10px', color: '#6B6E9A' }}>
+            <div className="flex-between" style={{ fontSize: '10px', color: 'rgba(1,62,55,0.5)' }}>
               <span>MEMBER SINCE 2026</span>
               <span>★★★★★</span>
             </div>
@@ -85,16 +85,16 @@ const Onboarding = ({ onComplete }) => {
           <svg width="220" height="220" viewBox="0 0 220 220" fill="none" xmlns="http://www.w3.org/2000/svg">
             {/* Laptop outline */}
             <rect x="40" y="55" width="140" height="95" rx="10" stroke="#FFFFFF" strokeWidth="3" fill="rgba(255,235,210, 0.6)" />
-            <path d="M 25 150 L 195 150 L 205 165 C 205 168, 202 170, 198 170 L 22 170 C 18 170, 15 168, 15 165 L 25 150 Z" fill="#ECEAE3" stroke="#FFFFFF" strokeWidth="2" />
+            <path d="M 25 150 L 195 150 L 205 165 C 205 168, 202 170, 198 170 L 22 170 C 18 170, 15 168, 15 165 L 25 150 Z" fill="#FFF6DA" stroke="#FFFFFF" strokeWidth="2" />
             {/* Eye Icon on screen */}
             <g transform="translate(110, 102)">
-              <path d="M -35 0 C -20 -22, 20 -22, 35 0 C 20 22, -20 22, -35 0 Z" stroke="#29B6F6" strokeWidth="3.5" fill="rgba(41, 182, 246, 0.15)" />
-              <circle cx="0" cy="0" r="12" stroke="#FF7873" strokeWidth="3" fill="#F4F3EF" />
-              <circle cx="0" cy="0" r="5" fill="#29B6F6" />
+              <path d="M -35 0 C -20 -22, 20 -22, 35 0 C 20 22, -20 22, -35 0 Z" stroke="#013E37" strokeWidth="3.5" fill="rgba(1,62,55, 0.15)" />
+              <circle cx="0" cy="0" r="12" stroke="#A94A4A" strokeWidth="3" fill="#FFF6DA" />
+              <circle cx="0" cy="0" r="5" fill="#013E37" />
             </g>
             {/* Free badge */}
             <g transform="translate(160, 45)">
-              <rect x="-25" y="-12" width="50" height="24" rx="12" fill="#43A047" />
+              <rect x="-25" y="-12" width="50" height="24" rx="12" fill="#013E37" />
               <text x="0" y="4" fill="#FFFFFF" fontSize="11" fontWeight="800" textAnchor="middle">FREE</text>
             </g>
           </svg>
@@ -198,9 +198,9 @@ const Onboarding = ({ onComplete }) => {
               className="btn-secondary-pill"
               style={{
                 width: '100%',
-                borderColor: 'rgba(226,47,128, 0.5)',
-                color: '#FF7873',
-                boxShadow: '0 0 15px rgba(226,47,128, 0.15)'
+                borderColor: 'rgba(1,62,55, 0.5)',
+                color: '#A94A4A',
+                boxShadow: '0 0 15px rgba(1,62,55, 0.15)'
               }}
               onClick={handleNext}
             >

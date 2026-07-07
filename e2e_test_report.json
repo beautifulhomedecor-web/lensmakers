@@ -1,0 +1,253 @@
+[
+  {
+    "name": "Header Feature Coverage",
+    "tier": 1,
+    "passed": true,
+    "message": "All header features detected.",
+    "details": []
+  },
+  {
+    "name": "Search Feature Coverage",
+    "tier": 1,
+    "passed": true,
+    "message": "All search features detected.",
+    "details": []
+  },
+  {
+    "name": "Hero Section Feature Coverage",
+    "tier": 1,
+    "passed": true,
+    "message": "All hero section features detected.",
+    "details": []
+  },
+  {
+    "name": "Quick Links Feature Coverage",
+    "tier": 1,
+    "passed": true,
+    "message": "All Quick Links features detected.",
+    "details": []
+  },
+  {
+    "name": "Product Cards Feature Coverage",
+    "tier": 1,
+    "passed": true,
+    "message": "All product card features detected.",
+    "details": []
+  },
+  {
+    "name": "Cart Feature Coverage",
+    "tier": 1,
+    "passed": true,
+    "message": "All cart features detected.",
+    "details": []
+  },
+  {
+    "name": "Profile Feature Coverage",
+    "tier": 1,
+    "passed": true,
+    "message": "All profile features detected.",
+    "details": []
+  },
+  {
+    "name": "Bottom Nav Feature Coverage",
+    "tier": 1,
+    "passed": true,
+    "message": "All Bottom Nav features detected.",
+    "details": []
+  },
+  {
+    "name": "Color Palette Enforcement",
+    "tier": 2,
+    "passed": false,
+    "message": "Found 1280 occurrences of unauthorized colors.",
+    "details": [
+      "styles.css:298 - Hex Code '#0b2a6b'",
+      "styles.css:299 - Hex Code '#0b2a6b'",
+      "styles.css:300 - Hex Code '#0b2a6b'",
+      "styles.css:301 - Hex Code '#1b3a73'",
+      "styles.css:302 - Hex Code '#2b4c8c'",
+      "styles.css:303 - Hex Code '#0b2a6b'",
+      "styles.css:510 - Hex Code '#ff7873'",
+      "styles.css:510 - Hex Code '#e22f80'",
+      "styles.css:606 - Hex Code '#43a047'",
+      "styles.css:606 - Hex Code '#2e7d32'",
+      "styles.css:619 - Hex Code '#c9a876'",
+      "styles.css:623 - Hex Code '#0b2a6b'",
+      "styles.css:645 - Hex Code '#ef5350'",
+      "styles.css:645 - Hex Code '#b71c1c'",
+      "styles.css:782 - Hex Code '#a0a4c8'",
+      "styles.css:789 - Hex Code '#ff7873'",
+      "styles.css:790 - Hex Code '#ff7873'",
+      "styles.css:1267 - Hex Code '#8b96b8'",
+      "styles.css:1286 - Hex Code '#0b2a6b'",
+      "styles.css:1292 - Hex Code '#ff7873'",
+      "styles.css:1318 - Hex Code '#ff7873'",
+      "styles.css:1326 - Hex Code '#ff7873'",
+      "styles.css:1397 - Hex Code '#ff7873'",
+      "styles.css:1397 - Hex Code '#e22f80'",
+      "styles.css:1414 - Hex Code '#00e5ff'"
+    ]
+  },
+  {
+    "name": "Generic Gray Text Removal",
+    "tier": 2,
+    "passed": false,
+    "message": "Found 292 occurrences of generic/legacy gray styles.",
+    "details": [
+      "styles.css:782 - Found gray hex code '#A0A4C8'",
+      "styles.css:1761 - Found gray hex code '#A0A4C8'",
+      "styles.css:2148 - Found gray hex code '#A0A4C8'",
+      "styles.css:2259 - Found gray hex code '#A0A4C8'",
+      "styles.css:2441 - Found gray hex code '#A0A4C8'",
+      "styles.css:2766 - Found gray hex code '#A0A4C8'",
+      "styles.css:302 - Found gray hex code '#2B4C8C'",
+      "styles.css:301 - Found gray hex code '#1B3A73'",
+      "styles.css:619 - Found gray hex code '#C9A876'",
+      "styles.css:2557 - Found gray hex code '#C9A876'",
+      "styles.css:2604 - Found gray hex code '#C9A876'",
+      "src\\App.js:295 - Found gray hex code '#64748B'",
+      "src\\App.js:330 - Found gray hex code '#64748B'",
+      "src\\App.js:291 - Found gray hex code '#1C1917'",
+      "src\\App.js:293 - Found gray hex code '#1C1917'",
+      "src\\App.js:331 - Found gray hex code '#1C1917'",
+      "src\\App.js:320 - Found gray hex code '#EAEAEA'",
+      "src\\components\\AuthModal.js:298 - Found gray hex code '#A0A4C8'",
+      "src\\components\\AuthModal.js:304 - Found gray hex code '#A0A4C8'",
+      "src\\components\\AuthModal.js:310 - Found gray hex code '#A0A4C8'",
+      "src\\components\\AuthModal.js:324 - Found gray hex code '#A0A4C8'",
+      "src\\components\\AuthModal.js:361 - Found gray hex code '#A0A4C8'",
+      "src\\components\\AuthModal.js:378 - Found gray hex code '#A0A4C8'",
+      "src\\components\\AuthModal.js:392 - Found gray hex code '#A0A4C8'",
+      "src\\components\\AuthModal.js:433 - Found gray hex code '#A0A4C8'"
+    ]
+  },
+  {
+    "name": "Harsh Shadows Removal",
+    "tier": 2,
+    "passed": false,
+    "message": "Found 195 occurrences of harsh/unauthorized shadows.",
+    "details": [
+      "styles.css:208 - Harsh shadow color in: 0 0 64px rgba(0, 0, 0, 0.8)",
+      "styles.css:298 - Unauthorized rgba shadow color: rgba(30, 136, 229, 0.35)",
+      "styles.css:299 - Unauthorized rgba shadow color: rgba(30, 136, 229, 0.35)",
+      "styles.css:300 - Unauthorized rgba shadow color: rgba(30, 136, 229, 0.35)",
+      "styles.css:301 - Unauthorized rgba shadow color: rgba(30, 136, 229, 0.18)",
+      "styles.css:303 - Unauthorized rgba shadow color: rgba(30, 136, 229, 0.35)",
+      "styles.css:317 - Harsh shadow color in: 0 16px 40px rgba(0, 0, 0, 0.22),",
+      "styles.css:339 - Harsh shadow color in: 0 24px 50px rgba(0, 0, 0, 0.28),",
+      "styles.css:354 - Harsh shadow color in: 0 24px 64px rgba(0, 0, 0, 0.3),",
+      "styles.css:370 - Harsh shadow color in: 0 0 28px rgba(226,47,128, 0.15),",
+      "styles.css:381 - Harsh shadow color in: 0 0 40px rgba(226,47,128, 0.25),",
+      "styles.css:394 - Harsh shadow color in: 0 0 28px rgba(129,64,220, 0.15),",
+      "styles.css:405 - Harsh shadow color in: 0 0 40px rgba(129,64,220, 0.25),",
+      "styles.css:418 - Unauthorized rgba shadow color: rgba(41, 182, 246, 0.15)",
+      "styles.css:429 - Unauthorized rgba shadow color: rgba(41, 182, 246, 0.25)",
+      "styles.css:442 - Unauthorized rgba shadow color: rgba(102, 187, 106, 0.15)",
+      "styles.css:453 - Unauthorized rgba shadow color: rgba(102, 187, 106, 0.25)",
+      "styles.css:479 - Harsh shadow color in: inset 0 2px 4px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2)",
+      "styles.css:486 - Harsh shadow color in: 0 0 0 4px rgba(226,47,128, 0.2), inset 0 1px 1px rgba(255, 255, 255, 0.4)",
+      "styles.css:491 - Harsh shadow color in: 0 0 0 4px rgba(239, 83, 80, 0.2), inset 0 1px 1px rgba(255, 255, 255, 0.3)",
+      "styles.css:496 - Unauthorized rgba shadow color: rgba(102, 187, 106, 0.2)",
+      "styles.css:496 - Unauthorized rgba shadow color: rgba(255, 255, 255, 0.3)",
+      "styles.css:532 - Harsh shadow color in: 0 4px 15px rgba(226,47,128, 0.35),",
+      "styles.css:546 - Harsh shadow color in: 0 8px 24px rgba(226,47,128, 0.45),",
+      "styles.css:554 - Harsh shadow color in: 0 2px 8px rgba(226,47,128, 0.2),"
+    ]
+  },
+  {
+    "name": "Dark Green Opacity Rules",
+    "tier": 2,
+    "passed": true,
+    "message": "Opacity rules for Dark Green are strictly followed.",
+    "details": []
+  },
+  {
+    "name": "Bottom Nav Active Pill Alignment",
+    "tier": 3,
+    "passed": false,
+    "message": "Bottom Nav active pill color and inactive colors are out of alignment.",
+    "details": [
+      "Active Bottom Nav tab uses old color '#9CCC65'",
+      "Inactive Bottom Nav tab uses old gray '#475569'"
+    ]
+  },
+  {
+    "name": "Header vs Search Style Alignment",
+    "tier": 3,
+    "passed": false,
+    "message": "Header and Search styling are not aligned on the luxury color scheme.",
+    "details": [
+      "Header background uses legacy dark '#070A13'",
+      "Header background uses legacy peach '#FFF5EC'",
+      "Voice search active border uses legacy cyan '#00E5FF'"
+    ]
+  },
+  {
+    "name": "Inactive vs Active Tab Styles",
+    "tier": 3,
+    "passed": false,
+    "message": "Active and inactive tabs do not use correct styling variables.",
+    "details": [
+      "Active tab assigned old green '#9CCC65'",
+      "Inactive tab assigned old gray '#475569'"
+    ]
+  },
+  {
+    "name": "Hover Translation (2px Upward)",
+    "tier": 4,
+    "passed": false,
+    "message": "Found non-conforming hover translations (must be exactly translateY(-2px)).",
+    "details": [
+      "styles.css:336 - '.glass-card-standard:hover' has hover translation '-3px' instead of '-2px'",
+      "styles.css:378 - '.glass-card-glow-pink:hover' has hover translation '-3px' instead of '-2px'",
+      "styles.css:402 - '.glass-card-glow-purple:hover' has hover translation '-3px' instead of '-2px'",
+      "styles.css:426 - '.glass-card-glow-cyan:hover' has hover translation '-3px' instead of '-2px'",
+      "styles.css:450 - '.glass-card-glow-green:hover' has hover translation '-3px' instead of '-2px'",
+      "styles.css:543 - '.btn-primary:hover:not(:active), .btn-primary-pill:hover:not(:active)' has hover translation '-1px' instead of '-2px'",
+      "styles.css:638 - '.btn-secondary-pill:hover:not(:active)' has hover translation '-1px' instead of '-2px'",
+      "styles.css:666 - '.btn-destructive-pill:hover:not(:active)' has hover translation '-1px' instead of '-2px'",
+      "styles.css:1592 - '.category-card:hover' has hover translation '-4px' instead of '-2px'",
+      "styles.css:1865 - '.shape-circle-btn:hover' has hover translation '-3px' instead of '-2px'",
+      "styles.css:2202 - '.tryon-360-chip:hover' has hover translation '-1px' instead of '-2px'",
+      "styles.css:2334 - '.tryon-thumb-circle:hover' has hover translation '-3px' instead of '-2px'",
+      "styles.css:2939 - '.ai-tryon-header-badge:hover' has hover translation '-1px' instead of '-2px'",
+      "styles.css:3039 - '.category-card:hover, .product-card-glass:hover, .premium-special-card:hover, .bogo-rotating-card:hover, .glass-card-glow-cyan:hover, .glass-card-glow-pink:hover, .glass-card-glow-green:hover, .rx-card-cyan:hover, .purple-shimmer-card:hover' has hover translation '-4px' instead of '-2px'"
+    ]
+  },
+  {
+    "name": "Click Scaling (95% for 150ms)",
+    "tier": 4,
+    "passed": false,
+    "message": "Found non-conforming click scaling behaviors.",
+    "details": [
+      "styles.css:551 - '.btn-primary:active, .btn-primary-pill:active' has active scale '0.96, 0.90, 1' instead of '0.95'",
+      "styles.css:640 - '.btn-secondary-pill:active' has active scale '0.96, 0.90, 1' instead of '0.95'",
+      "styles.css:667 - '.btn-destructive-pill:active' has active scale '0.96, 0.90, 1' instead of '0.95'",
+      "styles.css:741 - '.icon-btn:active, .icon-btn-circle:active, .nav-icon:active, .close-btn:active, .bell-btn:active, .search-icon-btn:active' has active scale '0.82' instead of '0.95'",
+      "styles.css:775 - '.heart-btn:active .heart-icon' has active scale '0.8' instead of '0.95'",
+      "styles.css:1274 - '.nav-item:active' has active scale '0.92, 0.92, 1' instead of '0.95'",
+      "styles.css:1437 - '.nav-center-tryon-wrapper:active .nav-center-tryon-btn' has active scale '0.88' instead of '0.95'",
+      "styles.css:1505 - '.icon-btn-circle:active' has active scale '0.92, 0.88, 1' instead of '0.95'",
+      "styles.css:1593 - '.category-card:active' has active scale '0.92, 0.92, 1' instead of '0.95'",
+      "styles.css:1797 - '.social-btn-circle:active' has active scale '0.93' instead of '0.95'",
+      "styles.css:1924 - '.wishlist-circle-btn:active' has active scale '0.92' instead of '0.95'",
+      "styles.css:2102 - '.tryon-circle-btn:active' has active scale '0.88, 0.88, 1' instead of '0.95'",
+      "styles.css:2130 - '.tryon-sleek-btn:active' has active scale '0.92, 0.92, 1' instead of '0.95'",
+      "styles.css:2351 - '.tryon-capture-btn:active' has active scale '0.9' instead of '0.95'",
+      "styles.css:2944 - '.ai-tryon-header-badge:active' has active scale '0.92, 0.92, 1' instead of '0.95'",
+      "styles.css:2952 - '.liquid-btn:active' has active scale '0.88, 0.88, 1' instead of '0.95'",
+      "styles.css:3028 - '.btn-primary-pill:active, .btn-secondary-pill:active' has active scale '0.92, 0.92, 1' instead of '0.95'",
+      "styles.css:3130 - '.btn-primary-pill:active, .btn-secondary-pill:active' has active scale '0.92, 0.92, 1' instead of '0.95'",
+      "styles.css:3134 - '.shape-circle-btn:active, .tryon-thumb-circle:active' has active scale '0.88, 0.88, 1' instead of '0.95'"
+    ]
+  },
+  {
+    "name": "Focus Ring Outlines (spaced 2px)",
+    "tier": 4,
+    "passed": false,
+    "message": "Missing or non-conforming keyboard focus rings.",
+    "details": [
+      "styles.css - Missing keyboard focus ring configuration (:focus outline & outline-offset)"
+    ]
+  }
+]

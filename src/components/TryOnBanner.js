@@ -3,7 +3,7 @@
 window.TryOnBanner = function TryOnBanner({ onTriggerTryOn }) {
   return (
     <section className="px-5 my-8">
-      <div className="glass-panel p-5 sm:p-6 border border-white/20 relative overflow-hidden shadow-2xl bg-gradient-to-r from-[#8B5CF6]/20 via-[#EC4899]/15 to-[#2D1B5E]/30 group">
+      <div className="glass-panel p-5 sm:p-6 border border-white/20 relative overflow-hidden shadow-2xl bg-gradient-to-r from-[#8B5CF6]/20 via-[#EC4899]/15 to-[#013E37]/30 group">
         
         {/* Ambient magenta aura */}
         <div className="absolute -bottom-10 -right-10 w-64 h-64 bg-[#EC4899]/20 rounded-full blur-3xl pointer-events-none group-hover:bg-[#EC4899]/30 transition-colors duration-500"></div>
@@ -26,7 +26,7 @@ window.TryOnBanner = function TryOnBanner({ onTriggerTryOn }) {
                 <h2 className="font-heading font-extrabold text-2xl text-white tracking-tight">
                   Virtual Try-On
                 </h2>
-                <span className="bg-gradient-to-r from-[#00E5FF] to-[#8140DC] text-[#0B2A6B] text-[10px] font-black px-2 py-0.5 rounded-full uppercase tracking-wider shadow-[0_0_10px_rgba(0,229,255,0.8)]">
+                <span className="bg-gradient-to-r from-[#013E37] to-[#013E37] text-[#FFFFFF] text-[10px] font-black px-2 py-0.5 rounded-full uppercase tracking-wider shadow-[0_0_10px_rgba(1,62,55,0.8)]">
                   AI Studio Pro
                 </span>
               </div>

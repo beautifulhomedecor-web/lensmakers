@@ -83,7 +83,7 @@ const AuthModal = ({ onLoginSuccess, onExploreGuest }) => {
 
   const strengthScore = getPasswordStrength(signupPassword || loginPassword);
   const strengthLabels = ['Weak', 'Weak', 'Fair', 'Good', 'Strong'];
-  const strengthColors = ['#EF5350', '#EF5350', '#FF7A30', '#C9A876', '#43A047'];
+  const strengthColors = ['#A94A4A', '#A94A4A', '#013E37', 'rgba(1,62,55,0.6)', '#013E37'];
 
   // Field Blur Validation
   const handleBlur = (field) => {
@@ -259,7 +259,7 @@ const AuthModal = ({ onLoginSuccess, onExploreGuest }) => {
     }
     if (submitStatus === 'success') {
       return (
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px', color: '#FFFFFF', fontWeight: '800' }}>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px', color: '#013E37', fontWeight: '800' }}>
           <span style={{ fontSize: '18px' }}>✓</span>
           <span>Success! Redirecting...</span>
         </div>
@@ -294,24 +294,24 @@ const AuthModal = ({ onLoginSuccess, onExploreGuest }) => {
 
           {view === 'login' && (
             <>
-              <h1 style={{ fontSize: '28px', fontWeight: '800', color: '#FFFFFF', letterSpacing: '-0.5px' }}>Welcome back</h1>
-              <p style={{ fontSize: '14px', color: '#A0A4C8', marginTop: '6px' }}>Sign in to your account to continue</p>
+              <h1 style={{ fontSize: '28px', fontWeight: '800', color: '#013E37', letterSpacing: '-0.5px' }}>Welcome back</h1>
+              <p style={{ fontSize: '14px', color: 'rgba(1,62,55,0.5)', marginTop: '6px' }}>Sign in to your account to continue</p>
             </>
           )}
           {view === 'signup' && (
             <>
-              <h1 style={{ fontSize: '28px', fontWeight: '800', color: '#FFFFFF', letterSpacing: '-0.5px' }}>Create Account</h1>
-              <p style={{ fontSize: '14px', color: '#A0A4C8', marginTop: '6px' }}>Join Lens Makers Club for 3D Try-On & perks</p>
+              <h1 style={{ fontSize: '28px', fontWeight: '800', color: '#013E37', letterSpacing: '-0.5px' }}>Create Account</h1>
+              <p style={{ fontSize: '14px', color: 'rgba(1,62,55,0.5)', marginTop: '6px' }}>Join Lens Makers Club for 3D Try-On & perks</p>
             </>
           )}
           {view === 'otp' && (
             <>
-              <h1 style={{ fontSize: '24px', fontWeight: '800', color: '#FFFFFF' }}>Verify your number</h1>
-              <p style={{ fontSize: '13px', color: '#A0A4C8', marginTop: '6px' }}>
+              <h1 style={{ fontSize: '24px', fontWeight: '800', color: '#013E37' }}>Verify your number</h1>
+              <p style={{ fontSize: '13px', color: 'rgba(1,62,55,0.5)', marginTop: '6px' }}>
                 We sent a 6-digit code to +91 {mobileNumber ? mobileNumber.slice(-5).padStart(11, 'X ') : 'XXXXX XXXXX'}
               </p>
               <span 
-                style={{ color: '#FF7873', fontSize: '13px', fontWeight: '700', cursor: 'pointer', display: 'inline-block', marginTop: '6px' }}
+                style={{ color: '#A94A4A', fontSize: '13px', fontWeight: '700', cursor: 'pointer', display: 'inline-block', marginTop: '6px' }}
                 onClick={() => setView('signup')}
               >
                 Change number
@@ -320,8 +320,8 @@ const AuthModal = ({ onLoginSuccess, onExploreGuest }) => {
           )}
           {(view === 'forgot' || view === 'reset-confirm' || view === 'reset-password') && (
             <>
-              <h1 style={{ fontSize: '24px', fontWeight: '800', color: '#FFFFFF' }}>Password Recovery</h1>
-              <p style={{ fontSize: '13px', color: '#A0A4C8', marginTop: '6px' }}>Securely reset your account password</p>
+              <h1 style={{ fontSize: '24px', fontWeight: '800', color: '#013E37' }}>Password Recovery</h1>
+              <p style={{ fontSize: '13px', color: 'rgba(1,62,55,0.5)', marginTop: '6px' }}>Securely reset your account password</p>
             </>
           )}
         </div>
@@ -358,7 +358,7 @@ const AuthModal = ({ onLoginSuccess, onExploreGuest }) => {
             <form onSubmit={handleLoginSubmit}>
               {/* Field 1: Email or Phone */}
               <div className="glass-input-wrapper mb-3" style={{ position: 'relative' }}>
-                <i data-lucide="mail" style={{ position: 'absolute', left: '16px', top: '16px', width: '18px', height: '18px', color: '#A0A4C8', zIndex: 2 }} />
+                <i data-lucide="mail" style={{ position: 'absolute', left: '16px', top: '16px', width: '18px', height: '18px', color: 'rgba(1,62,55,0.5)', zIndex: 2 }} />
                 <input
                   type="text"
                   className={`glass-input ${submitStatus === 'error' && !loginIdentifier ? 'error' : ''}`}
@@ -375,7 +375,7 @@ const AuthModal = ({ onLoginSuccess, onExploreGuest }) => {
 
               {/* Field 2: Password */}
               <div className="glass-input-wrapper mb-1" style={{ position: 'relative' }}>
-                <i data-lucide="lock" style={{ position: 'absolute', left: '16px', top: '16px', width: '18px', height: '18px', color: '#A0A4C8', zIndex: 2 }} />
+                <i data-lucide="lock" style={{ position: 'absolute', left: '16px', top: '16px', width: '18px', height: '18px', color: 'rgba(1,62,55,0.5)', zIndex: 2 }} />
                 <input
                   type={showLoginPassword ? 'text' : 'password'}
                   className={`glass-input ${submitStatus === 'error' && !loginPassword ? 'error' : ''}`}
@@ -389,7 +389,7 @@ const AuthModal = ({ onLoginSuccess, onExploreGuest }) => {
                 />
                 <button
                   type="button"
-                  style={{ position: 'absolute', right: '14px', top: '14px', background: 'transparent', border: 'none', color: '#A0A4C8', cursor: 'pointer', zIndex: 2 }}
+                  style={{ position: 'absolute', right: '14px', top: '14px', background: 'transparent', border: 'none', color: 'rgba(1,62,55,0.5)', cursor: 'pointer', zIndex: 2 }}
                   onClick={() => setShowLoginPassword(!showLoginPassword)}
                 >
                   <i data-lucide={showLoginPassword ? 'eye-off' : 'eye'} style={{ width: '18px', height: '18px' }} />
@@ -399,7 +399,7 @@ const AuthModal = ({ onLoginSuccess, onExploreGuest }) => {
               {/* Forgot Password Link */}
               <div style={{ textAlign: 'right', marginBottom: '24px' }}>
                 <span
-                  style={{ fontSize: '12px', color: '#FF7873', fontWeight: '700', cursor: 'pointer' }}
+                  style={{ fontSize: '12px', color: '#A94A4A', fontWeight: '700', cursor: 'pointer' }}
                   onClick={() => setView('forgot')}
                 >
                   Forgot Password?
@@ -408,7 +408,7 @@ const AuthModal = ({ onLoginSuccess, onExploreGuest }) => {
 
               {/* Error Message Below */}
               {loginError && (
-                <div style={{ color: '#EF5350', fontSize: '13px', fontWeight: '600', marginBottom: '16px', textAlign: 'center', animation: 'toastPop 200ms ease' }}>
+                <div style={{ color: '#A94A4A', fontSize: '13px', fontWeight: '600', marginBottom: '16px', textAlign: 'center', animation: 'toastPop 200ms ease' }}>
                   ⚠️ {loginError}
                 </div>
               )}
@@ -430,7 +430,7 @@ const AuthModal = ({ onLoginSuccess, onExploreGuest }) => {
             {/* Divider */}
             <div style={{ display: 'flex', alignItems: 'center', margin: '26px 0', gap: '14px' }}>
               <div style={{ flex: 1, height: '1px', background: 'rgba(255,255,255,0.1)' }} />
-              <span style={{ fontSize: '12px', color: '#A0A4C8', fontWeight: '600' }}>or continue with</span>
+              <span style={{ fontSize: '12px', color: 'rgba(1,62,55,0.5)', fontWeight: '600' }}>or continue with</span>
               <div style={{ flex: 1, height: '1px', background: 'rgba(255,255,255,0.1)' }} />
             </div>
 
@@ -444,7 +444,7 @@ const AuthModal = ({ onLoginSuccess, onExploreGuest }) => {
                 >
                   <span style={{ fontSize: '20px', fontWeight: '900', background: 'linear-gradient(45deg, #4285F4, #34A853, #FBBC05, #EA4335)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>G</span>
                 </button>
-                <span style={{ fontSize: '10px', color: '#A0A4C8', display: 'block', marginTop: '6px', fontWeight: '600' }}>Google</span>
+                <span style={{ fontSize: '10px', color: 'rgba(1,62,55,0.5)', display: 'block', marginTop: '6px', fontWeight: '600' }}>Google</span>
               </div>
 
               <div style={{ textAlign: 'center' }}>
@@ -453,9 +453,9 @@ const AuthModal = ({ onLoginSuccess, onExploreGuest }) => {
                   className="social-btn-circle"
                   onClick={() => showToast('Connecting to Apple ID...')}
                 >
-                  <i data-lucide="apple" style={{ width: '22px', height: '22px', color: '#FFFFFF' }} />
+                  <i data-lucide="apple" style={{ width: '22px', height: '22px', color: '#013E37' }} />
                 </button>
-                <span style={{ fontSize: '10px', color: '#A0A4C8', display: 'block', marginTop: '6px', fontWeight: '600' }}>Apple</span>
+                <span style={{ fontSize: '10px', color: 'rgba(1,62,55,0.5)', display: 'block', marginTop: '6px', fontWeight: '600' }}>Apple</span>
               </div>
 
               <div style={{ textAlign: 'center' }}>
@@ -466,7 +466,7 @@ const AuthModal = ({ onLoginSuccess, onExploreGuest }) => {
                 >
                   <span style={{ fontSize: '22px', fontWeight: '900', color: '#1877F2' }}>f</span>
                 </button>
-                <span style={{ fontSize: '10px', color: '#A0A4C8', display: 'block', marginTop: '6px', fontWeight: '600' }}>Facebook</span>
+                <span style={{ fontSize: '10px', color: 'rgba(1,62,55,0.5)', display: 'block', marginTop: '6px', fontWeight: '600' }}>Facebook</span>
               </div>
             </div>
 
@@ -475,7 +475,7 @@ const AuthModal = ({ onLoginSuccess, onExploreGuest }) => {
               <button
                 type="button"
                 className="btn-primary-pill"
-                style={{ width: '100%', height: '44px', fontSize: '13px', background: 'linear-gradient(135deg, #8140DC 0%, #FF7873 100%)', boxShadow: '0 4px 15px rgba(129,64,220,0.4)' }}
+                style={{ width: '100%', height: '44px', fontSize: '13px', background: 'linear-gradient(135deg, #013E37 0%, #A94A4A 100%)', boxShadow: '0 4px 15px rgba(1,62,55,0.4)' }}
                 onClick={() => handleTabSwitch('signup')}
               >
                 <span>✨ Create Account</span>
@@ -489,7 +489,7 @@ const AuthModal = ({ onLoginSuccess, onExploreGuest }) => {
                 }}
               >
                 <span>Continue as Guest</span>
-                <span style={{ color: '#A0A4C8' }}>→</span>
+                <span style={{ color: 'rgba(1,62,55,0.5)' }}>→</span>
               </button>
             </div>
           </div>
@@ -503,7 +503,7 @@ const AuthModal = ({ onLoginSuccess, onExploreGuest }) => {
             <form onSubmit={handleSignupSubmit}>
               {/* Field 1: Full Name */}
               <div className="glass-input-wrapper mb-3" style={{ position: 'relative' }}>
-                <i data-lucide="user" style={{ position: 'absolute', left: '16px', top: '16px', width: '18px', height: '18px', color: '#A0A4C8', zIndex: 2 }} />
+                <i data-lucide="user" style={{ position: 'absolute', left: '16px', top: '16px', width: '18px', height: '18px', color: 'rgba(1,62,55,0.5)', zIndex: 2 }} />
                 <input
                   type="text"
                   className={`glass-input ${touchedFields.fullName && signupErrors.fullName ? 'error' : fullName.trim().includes(' ') ? 'success' : ''}`}
@@ -514,16 +514,16 @@ const AuthModal = ({ onLoginSuccess, onExploreGuest }) => {
                   onBlur={() => handleBlur('fullName')}
                 />
                 {fullName.trim().includes(' ') && fullName.length > 3 && (
-                  <span style={{ position: 'absolute', right: '16px', top: '14px', color: '#43A047', fontWeight: 'bold', fontSize: '16px' }}>✓</span>
+                  <span style={{ position: 'absolute', right: '16px', top: '14px', color: '#013E37', fontWeight: 'bold', fontSize: '16px' }}>✓</span>
                 )}
               </div>
               {touchedFields.fullName && signupErrors.fullName && (
-                <div style={{ color: '#EF5350', fontSize: '12px', marginTop: '-18px', marginBottom: '14px', fontWeight: '600' }}>⚠️ {signupErrors.fullName}</div>
+                <div style={{ color: '#A94A4A', fontSize: '12px', marginTop: '-18px', marginBottom: '14px', fontWeight: '600' }}>⚠️ {signupErrors.fullName}</div>
               )}
 
               {/* Field 2: Email Address */}
               <div className="glass-input-wrapper mb-3" style={{ position: 'relative' }}>
-                <i data-lucide="mail" style={{ position: 'absolute', left: '16px', top: '16px', width: '18px', height: '18px', color: '#A0A4C8', zIndex: 2 }} />
+                <i data-lucide="mail" style={{ position: 'absolute', left: '16px', top: '16px', width: '18px', height: '18px', color: 'rgba(1,62,55,0.5)', zIndex: 2 }} />
                 <input
                   type="email"
                   className={`glass-input ${touchedFields.signupEmail && signupErrors.signupEmail ? 'error' : signupEmail.includes('@') && signupEmail.includes('.') ? 'success' : ''}`}
@@ -535,7 +535,7 @@ const AuthModal = ({ onLoginSuccess, onExploreGuest }) => {
                 />
               </div>
               {touchedFields.signupEmail && signupErrors.signupEmail && (
-                <div style={{ color: '#EF5350', fontSize: '12px', marginTop: '-18px', marginBottom: '14px', fontWeight: '600' }}>⚠️ {signupErrors.signupEmail}</div>
+                <div style={{ color: '#A94A4A', fontSize: '12px', marginTop: '-18px', marginBottom: '14px', fontWeight: '600' }}>⚠️ {signupErrors.signupEmail}</div>
               )}
 
               {/* Field 3: Mobile Number with +91 Prefix */}
@@ -544,14 +544,14 @@ const AuthModal = ({ onLoginSuccess, onExploreGuest }) => {
                   style={{ 
                     position: 'absolute', left: '8px', zIndex: 2,
                     background: 'rgba(255,255,255,0.1)', padding: '4px 8px', borderRadius: '8px',
-                    fontSize: '13px', fontWeight: '700', color: '#FFFFFF', cursor: 'pointer',
+                    fontSize: '13px', fontWeight: '700', color: '#013E37', cursor: 'pointer',
                     display: 'flex', alignItems: 'center', gap: '4px'
                   }}
                   onClick={() => showToast('🇮🇳 India (+91) selected by default')}
                   title="Change Country Code"
                 >
                   <span>🇮🇳 +91</span>
-                  <span style={{ fontSize: '10px', color: '#A0A4C8' }}>▼</span>
+                  <span style={{ fontSize: '10px', color: 'rgba(1,62,55,0.5)' }}>▼</span>
                 </div>
                 <input
                   type="text"
@@ -565,7 +565,7 @@ const AuthModal = ({ onLoginSuccess, onExploreGuest }) => {
 
               {/* Field 4: Password with Strength Meter */}
               <div className="glass-input-wrapper mb-2" style={{ position: 'relative' }}>
-                <i data-lucide="lock" style={{ position: 'absolute', left: '16px', top: '16px', width: '18px', height: '18px', color: '#A0A4C8', zIndex: 2 }} />
+                <i data-lucide="lock" style={{ position: 'absolute', left: '16px', top: '16px', width: '18px', height: '18px', color: 'rgba(1,62,55,0.5)', zIndex: 2 }} />
                 <input
                   type={showSignupPassword ? 'text' : 'password'}
                   className="glass-input"
@@ -576,7 +576,7 @@ const AuthModal = ({ onLoginSuccess, onExploreGuest }) => {
                 />
                 <button
                   type="button"
-                  style={{ position: 'absolute', right: '14px', top: '14px', background: 'transparent', border: 'none', color: '#A0A4C8', cursor: 'pointer', zIndex: 2 }}
+                  style={{ position: 'absolute', right: '14px', top: '14px', background: 'transparent', border: 'none', color: 'rgba(1,62,55,0.5)', cursor: 'pointer', zIndex: 2 }}
                   onClick={() => setShowSignupPassword(!showSignupPassword)}
                 >
                   <i data-lucide={showSignupPassword ? 'eye-off' : 'eye'} style={{ width: '18px', height: '18px' }} />
@@ -599,7 +599,7 @@ const AuthModal = ({ onLoginSuccess, onExploreGuest }) => {
                     ))}
                   </div>
                   <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '11px', fontWeight: '700' }}>
-                    <span style={{ color: '#A0A4C8' }}>Password Strength:</span>
+                    <span style={{ color: 'rgba(1,62,55,0.5)' }}>Password Strength:</span>
                     <span style={{ color: strengthColors[strengthScore] }}>{strengthLabels[strengthScore]}</span>
                   </div>
                 </div>
@@ -607,7 +607,7 @@ const AuthModal = ({ onLoginSuccess, onExploreGuest }) => {
 
               {/* Field 5: Confirm Password */}
               <div className="glass-input-wrapper mb-3" style={{ position: 'relative' }}>
-                <i data-lucide="lock" style={{ position: 'absolute', left: '16px', top: '16px', width: '18px', height: '18px', color: '#A0A4C8', zIndex: 2 }} />
+                <i data-lucide="lock" style={{ position: 'absolute', left: '16px', top: '16px', width: '18px', height: '18px', color: 'rgba(1,62,55,0.5)', zIndex: 2 }} />
                 <input
                   type={showConfirmPassword ? 'text' : 'password'}
                   className={`glass-input ${touchedFields.confirmPassword && signupErrors.confirmPassword ? 'error' : confirmPassword && confirmPassword === signupPassword ? 'success' : ''}`}
@@ -618,18 +618,18 @@ const AuthModal = ({ onLoginSuccess, onExploreGuest }) => {
                   onBlur={() => handleBlur('confirmPassword')}
                 />
                 {confirmPassword && confirmPassword === signupPassword && (
-                  <span style={{ position: 'absolute', right: '40px', top: '14px', color: '#43A047', fontWeight: 'bold', fontSize: '16px' }}>✓</span>
+                  <span style={{ position: 'absolute', right: '40px', top: '14px', color: '#013E37', fontWeight: 'bold', fontSize: '16px' }}>✓</span>
                 )}
                 <button
                   type="button"
-                  style={{ position: 'absolute', right: '14px', top: '14px', background: 'transparent', border: 'none', color: '#A0A4C8', cursor: 'pointer', zIndex: 2 }}
+                  style={{ position: 'absolute', right: '14px', top: '14px', background: 'transparent', border: 'none', color: 'rgba(1,62,55,0.5)', cursor: 'pointer', zIndex: 2 }}
                   onClick={() => setShowConfirmPassword(!showConfirmPassword)}
                 >
                   <i data-lucide={showConfirmPassword ? 'eye-off' : 'eye'} style={{ width: '18px', height: '18px' }} />
                 </button>
               </div>
               {touchedFields.confirmPassword && signupErrors.confirmPassword && (
-                <div style={{ color: '#EF5350', fontSize: '12px', marginTop: '-18px', marginBottom: '14px', fontWeight: '600' }}>⚠️ {signupErrors.confirmPassword}</div>
+                <div style={{ color: '#A94A4A', fontSize: '12px', marginTop: '-18px', marginBottom: '14px', fontWeight: '600' }}>⚠️ {signupErrors.confirmPassword}</div>
               )}
 
               {/* Terms Checkbox */}
@@ -637,22 +637,22 @@ const AuthModal = ({ onLoginSuccess, onExploreGuest }) => {
                 <div 
                   style={{
                     width: '20px', height: '20px', borderRadius: '6px', flexShrink: 0, marginTop: '2px',
-                    background: termsAgreed ? 'linear-gradient(135deg, #FF7873 0%, #E22F80 100%)' : 'rgba(255,240,224,0.8)',
+                    background: termsAgreed ? 'linear-gradient(135deg, #A94A4A 0%, #013E37 100%)' : 'rgba(255,240,224,0.8)',
                     border: termsAgreed ? 'none' : '1.5px solid rgba(255,255,255,0.3)',
                     display: 'flex', alignItems: 'center', justifyContent: 'center',
-                    boxShadow: termsAgreed ? '0 0 10px rgba(226,47,128,0.6)' : 'inset 0 1px 2px rgba(0,0,0,0.4)',
+                    boxShadow: termsAgreed ? '0 0 10px rgba(1,62,55,0.6)' : 'inset 0 1px 2px rgba(0,0,0,0.4)',
                     transition: 'all 200ms var(--spring-bezier)'
                   }}
                 >
-                  {termsAgreed && <span style={{ color: '#FFFFFF', fontSize: '13px', fontWeight: '900' }}>✓</span>}
+                  {termsAgreed && <span style={{ color: '#013E37', fontSize: '13px', fontWeight: '900' }}>✓</span>}
                 </div>
-                <span style={{ fontSize: '12px', color: '#A0A4C8', lineHeight: '1.4' }}>
-                  I agree to the <span style={{ color: '#FF7873', fontWeight: '700' }} onClick={(e) => { e.stopPropagation(); showToast('📜 Opening Terms of Service...'); }}>Terms of Service</span> and <span style={{ color: '#FF7873', fontWeight: '700' }} onClick={(e) => { e.stopPropagation(); showToast('🔒 Opening Privacy Policy...'); }}>Privacy Policy</span>
+                <span style={{ fontSize: '12px', color: 'rgba(1,62,55,0.5)', lineHeight: '1.4' }}>
+                  I agree to the <span style={{ color: '#A94A4A', fontWeight: '700' }} onClick={(e) => { e.stopPropagation(); showToast('📜 Opening Terms of Service...'); }}>Terms of Service</span> and <span style={{ color: '#A94A4A', fontWeight: '700' }} onClick={(e) => { e.stopPropagation(); showToast('🔒 Opening Privacy Policy...'); }}>Privacy Policy</span>
                 </span>
               </div>
 
               {signupErrors.general && (
-                <div style={{ color: '#EF5350', fontSize: '13px', fontWeight: '600', marginBottom: '16px', textAlign: 'center' }}>
+                <div style={{ color: '#A94A4A', fontSize: '13px', fontWeight: '600', marginBottom: '16px', textAlign: 'center' }}>
                   ⚠️ {signupErrors.general}
                 </div>
               )}
@@ -673,9 +673,9 @@ const AuthModal = ({ onLoginSuccess, onExploreGuest }) => {
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', marginTop: '22px', borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: '16px' }}>
               <div style={{ textAlign: 'center' }}>
-                <span style={{ fontSize: '13px', color: '#A0A4C8' }}>Already a member? </span>
+                <span style={{ fontSize: '13px', color: 'rgba(1,62,55,0.5)' }}>Already a member? </span>
                 <span
-                  style={{ fontSize: '13px', color: '#FF7873', fontWeight: '700', cursor: 'pointer' }}
+                  style={{ fontSize: '13px', color: '#A94A4A', fontWeight: '700', cursor: 'pointer' }}
                   onClick={() => handleTabSwitch('login')}
                 >
                   Log In
@@ -690,7 +690,7 @@ const AuthModal = ({ onLoginSuccess, onExploreGuest }) => {
                 }}
               >
                 <span>Continue as Guest</span>
-                <span style={{ color: '#A0A4C8' }}>→</span>
+                <span style={{ color: 'rgba(1,62,55,0.5)' }}>→</span>
               </button>
             </div>
           </div>
@@ -707,7 +707,7 @@ const AuthModal = ({ onLoginSuccess, onExploreGuest }) => {
               style={{
                 position: 'absolute', top: '16px', left: '16px',
                 width: '36px', height: '36px', borderRadius: '18px',
-                background: 'rgba(255,255,255,0.08)', border: 'none', color: '#FFFFFF',
+                background: 'rgba(255,255,255,0.08)', border: 'none', color: '#013E37',
                 cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '18px'
               }}
               onClick={() => setView('signup')}
@@ -717,7 +717,7 @@ const AuthModal = ({ onLoginSuccess, onExploreGuest }) => {
             </button>
 
             <div style={{ textAlign: 'center', marginBottom: '24px', marginTop: '10px' }}>
-              <p style={{ fontSize: '13px', color: '#A0A4C8', marginBottom: '16px' }}>
+              <p style={{ fontSize: '13px', color: 'rgba(1,62,55,0.5)', marginBottom: '16px' }}>
                 Enter the 6-digit verification code sent to your mobile
               </p>
 
@@ -736,7 +736,7 @@ const AuthModal = ({ onLoginSuccess, onExploreGuest }) => {
                     inputMode="numeric"
                     maxLength={6} // allow paste
                     className={`otp-input-square ${digit ? 'filled' : ''}`}
-                    style={{ borderColor: otpError ? '#EF5350' : digit ? '#43A047' : 'rgba(255,255,255,0.18)' }}
+                    style={{ borderColor: otpError ? '#A94A4A' : digit ? '#013E37' : 'rgba(255,255,255,0.18)' }}
                     value={digit}
                     onChange={(e) => handleOtpChange(index, e.target.value)}
                     onKeyDown={(e) => handleOtpKeyDown(index, e)}
@@ -744,7 +744,7 @@ const AuthModal = ({ onLoginSuccess, onExploreGuest }) => {
                 ))}
               </div>
               {otpError && (
-                <div style={{ color: '#EF5350', fontSize: '12px', marginTop: '12px', fontWeight: '700' }}>
+                <div style={{ color: '#A94A4A', fontSize: '12px', marginTop: '12px', fontWeight: '700' }}>
                   ⚠️ Invalid OTP code. (Hint: enter 123456)
                 </div>
               )}
@@ -753,12 +753,12 @@ const AuthModal = ({ onLoginSuccess, onExploreGuest }) => {
             {/* Timer & Resend */}
             <div style={{ textAlign: 'center', marginBottom: '28px' }}>
               {otpTimer > 0 ? (
-                <span style={{ fontSize: '13px', color: '#A0A4C8', fontWeight: '600' }}>
-                  Resend code in <span style={{ color: '#FFFFFF' }}>0:{otpTimer < 10 ? `0${otpTimer}` : otpTimer}</span>
+                <span style={{ fontSize: '13px', color: 'rgba(1,62,55,0.5)', fontWeight: '600' }}>
+                  Resend code in <span style={{ color: '#013E37' }}>0:{otpTimer < 10 ? `0${otpTimer}` : otpTimer}</span>
                 </span>
               ) : (
                 <span
-                  style={{ fontSize: '14px', color: '#FF7873', fontWeight: '800', cursor: 'pointer', textDecoration: 'underline' }}
+                  style={{ fontSize: '14px', color: '#A94A4A', fontWeight: '800', cursor: 'pointer', textDecoration: 'underline' }}
                   onClick={() => {
                     setOtpTimer(30);
                     showToast('📱 New OTP sent! (Demo code: 123456)');
@@ -781,7 +781,7 @@ const AuthModal = ({ onLoginSuccess, onExploreGuest }) => {
             </button>
 
             <div style={{ textAlign: 'center', marginTop: '16px' }}>
-              <span style={{ fontSize: '11px', color: '#6B6E9A' }}>
+              <span style={{ fontSize: '11px', color: 'rgba(1,62,55,0.5)' }}>
                 💡 Tip: You can type any valid 6-digit code or paste it directly!
               </span>
             </div>
@@ -798,7 +798,7 @@ const AuthModal = ({ onLoginSuccess, onExploreGuest }) => {
               style={{
                 position: 'absolute', top: '16px', left: '16px',
                 width: '36px', height: '36px', borderRadius: '18px',
-                background: 'rgba(255,255,255,0.08)', border: 'none', color: '#FFFFFF',
+                background: 'rgba(255,255,255,0.08)', border: 'none', color: '#013E37',
                 cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '18px'
               }}
               onClick={() => setView('login')}
@@ -807,12 +807,12 @@ const AuthModal = ({ onLoginSuccess, onExploreGuest }) => {
             </button>
 
             <form onSubmit={handleForgotSubmit} style={{ marginTop: '12px' }}>
-              <p style={{ fontSize: '13px', color: '#A0A4C8', marginBottom: '20px', lineHeight: '1.5' }}>
+              <p style={{ fontSize: '13px', color: 'rgba(1,62,55,0.5)', marginBottom: '20px', lineHeight: '1.5' }}>
                 Enter your registered mobile number or email address and we'll send you a secure link to reset your password.
               </p>
 
               <div className="glass-input-wrapper mb-4" style={{ position: 'relative' }}>
-                <i data-lucide="mail" style={{ position: 'absolute', left: '16px', top: '16px', width: '18px', height: '18px', color: '#A0A4C8', zIndex: 2 }} />
+                <i data-lucide="mail" style={{ position: 'absolute', left: '16px', top: '16px', width: '18px', height: '18px', color: 'rgba(1,62,55,0.5)', zIndex: 2 }} />
                 <input
                   type="text"
                   required
@@ -841,12 +841,12 @@ const AuthModal = ({ onLoginSuccess, onExploreGuest }) => {
            ========================================================================== */}
         {view === 'reset-confirm' && (
           <div className="glass-card-elevated fade-up-item" style={{ padding: '36px 24px', textAlign: 'center' }}>
-            <div style={{ width: '64px', height: '64px', borderRadius: '32px', background: 'rgba(67, 160, 71, 0.2)', border: '2px solid #43A047', color: '#43A047', fontSize: '32px', fontWeight: 'bold', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 20px', boxShadow: '0 0 24px rgba(67, 160, 71, 0.4)' }}>
+            <div style={{ width: '64px', height: '64px', borderRadius: '32px', background: 'rgba(67, 160, 71, 0.2)', border: '2px solid #013E37', color: '#013E37', fontSize: '32px', fontWeight: 'bold', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 20px', boxShadow: '0 0 24px rgba(67, 160, 71, 0.4)' }}>
               ✓
             </div>
-            <h2 style={{ fontSize: '22px', fontWeight: '800', color: '#FFFFFF', marginBottom: '10px' }}>Check your messages</h2>
-            <p style={{ fontSize: '13px', color: '#A0A4C8', lineHeight: '1.5', marginBottom: '28px' }}>
-              We sent a password reset link to <strong style={{ color: '#FFFFFF' }}>{loginIdentifier || 'your email/mobile'}</strong>. Click the link to update your password.
+            <h2 style={{ fontSize: '22px', fontWeight: '800', color: '#013E37', marginBottom: '10px' }}>Check your messages</h2>
+            <p style={{ fontSize: '13px', color: 'rgba(1,62,55,0.5)', lineHeight: '1.5', marginBottom: '28px' }}>
+              We sent a password reset link to <strong style={{ color: '#013E37' }}>{loginIdentifier || 'your email/mobile'}</strong>. Click the link to update your password.
             </p>
 
             <button
@@ -863,10 +863,10 @@ const AuthModal = ({ onLoginSuccess, onExploreGuest }) => {
 
             {/* Demo Helper to Try Step 2 */}
             <div style={{ borderTop: '1px dashed rgba(255,255,255,0.15)', paddingTop: '16px', marginTop: '16px' }}>
-              <span style={{ fontSize: '11px', color: '#6B6E9A', display: 'block', marginBottom: '8px' }}>Demo Mode Testing:</span>
+              <span style={{ fontSize: '11px', color: 'rgba(1,62,55,0.5)', display: 'block', marginBottom: '8px' }}>Demo Mode Testing:</span>
               <button
                 type="button"
-                style={{ background: 'transparent', border: '1px solid #FF7873', color: '#FF7873', padding: '6px 14px', borderRadius: '999px', fontSize: '12px', fontWeight: '700', cursor: 'pointer' }}
+                style={{ background: 'transparent', border: '1px solid #A94A4A', color: '#A94A4A', padding: '6px 14px', borderRadius: '999px', fontSize: '12px', fontWeight: '700', cursor: 'pointer' }}
                 onClick={() => setView('reset-password')}
               >
                 Simulate Clicking Reset Link →
@@ -880,12 +880,12 @@ const AuthModal = ({ onLoginSuccess, onExploreGuest }) => {
            ========================================================================== */}
         {view === 'reset-password' && (
           <div className="glass-card-elevated fade-up-item" style={{ padding: '32px 24px', position: 'relative' }}>
-            <h2 style={{ fontSize: '22px', fontWeight: '800', color: '#FFFFFF', marginBottom: '8px', textAlign: 'center' }}>Create New Password</h2>
-            <p style={{ fontSize: '13px', color: '#A0A4C8', marginBottom: '24px', textAlign: 'center' }}>Ensure it is at least 8 characters with numbers & symbols</p>
+            <h2 style={{ fontSize: '22px', fontWeight: '800', color: '#013E37', marginBottom: '8px', textAlign: 'center' }}>Create New Password</h2>
+            <p style={{ fontSize: '13px', color: 'rgba(1,62,55,0.5)', marginBottom: '24px', textAlign: 'center' }}>Ensure it is at least 8 characters with numbers & symbols</p>
 
             <form onSubmit={handleResetPasswordSubmit}>
               <div className="glass-input-wrapper mb-3" style={{ position: 'relative' }}>
-                <i data-lucide="lock" style={{ position: 'absolute', left: '16px', top: '16px', width: '18px', height: '18px', color: '#A0A4C8', zIndex: 2 }} />
+                <i data-lucide="lock" style={{ position: 'absolute', left: '16px', top: '16px', width: '18px', height: '18px', color: 'rgba(1,62,55,0.5)', zIndex: 2 }} />
                 <input
                   type={showSignupPassword ? 'text' : 'password'}
                   required
@@ -897,7 +897,7 @@ const AuthModal = ({ onLoginSuccess, onExploreGuest }) => {
                 />
                 <button
                   type="button"
-                  style={{ position: 'absolute', right: '14px', top: '14px', background: 'transparent', border: 'none', color: '#A0A4C8', cursor: 'pointer', zIndex: 2 }}
+                  style={{ position: 'absolute', right: '14px', top: '14px', background: 'transparent', border: 'none', color: 'rgba(1,62,55,0.5)', cursor: 'pointer', zIndex: 2 }}
                   onClick={() => setShowSignupPassword(!showSignupPassword)}
                 >
                   <i data-lucide={showSignupPassword ? 'eye-off' : 'eye'} style={{ width: '18px', height: '18px' }} />
@@ -923,7 +923,7 @@ const AuthModal = ({ onLoginSuccess, onExploreGuest }) => {
               )}
 
               <div className="glass-input-wrapper mb-4" style={{ position: 'relative' }}>
-                <i data-lucide="lock" style={{ position: 'absolute', left: '16px', top: '16px', width: '18px', height: '18px', color: '#A0A4C8', zIndex: 2 }} />
+                <i data-lucide="lock" style={{ position: 'absolute', left: '16px', top: '16px', width: '18px', height: '18px', color: 'rgba(1,62,55,0.5)', zIndex: 2 }} />
                 <input
                   type={showConfirmPassword ? 'text' : 'password'}
                   required

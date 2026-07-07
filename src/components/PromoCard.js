@@ -14,7 +14,7 @@ window.PromoCard = function PromoCard({ onApplyCode }) {
 
   return (
     <section className="px-5 my-8">
-      <div className="glass-panel p-6 border border-white/15 relative overflow-hidden shadow-2xl bg-gradient-to-r from-[#F97316]/25 via-[#2D1B5E]/50 to-[#1E3A6E]/40 group">
+      <div className="glass-panel p-6 border border-white/15 relative overflow-hidden shadow-2xl bg-gradient-to-r from-[#F97316]/25 via-[#013E37]/50 to-[#1E3A6E]/40 group">
         
         {/* Warm-toned gradient overlay & sunburst aura */}
         <div className="absolute top-0 right-0 w-72 h-72 bg-gradient-to-bl from-[#F97316]/25 to-[#FBBF24]/10 rounded-full blur-3xl pointer-events-none"></div>

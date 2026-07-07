@@ -16,7 +16,7 @@ window.LocationCard = function LocationCard({ activeLocation, setActiveLocation,
       <div className="glass-panel border border-white/15 overflow-hidden relative shadow-2xl transition-all">
         
         {/* Map Grid Area (Low-opacity white grid lines + stylized dots) */}
-        <div className="relative h-44 sm:h-52 w-full map-dotted-grid flex items-center justify-center overflow-hidden bg-gradient-to-b from-transparent via-[#2D1B5E]/40 to-[#1E3A6E]/30">
+        <div className="relative h-44 sm:h-52 w-full map-dotted-grid flex items-center justify-center overflow-hidden bg-gradient-to-b from-transparent via-[#013E37]/40 to-[#1E3A6E]/30">
           
           {/* Subtle stylized city blocks / radar lines */}
           <div className="absolute inset-0 flex items-center justify-center opacity-25 pointer-events-none">
@@ -41,7 +41,7 @@ window.LocationCard = function LocationCard({ activeLocation, setActiveLocation,
                 <path d="M12 2C8.13 2 5 5.13 5 9C5 14.25 12 22 12 22C12 22 19 14.25 19 9C19 5.13 15.87 2 12 2ZM12 11.5C10.62 11.5 9.5 10.38 9.5 9C9.5 7.62 10.62 6.5 12 6.5C13.38 6.5 14.5 7.62 14.5 9C14.5 10.38 13.38 11.5 12 11.5Z" />
               </svg>
             </div>
-            <span className="mt-1 px-2.5 py-0.5 rounded-full bg-[#150E30]/90 border border-[#FBBF24]/40 text-[10px] font-bold text-[#FBBF24] tracking-wider uppercase shadow-md">
+            <span className="mt-1 px-2.5 py-0.5 rounded-full bg-[#FFFFFF]/90 border border-[#FBBF24]/40 text-[10px] font-bold text-[#FBBF24] tracking-wider uppercase shadow-md">
               Hub: {activeLocation.deliveryTime}
             </span>
           </div>
@@ -56,7 +56,7 @@ window.LocationCard = function LocationCard({ activeLocation, setActiveLocation,
         {/* Footer Strip Inside Same Card */}
         <div 
           onClick={() => setShowSheet(!showSheet)}
-          className="bg-[#150E30]/90 backdrop-blur-md px-5 py-4 border-t border-white/10 flex items-center justify-between cursor-pointer hover:bg-[#1A152E] transition-colors group"
+          className="bg-[#FFFFFF]/90 backdrop-blur-md px-5 py-4 border-t border-white/10 flex items-center justify-between cursor-pointer hover:bg-[#1A152E] transition-colors group"
         >
           <div className="flex items-center space-x-3 min-w-0 flex-1">
             <div className="w-8 h-8 rounded-full bg-[#A3E635]/15 border border-[#A3E635]/30 flex items-center justify-center flex-shrink-0">

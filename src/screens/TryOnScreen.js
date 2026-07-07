@@ -227,7 +227,7 @@ const TryOnScreen = ({ onSelectTab }) => {
       const coating = lensCoatingRef.current;
       if (coating === 'antireflective') {
         const grad = ctx.createLinearGradient(x, y, x + width, y + height);
-        grad.addColorStop(0, 'rgba(0, 229, 255, 0.22)');
+        grad.addColorStop(0, 'rgba(1,62,55, 0.22)');
         grad.addColorStop(0.5, style.lensFill || 'rgba(10,15,40,0.2)');
         grad.addColorStop(1, 'rgba(40, 220, 160, 0.25)');
         ctx.fillStyle = grad;
@@ -370,15 +370,15 @@ const TryOnScreen = ({ onSelectTab }) => {
     ctx.translate(pCenter.x, pCenter.y);
     ctx.scale(1, 0.28);
     const pedGrad = ctx.createRadialGradient(0, 0, 10, 0, 0, 240 * pCenter.scale);
-    pedGrad.addColorStop(0, 'rgba(0, 229, 255, 0.45)');
-    pedGrad.addColorStop(0.5, 'rgba(226,47,128, 0.18)');
+    pedGrad.addColorStop(0, 'rgba(1,62,55, 0.45)');
+    pedGrad.addColorStop(0.5, 'rgba(1,62,55, 0.18)');
     pedGrad.addColorStop(1, 'rgba(255,245,236, 0)');
     ctx.fillStyle = pedGrad;
     ctx.beginPath();
     ctx.arc(0, 0, 240 * pCenter.scale, 0, Math.PI * 2);
     ctx.fill();
     ctx.lineWidth = 1.5;
-    ctx.strokeStyle = 'rgba(0, 229, 255, 0.35)';
+    ctx.strokeStyle = 'rgba(1,62,55, 0.35)';
     ctx.stroke();
     ctx.restore();
 
@@ -442,7 +442,7 @@ const TryOnScreen = ({ onSelectTab }) => {
       // Metallic barrel hinge joint at frame connection
       ctx.beginPath();
       ctx.arc(pHinge.x, pHinge.y, armW * 0.75, 0, Math.PI * 2);
-      ctx.fillStyle = style.hingeAccent || '#C9A876';
+      ctx.fillStyle = style.hingeAccent || 'rgba(1,62,55,0.6)';
       ctx.fill();
       ctx.lineWidth = 1;
       ctx.strokeStyle = 'rgba(255, 255, 255, 0.4)';
@@ -469,7 +469,7 @@ const TryOnScreen = ({ onSelectTab }) => {
           const coating = lensCoatingRef.current;
           if (coating === 'antireflective') {
             const grad = ctx.createLinearGradient(-lw / 2, -lh / 2, lw / 2, lh / 2);
-            grad.addColorStop(0, 'rgba(0, 229, 255, 0.35)');
+            grad.addColorStop(0, 'rgba(1,62,55, 0.35)');
             grad.addColorStop(0.5, style.lensFill || 'rgba(10,15,40,0.25)');
             grad.addColorStop(1, 'rgba(40, 220, 160, 0.35)');
             ctx.fillStyle = grad;
@@ -574,7 +574,7 @@ const TryOnScreen = ({ onSelectTab }) => {
 
       // Draw simulated studio mirror gradient background
       const bgGrad = ctx.createRadialGradient(w / 2, h / 2, 50, w / 2, h / 2, w * 0.7);
-      bgGrad.addColorStop(0, '#F4F3EF');
+      bgGrad.addColorStop(0, '#FFF6DA');
       bgGrad.addColorStop(1, '#0A0D22');
       ctx.fillStyle = bgGrad;
       ctx.fillRect(0, 0, w, h);
@@ -1004,7 +1004,7 @@ const TryOnScreen = ({ onSelectTab }) => {
     } else {
       // Draw dark studio background
       const bgGrad = offCtx.createRadialGradient(offCanvas.width / 2, offCanvas.height / 2, 50, offCanvas.width / 2, offCanvas.height / 2, offCanvas.width * 0.7);
-      bgGrad.addColorStop(0, '#F4F3EF');
+      bgGrad.addColorStop(0, '#FFF6DA');
       bgGrad.addColorStop(1, '#0A0D22');
       offCtx.fillStyle = bgGrad;
       offCtx.fillRect(0, 0, offCanvas.width, offCanvas.height);
@@ -1138,11 +1138,11 @@ const TryOnScreen = ({ onSelectTab }) => {
          ========================================================================== */}
       {status === 'loading' && !faceDetected && (
         <div style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '32px' }}>
-          <div style={{ width: '80px', height: '80px', borderRadius: '50%', border: '4px solid rgba(255,255,255,0.1)', borderTopColor: '#FF7873', animation: 'spin 1s infinite linear', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '20px' }}>
+          <div style={{ width: '80px', height: '80px', borderRadius: '50%', border: '4px solid rgba(255,255,255,0.1)', borderTopColor: '#A94A4A', animation: 'spin 1s infinite linear', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '20px' }}>
             <span style={{ fontSize: '32px' }}>👓</span>
           </div>
-          <h2 style={{ fontSize: '18px', fontWeight: '800', color: '#FFFFFF' }}>Setting up your mirror...</h2>
-          <p style={{ fontSize: '13px', color: '#A0A4C8', marginTop: '8px' }}>Starting live AR studio...</p>
+          <h2 style={{ fontSize: '18px', fontWeight: '800', color: '#013E37' }}>Setting up your mirror...</h2>
+          <p style={{ fontSize: '13px', color: 'rgba(1,62,55,0.5)', marginTop: '8px' }}>Starting live AR studio...</p>
         </div>
       )}
 
@@ -1152,8 +1152,8 @@ const TryOnScreen = ({ onSelectTab }) => {
       {status === 'fallback' && (
         <div style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '32px', textAlign: 'center' }}>
           <span style={{ fontSize: '64px', marginBottom: '16px' }}>🕶️</span>
-          <h2 style={{ fontSize: '20px', fontWeight: '800', color: '#FFFFFF', marginBottom: '10px' }}>Camera Offline or Denied</h2>
-          <p style={{ fontSize: '13px', color: '#A0A4C8', maxWidth: '300px', lineHeight: '1.6', marginBottom: '28px' }}>
+          <h2 style={{ fontSize: '20px', fontWeight: '800', color: '#013E37', marginBottom: '10px' }}>Camera Offline or Denied</h2>
+          <p style={{ fontSize: '13px', color: 'rgba(1,62,55,0.5)', maxWidth: '300px', lineHeight: '1.6', marginBottom: '28px' }}>
             Your browser doesn't support live try-on or webcam permission was blocked. You can still test frames using our interactive AI simulation!
           </p>
           <button
@@ -1327,7 +1327,7 @@ const TryOnScreen = ({ onSelectTab }) => {
               <button
                 type="button"
                 className={`tryon-360-chip ${isAutoSpinning ? 'active' : ''}`}
-                style={{ background: isAutoSpinning ? '#FF7873' : undefined, borderColor: isAutoSpinning ? '#FF7873' : undefined, color: isAutoSpinning ? '#FFFFFF' : undefined }}
+                style={{ background: isAutoSpinning ? '#A94A4A' : undefined, borderColor: isAutoSpinning ? '#A94A4A' : undefined, color: isAutoSpinning ? '#FFFFFF' : undefined }}
                 onClick={() => {
                   setIsAutoSpinning(!isAutoSpinning);
                 }}
@@ -1390,8 +1390,8 @@ const TryOnScreen = ({ onSelectTab }) => {
 
               {/* Active Frame Name & Price Badge */}
               <div className="tryon-frame-title-mini">
-                <span style={{ fontWeight: '800', color: '#FFFFFF' }}>{currentFrameStyle.name}</span>
-                <span style={{ fontWeight: '900', color: '#00E5FF', marginLeft: '6px' }}>{currentFrameStyle.price}</span>
+                <span style={{ fontWeight: '800', color: '#013E37' }}>{currentFrameStyle.name}</span>
+                <span style={{ fontWeight: '900', color: '#013E37', marginLeft: '6px' }}>{currentFrameStyle.price}</span>
               </div>
 
               {/* Upload Photo Button (Only shown in demo/photo mode) */}
@@ -1419,7 +1419,7 @@ const TryOnScreen = ({ onSelectTab }) => {
                   onClick={handleToggleWishlist}
                   title="Save to Wishlist"
                 >
-                  <span style={{ fontSize: '18px', color: wishlist.includes(currentFrameStyle.id) ? '#FF7873' : '#FFFFFF' }}>
+                  <span style={{ fontSize: '18px', color: wishlist.includes(currentFrameStyle.id) ? '#A94A4A' : '#FFFFFF' }}>
                     {wishlist.includes(currentFrameStyle.id) ? '♥' : '♡'}
                   </span>
                 </button>
@@ -1468,7 +1468,7 @@ const TryOnScreen = ({ onSelectTab }) => {
                   onClick={handleTakeSnapshot}
                   title="Take AR Snapshot"
                 >
-                  <i data-lucide="camera" style={{ width: '22px', height: '22px', color: '#FFFFFF' }} />
+                  <i data-lucide="camera" style={{ width: '22px', height: '22px', color: '#013E37' }} />
                 </button>
               </div>
             </div>
@@ -1492,7 +1492,7 @@ const TryOnScreen = ({ onSelectTab }) => {
           <div className="flex-between" style={{ position: 'absolute', top: '16px', left: '16px', right: '16px', zIndex: 20 }}>
             <button
               type="button"
-              style={{ width: '44px', height: '44px', borderRadius: '50%', background: 'rgba(255,245,236, 0.75)', border: '1px solid rgba(255,255,255,0.25)', color: '#FFFFFF', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '18px', cursor: 'pointer', backdropFilter: 'blur(10px)' }}
+              style={{ width: '44px', height: '44px', borderRadius: '50%', background: 'rgba(255,245,236, 0.75)', border: '1px solid rgba(255,255,255,0.25)', color: '#013E37', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '18px', cursor: 'pointer', backdropFilter: 'blur(10px)' }}
               onClick={() => setStatus('active')}
               title="Retake Snapshot"
             >
@@ -1500,7 +1500,7 @@ const TryOnScreen = ({ onSelectTab }) => {
             </button>
             <button
               type="button"
-              style={{ width: '44px', height: '44px', borderRadius: '50%', background: 'rgba(255,245,236, 0.75)', border: '1px solid rgba(255,255,255,0.25)', color: '#FFFFFF', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', backdropFilter: 'blur(10px)' }}
+              style={{ width: '44px', height: '44px', borderRadius: '50%', background: 'rgba(255,245,236, 0.75)', border: '1px solid rgba(255,255,255,0.25)', color: '#013E37', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', backdropFilter: 'blur(10px)' }}
               onClick={() => showToast('📤 Opening native share sheet...')}
               title="Share Snapshot"
             >
@@ -1523,7 +1523,7 @@ const TryOnScreen = ({ onSelectTab }) => {
             {/* Button 2: Save to Gallery */}
             <button
               type="button"
-              style={{ flex: 1, height: '48px', borderRadius: '999px', background: 'linear-gradient(135deg, #1E88E5 0%, #1565C0 100%)', border: 'none', color: '#FFFFFF', fontSize: '13px', fontWeight: '800', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '6px', cursor: 'pointer', boxShadow: '0 4px 14px rgba(30,136,229,0.4)' }}
+              style={{ flex: 1, height: '48px', borderRadius: '999px', background: 'linear-gradient(135deg, #013E37 0%, #1565C0 100%)', border: 'none', color: '#013E37', fontSize: '13px', fontWeight: '800', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '6px', cursor: 'pointer', boxShadow: '0 4px 14px rgba(1,62,55,0.4)' }}
               onClick={handleDownloadSnapshot}
             >
               <i data-lucide="download" style={{ width: '16px', height: '16px' }} />

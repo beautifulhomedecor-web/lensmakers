@@ -51,9 +51,11 @@ const BottomNav = ({ activeTab, onSelectTab, cartCount = 2 }) => {
     <nav
       className="bottom-nav nav-visible dark-anchor"
       style={{
-        background: '#FFFFFF',
-        borderTop: '1px solid #EAEAEA',
-        boxShadow: 'none',
+        background: 'rgba(255,255,255,0.96)',
+        backdropFilter: 'blur(20px)',
+        WebkitBackdropFilter: 'blur(20px)',
+        borderTop: '1px solid #FFF6DA',
+        boxShadow: '0 -4px 24px rgba(1,62,55,0.06)',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'space-around',
@@ -96,7 +98,7 @@ const BottomNav = ({ activeTab, onSelectTab, cartCount = 2 }) => {
                 style={{
                   width: '22px',
                   height: '22px',
-                  color: isActive ? '#9CCC65' : '#475569',
+                  color: isActive ? '#013E37' : 'rgba(1, 62, 55, 0.4)',
                   strokeWidth: isActive ? '2.5px' : '1.8px',
                   transition: 'color 200ms ease',
                   transform: 'none',
@@ -109,8 +111,8 @@ const BottomNav = ({ activeTab, onSelectTab, cartCount = 2 }) => {
                     position: 'absolute',
                     top: '-5px',
                     right: '-10px',
-                    background: '#9CCC65',
-                    color: '#000000',
+                    background: '#A94A4A',
+                    color: '#FFFFFF',
                     fontSize: '10px',
                     fontWeight: '900',
                     minWidth: '16px',
@@ -133,7 +135,7 @@ const BottomNav = ({ activeTab, onSelectTab, cartCount = 2 }) => {
               style={{
                 fontSize: '11px',
                 fontWeight: isActive ? '700' : '500',
-                color: isActive ? '#9CCC65' : '#475569',
+                color: isActive ? '#013E37' : 'rgba(1, 62, 55, 0.4)',
                 marginTop: '4px',
                 letterSpacing: '0.2px',
                 transition: 'color 200ms ease'
