@@ -88,3 +88,37 @@ After all color replacements:
 - [ ] App loads with zero JavaScript console errors
 - [ ] All screens navigate correctly (Home, Shop, Cart, Profile, Eye Checkup, AR Try-On)
 - [ ] No layout shifts, no border-radius changes, no animation timing changes
+
+## Follow-up — 2026-07-07T14:32:07Z
+
+Refactor the lensmakers application UI to a flawless, luxurious aesthetic using a strict new color palette (Pure White, Cornsilk, Dark Green, Rose Vale). Apply global typography, layout, and micro-animation updates across all major components including the header, hero section, shop categories, product cards, cart, profile, and bottom navigation.
+
+Working directory: c:/Users/NEW/OneDrive/Desktop/lensmakers-web
+Integrity mode: benchmark
+
+### Requirements
+
+#### R1. Strict Color Palette Enforcement
+Apply the exact provided hex codes across the entire application: Pure White (#FFFFFF) for base backgrounds, Cornsilk (#FFF6DA) with backdrop blur for glassmorphic surfaces, Dark Green (#013E37) for primary typography/actions, and Rose Vale (#A94A4A) for accents/alerts. Do not introduce any unauthorized colors. 
+
+#### R2. Global Typography & Structural Directives
+Replace all generic gray text with Dark Green at various opacities (e.g., 60% for subtitles). Use fully opaque Cornsilk for structural borders. Apply highly transparent Dark Green for soft, organic drop shadows instead of harsh black shadows. Update the global `styles.css` and remove conflicting inline styles where necessary.
+
+#### R3. Component Level Specifications
+Update the styling of specific components according to the precise directives: 
+- Header & Search: Translucent white base, Dark Green brand text, Cornsilk search background with 1px border.
+- Hero Section: White base, White-to-Cornsilk internal glass card, Dark Green typography and CTA button.
+- Quick Links & Promos: Cornsilk wrappers for links; solid Dark Green backgrounds with Pure White text for promo banners.
+- Cards & Cart: White background product cards with Cornsilk borders/washes; Cornsilk free frame alert in checkout.
+- Profile & Bottom Nav: Cornsilk/Dark Green avatar and stats; Pure White blurred bottom nav with Dark Green inactive (40% opacity) and active (100% opacity + pill) tabs.
+
+#### R4. Interactive States & Micro Animations
+Implement a 2px upward translation on hover for all cards. Ensure all buttons scale down to 95% for exactly 150ms on click. Apply a solid Dark Green focus ring spaced 2px away for keyboard accessibility.
+
+### Acceptance Criteria
+
+#### Verification
+- [ ] Programmatic or visual verification that only the authorized hex codes (#FFFFFF, #FFF6DA, #013E37, #A94A4A) are used for backgrounds, borders, text, and shadows across the refactored CSS.
+- [ ] Code verification that conflicting inline styles have been moved to or superseded by `styles.css`.
+- [ ] Visual verification that hovering a card shifts it up by exactly 2px, and clicking a button scales it to 0.95 for 150ms.
+- [ ] Component verification that the bottom navigation active tab displays a Dark Green indicator pill.
