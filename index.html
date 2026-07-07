@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  
+  <title>Lens Makers — Premium 3D AR Eyewear & Club App</title>
+  <meta name="title" content="Lens Makers — Premium 3D AR Eyewear & Club App">
+  <meta name="description" content="Shop luxury eyeglasses & UV400 sunglasses with real-time 3D AR Virtual Try-On and flat 25% off Club membership.">
+  <meta name="theme-color" content="#FAFAF9">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Lens Makers">
+  <link rel="manifest" href="./manifest.json">
+  <link rel="canonical" href="https://lensmakers-app.vercel.app/">
+
+  <!-- CDN Preconnects for lightning-fast asset loading -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="preconnect" href="https://unpkg.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@0.344.0/dist/umd/lucide.min.js"></script>
+
+  <!-- MediaPipe FaceMesh & Camera Utils CDN (deferred for fast initial page load) -->
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous" defer onerror="window.mediaPipeLoadError = true;"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js" crossorigin="anonymous" defer onerror="window.mediaPipeLoadError = true;"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/face_mesh/face_mesh.js" crossorigin="anonymous" defer onerror="window.mediaPipeLoadError = true;"></script>
+
+  <!-- Vanilla Design System & Animation Law CSS -->
+  <link rel="stylesheet" href="./styles.css?v=20260707_warmpalette_v1">
+
+  <!-- React 18 & Babel Standalone CDN -->
+  <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
+  <script src="https://unpkg.com/@babel/standalone@7.23.10/babel.min.js"></script>
+</head>
+<body style="background-color: #FAFAF9; margin: 0; padding: 0; overflow: hidden;">
+  <div id="root">
+    <!-- Zero spinners. Splash screen mounts instantly via React orchestrator. -->
+  </div>
+
+  <!-- Flagship Modular Script Loader -->
+  <script>
+    (async function initializeLensMakers() {
+      // Ensure service worker is updated and active
+      // Unregister ALL old service workers first, then register fresh
+      if ('serviceWorker' in navigator) {
+        try {
+          const registrations = await navigator.serviceWorker.getRegistrations();
+          await Promise.all(registrations.map(r => r.unregister()));
+          await navigator.serviceWorker.register('./sw.js');
+        } catch (swErr) {
+          console.warn('SW registration info:', swErr);
+        }
+      }
+
+      const modules = [
+        './src/utils/spring.js',
+        './src/data/products.js',
+        './src/components/Logo.js',
+        './src/components/UIPrimitives.js',
+        './src/components/Splash.js',
+        './src/components/Onboarding.js',
+        './src/components/AuthModal.js',
+        './src/components/BottomNav.js',
+        './src/components/Header.js',
+        './src/components/PromoCard.js',
+        './src/components/LocationCard.js',
+        './src/components/TrendingSunglasses.js',
+        './src/components/EyeglassesSection.js',
+        './src/components/PremiumPicks.js',
+        './src/components/TryOnBanner.js',
+        './src/components/Navbar.js',
+        './src/screens/HomeScreen.js',
+        './src/screens/ShopScreen.js',
+        './src/screens/TryOnScreen.js',
+        './src/screens/EyeCheckupScreen.js',
+        './src/screens/MembershipScreen.js',
+        './src/screens/PrescriptionScreen.js',
+        './src/screens/CartScreen.js',
+        './src/screens/StoreLocatorScreen.js',
+        './src/screens/ProfileScreen.js',
+        './src/App.js'
+      ];
+
+      try {
+        // Fetch all modules simultaneously in parallel over network for maximum loading speed
+        const moduleResponses = await Promise.all(modules.map(async (mod) => {
+          const res = await fetch(mod + '?v=20260707_warmpalette_v1', { cache: 'no-store' });
+          if (!res.ok) throw new Error(`HTTP ${res.status} when loading ${mod}`);
+          const text = await res.text();
+          return { mod, text };
+        }));
+
+        // Compile and execute sequentially in exact dependency order
+        for (let i = 0; i < moduleResponses.length; i++) {
+          const { mod, text } = moduleResponses[i];
+          try {
+            const compiled = Babel.transform(text, { presets: ['react'], filename: mod }).code;
+            window.eval(compiled + "\n//# sourceURL=" + mod);
+          } catch (modErr) {
+            throw new Error(`Error loading/executing ${mod}: ${modErr.message || modErr}`);
+          }
+        }
+
+        // Initialize Lucide icons
+        if (window.lucide && window.lucide.createIcons) {
+          window.lucide.createIcons();
+        }
+
+        // Render Application
+        if (window.App && document.getElementById('root')) {
+          const root = ReactDOM.createRoot(document.getElementById('root'));
+          root.render(React.createElement(window.App));
+        } else {
+          throw new Error('window.App was not defined after loading all modules.');
+        }
+      } catch (err) {
+        console.error('Initialization Error:', err);
+        document.getElementById('root').innerHTML = `
+          <div style="padding: 40px; text-align: center; color: #EF5350; font-family: 'Inter', sans-serif;">
+            <h3>Application Error</h3>
+            <p style="color: #A0A4C8; font-size: 13px; max-width: 400px; margin: 10px auto; line-height: 1.5; background: rgba(239,83,80,0.1); padding: 16px; border-radius: 12px; border: 1px solid rgba(239,83,80,0.3);">${err.message}</p>
+          </div>
+        `;
+      }
+    })();
+  </script>
+</body>
+</html>
