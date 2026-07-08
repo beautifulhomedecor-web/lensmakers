@@ -24,7 +24,7 @@
   --color-accent-tint: rgba(169, 74, 74, 0.10); /* Rose Vale at ~10% alpha */
   
   /* TYPOGRAPHY */
-  --color-text-primary: #2B2B2B; /* Warm near-black RGB 43, 43, 43 */
+  --color-text-primary: #000000; /* Pure black */
   --color-text-secondary: #706C68; /* Warm gray RGB 112, 108, 104 */
   
   /* SEMANTIC & ELEVATION */
