@@ -442,7 +442,7 @@ const TryOnScreen = ({ onSelectTab }) => {
       // Metallic barrel hinge joint at frame connection
       ctx.beginPath();
       ctx.arc(pHinge.x, pHinge.y, armW * 0.75, 0, Math.PI * 2);
-      ctx.fillStyle = style.hingeAccent || 'rgba(1,62,55,0.6)';
+      ctx.fillStyle = style.hingeAccent || 'var(--color-text-secondary)';
       ctx.fill();
       ctx.lineWidth = 1;
       ctx.strokeStyle = 'rgba(255, 255, 255, 0.4)';
@@ -1141,8 +1141,8 @@ const TryOnScreen = ({ onSelectTab }) => {
           <div style={{ width: '80px', height: '80px', borderRadius: '50%', border: '4px solid rgba(255,255,255,0.1)', borderTopColor: '#A94A4A', animation: 'spin 1s infinite linear', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '20px' }}>
             <span style={{ fontSize: '32px' }}>👓</span>
           </div>
-          <h2 style={{ fontSize: '18px', fontWeight: '800', color: '#013E37' }}>Setting up your mirror...</h2>
-          <p style={{ fontSize: '13px', color: 'rgba(1,62,55,0.5)', marginTop: '8px' }}>Starting live AR studio...</p>
+          <h2 style={{ fontSize: '18px', fontWeight: '800', color: 'var(--color-text-primary)' }}>Setting up your mirror...</h2>
+          <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', marginTop: '8px' }}>Starting live AR studio...</p>
         </div>
       )}
 
@@ -1152,8 +1152,8 @@ const TryOnScreen = ({ onSelectTab }) => {
       {status === 'fallback' && (
         <div style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '32px', textAlign: 'center' }}>
           <span style={{ fontSize: '64px', marginBottom: '16px' }}>🕶️</span>
-          <h2 style={{ fontSize: '20px', fontWeight: '800', color: '#013E37', marginBottom: '10px' }}>Camera Offline or Denied</h2>
-          <p style={{ fontSize: '13px', color: 'rgba(1,62,55,0.5)', maxWidth: '300px', lineHeight: '1.6', marginBottom: '28px' }}>
+          <h2 style={{ fontSize: '20px', fontWeight: '800', color: 'var(--color-text-primary)', marginBottom: '10px' }}>Camera Offline or Denied</h2>
+          <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', maxWidth: '300px', lineHeight: '1.6', marginBottom: '28px' }}>
             Your browser doesn't support live try-on or webcam permission was blocked. You can still test frames using our interactive AI simulation!
           </p>
           <button
@@ -1390,8 +1390,8 @@ const TryOnScreen = ({ onSelectTab }) => {
 
               {/* Active Frame Name & Price Badge */}
               <div className="tryon-frame-title-mini">
-                <span style={{ fontWeight: '800', color: '#013E37' }}>{currentFrameStyle.name}</span>
-                <span style={{ fontWeight: '900', color: '#013E37', marginLeft: '6px' }}>{currentFrameStyle.price}</span>
+                <span style={{ fontWeight: '800', color: 'var(--color-text-primary)' }}>{currentFrameStyle.name}</span>
+                <span style={{ fontWeight: '900', color: 'var(--color-text-primary)', marginLeft: '6px' }}>{currentFrameStyle.price}</span>
               </div>
 
               {/* Upload Photo Button (Only shown in demo/photo mode) */}
@@ -1468,7 +1468,7 @@ const TryOnScreen = ({ onSelectTab }) => {
                   onClick={handleTakeSnapshot}
                   title="Take AR Snapshot"
                 >
-                  <i data-lucide="camera" style={{ width: '22px', height: '22px', color: '#013E37' }} />
+                  <i data-lucide="camera" style={{ width: '22px', height: '22px', color: 'var(--color-text-primary)' }} />
                 </button>
               </div>
             </div>
@@ -1492,7 +1492,7 @@ const TryOnScreen = ({ onSelectTab }) => {
           <div className="flex-between" style={{ position: 'absolute', top: '16px', left: '16px', right: '16px', zIndex: 20 }}>
             <button
               type="button"
-              style={{ width: '44px', height: '44px', borderRadius: '50%', background: 'rgba(255,245,236, 0.75)', border: '1px solid rgba(255,255,255,0.25)', color: '#013E37', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '18px', cursor: 'pointer', backdropFilter: 'blur(10px)' }}
+              style={{ width: '44px', height: '44px', borderRadius: '50%', background: 'rgba(255,245,236, 0.75)', border: '1px solid rgba(255,255,255,0.25)', color: 'var(--color-text-primary)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '18px', cursor: 'pointer', backdropFilter: 'blur(10px)' }}
               onClick={() => setStatus('active')}
               title="Retake Snapshot"
             >
@@ -1500,7 +1500,7 @@ const TryOnScreen = ({ onSelectTab }) => {
             </button>
             <button
               type="button"
-              style={{ width: '44px', height: '44px', borderRadius: '50%', background: 'rgba(255,245,236, 0.75)', border: '1px solid rgba(255,255,255,0.25)', color: '#013E37', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', backdropFilter: 'blur(10px)' }}
+              style={{ width: '44px', height: '44px', borderRadius: '50%', background: 'rgba(255,245,236, 0.75)', border: '1px solid rgba(255,255,255,0.25)', color: 'var(--color-text-primary)', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', backdropFilter: 'blur(10px)' }}
               onClick={() => showToast('📤 Opening native share sheet...')}
               title="Share Snapshot"
             >
@@ -1523,7 +1523,11 @@ const TryOnScreen = ({ onSelectTab }) => {
             {/* Button 2: Save to Gallery */}
             <button
               type="button"
-              style={{ flex: 1, height: '48px', borderRadius: '999px', background: 'linear-gradient(135deg, #013E37 0%, #1565C0 100%)', border: 'none', color: '#013E37', fontSize: '13px', fontWeight: '800', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '6px', cursor: 'pointer', boxShadow: '0 4px 14px rgba(1,62,55,0.4)' }}
+              style={{ flex: 1, height: '48px', borderRadius: '999px', background: 'linear-gradient(135deg, #013E37 0%, #1565C0 100%)', border: 'none', color: 'var(--color-text-primary)', fontSize: '13px', fontWeight: '800', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '6px', cursor: 'pointer', boxShadow: '0 4px 14px 
+    param($m)
+    $opacity = $m.Groups[1].Value
+    "rgba(11,31,28,0.$opacity)"
+  ' }}
               onClick={handleDownloadSnapshot}
             >
               <i data-lucide="download" style={{ width: '16px', height: '16px' }} />

@@ -41,7 +41,7 @@ const Onboarding = ({ onComplete }) => {
     {
       id: 'membership',
       heading: '25% Off Everything, Always',
-      subtext: 'Join Lens Makers Club for just ₹99/month and get flat 25% off on all eyewear, every single order.',
+      subtext: 'Join Lensmakers Club for just ₹99/month and get flat 25% off on all eyewear, every single order.',
       illustration: (
         <div className="onboarding-illustration-box">
           {/* Stylized Glass Membership Card */}
@@ -51,7 +51,11 @@ const Onboarding = ({ onComplete }) => {
               width: '230px',
               height: '145px',
               borderRadius: '20px',
-              background: 'linear-gradient(135deg, rgba(1,62,55, 0.4) 0%, rgba(255,240,224, 0.8) 100%)',
+              background: 'linear-gradient(135deg, 
+    param($m)
+    $opacity = $m.Groups[1].Value
+    "rgba(11,31,28,0.$opacity)"
+   0%, rgba(255,240,224, 0.8) 100%)',
               display: 'flex',
               flexDirection: 'column',
               justifyContent: 'space-between',
@@ -61,14 +65,26 @@ const Onboarding = ({ onComplete }) => {
             }}
           >
             <div className="flex-between">
-              <span style={{ fontSize: '12px', fontWeight: '800', letterSpacing: '1.5px', color: '#013E37' }}>LENS MAKERS CLUB</span>
+              <span style={{ fontSize: '12px', fontWeight: '800', letterSpacing: '1.5px', color: 'var(--color-bg-primary)' }}>Lensmakers CLUB</span>
               <span className="badge-pill badge-green" style={{ fontSize: '10px' }}>ACTIVE</span>
             </div>
             <div style={{ textAlign: 'left' }}>
-              <div style={{ fontSize: '24px', fontWeight: '800', color: '#A94A4A', textShadow: '0 0 12px rgba(1,62,55,0.5)' }}>FLAT 25% OFF</div>
-              <div style={{ fontSize: '11px', color: 'rgba(1,62,55,0.5)', marginTop: '4px' }}>VIP ALL-ACCESS PASS • ₹99/MO</div>
+              <div style={{ fontSize: '24px', fontWeight: '800', color: 'var(--color-accent-primary)', textShadow: '0 0 12px 
+    param($m)
+    $opacity = $m.Groups[1].Value
+    "rgba(11,31,28,0.$opacity)"
+  ' }}>FLAT 25% OFF</div>
+              <div style={{ fontSize: '11px', color: '
+    param($m)
+    $opacity = $m.Groups[1].Value
+    "rgba(11,31,28,0.$opacity)"
+  ', marginTop: '4px' }}>VIP ALL-ACCESS PASS • ₹99/MO</div>
             </div>
-            <div className="flex-between" style={{ fontSize: '10px', color: 'rgba(1,62,55,0.5)' }}>
+            <div className="flex-between" style={{ fontSize: '10px', color: '
+    param($m)
+    $opacity = $m.Groups[1].Value
+    "rgba(11,31,28,0.$opacity)"
+  ' }}>
               <span>MEMBER SINCE 2026</span>
               <span>★★★★★</span>
             </div>
@@ -198,8 +214,12 @@ const Onboarding = ({ onComplete }) => {
               className="btn-secondary-pill"
               style={{
                 width: '100%',
-                borderColor: 'rgba(1,62,55, 0.5)',
-                color: '#A94A4A',
+                borderColor: '
+    param($m)
+    $opacity = $m.Groups[1].Value
+    "rgba(11,31,28,0.$opacity)"
+  ',
+                color: 'var(--color-accent-primary)',
                 boxShadow: '0 0 15px rgba(1,62,55, 0.15)'
               }}
               onClick={handleNext}

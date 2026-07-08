@@ -26,13 +26,13 @@ window.TrendingSunglasses = function TrendingSunglasses({ products, onSelectProd
               onClick={() => onSelectProduct(prod)}
               className="flex-shrink-0 w-60 sm:w-68 glass-panel bg-[#1E3A6E]/30 p-3.5 border border-white/15 hover:border-white/30 transition-all card-spring cursor-pointer flex flex-col justify-between shadow-lg"
             >
-              <div className="relative h-40 w-full rounded-2xl overflow-hidden bg-gradient-to-b from-[#FFFFFF] to-[#013E37]/60 mb-3 flex items-center justify-center">
+              <div className="relative h-40 w-full rounded-2xl overflow-hidden bg-gradient-to-b from-[var(--color-bg-primary)] to-[var(--color-accent-primary)]/60 mb-3 flex items-center justify-center">
                 <img 
                   src={prod.image} 
                   alt={prod.name} 
                   className="w-full h-full object-cover transform transition-transform duration-500 hover:scale-108" 
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#FFFFFF]/80 via-transparent to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-bg-primary)]/80 via-transparent to-transparent"></div>
                 
                 {prod.isPremium && (
                   <div className="absolute top-2.5 right-2.5 shimmer-badge px-2 py-0.5 rounded-full text-[9px] font-extrabold">

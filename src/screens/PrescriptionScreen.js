@@ -287,7 +287,7 @@ const PrescriptionScreen = ({ onSelectTab, initialViewMode = 'list' }) => {
               style={{
                 padding: '8px 16px', borderRadius: '999px', fontSize: '13px', fontWeight: '700', flexShrink: 0,
                 background: isActive ? 'linear-gradient(135deg, #013E37 0%, #A94A4A 100%)' : 'rgba(255,240,224,0.65)',
-                color: isActive ? '#FFFFFF' : 'rgba(1,62,55,0.5)',
+                color: isActive ? '#FFFFFF' : 'var(--color-text-secondary)',
                 border: isActive ? 'none' : '1px solid rgba(255,255,255,0.15)',
                 display: 'flex', alignItems: 'center', gap: '6px', cursor: 'pointer', transition: 'all 200ms ease'
               }}
@@ -298,7 +298,7 @@ const PrescriptionScreen = ({ onSelectTab, initialViewMode = 'list' }) => {
             >
               <span>{tab.label}</span>
               {tab.badge && (
-                <span style={{ background: isActive ? 'rgba(0,0,0,0.25)' : '#013E37', color: '#013E37', padding: '2px 6px', borderRadius: '999px', fontSize: '9px', fontWeight: '900' }}>
+                <span style={{ background: isActive ? 'rgba(0,0,0,0.25)' : '#013E37', color: '#0B1F1C', padding: '2px 6px', borderRadius: '999px', fontSize: '9px', fontWeight: '900' }}>
                   {tab.badge}
                 </span>
               )}
@@ -317,12 +317,12 @@ const PrescriptionScreen = ({ onSelectTab, initialViewMode = 'list' }) => {
             <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
               <button
                 type="button"
-                style={{ width: '36px', height: '36px', borderRadius: '50%', background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.15)', color: '#013E37', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer' }}
+                style={{ width: '36px', height: '36px', borderRadius: '50%', background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.15)', color: '#0B1F1C', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer' }}
                 onClick={() => { if (onSelectTab) onSelectTab('profile'); }}
               >
                 ←
               </button>
-              <h1 style={{ fontSize: '24px', fontWeight: '800', color: '#013E37' }}>My Prescriptions</h1>
+              <h1 style={{ fontSize: '24px', fontWeight: '800', color: '#0B1F1C' }}>My Prescriptions</h1>
             </div>
             <button
               type="button"
@@ -344,7 +344,7 @@ const PrescriptionScreen = ({ onSelectTab, initialViewMode = 'list' }) => {
                   style={{
                     padding: '6px 14px', borderRadius: '999px', fontSize: '12px', fontWeight: '700',
                     background: isSel ? 'linear-gradient(135deg, #A94A4A, #013E37)' : 'rgba(255,255,255,0.05)',
-                    color: '#013E37', border: isSel ? 'none' : '1px solid rgba(255,255,255,0.15)', cursor: 'pointer'
+                    color: '#0B1F1C', border: isSel ? 'none' : '1px solid rgba(255,255,255,0.15)', cursor: 'pointer'
                   }}
                   onClick={() => setValidityFilter(status)}
                 >
@@ -360,10 +360,10 @@ const PrescriptionScreen = ({ onSelectTab, initialViewMode = 'list' }) => {
               <div style={{ width: '80px', height: '80px', borderRadius: '40px', background: 'rgba(1,62,55,0.15)', border: '2px dashed #013E37', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '38px', margin: '0 auto 16px' }}>
                 👁️+
               </div>
-              <h3 style={{ fontSize: '18px', fontWeight: '800', color: '#013E37', marginBottom: '8px' }}>
+              <h3 style={{ fontSize: '18px', fontWeight: '800', color: '#0B1F1C', marginBottom: '8px' }}>
                 No prescriptions saved yet
               </h3>
-              <p style={{ fontSize: '14px', color: 'rgba(1,62,55,0.5)', maxWidth: '280px', margin: '0 auto 24px', lineHeight: '1.5' }}>
+              <p style={{ fontSize: '14px', color: 'var(--color-text-secondary)', maxWidth: '280px', margin: '0 auto 24px', lineHeight: '1.5' }}>
                 Add your eye prescription to quickly order powered lenses without re-entering details every time.
               </p>
               <button
@@ -384,7 +384,7 @@ const PrescriptionScreen = ({ onSelectTab, initialViewMode = 'list' }) => {
                   <div key={rx.id} className="rx-card-cyan" style={{ position: 'relative' }}>
                     {/* TOP ROW */}
                     <div className="flex-between mb-2">
-                      <div style={{ fontSize: '16px', fontWeight: '800', color: '#013E37', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                      <div style={{ fontSize: '16px', fontWeight: '800', color: '#0B1F1C', display: 'flex', alignItems: 'center', gap: '8px' }}>
                         <span>👁️ {rx.name}</span>
                       </div>
                       <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
@@ -396,14 +396,14 @@ const PrescriptionScreen = ({ onSelectTab, initialViewMode = 'list' }) => {
                           <span className="badge-pill badge-expiring" style={{ padding: '3px 10px', fontSize: '10px', borderRadius: '999px' }}>⏳ Expiring Soon</span>
                         )}
                         {rx.status === 'Expired' && (
-                          <span className="badge-pill badge-orange" style={{ background: '#A94A4A', color: '#013E37', padding: '3px 10px', fontSize: '10px' }}>✕ Expired</span>
+                          <span className="badge-pill badge-orange" style={{ background: '#A94A4A', color: '#0B1F1C', padding: '3px 10px', fontSize: '10px' }}>✕ Expired</span>
                         )}
 
                         {/* Three Dot Menu Icon */}
                         <div style={{ position: 'relative' }}>
                           <button
                             type="button"
-                            style={{ width: '32px', height: '32px', borderRadius: '16px', background: 'rgba(255,255,255,0.08)', border: 'none', color: '#013E37', fontSize: '16px', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+                            style={{ width: '32px', height: '32px', borderRadius: '16px', background: 'rgba(255,255,255,0.08)', border: 'none', color: '#0B1F1C', fontSize: '16px', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
                             onClick={(e) => {
                               e.stopPropagation();
                               setShowMenuRxId(isMenuOpen ? null : rx.id);
@@ -418,13 +418,13 @@ const PrescriptionScreen = ({ onSelectTab, initialViewMode = 'list' }) => {
                               style={{ position: 'absolute', top: '38px', right: '0', width: '180px', background: 'rgba(255, 255, 255, 0.95)', border: '1.5px solid rgba(255,255,255,0.2)', borderRadius: '12px', boxShadow: '0 12px 32px rgba(0,0,0,0.6)', zIndex: 100, padding: '6px 0', overflow: 'hidden' }}
                               onClick={(e) => e.stopPropagation()}
                             >
-                              <button type="button" className="menu-item-btn" style={{ width: '100%', padding: '10px 14px', textAlign: 'left', background: 'transparent', border: 'none', color: '#013E37', fontSize: '13px', cursor: 'pointer', display: 'flex', gap: '8px' }} onClick={() => { setSelectedRx(rx); setViewMode('detail'); setShowMenuRxId(null); }}>
+                              <button type="button" className="menu-item-btn" style={{ width: '100%', padding: '10px 14px', textAlign: 'left', background: 'transparent', border: 'none', color: '#0B1F1C', fontSize: '13px', cursor: 'pointer', display: 'flex', gap: '8px' }} onClick={() => { setSelectedRx(rx); setViewMode('detail'); setShowMenuRxId(null); }}>
                                 <span>👁️ View & Edit Details</span>
                               </button>
-                              <button type="button" className="menu-item-btn" style={{ width: '100%', padding: '10px 14px', textAlign: 'left', background: 'transparent', border: 'none', color: '#013E37', fontSize: '13px', cursor: 'pointer', display: 'flex', gap: '8px' }} onClick={() => { setSelectedRx(rx); setShowShareModal(true); setShowMenuRxId(null); }}>
+                              <button type="button" className="menu-item-btn" style={{ width: '100%', padding: '10px 14px', textAlign: 'left', background: 'transparent', border: 'none', color: '#0B1F1C', fontSize: '13px', cursor: 'pointer', display: 'flex', gap: '8px' }} onClick={() => { setSelectedRx(rx); setShowShareModal(true); setShowMenuRxId(null); }}>
                                 <span>📤 Share with Doctor</span>
                               </button>
-                              <button type="button" className="menu-item-btn" style={{ width: '100%', padding: '10px 14px', textAlign: 'left', background: 'transparent', border: 'none', color: '#013E37', fontSize: '13px', cursor: 'pointer', display: 'flex', gap: '8px' }} onClick={() => { showToast(`📄 Downloading medical PDF report for "${rx.name}"...`); setShowMenuRxId(null); }}>
+                              <button type="button" className="menu-item-btn" style={{ width: '100%', padding: '10px 14px', textAlign: 'left', background: 'transparent', border: 'none', color: '#0B1F1C', fontSize: '13px', cursor: 'pointer', display: 'flex', gap: '8px' }} onClick={() => { showToast(`📄 Downloading medical PDF report for "${rx.name}"...`); setShowMenuRxId(null); }}>
                                 <span>📥 Download PDF</span>
                               </button>
                               <div style={{ height: '1px', background: 'rgba(255,255,255,0.1)', margin: '4px 0' }} />
@@ -438,7 +438,7 @@ const PrescriptionScreen = ({ onSelectTab, initialViewMode = 'list' }) => {
                     </div>
 
                     {/* DATE ROW */}
-                    <div style={{ display: 'flex', gap: '16px', fontSize: '11px', color: 'rgba(1,62,55,0.5)', marginBottom: '14px', flexWrap: 'wrap' }}>
+                    <div style={{ display: 'flex', gap: '16px', fontSize: '11px', color: 'var(--color-text-secondary)', marginBottom: '14px', flexWrap: 'wrap' }}>
                       <span>📅 Issued: {rx.issuedDate}</span>
                       <span>⏳ Valid until: {rx.validUntil}</span>
                     </div>
@@ -447,7 +447,7 @@ const PrescriptionScreen = ({ onSelectTab, initialViewMode = 'list' }) => {
                     <div className="rx-table-inset mb-3">
                       <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'center' }}>
                         <thead>
-                          <tr style={{ fontSize: '11px', color: '#013E37', textTransform: 'uppercase', letterSpacing: '1px', borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
+                          <tr style={{ fontSize: '11px', color: '#0B1F1C', textTransform: 'uppercase', letterSpacing: '1px', borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
                             <th style={{ padding: '6px 4px', textAlign: 'left' }}>EYE</th>
                             <th style={{ padding: '6px 4px' }}>SPH</th>
                             <th style={{ padding: '6px 4px' }}>CYL</th>
@@ -458,7 +458,7 @@ const PrescriptionScreen = ({ onSelectTab, initialViewMode = 'list' }) => {
                         <tbody style={{ fontFamily: 'monospace', fontSize: '14px' }}>
                           <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
                             <td style={{ padding: '6px 4px', textAlign: 'left' }}>
-                              <span style={{ background: 'linear-gradient(90deg, #0083B0, #00A8E8)', color: '#013E37', padding: '3px 8px', borderRadius: '4px', fontSize: '11px', fontWeight: '800', display: 'inline-block' }}>Right (OD)</span>
+                              <span style={{ background: 'linear-gradient(90deg, #0083B0, #00A8E8)', color: '#0B1F1C', padding: '3px 8px', borderRadius: '4px', fontSize: '11px', fontWeight: '800', display: 'inline-block' }}>Right (OD)</span>
                             </td>
                             <td style={{ padding: '8px 4px', fontWeight: '800', color: rx.od.sph === '0.00' ? 'rgba(255,255,255,0.35)' : '#FFFFFF' }}>{rx.od.sph}</td>
                             <td style={{ padding: '8px 4px', fontWeight: '800', color: rx.od.cyl === '0.00' ? 'rgba(255,255,255,0.35)' : '#FFFFFF' }}>{rx.od.cyl}</td>
@@ -467,7 +467,7 @@ const PrescriptionScreen = ({ onSelectTab, initialViewMode = 'list' }) => {
                           </tr>
                           <tr>
                             <td style={{ padding: '6px 4px', textAlign: 'left' }}>
-                              <span style={{ background: 'linear-gradient(90deg, #388E3C, #013E37)', color: '#013E37', padding: '3px 8px', borderRadius: '4px', fontSize: '11px', fontWeight: '800', display: 'inline-block' }}>Left (OS)</span>
+                              <span style={{ background: 'linear-gradient(90deg, #388E3C, #013E37)', color: '#0B1F1C', padding: '3px 8px', borderRadius: '4px', fontSize: '11px', fontWeight: '800', display: 'inline-block' }}>Left (OS)</span>
                             </td>
                             <td style={{ padding: '8px 4px', fontWeight: '800', color: rx.os.sph === '0.00' ? 'rgba(255,255,255,0.35)' : '#FFFFFF' }}>{rx.os.sph}</td>
                             <td style={{ padding: '8px 4px', fontWeight: '800', color: rx.os.cyl === '0.00' ? 'rgba(255,255,255,0.35)' : '#FFFFFF' }}>{rx.os.cyl}</td>
@@ -481,12 +481,12 @@ const PrescriptionScreen = ({ onSelectTab, initialViewMode = 'list' }) => {
                     {/* PD & VISION MEASUREMENTS ROW */}
                     <div style={{ background: 'rgba(255,255,255,0.03)', padding: '10px 12px', borderRadius: '10px', marginBottom: '12px' }}>
                       <div className="flex-between mb-1" style={{ fontSize: '12px' }}>
-                        <span style={{ color: 'rgba(1,62,55,0.5)' }}>PD (Pupillary Distance):</span>
-                        <span style={{ color: '#013E37', fontWeight: '800', fontFamily: 'monospace' }}>{rx.pd}</span>
+                        <span style={{ color: 'var(--color-text-secondary)' }}>PD (Pupillary Distance):</span>
+                        <span style={{ color: '#0B1F1C', fontWeight: '800', fontFamily: 'monospace' }}>{rx.pd}</span>
                       </div>
                       {rx.distVision && (
                         <div className="flex-between" style={{ fontSize: '12px' }}>
-                          <span style={{ color: 'rgba(1,62,55,0.5)' }}>Distance / Near Vision:</span>
+                          <span style={{ color: 'var(--color-text-secondary)' }}>Distance / Near Vision:</span>
                           <span style={{ color: '#00E676', fontWeight: '700' }}>{rx.distVision} / {rx.nearVision || 'Normal'}</span>
                         </div>
                       )}
@@ -495,12 +495,12 @@ const PrescriptionScreen = ({ onSelectTab, initialViewMode = 'list' }) => {
                     {/* LENS RECOMMENDATION PILLS */}
                     {rx.recommendations && rx.recommendations.length > 0 && (
                       <div style={{ marginBottom: '14px' }}>
-                        <div style={{ fontSize: '10px', color: '#013E37', fontWeight: '800', textTransform: 'uppercase', letterSpacing: '0.8px', marginBottom: '6px' }}>
+                        <div style={{ fontSize: '10px', color: '#0B1F1C', fontWeight: '800', textTransform: 'uppercase', letterSpacing: '0.8px', marginBottom: '6px' }}>
                           ✓ LENS RECOMMENDATION
                         </div>
                         <div style={{ display: 'flex', gap: '6px', flexWrap: 'wrap' }}>
                           {rx.recommendations.map((rec, i) => (
-                            <span key={i} style={{ background: 'rgba(1,62,55, 0.12)', border: '1px solid rgba(1,62,55, 0.3)', color: '#013E37', fontSize: '11px', fontWeight: '700', padding: '3px 10px', borderRadius: '14px' }}>
+                            <span key={i} style={{ background: 'rgba(1,62,55, 0.12)', border: '1px solid rgba(1,62,55, 0.3)', color: '#0B1F1C', fontSize: '11px', fontWeight: '700', padding: '3px 10px', borderRadius: '14px' }}>
                               ✓ {rec}
                             </span>
                           ))}
@@ -510,9 +510,9 @@ const PrescriptionScreen = ({ onSelectTab, initialViewMode = 'list' }) => {
 
                     {/* DOCTOR & CLINIC FOOTER ROW */}
                     {rx.doctor && (
-                      <div style={{ fontSize: '11px', color: 'rgba(1,62,55,0.5)', marginBottom: '14px', lineHeight: '1.4' }}>
+                      <div style={{ fontSize: '11px', color: 'var(--color-text-secondary)', marginBottom: '14px', lineHeight: '1.4' }}>
                         <div>👨‍⚕️ <strong style={{ color: '#FFF' }}>{rx.doctor}</strong></div>
-                        <div style={{ color: 'rgba(1,62,55,0.5)' }}>📍 {rx.clinic}</div>
+                        <div style={{ color: 'var(--color-text-secondary)' }}>📍 {rx.clinic}</div>
                       </div>
                     )}
 
@@ -532,7 +532,7 @@ const PrescriptionScreen = ({ onSelectTab, initialViewMode = 'list' }) => {
                       </button>
                       <button
                         type="button"
-                        style={{ background: 'transparent', border: 'none', color: 'rgba(1,62,55,0.5)', fontSize: '13px', fontWeight: '700', cursor: 'pointer', textDecoration: 'underline' }}
+                        style={{ background: 'transparent', border: 'none', color: 'var(--color-text-secondary)', fontSize: '13px', fontWeight: '700', cursor: 'pointer', textDecoration: 'underline' }}
                         onClick={() => {
                           setSelectedRx(rx);
                           setViewMode('detail');
@@ -558,12 +558,12 @@ const PrescriptionScreen = ({ onSelectTab, initialViewMode = 'list' }) => {
           <div className="flex-between mb-4">
             <button
               type="button"
-              style={{ width: '36px', height: '36px', borderRadius: '50%', background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.15)', color: '#013E37', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer' }}
+              style={{ width: '36px', height: '36px', borderRadius: '50%', background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.15)', color: '#0B1F1C', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer' }}
               onClick={() => setViewMode('list')}
             >
               ←
             </button>
-            <h1 style={{ fontSize: '20px', fontWeight: '800', color: '#013E37' }}>Add Eye Prescription</h1>
+            <h1 style={{ fontSize: '20px', fontWeight: '800', color: '#0B1F1C' }}>Add Eye Prescription</h1>
             <span style={{ width: '36px' }} />
           </div>
 
@@ -581,7 +581,7 @@ const PrescriptionScreen = ({ onSelectTab, initialViewMode = 'list' }) => {
                   style={{
                     flex: 1, padding: '10px 0', borderRadius: '999px', fontSize: '13px', fontWeight: '800',
                     background: isSel ? 'linear-gradient(135deg, #A94A4A, #013E37)' : 'transparent',
-                    color: isSel ? '#FFFFFF' : 'rgba(1,62,55,0.5)', border: 'none', cursor: 'pointer', transition: 'all 250ms var(--spring-bezier)'
+                    color: isSel ? '#FFFFFF' : 'var(--color-text-secondary)', border: 'none', cursor: 'pointer', transition: 'all 250ms var(--spring-bezier)'
                   }}
                   onClick={() => setAddMethod(m.id)}
                 >
@@ -598,7 +598,7 @@ const PrescriptionScreen = ({ onSelectTab, initialViewMode = 'list' }) => {
             <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
               {/* Prescription Name + Suggestion Pills */}
               <div>
-                <label style={{ fontSize: '12px', fontWeight: '700', color: 'rgba(1,62,55,0.5)', display: 'block', marginBottom: '6px' }}>
+                <label style={{ fontSize: '12px', fontWeight: '700', color: 'var(--color-text-secondary)', display: 'block', marginBottom: '6px' }}>
                   PRESCRIPTION NAME *
                 </label>
                 <input
@@ -606,14 +606,14 @@ const PrescriptionScreen = ({ onSelectTab, initialViewMode = 'list' }) => {
                   placeholder="e.g. Dr. Sharma Clinic — March 2026"
                   value={rxName}
                   onChange={(e) => setRxName(e.target.value)}
-                  style={{ width: '100%', height: '48px', padding: '0 16px', borderRadius: '12px', background: 'rgba(255,240,224,0.8)', border: '1px solid rgba(255,255,255,0.2)', color: '#013E37', fontSize: '14px', outline: 'none' }}
+                  style={{ width: '100%', height: '48px', padding: '0 16px', borderRadius: '12px', background: 'rgba(255,240,224,0.8)', border: '1px solid rgba(255,255,255,0.2)', color: '#0B1F1C', fontSize: '14px', outline: 'none' }}
                 />
                 <div style={{ display: 'flex', gap: '8px', marginTop: '8px', overflowX: 'auto', scrollbarWidth: 'none' }}>
                   {['My Prescription', 'Right Eye Focus', 'Dr. Sharma 2026', 'Apollo Optical'].map((sug, idx) => (
                     <button
                       key={idx}
                       type="button"
-                      style={{ padding: '4px 10px', borderRadius: '999px', background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.12)', color: 'rgba(1,62,55,0.5)', fontSize: '11px', cursor: 'pointer', whiteSpace: 'nowrap' }}
+                      style={{ padding: '4px 10px', borderRadius: '999px', background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.12)', color: 'var(--color-text-secondary)', fontSize: '11px', cursor: 'pointer', whiteSpace: 'nowrap' }}
                       onClick={() => setRxName(sug)}
                     >
                       + {sug}
@@ -625,23 +625,23 @@ const PrescriptionScreen = ({ onSelectTab, initialViewMode = 'list' }) => {
               {/* Doctor & Clinic */}
               <div className="grid-2" style={{ gap: '12px' }}>
                 <div>
-                  <label style={{ fontSize: '11px', fontWeight: '700', color: 'rgba(1,62,55,0.5)', display: 'block', marginBottom: '6px' }}>👨‍⚕️ DOCTOR NAME (OPTIONAL)</label>
+                  <label style={{ fontSize: '11px', fontWeight: '700', color: 'var(--color-text-secondary)', display: 'block', marginBottom: '6px' }}>👨‍⚕️ DOCTOR NAME (OPTIONAL)</label>
                   <input
                     type="text"
                     placeholder="Dr. Ananya Sharma"
                     value={doctorName}
                     onChange={(e) => setDoctorName(e.target.value)}
-                    style={{ width: '100%', height: '44px', padding: '0 12px', borderRadius: '10px', background: 'rgba(255,240,224,0.8)', border: '1px solid rgba(255,255,255,0.15)', color: '#013E37', fontSize: '13px' }}
+                    style={{ width: '100%', height: '44px', padding: '0 12px', borderRadius: '10px', background: 'rgba(255,240,224,0.8)', border: '1px solid rgba(255,255,255,0.15)', color: '#0B1F1C', fontSize: '13px' }}
                   />
                 </div>
                 <div>
-                  <label style={{ fontSize: '11px', fontWeight: '700', color: 'rgba(1,62,55,0.5)', display: 'block', marginBottom: '6px' }}>🏥 CLINIC / HOSPITAL</label>
+                  <label style={{ fontSize: '11px', fontWeight: '700', color: 'var(--color-text-secondary)', display: 'block', marginBottom: '6px' }}>🏥 CLINIC / HOSPITAL</label>
                   <input
                     type="text"
                     placeholder="AIOC Advanced Vision"
                     value={clinicName}
                     onChange={(e) => setClinicName(e.target.value)}
-                    style={{ width: '100%', height: '44px', padding: '0 12px', borderRadius: '10px', background: 'rgba(255,240,224,0.8)', border: '1px solid rgba(255,255,255,0.15)', color: '#013E37', fontSize: '13px' }}
+                    style={{ width: '100%', height: '44px', padding: '0 12px', borderRadius: '10px', background: 'rgba(255,240,224,0.8)', border: '1px solid rgba(255,255,255,0.15)', color: '#0B1F1C', fontSize: '13px' }}
                   />
                 </div>
               </div>
@@ -649,17 +649,17 @@ const PrescriptionScreen = ({ onSelectTab, initialViewMode = 'list' }) => {
               {/* Dates Row + Auto-Set Link */}
               <div className="grid-2" style={{ gap: '12px' }}>
                 <div>
-                  <label style={{ fontSize: '11px', fontWeight: '700', color: 'rgba(1,62,55,0.5)', display: 'block', marginBottom: '6px' }}>📅 DATE ISSUED</label>
+                  <label style={{ fontSize: '11px', fontWeight: '700', color: 'var(--color-text-secondary)', display: 'block', marginBottom: '6px' }}>📅 DATE ISSUED</label>
                   <input
                     type="date"
                     value={issuedDate}
                     onChange={(e) => setIssuedDate(e.target.value)}
-                    style={{ width: '100%', height: '44px', padding: '0 10px', borderRadius: '10px', background: 'rgba(255,240,224,0.8)', border: '1px solid rgba(255,255,255,0.15)', color: '#013E37', fontSize: '13px' }}
+                    style={{ width: '100%', height: '44px', padding: '0 10px', borderRadius: '10px', background: 'rgba(255,240,224,0.8)', border: '1px solid rgba(255,255,255,0.15)', color: '#0B1F1C', fontSize: '13px' }}
                   />
                 </div>
                 <div>
                   <div className="flex-between mb-1">
-                    <label style={{ fontSize: '11px', fontWeight: '700', color: 'rgba(1,62,55,0.5)' }}>⏳ VALID UNTIL</label>
+                    <label style={{ fontSize: '11px', fontWeight: '700', color: 'var(--color-text-secondary)' }}>⏳ VALID UNTIL</label>
                     <span style={{ fontSize: '10px', color: '#A94A4A', cursor: 'pointer', textDecoration: 'underline', fontWeight: '700' }} onClick={handleAutoSetValidity}>
                       + Set 2Y Auto
                     </span>
@@ -668,15 +668,19 @@ const PrescriptionScreen = ({ onSelectTab, initialViewMode = 'list' }) => {
                     type="date"
                     value={validUntil}
                     onChange={(e) => setValidUntil(e.target.value)}
-                    style={{ width: '100%', height: '44px', padding: '0 10px', borderRadius: '10px', background: 'rgba(255,240,224,0.8)', border: '1px solid rgba(255,255,255,0.15)', color: '#013E37', fontSize: '13px' }}
+                    style={{ width: '100%', height: '44px', padding: '0 10px', borderRadius: '10px', background: 'rgba(255,240,224,0.8)', border: '1px solid rgba(255,255,255,0.15)', color: '#0B1F1C', fontSize: '13px' }}
                   />
                 </div>
               </div>
-              <div style={{ fontSize: '11px', color: 'rgba(1,62,55,0.5)', marginTop: '-10px' }}>Most optometry prescriptions are valid for 1-2 years from date of assessment.</div>
+              <div style={{ fontSize: '11px', color: 'var(--color-text-secondary)', marginTop: '-10px' }}>Most optometry prescriptions are valid for 1-2 years from date of assessment.</div>
 
               {/* UNUSUAL VALUE WARNING TOOLTIP */}
               {unusualWarning && (
-                <div style={{ background: 'rgba(201,168,118,0.15)', border: '1.5px solid rgba(1,62,55,0.6)', padding: '12px', borderRadius: '10px', color: 'rgba(1,62,55,0.6)', fontSize: '12px', fontWeight: '700', display: 'flex', alignItems: 'center', gap: '8px', animation: 'fadeIn 200ms ease' }}>
+                <div style={{ background: 'rgba(201,168,118,0.15)', border: '1.5px solid 
+    param($m)
+    $opacity = $m.Groups[1].Value
+    "rgba(11,31,28,0.$opacity)"
+  ', padding: '12px', borderRadius: '10px', color: 'var(--color-text-secondary)', fontSize: '12px', fontWeight: '700', display: 'flex', alignItems: 'center', gap: '8px', animation: 'fadeIn 200ms ease' }}>
                   <span>⚠️</span>
                   <span>{unusualWarning}</span>
                 </div>
@@ -684,16 +688,16 @@ const PrescriptionScreen = ({ onSelectTab, initialViewMode = 'list' }) => {
 
               {/* OPTICAL VALUES TABLE-INPUT (Core Data) */}
               <div className="glass-card-standard" style={{ padding: '16px' }}>
-                <h3 style={{ fontSize: '14px', fontWeight: '800', color: '#013E37', marginBottom: '8px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                <h3 style={{ fontSize: '14px', fontWeight: '800', color: '#0B1F1C', marginBottom: '8px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                   <span>👓 Optical Correction Parameters</span>
-                  <span style={{ fontSize: '11px', color: '#013E37' }}>Monospace Grid</span>
+                  <span style={{ fontSize: '11px', color: '#0B1F1C' }}>Monospace Grid</span>
                 </h3>
 
                 {/* POWER RANGE SPECIFICATION BANNER FROM CATALOG */}
-                <div style={{ background: 'linear-gradient(135deg, rgba(255,122,48,0.15) 0%, rgba(1,62,55,0.12) 100%)', border: '1px solid rgba(255,122,48,0.3)', borderRadius: '8px', padding: '8px 12px', marginBottom: '12px', fontSize: '11px', color: '#013E37', display: 'flex', alignItems: 'center', gap: '8px', lineHeight: '1.4' }}>
+                <div style={{ background: 'linear-gradient(135deg, rgba(255,122,48,0.15) 0%, rgba(1,62,55,0.12) 100%)', border: '1px solid rgba(255,122,48,0.3)', borderRadius: '8px', padding: '8px 12px', marginBottom: '12px', fontSize: '11px', color: '#0B1F1C', display: 'flex', alignItems: 'center', gap: '8px', lineHeight: '1.4' }}>
                   <span style={{ fontSize: '14px' }}>📏</span>
                   <div>
-                    <span style={{ fontWeight: '800', color: '#013E37' }}>POWER RANGE LIMIT:</span>{' '}
+                    <span style={{ fontWeight: '800', color: '#0B1F1C' }}>POWER RANGE LIMIT:</span>{' '}
                     <span>Sph -6.00/-2.00 Cyl, +2.00/+2.00 Cyl, upto +4.00 Sph Available, -4.00/-3.00 Cyl</span>
                   </div>
                 </div>
@@ -701,7 +705,7 @@ const PrescriptionScreen = ({ onSelectTab, initialViewMode = 'list' }) => {
                 <div className="rx-table-inset">
                   <table style={{ width: '100%', borderCollapse: 'collapse' }}>
                     <thead>
-                      <tr style={{ fontSize: '11px', color: '#013E37', textTransform: 'uppercase', letterSpacing: '1px', borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
+                      <tr style={{ fontSize: '11px', color: '#0B1F1C', textTransform: 'uppercase', letterSpacing: '1px', borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
                         <th style={{ padding: '6px', textAlign: 'left', width: '28%' }}>EYE</th>
                         <th style={{ padding: '6px', width: '18%' }}>SPH</th>
                         <th style={{ padding: '6px', width: '18%' }}>CYL</th>
@@ -712,7 +716,7 @@ const PrescriptionScreen = ({ onSelectTab, initialViewMode = 'list' }) => {
                     <tbody>
                       {/* Right Eye OD Row */}
                       <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
-                        <td style={{ padding: '8px 4px', fontSize: '12px', fontWeight: '800', color: '#013E37' }}>Right Eye (OD)</td>
+                        <td style={{ padding: '8px 4px', fontSize: '12px', fontWeight: '800', color: '#0B1F1C' }}>Right Eye (OD)</td>
                         <td style={{ padding: '6px 2px' }}>
                           <input type="text" className="rx-cell-input" placeholder="0.00" value={odSph} onChange={(e) => setOdSph(e.target.value)} onBlur={(e) => handleCellBlur(e.target.value, 'sph', 'od')} />
                         </td>
@@ -750,18 +754,18 @@ const PrescriptionScreen = ({ onSelectTab, initialViewMode = 'list' }) => {
               {/* PD (Pupillary Distance) Section */}
               <div className="glass-card-standard" style={{ padding: '16px' }}>
                 <div className="flex-between mb-3">
-                  <span style={{ fontSize: '13px', fontWeight: '800', color: '#013E37' }}>📏 Pupillary Distance (PD)</span>
+                  <span style={{ fontSize: '13px', fontWeight: '800', color: '#0B1F1C' }}>📏 Pupillary Distance (PD)</span>
                   <div style={{ display: 'flex', background: 'rgba(0,0,0,0.3)', borderRadius: '999px', padding: '2px' }}>
                     <button
                       type="button"
-                      style={{ padding: '4px 10px', borderRadius: '999px', fontSize: '11px', fontWeight: '700', background: pdMode === 'single' ? '#013E37' : 'transparent', color: '#013E37', border: 'none', cursor: 'pointer' }}
+                      style={{ padding: '4px 10px', borderRadius: '999px', fontSize: '11px', fontWeight: '700', background: pdMode === 'single' ? '#013E37' : 'transparent', color: '#0B1F1C', border: 'none', cursor: 'pointer' }}
                       onClick={() => setPdMode('single')}
                     >
                       Single PD
                     </button>
                     <button
                       type="button"
-                      style={{ padding: '4px 10px', borderRadius: '999px', fontSize: '11px', fontWeight: '700', background: pdMode === 'dual' ? '#013E37' : 'transparent', color: '#013E37', border: 'none', cursor: 'pointer' }}
+                      style={{ padding: '4px 10px', borderRadius: '999px', fontSize: '11px', fontWeight: '700', background: pdMode === 'dual' ? '#013E37' : 'transparent', color: '#0B1F1C', border: 'none', cursor: 'pointer' }}
                       onClick={() => setPdMode('dual')}
                     >
                       Dual PD (R/L)
@@ -776,19 +780,19 @@ const PrescriptionScreen = ({ onSelectTab, initialViewMode = 'list' }) => {
                       placeholder="63"
                       value={pdSingle}
                       onChange={(e) => setPdSingle(e.target.value)}
-                      style={{ width: '100%', height: '44px', padding: '0 14px', borderRadius: '10px', background: 'rgba(255,240,224,0.8)', border: '1px solid rgba(255,255,255,0.2)', color: '#013E37', fontSize: '14px', fontFamily: 'monospace' }}
+                      style={{ width: '100%', height: '44px', padding: '0 14px', borderRadius: '10px', background: 'rgba(255,240,224,0.8)', border: '1px solid rgba(255,255,255,0.2)', color: '#0B1F1C', fontSize: '14px', fontFamily: 'monospace' }}
                     />
-                    <div style={{ fontSize: '11px', color: 'rgba(1,62,55,0.5)', marginTop: '6px' }}>Average adult PD is 60mm – 65mm. Measured between centers of pupils.</div>
+                    <div style={{ fontSize: '11px', color: 'var(--color-text-secondary)', marginTop: '6px' }}>Average adult PD is 60mm – 65mm. Measured between centers of pupils.</div>
                   </div>
                 ) : (
                   <div className="grid-2" style={{ gap: '12px' }}>
                     <div>
-                      <label style={{ fontSize: '10px', color: 'rgba(1,62,55,0.5)', display: 'block', marginBottom: '4px' }}>RIGHT EYE (R-PD)</label>
-                      <input type="number" placeholder="31.5" value={pdRight} onChange={(e) => setPdRight(e.target.value)} style={{ width: '100%', height: '44px', padding: '0 12px', borderRadius: '10px', background: 'rgba(255,240,224,0.8)', border: '1px solid rgba(255,255,255,0.2)', color: '#013E37', fontSize: '14px', fontFamily: 'monospace' }} />
+                      <label style={{ fontSize: '10px', color: 'var(--color-text-secondary)', display: 'block', marginBottom: '4px' }}>RIGHT EYE (R-PD)</label>
+                      <input type="number" placeholder="31.5" value={pdRight} onChange={(e) => setPdRight(e.target.value)} style={{ width: '100%', height: '44px', padding: '0 12px', borderRadius: '10px', background: 'rgba(255,240,224,0.8)', border: '1px solid rgba(255,255,255,0.2)', color: '#0B1F1C', fontSize: '14px', fontFamily: 'monospace' }} />
                     </div>
                     <div>
-                      <label style={{ fontSize: '10px', color: 'rgba(1,62,55,0.5)', display: 'block', marginBottom: '4px' }}>LEFT EYE (L-PD)</label>
-                      <input type="number" placeholder="31.5" value={pdLeft} onChange={(e) => setPdLeft(e.target.value)} style={{ width: '100%', height: '44px', padding: '0 12px', borderRadius: '10px', background: 'rgba(255,240,224,0.8)', border: '1px solid rgba(255,255,255,0.2)', color: '#013E37', fontSize: '14px', fontFamily: 'monospace' }} />
+                      <label style={{ fontSize: '10px', color: 'var(--color-text-secondary)', display: 'block', marginBottom: '4px' }}>LEFT EYE (L-PD)</label>
+                      <input type="number" placeholder="31.5" value={pdLeft} onChange={(e) => setPdLeft(e.target.value)} style={{ width: '100%', height: '44px', padding: '0 12px', borderRadius: '10px', background: 'rgba(255,240,224,0.8)', border: '1px solid rgba(255,255,255,0.2)', color: '#0B1F1C', fontSize: '14px', fontFamily: 'monospace' }} />
                     </div>
                   </div>
                 )}
@@ -796,12 +800,12 @@ const PrescriptionScreen = ({ onSelectTab, initialViewMode = 'list' }) => {
 
               {/* Notes */}
               <div>
-                <label style={{ fontSize: '12px', fontWeight: '700', color: 'rgba(1,62,55,0.5)', display: 'block', marginBottom: '6px' }}>📝 ADDITIONAL NOTES (OPTIONAL)</label>
+                <label style={{ fontSize: '12px', fontWeight: '700', color: 'var(--color-text-secondary)', display: 'block', marginBottom: '6px' }}>📝 ADDITIONAL NOTES (OPTIONAL)</label>
                 <textarea
                   placeholder="e.g. Recommended Zeiss DuraVision coating, or special lens thinning preference..."
                   value={notes}
                   onChange={(e) => setNotes(e.target.value)}
-                  style={{ width: '100%', height: '76px', padding: '12px 14px', borderRadius: '12px', background: 'rgba(255,240,224,0.8)', border: '1px solid rgba(255,255,255,0.15)', color: '#013E37', fontSize: '13px', outline: 'none', resize: 'none' }}
+                  style={{ width: '100%', height: '76px', padding: '12px 14px', borderRadius: '12px', background: 'rgba(255,240,224,0.8)', border: '1px solid rgba(255,255,255,0.15)', color: '#0B1F1C', fontSize: '13px', outline: 'none', resize: 'none' }}
                 />
               </div>
 
@@ -810,7 +814,11 @@ const PrescriptionScreen = ({ onSelectTab, initialViewMode = 'list' }) => {
                 <button
                   type="button"
                   className="btn-primary-pill w-100"
-                  style={{ height: '54px', fontSize: '16px', fontWeight: '900', background: 'linear-gradient(135deg, #A94A4A, #013E37)', boxShadow: '0 8px 24px rgba(1,62,55,0.5)' }}
+                  style={{ height: '54px', fontSize: '16px', fontWeight: '900', background: 'linear-gradient(135deg, #A94A4A, #013E37)', boxShadow: '0 8px 24px 
+    param($m)
+    $opacity = $m.Groups[1].Value
+    "rgba(11,31,28,0.$opacity)"
+  ' }}
                   disabled={isSaving}
                   onClick={handleSaveManualRx}
                 >
@@ -833,10 +841,10 @@ const PrescriptionScreen = ({ onSelectTab, initialViewMode = 'list' }) => {
                     <span style={{ fontSize: '24px', color: 'rgba(255,255,255,0.2)' }}>|</span>
                     <span>📄</span>
                   </div>
-                  <h3 style={{ fontSize: '16px', fontWeight: '800', color: '#013E37', marginBottom: '4px' }}>
+                  <h3 style={{ fontSize: '16px', fontWeight: '800', color: '#0B1F1C', marginBottom: '4px' }}>
                     Tap to upload or photograph prescription
                   </h3>
-                  <p style={{ fontSize: '12px', color: 'rgba(1,62,55,0.5)', marginBottom: '20px' }}>
+                  <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', marginBottom: '20px' }}>
                     Supports JPG, PNG, or PDF hospital reports · Max 10MB
                   </p>
                   <div style={{ display: 'flex', gap: '10px', justifyContent: 'center' }}>
@@ -851,7 +859,7 @@ const PrescriptionScreen = ({ onSelectTab, initialViewMode = 'list' }) => {
                     <button
                       type="button"
                       className="btn-secondary-pill"
-                      style={{ height: '40px', padding: '0 20px', fontSize: '12px', borderColor: '#013E37', color: '#013E37' }}
+                      style={{ height: '40px', padding: '0 20px', fontSize: '12px', bordercolor: '#0B1F1C', color: '#0B1F1C' }}
                       onClick={(e) => { e.stopPropagation(); handleSimulateUpload('file'); }}
                     >
                       📁 Upload PDF File
@@ -866,11 +874,11 @@ const PrescriptionScreen = ({ onSelectTab, initialViewMode = 'list' }) => {
                       {uploadedFile.type === 'image' ? '🖼️' : '📄'}
                     </div>
                     <div>
-                      <div style={{ fontSize: '14px', fontWeight: '800', color: '#013E37' }}>{uploadedFile.name}</div>
-                      <div style={{ fontSize: '12px', color: '#013E37', fontWeight: '700', marginTop: '2px' }}>✓ OCR Scanned ({uploadedFile.size})</div>
+                      <div style={{ fontSize: '14px', fontWeight: '800', color: '#0B1F1C' }}>{uploadedFile.name}</div>
+                      <div style={{ fontSize: '12px', color: '#0B1F1C', fontWeight: '700', marginTop: '2px' }}>✓ OCR Scanned ({uploadedFile.size})</div>
                       <button
                         type="button"
-                        style={{ background: 'transparent', border: 'none', color: '#013E37', fontSize: '11px', textDecoration: 'underline', cursor: 'pointer', padding: '0', marginTop: '4px' }}
+                        style={{ background: 'transparent', border: 'none', color: '#0B1F1C', fontSize: '11px', textDecoration: 'underline', cursor: 'pointer', padding: '0', marginTop: '4px' }}
                         onClick={() => showToast(`📄 Opening full-screen document viewer for "${uploadedFile.name}"...`)}
                       >
                         👁️ Preview Document
@@ -891,7 +899,7 @@ const PrescriptionScreen = ({ onSelectTab, initialViewMode = 'list' }) => {
               {/* Prescription Name field appears after upload */}
               {uploadedFile && (
                 <div style={{ animation: 'slideInDown 300ms var(--spring-bezier)' }}>
-                  <label style={{ fontSize: '12px', fontWeight: '700', color: 'rgba(1,62,55,0.5)', display: 'block', marginBottom: '6px' }}>
+                  <label style={{ fontSize: '12px', fontWeight: '700', color: 'var(--color-text-secondary)', display: 'block', marginBottom: '6px' }}>
                     GIVE THIS PRESCRIPTION A NAME *
                   </label>
                   <input
@@ -899,14 +907,18 @@ const PrescriptionScreen = ({ onSelectTab, initialViewMode = 'list' }) => {
                     placeholder="e.g. Dr. Sharma Clinic — March 2026"
                     value={uploadRxName}
                     onChange={(e) => setUploadRxName(e.target.value)}
-                    style={{ width: '100%', height: '48px', padding: '0 16px', borderRadius: '12px', background: 'rgba(255,240,224,0.8)', border: '1px solid rgba(255,255,255,0.2)', color: '#013E37', fontSize: '14px', outline: 'none' }}
+                    style={{ width: '100%', height: '48px', padding: '0 16px', borderRadius: '12px', background: 'rgba(255,240,224,0.8)', border: '1px solid rgba(255,255,255,0.2)', color: '#0B1F1C', fontSize: '14px', outline: 'none' }}
                   />
-                  <div style={{ fontSize: '11px', color: 'rgba(1,62,55,0.5)', marginTop: '6px' }}>We automatically extracted OD/OS parameters from your document using AI OCR.</div>
+                  <div style={{ fontSize: '11px', color: 'var(--color-text-secondary)', marginTop: '6px' }}>We automatically extracted OD/OS parameters from your document using AI OCR.</div>
 
                   <button
                     type="button"
                     className="btn-primary-pill w-100"
-                    style={{ height: '50px', fontSize: '15px', fontWeight: '800', boxShadow: '0 0 20px rgba(1,62,55,0.5)' }}
+                    style={{ height: '50px', fontSize: '15px', fontWeight: '800', boxShadow: '0 0 20px 
+    param($m)
+    $opacity = $m.Groups[1].Value
+    "rgba(11,31,28,0.$opacity)"
+  ' }}
                     onClick={handleSaveManualRx}
                   >
                     💾 Verify & Save Prescription →
@@ -927,12 +939,12 @@ const PrescriptionScreen = ({ onSelectTab, initialViewMode = 'list' }) => {
           <div className="flex-between mb-3">
             <button
               type="button"
-              style={{ width: '36px', height: '36px', borderRadius: '50%', background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.15)', color: '#013E37', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer' }}
+              style={{ width: '36px', height: '36px', borderRadius: '50%', background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.15)', color: '#0B1F1C', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer' }}
               onClick={() => setViewMode('list')}
             >
               ←
             </button>
-            <h1 style={{ fontSize: '18px', fontWeight: '800', color: '#013E37' }}>Prescription Details</h1>
+            <h1 style={{ fontSize: '18px', fontWeight: '800', color: '#0B1F1C' }}>Prescription Details</h1>
             <button
               type="button"
               style={{ padding: '6px 12px', borderRadius: '999px', background: 'rgba(1,62,55,0.15)', border: '1px solid #A94A4A', color: '#A94A4A', fontSize: '11px', fontWeight: '800', cursor: 'pointer' }}
@@ -949,37 +961,37 @@ const PrescriptionScreen = ({ onSelectTab, initialViewMode = 'list' }) => {
                 {selectedRx.status === 'Valid' ? '✓ Valid' : selectedRx.status === 'Expiring Soon' ? '⏳ Expiring Soon' : '✕ Expired'}
               </span>
             </div>
-            <div style={{ fontSize: '13px', color: '#013E37', fontWeight: '700', marginBottom: '2px' }}>{selectedRx.doctor}</div>
-            <div style={{ fontSize: '12px', color: 'rgba(1,62,55,0.5)', marginBottom: '14px' }}>{selectedRx.clinic}</div>
+            <div style={{ fontSize: '13px', color: '#0B1F1C', fontWeight: '700', marginBottom: '2px' }}>{selectedRx.doctor}</div>
+            <div style={{ fontSize: '12px', color: 'var(--color-text-secondary)', marginBottom: '14px' }}>{selectedRx.clinic}</div>
 
             {/* PATIENT INFO HEADER ROW */}
             <div style={{ background: 'rgba(255,255,255,0.04)', padding: '12px 14px', borderRadius: '12px', marginBottom: '16px', border: '1px solid rgba(255,255,255,0.08)' }}>
               <div className="flex-between mb-2" style={{ fontSize: '13px' }}>
-                <span style={{ color: 'rgba(1,62,55,0.5)' }}>👤 Patient Name:</span>
+                <span style={{ color: 'var(--color-text-secondary)' }}>👤 Patient Name:</span>
                 <strong style={{ color: '#FFF' }}>{selectedRx.patientName || 'Rahul Verma'}</strong>
               </div>
               <div className="flex-between mb-2" style={{ fontSize: '13px' }}>
-                <span style={{ color: 'rgba(1,62,55,0.5)' }}>🎂 Age / Gender:</span>
+                <span style={{ color: 'var(--color-text-secondary)' }}>🎂 Age / Gender:</span>
                 <strong style={{ color: '#FFF' }}>{selectedRx.ageGender || '28 / Male'}</strong>
               </div>
               <div className="flex-between" style={{ fontSize: '13px' }}>
-                <span style={{ color: 'rgba(1,62,55,0.5)' }}>📞 Mobile Number:</span>
-                <strong style={{ color: '#013E37', fontFamily: 'monospace' }}>{selectedRx.mobile || '9030317333'}</strong>
+                <span style={{ color: 'var(--color-text-secondary)' }}>📞 Mobile Number:</span>
+                <strong style={{ color: '#0B1F1C', fontFamily: 'monospace' }}>{selectedRx.mobile || '9030317333'}</strong>
               </div>
             </div>
 
-            <div style={{ display: 'flex', gap: '16px', fontSize: '12px', color: 'rgba(1,62,55,0.5)', marginBottom: '16px', paddingBottom: '14px', borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
+            <div style={{ display: 'flex', gap: '16px', fontSize: '12px', color: 'var(--color-text-secondary)', marginBottom: '16px', paddingBottom: '14px', borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
               <span>📅 Issued: <strong style={{ color: '#FFF' }}>{selectedRx.issuedDate}</strong></span>
               <span>⏳ Valid until: <strong style={{ color: '#FFF' }}>{selectedRx.validUntil}</strong></span>
             </div>
 
-            <h4 style={{ fontSize: '12px', fontWeight: '800', color: '#013E37', uppercase: 'true', letterSpacing: '1px', marginBottom: '8px' }}>
+            <h4 style={{ fontSize: '12px', fontWeight: '800', color: '#0B1F1C', uppercase: 'true', letterSpacing: '1px', marginBottom: '8px' }}>
               OPTICAL CORRECTION TABLE
             </h4>
             <div className="rx-table-inset mb-4">
               <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'center' }}>
                 <thead>
-                  <tr style={{ fontSize: '11px', color: '#013E37', borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
+                  <tr style={{ fontSize: '11px', color: '#0B1F1C', borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
                     <th style={{ padding: '6px', textAlign: 'left' }}>EYE</th>
                     <th style={{ padding: '6px' }}>SPH</th>
                     <th style={{ padding: '6px' }}>CYL</th>
@@ -990,7 +1002,7 @@ const PrescriptionScreen = ({ onSelectTab, initialViewMode = 'list' }) => {
                 <tbody>
                   <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
                     <td style={{ padding: '6px 4px', textAlign: 'left' }}>
-                      <span style={{ background: 'linear-gradient(90deg, #0083B0, #00A8E8)', color: '#013E37', padding: '3px 8px', borderRadius: '4px', fontSize: '11px', fontWeight: '800', display: 'inline-block' }}>Right (OD)</span>
+                      <span style={{ background: 'linear-gradient(90deg, #0083B0, #00A8E8)', color: '#0B1F1C', padding: '3px 8px', borderRadius: '4px', fontSize: '11px', fontWeight: '800', display: 'inline-block' }}>Right (OD)</span>
                     </td>
                     <td style={{ padding: '8px 4px', fontWeight: '800', color: selectedRx.od.sph === '0.00' ? 'rgba(255,255,255,0.35)' : '#FFF' }}>{selectedRx.od.sph}</td>
                     <td style={{ padding: '8px 4px', fontWeight: '800', color: selectedRx.od.cyl === '0.00' ? 'rgba(255,255,255,0.35)' : '#FFF' }}>{selectedRx.od.cyl}</td>
@@ -999,7 +1011,7 @@ const PrescriptionScreen = ({ onSelectTab, initialViewMode = 'list' }) => {
                   </tr>
                   <tr>
                     <td style={{ padding: '6px 4px', textAlign: 'left' }}>
-                      <span style={{ background: 'linear-gradient(90deg, #388E3C, #013E37)', color: '#013E37', padding: '3px 8px', borderRadius: '4px', fontSize: '11px', fontWeight: '800', display: 'inline-block' }}>Left (OS)</span>
+                      <span style={{ background: 'linear-gradient(90deg, #388E3C, #013E37)', color: '#0B1F1C', padding: '3px 8px', borderRadius: '4px', fontSize: '11px', fontWeight: '800', display: 'inline-block' }}>Left (OS)</span>
                     </td>
                     <td style={{ padding: '8px 4px', fontWeight: '800', color: selectedRx.os.sph === '0.00' ? 'rgba(255,255,255,0.35)' : '#FFF' }}>{selectedRx.os.sph}</td>
                     <td style={{ padding: '8px 4px', fontWeight: '800', color: selectedRx.os.cyl === '0.00' ? 'rgba(255,255,255,0.35)' : '#FFF' }}>{selectedRx.os.cyl}</td>
@@ -1012,11 +1024,11 @@ const PrescriptionScreen = ({ onSelectTab, initialViewMode = 'list' }) => {
 
             <div className="grid-2 mb-3" style={{ gap: '12px', fontSize: '12px' }}>
               <div style={{ background: 'rgba(255,255,255,0.05)', padding: '10px', borderRadius: '10px' }}>
-                <span style={{ color: 'rgba(1,62,55,0.5)', display: 'block', fontSize: '10px', fontWeight: '700' }}>PUPILLARY DISTANCE</span>
+                <span style={{ color: 'var(--color-text-secondary)', display: 'block', fontSize: '10px', fontWeight: '700' }}>PUPILLARY DISTANCE</span>
                 <span style={{ color: '#FFF', fontWeight: '800', fontSize: '14px' }}>{selectedRx.pd}</span>
               </div>
               <div style={{ background: 'rgba(255,255,255,0.05)', padding: '10px', borderRadius: '10px' }}>
-                <span style={{ color: 'rgba(1,62,55,0.5)', display: 'block', fontSize: '10px', fontWeight: '700' }}>DISTANCE / NEAR VISION</span>
+                <span style={{ color: 'var(--color-text-secondary)', display: 'block', fontSize: '10px', fontWeight: '700' }}>DISTANCE / NEAR VISION</span>
                 <span style={{ color: '#00E676', fontWeight: '800', fontSize: '13px' }}>{selectedRx.distVision || '6/6'} / {selectedRx.nearVision || 'N6'}</span>
               </div>
             </div>
@@ -1024,12 +1036,12 @@ const PrescriptionScreen = ({ onSelectTab, initialViewMode = 'list' }) => {
             {/* LENS RECOMMENDATIONS BADGES */}
             {selectedRx.recommendations && selectedRx.recommendations.length > 0 && (
               <div style={{ background: 'rgba(1,62,55, 0.05)', border: '1px solid rgba(1,62,55, 0.25)', padding: '12px', borderRadius: '10px', marginBottom: '16px' }}>
-                <div style={{ fontSize: '11px', fontWeight: '800', color: '#013E37', textTransform: 'uppercase', letterSpacing: '0.8px', marginBottom: '8px' }}>
+                <div style={{ fontSize: '11px', fontWeight: '800', color: '#0B1F1C', textTransform: 'uppercase', letterSpacing: '0.8px', marginBottom: '8px' }}>
                   ✓ CLINICAL LENS RECOMMENDATION
                 </div>
                 <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
                   {selectedRx.recommendations.map((rec, i) => (
-                    <span key={i} style={{ background: '#013E37', color: '#013E37', fontSize: '11px', fontWeight: '800', padding: '4px 12px', borderRadius: '14px' }}>
+                    <span key={i} style={{ background: '#013E37', color: '#0B1F1C', fontSize: '11px', fontWeight: '800', padding: '4px 12px', borderRadius: '14px' }}>
                       ✓ {rec}
                     </span>
                   ))}
@@ -1040,7 +1052,7 @@ const PrescriptionScreen = ({ onSelectTab, initialViewMode = 'list' }) => {
             {selectedRx.notes && (
               <div style={{ background: 'rgba(255,255,255,0.04)', padding: '12px', borderRadius: '10px', borderLeft: '3px solid #A94A4A', marginBottom: '16px' }}>
                 <div style={{ fontSize: '11px', fontWeight: '800', color: '#A94A4A', marginBottom: '4px' }}>CLINICAL NOTES</div>
-                <div style={{ fontSize: '12px', color: '#013E37', lineHeight: '1.4' }}>{selectedRx.notes}</div>
+                <div style={{ fontSize: '12px', color: '#0B1F1C', lineHeight: '1.4' }}>{selectedRx.notes}</div>
               </div>
             )}
 
@@ -1049,11 +1061,11 @@ const PrescriptionScreen = ({ onSelectTab, initialViewMode = 'list' }) => {
                 <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                   <span style={{ fontSize: '18px' }}>📎</span>
                   <div>
-                    <div style={{ fontSize: '12px', fontWeight: '800', color: '#013E37' }}>Attached Document Scan</div>
-                    <div style={{ fontSize: '10px', color: '#013E37' }}>{selectedRx.scanFile}</div>
+                    <div style={{ fontSize: '12px', fontWeight: '800', color: '#0B1F1C' }}>Attached Document Scan</div>
+                    <div style={{ fontSize: '10px', color: '#0B1F1C' }}>{selectedRx.scanFile}</div>
                   </div>
                 </div>
-                <button type="button" style={{ padding: '6px 12px', borderRadius: '999px', background: '#013E37', border: 'none', color: '#013E37', fontSize: '11px', fontWeight: '800', cursor: 'pointer' }} onClick={() => alert(`🔍 Opening full-screen zoom preview of medical OCR scan: ${selectedRx.scanFile}`)}>
+                <button type="button" style={{ padding: '6px 12px', borderRadius: '999px', background: '#013E37', border: 'none', color: '#0B1F1C', fontSize: '11px', fontWeight: '800', cursor: 'pointer' }} onClick={() => alert(`🔍 Opening full-screen zoom preview of medical OCR scan: ${selectedRx.scanFile}`)}>
                   View Scan
                 </button>
               </div>
@@ -1063,7 +1075,11 @@ const PrescriptionScreen = ({ onSelectTab, initialViewMode = 'list' }) => {
               <button
                 type="button"
                 className="btn-primary-pill"
-                style={{ flex: 1, height: '46px', fontSize: '14px', background: 'linear-gradient(135deg, #013E37, #0288D1)', boxShadow: '0 0 16px rgba(1,62,55,0.4)' }}
+                style={{ flex: 1, height: '46px', fontSize: '14px', background: 'linear-gradient(135deg, #013E37, #0288D1)', boxShadow: '0 0 16px 
+    param($m)
+    $opacity = $m.Groups[1].Value
+    "rgba(11,31,28,0.$opacity)"
+  ' }}
                 onClick={() => {
                   showToast(`⚡ Selected "${selectedRx.name}" for your order!`);
                   setTimeout(() => { if (onSelectTab) onSelectTab('cart'); }, 1000);
@@ -1076,7 +1092,7 @@ const PrescriptionScreen = ({ onSelectTab, initialViewMode = 'list' }) => {
               <button
                 type="button"
                 className="btn-secondary-pill"
-                style={{ flex: 1, height: '44px', fontSize: '12px', borderColor: '#013E37', color: '#013E37' }}
+                style={{ flex: 1, height: '44px', fontSize: '12px', bordercolor: '#0B1F1C', color: '#0B1F1C' }}
                 onClick={() => setShowShareModal(true)}
               >
                 📤 Share with Doctor
@@ -1084,7 +1100,7 @@ const PrescriptionScreen = ({ onSelectTab, initialViewMode = 'list' }) => {
               <button
                 type="button"
                 className="btn-secondary-pill"
-                style={{ flex: 1, height: '44px', fontSize: '12px', borderColor: '#013E37', color: '#013E37' }}
+                style={{ flex: 1, height: '44px', fontSize: '12px', bordercolor: '#0B1F1C', color: '#0B1F1C' }}
                 onClick={() => showToast(`📥 Downloading signed medical PDF for "${selectedRx.name}"...`)}
               >
                 📥 Download PDF
@@ -1093,15 +1109,15 @@ const PrescriptionScreen = ({ onSelectTab, initialViewMode = 'list' }) => {
           </div>
 
           {/* CATALOG POWER RANGE INFO */}
-          <div style={{ background: 'linear-gradient(135deg, rgba(255,122,48,0.15) 0%, rgba(1,62,55,0.12) 100%)', border: '1px solid rgba(255,122,48,0.3)', borderRadius: '8px', padding: '8px 12px', marginBottom: '16px', fontSize: '11px', color: '#013E37', display: 'flex', alignItems: 'center', gap: '8px' }}>
+          <div style={{ background: 'linear-gradient(135deg, rgba(255,122,48,0.15) 0%, rgba(1,62,55,0.12) 100%)', border: '1px solid rgba(255,122,48,0.3)', borderRadius: '8px', padding: '8px 12px', marginBottom: '16px', fontSize: '11px', color: '#0B1F1C', display: 'flex', alignItems: 'center', gap: '8px' }}>
             <span style={{ fontSize: '14px' }}>📏</span>
             <div>
-              <span style={{ fontWeight: '800', color: '#013E37' }}>SUPPORTED CATALOG RANGE:</span>{' '}
+              <span style={{ fontWeight: '800', color: '#0B1F1C' }}>SUPPORTED CATALOG RANGE:</span>{' '}
               <span>Sph -6.00/-2.00 Cyl, +2.00/+2.00cyl, upto +4.00 Sph Available, -4.00/-3.00</span>
             </div>
           </div>
 
-          <h3 style={{ fontSize: '16px', fontWeight: '800', color: '#013E37', marginBottom: '12px' }}>
+          <h3 style={{ fontSize: '16px', fontWeight: '800', color: '#0B1F1C', marginBottom: '12px' }}>
             Select Which Prescription to Apply:
           </h3>
 
@@ -1126,21 +1142,21 @@ const PrescriptionScreen = ({ onSelectTab, initialViewMode = 'list' }) => {
                 >
                   <div className="flex-between mb-1">
                     <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                      <div style={{ width: '20px', height: '20px', borderRadius: '10px', border: `2px solid ${isSel ? '#A94A4A' : 'rgba(1,62,55,0.5)'}`, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                      <div style={{ width: '20px', height: '20px', borderRadius: '10px', border: `2px solid ${isSel ? '#A94A4A' : 'var(--color-text-secondary)'}`, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                         {isSel && <div style={{ width: '10px', height: '10px', borderRadius: '5px', background: '#A94A4A' }} />}
                       </div>
-                      <span style={{ fontSize: '15px', fontWeight: '800', color: '#013E37' }}>{rx.name}</span>
+                      <span style={{ fontSize: '15px', fontWeight: '800', color: '#0B1F1C' }}>{rx.name}</span>
                     </div>
                     {isSel && (
                       <span className="badge-pill badge-green" style={{ background: '#A94A4A', color: '#FFF' }}>SELECTED ✓</span>
                     )}
                   </div>
 
-                  <div style={{ paddingLeft: '28px', fontSize: '12px', color: 'rgba(1,62,55,0.5)' }}>
-                    <div style={{ fontFamily: 'monospace', color: '#013E37', fontWeight: '700', margin: '4px 0' }}>
+                  <div style={{ paddingLeft: '28px', fontSize: '12px', color: 'var(--color-text-secondary)' }}>
+                    <div style={{ fontFamily: 'monospace', color: '#0B1F1C', fontWeight: '700', margin: '4px 0' }}>
                       OD: SPH {rx.od.sph} / CYL {rx.od.cyl}  |  OS: SPH {rx.os.sph} / CYL {rx.os.cyl}
                     </div>
-                    <div style={{ fontSize: '11px', color: 'rgba(1,62,55,0.5)' }}>Issued: {rx.issuedDate} · {rx.doctor}</div>
+                    <div style={{ fontSize: '11px', color: 'var(--color-text-secondary)' }}>Issued: {rx.issuedDate} · {rx.doctor}</div>
                   </div>
                 </div>
               );
@@ -1148,12 +1164,16 @@ const PrescriptionScreen = ({ onSelectTab, initialViewMode = 'list' }) => {
           </div>
 
           {/* MISSING PRESCRIPTION ALERT DEMO CARD */}
-          <div className="glass-card-glow-cyan mb-4" style={{ padding: '18px', border: '1.5px solid rgba(1,62,55,0.6)', background: 'rgba(201,168,118,0.06)' }}>
+          <div className="glass-card-glow-cyan mb-4" style={{ padding: '18px', border: '1.5px solid 
+    param($m)
+    $opacity = $m.Groups[1].Value
+    "rgba(11,31,28,0.$opacity)"
+  ', background: 'rgba(201,168,118,0.06)' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '8px' }}>
               <span style={{ fontSize: '20px' }}>⚠️</span>
-              <span style={{ fontSize: '15px', fontWeight: '800', color: '#013E37' }}>Need a new prescription for this order?</span>
+              <span style={{ fontSize: '15px', fontWeight: '800', color: '#0B1F1C' }}>Need a new prescription for this order?</span>
             </div>
-            <p style={{ fontSize: '12px', color: 'rgba(1,62,55,0.5)', marginBottom: '14px', lineHeight: '1.4' }}>
+            <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', marginBottom: '14px', lineHeight: '1.4' }}>
               You can add a new paper scan or book a free online clinical eye test without losing your cart items!
             </p>
             <div style={{ display: 'flex', gap: '10px' }}>
@@ -1168,7 +1188,7 @@ const PrescriptionScreen = ({ onSelectTab, initialViewMode = 'list' }) => {
               <button
                 type="button"
                 className="btn-secondary-pill"
-                style={{ flex: 1, height: '40px', fontSize: '12px', borderColor: '#013E37', color: '#013E37' }}
+                style={{ flex: 1, height: '40px', fontSize: '12px', bordercolor: '#0B1F1C', color: '#0B1F1C' }}
                 onClick={() => { if (onSelectTab) onSelectTab('eyetest'); }}
               >
                 👁️ Free Eye Test
@@ -1200,21 +1220,29 @@ const PrescriptionScreen = ({ onSelectTab, initialViewMode = 'list' }) => {
          ========================================================================== */}
       {showShareModal && selectedRx && (
         <div className="modal-backdrop screen-transition-enter" style={{ zIndex: 200 }} onClick={() => setShowShareModal(false)}>
-          <div className="modal-sheet" onClick={(e) => e.stopPropagation()} style={{ padding: '24px var(--screen-padding) 30px', maxHeight: '80vh', overflowY: 'auto', borderTop: '2px solid #013E37', boxShadow: '0 -20px 60px rgba(1,62,55,0.4)' }}>
+          <div className="modal-sheet" onClick={(e) => e.stopPropagation()} style={{ padding: '24px var(--screen-padding) 30px', maxHeight: '80vh', overflowY: 'auto', borderTop: '2px solid #013E37', boxShadow: '0 -20px 60px 
+    param($m)
+    $opacity = $m.Groups[1].Value
+    "rgba(11,31,28,0.$opacity)"
+  ' }}>
             <div className="flex-between mb-3">
-              <h2 style={{ fontSize: '18px', fontWeight: '900', color: '#013E37', display: 'flex', alignItems: 'center', gap: '8px' }}>
+              <h2 style={{ fontSize: '18px', fontWeight: '900', color: '#0B1F1C', display: 'flex', alignItems: 'center', gap: '8px' }}>
                 <span>📤 Share with Optometrist / Doctor</span>
               </h2>
-              <button type="button" style={{ width: '30px', height: '30px', borderRadius: '15px', background: 'rgba(255,255,255,0.1)', border: 'none', color: '#013E37', cursor: 'pointer' }} onClick={() => setShowShareModal(false)}>
+              <button type="button" style={{ width: '30px', height: '30px', borderRadius: '15px', background: 'rgba(255,255,255,0.1)', border: 'none', color: '#0B1F1C', cursor: 'pointer' }} onClick={() => setShowShareModal(false)}>
                 ✕
               </button>
             </div>
-            <p style={{ fontSize: '13px', color: 'rgba(1,62,55,0.5)', marginBottom: '14px' }}>
+            <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', marginBottom: '14px' }}>
               Clean formatted medical summary ready for WhatsApp, Email, or Clinical SMS:
             </p>
 
             {/* Formatted Text Box */}
-            <div style={{ background: 'rgba(255,245,236,0.9)', padding: '16px', borderRadius: '12px', border: '1px solid rgba(1,62,55,0.4)', fontFamily: 'monospace', fontSize: '12px', color: '#013E37', whiteSpace: 'pre-line', lineHeight: '1.5', marginBottom: '20px' }}>
+            <div style={{ background: 'rgba(255,245,236,0.9)', padding: '16px', borderRadius: '12px', border: '1px solid 
+    param($m)
+    $opacity = $m.Groups[1].Value
+    "rgba(11,31,28,0.$opacity)"
+  ', fontFamily: 'monospace', fontSize: '12px', color: '#0B1F1C', whiteSpace: 'pre-line', lineHeight: '1.5', marginBottom: '20px' }}>
               {getShareText(selectedRx)}
             </div>
 

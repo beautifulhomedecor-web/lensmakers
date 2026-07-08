@@ -1,4 +1,4 @@
-// Logo Component — Exact Lens Makers Logo with Anti-Gravity Zero-G Floating Effect
+// Logo Component — Exact Lensmakers Logo with Anti-Gravity Zero-G Floating Effect
 const { useState, useEffect } = React;
 
 const Logo = ({ iconOnly = false, size = 36, onClick }) => {
@@ -47,7 +47,11 @@ const Logo = ({ iconOnly = false, size = 36, onClick }) => {
 
         .anti-gravity-floating:hover {
           transform: scale(1.12) rotate(0deg) translate3d(0px, -4px, 0px) !important;
-          filter: drop-shadow(0 16px 28px rgba(1,62,55, 0.8)) drop-shadow(0 0 15px rgba(118, 255, 3, 0.6)) !important;
+          filter: drop-shadow(0 16px 28px 
+    param($m)
+    $opacity = $m.Groups[1].Value
+    "rgba(11,31,28,0.$opacity)"
+  ) drop-shadow(0 0 15px rgba(118, 255, 3, 0.6)) !important;
           animation-play-state: paused;
         }
       `;
@@ -79,18 +83,9 @@ const Logo = ({ iconOnly = false, size = 36, onClick }) => {
           justifyContent: 'center',
           flexShrink: 0
         }}
-        title="Lens Makers — Floating in Zero Gravity"
+        title="Lensmakers"
       >
-        <svg width={h * 1.35} height={h} viewBox="0 0 44 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-          {/* Left Lens Circle - Cyan/Blue */}
-          <circle cx="13" cy="14" r="9" stroke="#013E37" strokeWidth="3" fill="rgba(1,62,55, 0.15)" />
-          {/* Right Lens Circle - Lime Green */}
-          <circle cx="31" cy="14" r="9" stroke="#013E37" strokeWidth="3" fill="rgba(156, 204, 101, 0.15)" />
-          {/* Bridge Connecting Circles */}
-          <path d="M22 14 C 22.5 11, 23.5 11, 24 14" stroke="#013E37" strokeWidth="2.5" strokeLinecap="round" />
-          {/* Outer Temples/Arms */}
-          <path d="M4 13 L 2 10 M 40 13 L 42 10" stroke="#013E37" strokeWidth="2.5" strokeLinecap="round" />
-        </svg>
+        <img src="./logo-3d.png" alt="Lensmakers Logo" style={{ height: `${h * 1.5}px`, objectFit: 'contain' }} />
       </div>
 
       {/* =========================================================================
@@ -110,8 +105,8 @@ const Logo = ({ iconOnly = false, size = 36, onClick }) => {
             lineHeight: 1
           }}
         >
-          <span style={{ color: '#FFFFFF' }}>lens</span>
-          <span style={{ color: '#FFFFFF' }}>makers</span>
+          <span style={{ color: 'var(--color-text-primary)' }}>lens</span>
+          <span style={{ color: '#C2FF27' }}>makers</span>
         </span>
       )}
     </div>

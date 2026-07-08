@@ -95,11 +95,11 @@ const STORES_DATA = [
 ];
 
 const ALL_SERVICES_SYSTEM = [
-  { id: 'Eye Test', label: 'Eye Test', icon: 'eye', color: '#013E37' },
+  { id: 'Eye Test', label: 'Eye Test', icon: 'eye', color: '#0B1F1C' },
   { id: 'AR Try-On', label: 'AR Try-On', icon: 'camera', color: '#A94A4A' },
-  { id: 'Frame Repair', label: 'Frame Repair', icon: 'wrench', color: '#013E37' },
-  { id: 'Lens Fitting', label: 'Lens Fitting', icon: 'disc', color: '#013E37' },
-  { id: 'Contact Lens Consultation', label: 'Contact Lenses', icon: 'smile', color: '#013E37' },
+  { id: 'Frame Repair', label: 'Frame Repair', icon: 'wrench', color: '#0B1F1C' },
+  { id: 'Lens Fitting', label: 'Lens Fitting', icon: 'disc', color: '#0B1F1C' },
+  { id: 'Contact Lens Consultation', label: 'Contact Lenses', icon: 'smile', color: '#0B1F1C' },
   { id: 'Home Delivery', label: 'Home Delivery', icon: 'truck', color: '#66BB6A' }
 ];
 
@@ -167,7 +167,11 @@ const StoreLocatorScreen = ({ onSelectTab }) => {
     <div className="screen-transition-enter" style={{ padding: '16px var(--screen-padding)', paddingBottom: 'calc(72px + env(safe-area-inset-bottom) + 24px)' }}>
       {/* Toast Notification */}
       {toastMessage && (
-        <div className="glass-card-glow-pink" style={{ position: 'fixed', top: '20px', left: '50%', transform: 'translateX(-50%)', zIndex: 9999, padding: '12px 24px', borderRadius: '999px', fontSize: '13px', fontWeight: '800', color: '#013E37', whiteSpace: 'nowrap', boxShadow: '0 8px 32px rgba(1,62,55,0.5)', animation: 'fadeIn 200ms ease' }}>
+        <div className="glass-card-glow-pink" style={{ position: 'fixed', top: '20px', left: '50%', transform: 'translateX(-50%)', zIndex: 9999, padding: '12px 24px', borderRadius: '999px', fontSize: '13px', fontWeight: '800', color: '#0B1F1C', whiteSpace: 'nowrap', boxShadow: '0 8px 32px 
+    param($m)
+    $opacity = $m.Groups[1].Value
+    "rgba(11,31,28,0.$opacity)"
+  ', animation: 'fadeIn 200ms ease' }}>
           {toastMessage}
         </div>
       )}
@@ -182,16 +186,20 @@ const StoreLocatorScreen = ({ onSelectTab }) => {
             <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
               <button
                 type="button"
-                style={{ width: '36px', height: '36px', borderRadius: '50%', background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.15)', color: '#013E37', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer' }}
+                style={{ width: '36px', height: '36px', borderRadius: '50%', background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.15)', color: '#0B1F1C', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer' }}
                 onClick={() => { if (onSelectTab) onSelectTab('home'); }}
               >
                 ←
               </button>
-              <h1 style={{ fontSize: '22px', fontWeight: '800', color: '#013E37' }}>Find a Store</h1>
+              <h1 style={{ fontSize: '22px', fontWeight: '800', color: '#0B1F1C' }}>Find a Store</h1>
             </div>
             <button
               type="button"
-              style={{ width: '38px', height: '38px', borderRadius: '50%', background: 'linear-gradient(135deg, #013E37, #0288D1)', border: 'none', color: '#013E37', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', boxShadow: '0 0 16px rgba(1,62,55,0.4)' }}
+              style={{ width: '38px', height: '38px', borderRadius: '50%', background: 'linear-gradient(135deg, #013E37, #0288D1)', border: 'none', color: '#0B1F1C', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', boxShadow: '0 0 16px 
+    param($m)
+    $opacity = $m.Groups[1].Value
+    "rgba(11,31,28,0.$opacity)"
+  ' }}
               onClick={handleUseMyLocation}
               title="Auto-detect current location"
             >
@@ -201,7 +209,7 @@ const StoreLocatorScreen = ({ onSelectTab }) => {
 
           {/* SEARCH BAR */}
           <div style={{ position: 'relative', marginBottom: '10px' }}>
-            <span style={{ position: 'absolute', left: '14px', top: '50%', transform: 'translateY(-50%)', fontSize: '16px', color: '#013E37' }}>
+            <span style={{ position: 'absolute', left: '14px', top: '50%', transform: 'translateY(-50%)', fontSize: '16px', color: '#0B1F1C' }}>
               🔍
             </span>
             <input
@@ -209,7 +217,7 @@ const StoreLocatorScreen = ({ onSelectTab }) => {
               placeholder="Search by city, area, or pincode..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              style={{ width: '100%', height: '46px', paddingLeft: '44px', paddingRight: '14px', borderRadius: '14px', background: 'rgba(255,240,224,0.75)', border: '1.5px solid rgba(255,122,48,0.3)', color: '#013E37', fontSize: '13px', outline: 'none', backdropFilter: 'blur(10px)' }}
+              style={{ width: '100%', height: '46px', paddingLeft: '44px', paddingRight: '14px', borderRadius: '14px', background: 'rgba(255,240,224,0.75)', border: '1.5px solid rgba(255,122,48,0.3)', color: '#0B1F1C', fontSize: '13px', outline: 'none', backdropFilter: 'blur(10px)' }}
             />
           </div>
 
@@ -217,7 +225,7 @@ const StoreLocatorScreen = ({ onSelectTab }) => {
           <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '16px' }}>
             <button
               type="button"
-              style={{ padding: '6px 14px', borderRadius: '999px', background: 'rgba(1,62,55,0.15)', border: '1px solid #013E37', color: '#013E37', fontSize: '11px', fontWeight: '800', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '6px' }}
+              style={{ padding: '6px 14px', borderRadius: '999px', background: 'rgba(1,62,55,0.15)', border: '1px solid #013E37', color: '#0B1F1C', fontSize: '11px', fontWeight: '800', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '6px' }}
               onClick={handleUseMyLocation}
             >
               {isDetectingLoc ? (
@@ -285,15 +293,19 @@ const StoreLocatorScreen = ({ onSelectTab }) => {
                       style={{
                         position: 'absolute', bottom: '38px', left: '50%', transform: 'translateX(-50%)',
                         background: 'rgba(255,245,236,0.95)', border: '1.5px solid #A94A4A', borderRadius: '12px',
-                        padding: '10px 14px', minWidth: '170px', boxShadow: '0 8px 24px rgba(1,62,55,0.4)',
+                        padding: '10px 14px', minWidth: '170px', boxShadow: '0 8px 24px 
+    param($m)
+    $opacity = $m.Groups[1].Value
+    "rgba(11,31,28,0.$opacity)"
+  ',
                         animation: 'fadeIn 200ms ease', backdropFilter: 'blur(10px)', zIndex: 30
                       }}
                       onClick={(e) => { e.stopPropagation(); setViewMode('detail'); }}
                     >
-                      <div style={{ fontSize: '13px', fontWeight: '800', color: '#013E37', marginBottom: '2px', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                      <div style={{ fontSize: '13px', fontWeight: '800', color: '#0B1F1C', marginBottom: '2px', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
                         {st.name}
                       </div>
-                      <div style={{ fontSize: '11px', color: 'rgba(1,62,55,0.5)', marginBottom: '4px' }}>
+                      <div style={{ fontSize: '11px', color: 'var(--color-text-secondary)', marginBottom: '4px' }}>
                         {st.distance}
                       </div>
                       <div style={{ fontSize: '11px', fontWeight: '800', color: st.isOpen ? '#66BB6A' : '#A94A4A', marginBottom: '6px' }}>
@@ -315,14 +327,22 @@ const StoreLocatorScreen = ({ onSelectTab }) => {
                       height: isSel ? '44px' : '34px',
                       background: isSel
                         ? 'linear-gradient(135deg, #A94A4A 0%, #013E37 100%)'
-                        : 'linear-gradient(135deg, rgba(1,62,55,0.6) 0%, #B8935E 100%)',
+                        : 'linear-gradient(135deg, 
+    param($m)
+    $opacity = $m.Groups[1].Value
+    "rgba(11,31,28,0.$opacity)"
+   0%, #B8935E 100%)',
                       borderRadius: '50% 50% 50% 0',
                       transform: 'rotate(-45deg)',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
                       boxShadow: isSel
-                        ? '0 6px 20px rgba(1,62,55,0.6)'
+                        ? '0 6px 20px 
+    param($m)
+    $opacity = $m.Groups[1].Value
+    "rgba(11,31,28,0.$opacity)"
+  '
                         : '0 4px 12px rgba(0,0,0,0.5)',
                       transition: 'all 250ms var(--spring-bezier)'
                     }}
@@ -332,7 +352,7 @@ const StoreLocatorScreen = ({ onSelectTab }) => {
                         transform: 'rotate(45deg)',
                         fontSize: isSel ? '12px' : '10px',
                         fontWeight: '900',
-                        color: '#013E37',
+                        color: '#0B1F1C',
                         letterSpacing: '0.5px'
                       }}
                     >
@@ -341,7 +361,7 @@ const StoreLocatorScreen = ({ onSelectTab }) => {
                   </div>
                   {/* Pin Base Shadow Pulse */}
                   {isSel && (
-                    <div style={{ position: 'absolute', bottom: '-4px', left: '50%', transform: 'translateX(-50%)', width: '18px', height: '6px', background: 'rgba(1,62,55,0.5)', borderRadius: '50%', filter: 'blur(2px)' }} />
+                    <div style={{ position: 'absolute', bottom: '-4px', left: '50%', transform: 'translateX(-50%)', width: '18px', height: '6px', background: 'var(--color-text-secondary)', borderRadius: '50%', filter: 'blur(2px)' }} />
                   )}
                 </div>
               );
@@ -351,14 +371,14 @@ const StoreLocatorScreen = ({ onSelectTab }) => {
             <div style={{ position: 'absolute', bottom: '12px', right: '12px', display: 'flex', flexDirection: 'column', gap: '6px', zIndex: 15 }}>
               <button
                 type="button"
-                style={{ width: '32px', height: '32px', borderRadius: '8px', background: 'rgba(255,240,224,0.9)', border: '1px solid rgba(255,255,255,0.2)', color: '#013E37', fontWeight: '800', cursor: 'pointer' }}
+                style={{ width: '32px', height: '32px', borderRadius: '8px', background: 'rgba(255,240,224,0.9)', border: '1px solid rgba(255,255,255,0.2)', color: '#0B1F1C', fontWeight: '800', cursor: 'pointer' }}
                 onClick={() => setMapZoom(prev => Math.min(prev + 0.2, 1.8))}
               >
                 +
               </button>
               <button
                 type="button"
-                style={{ width: '32px', height: '32px', borderRadius: '8px', background: 'rgba(255,240,224,0.9)', border: '1px solid rgba(255,255,255,0.2)', color: '#013E37', fontWeight: '800', cursor: 'pointer' }}
+                style={{ width: '32px', height: '32px', borderRadius: '8px', background: 'rgba(255,240,224,0.9)', border: '1px solid rgba(255,255,255,0.2)', color: '#0B1F1C', fontWeight: '800', cursor: 'pointer' }}
                 onClick={() => setMapZoom(prev => Math.max(prev - 0.2, 0.8))}
               >
                 -
@@ -366,15 +386,15 @@ const StoreLocatorScreen = ({ onSelectTab }) => {
             </div>
 
             {/* Map Legend Tag */}
-            <div style={{ position: 'absolute', top: '12px', left: '12px', background: 'rgba(255,245,236,0.85)', padding: '4px 10px', borderRadius: '999px', border: '1px solid rgba(255,255,255,0.12)', fontSize: '10px', fontWeight: '700', color: 'rgba(1,62,55,0.5)', backdropFilter: 'blur(6px)' }}>
+            <div style={{ position: 'absolute', top: '12px', left: '12px', background: 'rgba(255,245,236,0.85)', padding: '4px 10px', borderRadius: '999px', border: '1px solid rgba(255,255,255,0.12)', fontSize: '10px', fontWeight: '700', color: 'var(--color-text-secondary)', backdropFilter: 'blur(6px)' }}>
               📍 4 Verified Flagship Eye Clinics
             </div>
           </div>
 
           {/* STORE LIST (Scrollable, Synced to Map) */}
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '12px' }}>
-            <h2 style={{ fontSize: '16px', fontWeight: '800', color: '#013E37' }}>Nearby Optical Studios</h2>
-            <span style={{ fontSize: '12px', color: 'rgba(1,62,55,0.5)' }}>{filteredStores.length} Stores Found</span>
+            <h2 style={{ fontSize: '16px', fontWeight: '800', color: '#0B1F1C' }}>Nearby Optical Studios</h2>
+            <span style={{ fontSize: '12px', color: 'var(--color-text-secondary)' }}>{filteredStores.length} Stores Found</span>
           </div>
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
@@ -420,21 +440,21 @@ const StoreLocatorScreen = ({ onSelectTab }) => {
                   {/* MIDDLE: Name, Address, Distance & Service Chips */}
                   <div style={{ flex: 1, minWidth: 0 }}>
                     <div className="flex-between" style={{ marginBottom: '2px' }}>
-                      <h3 style={{ fontSize: '15px', fontWeight: '800', color: '#013E37', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                      <h3 style={{ fontSize: '15px', fontWeight: '800', color: '#0B1F1C', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
                         {st.name}
                       </h3>
                     </div>
-                    <div style={{ fontSize: '12px', color: 'rgba(1,62,55,0.5)', marginBottom: '8px', lineHeight: '1.4', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
+                    <div style={{ fontSize: '12px', color: 'var(--color-text-secondary)', marginBottom: '8px', lineHeight: '1.4', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
                       {st.address}
                     </div>
 
                     {/* Distance Badge & Rating */}
                     <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '10px' }}>
-                      <span className="badge-pill" style={{ background: 'rgba(1,62,55,0.15)', color: '#013E37', fontSize: '10px', fontWeight: '800', display: 'flex', alignItems: 'center', gap: '4px' }}>
+                      <span className="badge-pill" style={{ background: 'rgba(1,62,55,0.15)', color: '#0B1F1C', fontSize: '10px', fontWeight: '800', display: 'flex', alignItems: 'center', gap: '4px' }}>
                         <span>📍</span>
                         <span>{st.distance}</span>
                       </span>
-                      <span className="badge-pill" style={{ background: 'rgba(201,168,118,0.15)', color: 'rgba(1,62,55,0.6)', fontSize: '10px', fontWeight: '800' }}>
+                      <span className="badge-pill" style={{ background: 'rgba(201,168,118,0.15)', color: 'var(--color-text-secondary)', fontSize: '10px', fontWeight: '800' }}>
                         ★ {st.rating} ({st.reviews})
                       </span>
                     </div>
@@ -457,7 +477,7 @@ const StoreLocatorScreen = ({ onSelectTab }) => {
                         );
                       })}
                       {st.services.length > 3 && (
-                        <span style={{ padding: '2px 6px', borderRadius: '999px', fontSize: '10px', background: 'rgba(255,255,255,0.06)', color: 'rgba(1,62,55,0.5)' }}>
+                        <span style={{ padding: '2px 6px', borderRadius: '999px', fontSize: '10px', background: 'rgba(255,255,255,0.06)', color: 'var(--color-text-secondary)' }}>
                           +{st.services.length - 3} more
                         </span>
                       )}
@@ -469,7 +489,7 @@ const StoreLocatorScreen = ({ onSelectTab }) => {
                     <span className={`badge-pill ${st.isOpen ? 'badge-green' : 'badge-orange'}`} style={{ fontSize: '10px', padding: '2px 8px' }}>
                       {st.isOpen ? 'OPEN' : 'CLOSED'}
                     </span>
-                    <span style={{ color: isSel ? '#A94A4A' : 'rgba(1,62,55,0.5)', fontWeight: '800', fontSize: '16px' }}>
+                    <span style={{ color: isSel ? '#A94A4A' : 'var(--color-text-secondary)', fontWeight: '800', fontSize: '16px' }}>
                       →
                     </span>
                   </div>
@@ -489,12 +509,12 @@ const StoreLocatorScreen = ({ onSelectTab }) => {
           <div className="flex-between mb-3">
             <button
               type="button"
-              style={{ width: '36px', height: '36px', borderRadius: '50%', background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.15)', color: '#013E37', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer' }}
+              style={{ width: '36px', height: '36px', borderRadius: '50%', background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.15)', color: '#0B1F1C', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer' }}
               onClick={() => setViewMode('list')}
             >
               ←
             </button>
-            <h1 style={{ fontSize: '18px', fontWeight: '800', color: '#013E37' }}>{activeStore.name}</h1>
+            <h1 style={{ fontSize: '18px', fontWeight: '800', color: '#0B1F1C' }}>{activeStore.name}</h1>
             <span style={{ width: '36px' }} />
           </div>
 
@@ -518,17 +538,21 @@ const StoreLocatorScreen = ({ onSelectTab }) => {
 
             {/* Top Right Pill: Star Rating */}
             <div style={{ position: 'absolute', top: '12px', right: '12px', zIndex: 2 }}>
-              <span className="badge-pill" style={{ background: 'rgba(201,168,118,0.2)', border: '1px solid rgba(1,62,55,0.6)', color: 'rgba(1,62,55,0.6)', fontSize: '11px', fontWeight: '800', padding: '4px 10px', backdropFilter: 'blur(8px)' }}>
+              <span className="badge-pill" style={{ background: 'rgba(201,168,118,0.2)', border: '1px solid 
+    param($m)
+    $opacity = $m.Groups[1].Value
+    "rgba(11,31,28,0.$opacity)"
+  ', color: 'var(--color-text-secondary)', fontSize: '11px', fontWeight: '800', padding: '4px 10px', backdropFilter: 'blur(8px)' }}>
                 ★ {activeStore.rating} ({activeStore.reviews} reviews)
               </span>
             </div>
 
             {/* Bottom Overlay Title */}
             <div style={{ position: 'absolute', bottom: '12px', left: '16px', right: '16px', zIndex: 2 }}>
-              <div style={{ fontSize: '18px', fontWeight: '900', color: '#013E37', textShadow: '0 2px 4px rgba(0,0,0,0.8)' }}>
+              <div style={{ fontSize: '18px', fontWeight: '900', color: '#0B1F1C', textShadow: '0 2px 4px rgba(0,0,0,0.8)' }}>
                 {activeStore.name}
               </div>
-              <div style={{ fontSize: '12px', color: '#013E37', fontWeight: '700' }}>
+              <div style={{ fontSize: '12px', color: '#0B1F1C', fontWeight: '700' }}>
                 📍 {activeStore.area}, {activeStore.city} · {activeStore.distance}
               </div>
             </div>
@@ -539,15 +563,19 @@ const StoreLocatorScreen = ({ onSelectTab }) => {
             {/* Address Card */}
             <div className="glass-card-standard" style={{ padding: '16px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '14px' }}>
               <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', flex: 1 }}>
-                <span style={{ fontSize: '20px', color: '#013E37', marginTop: '2px' }}>📍</span>
+                <span style={{ fontSize: '20px', color: '#0B1F1C', marginTop: '2px' }}>📍</span>
                 <div>
-                  <div style={{ fontSize: '11px', fontWeight: '800', color: 'rgba(1,62,55,0.5)', uppercase: 'true' }}>STUDIO ADDRESS</div>
-                  <div style={{ fontSize: '13px', color: '#013E37', lineHeight: '1.4', marginTop: '2px' }}>{activeStore.address}</div>
+                  <div style={{ fontSize: '11px', fontWeight: '800', color: 'var(--color-text-secondary)', uppercase: 'true' }}>STUDIO ADDRESS</div>
+                  <div style={{ fontSize: '13px', color: '#0B1F1C', lineHeight: '1.4', marginTop: '2px' }}>{activeStore.address}</div>
                 </div>
               </div>
               <button
                 type="button"
-                style={{ padding: '8px 14px', borderRadius: '999px', background: 'linear-gradient(135deg, #013E37, #0288D1)', border: 'none', color: '#013E37', fontSize: '12px', fontWeight: '800', cursor: 'pointer', whiteSpace: 'nowrap', boxShadow: '0 4px 12px rgba(1,62,55,0.4)' }}
+                style={{ padding: '8px 14px', borderRadius: '999px', background: 'linear-gradient(135deg, #013E37, #0288D1)', border: 'none', color: '#0B1F1C', fontSize: '12px', fontWeight: '800', cursor: 'pointer', whiteSpace: 'nowrap', boxShadow: '0 4px 12px 
+    param($m)
+    $opacity = $m.Groups[1].Value
+    "rgba(11,31,28,0.$opacity)"
+  ' }}
                 onClick={() => showToast(`🗺️ Opening GPS directions to ${activeStore.name}...`)}
               >
                 Get Directions
@@ -559,13 +587,13 @@ const StoreLocatorScreen = ({ onSelectTab }) => {
               <div style={{ display: 'flex', alignItems: 'center', gap: '12px', flex: 1 }}>
                 <span style={{ fontSize: '20px', color: '#66BB6A' }}>📞</span>
                 <div>
-                  <div style={{ fontSize: '11px', fontWeight: '800', color: 'rgba(1,62,55,0.5)' }}>STUDIO CONTACT</div>
-                  <div style={{ fontSize: '14px', fontWeight: '800', color: '#013E37', marginTop: '2px' }}>{activeStore.phone}</div>
+                  <div style={{ fontSize: '11px', fontWeight: '800', color: 'var(--color-text-secondary)' }}>STUDIO CONTACT</div>
+                  <div style={{ fontSize: '14px', fontWeight: '800', color: '#0B1F1C', marginTop: '2px' }}>{activeStore.phone}</div>
                 </div>
               </div>
               <button
                 type="button"
-                style={{ padding: '8px 16px', borderRadius: '999px', background: 'linear-gradient(135deg, #013E37, #2E7D32)', border: 'none', color: '#013E37', fontSize: '12px', fontWeight: '800', cursor: 'pointer', whiteSpace: 'nowrap', boxShadow: '0 4px 12px rgba(67,160,71,0.4)' }}
+                style={{ padding: '8px 16px', borderRadius: '999px', background: 'linear-gradient(135deg, #013E37, #2E7D32)', border: 'none', color: '#0B1F1C', fontSize: '12px', fontWeight: '800', cursor: 'pointer', whiteSpace: 'nowrap', boxShadow: '0 4px 12px rgba(67,160,71,0.4)' }}
                 onClick={() => showToast(`📞 Calling optical reception desk at ${activeStore.phone}...`)}
               >
                 Call Now
@@ -580,15 +608,15 @@ const StoreLocatorScreen = ({ onSelectTab }) => {
                 onClick={() => setShowHoursTable(!showHoursTable)}
               >
                 <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                  <span style={{ fontSize: '20px', color: 'rgba(1,62,55,0.6)' }}>⏰</span>
+                  <span style={{ fontSize: '20px', color: 'var(--color-text-secondary)' }}>⏰</span>
                   <div>
-                    <div style={{ fontSize: '11px', fontWeight: '800', color: 'rgba(1,62,55,0.5)' }}>OPERATING HOURS</div>
+                    <div style={{ fontSize: '11px', fontWeight: '800', color: 'var(--color-text-secondary)' }}>OPERATING HOURS</div>
                     <div style={{ fontSize: '13px', fontWeight: '800', color: activeStore.isOpen ? '#66BB6A' : '#A94A4A' }}>
                       {activeStore.hoursText}
                     </div>
                   </div>
                 </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '6px', color: '#013E37', fontSize: '12px', fontWeight: '700' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '6px', color: '#0B1F1C', fontSize: '12px', fontWeight: '700' }}>
                   <span>{showHoursTable ? 'Hide Schedule' : 'View 7-Day Schedule'}</span>
                   <span style={{ transform: showHoursTable ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 200ms ease' }}>▼</span>
                 </div>
@@ -623,7 +651,7 @@ const StoreLocatorScreen = ({ onSelectTab }) => {
 
           {/* SERVICES AVAILABLE IN THIS STORE */}
           <div className="glass-card-elevated mb-4" style={{ padding: '18px' }}>
-            <h3 style={{ fontSize: '15px', fontWeight: '800', color: '#013E37', marginBottom: '14px' }}>
+            <h3 style={{ fontSize: '15px', fontWeight: '800', color: '#0B1F1C', marginBottom: '14px' }}>
               Services Available in Studio
             </h3>
 
@@ -653,9 +681,9 @@ const StoreLocatorScreen = ({ onSelectTab }) => {
                         justifyContent: 'center'
                       }}
                     >
-                      <i data-lucide={srv.icon} style={{ width: '20px', height: '20px', color: isAvail ? srv.color : 'rgba(1,62,55,0.5)' }} />
+                      <i data-lucide={srv.icon} style={{ width: '20px', height: '20px', color: isAvail ? srv.color : 'var(--color-text-secondary)' }} />
                     </div>
-                    <span style={{ fontSize: '11px', fontWeight: isAvail ? '700' : '500', color: isAvail ? '#FFFFFF' : 'rgba(1,62,55,0.5)', lineHeight: '1.2' }}>
+                    <span style={{ fontSize: '11px', fontWeight: isAvail ? '700' : '500', color: isAvail ? '#FFFFFF' : 'var(--color-text-secondary)', lineHeight: '1.2' }}>
                       {srv.label}
                     </span>
                     {isAvail && (
@@ -674,20 +702,24 @@ const StoreLocatorScreen = ({ onSelectTab }) => {
           >
             <div style={{ position: 'absolute', top: '-20px', right: '-20px', width: '80px', height: '80px', background: 'rgba(1,62,55,0.2)', borderRadius: '50%', filter: 'blur(20px)' }} />
 
-            <div style={{ display: 'inline-block', padding: '4px 12px', borderRadius: '999px', background: 'rgba(1,62,55,0.2)', color: '#013E37', fontSize: '11px', fontWeight: '800', marginBottom: '10px' }}>
+            <div style={{ display: 'inline-block', padding: '4px 12px', borderRadius: '999px', background: 'rgba(1,62,55,0.2)', color: '#0B1F1C', fontSize: '11px', fontWeight: '800', marginBottom: '10px' }}>
               👁️ CLINICALLY VERIFIED TEST
             </div>
-            <h3 style={{ fontSize: '18px', fontWeight: '900', color: '#013E37', marginBottom: '6px' }}>
+            <h3 style={{ fontSize: '18px', fontWeight: '900', color: '#0B1F1C', marginBottom: '6px' }}>
               Visit {activeStore.name} for an In-Person Eye Test
             </h3>
-            <p style={{ fontSize: '13px', color: 'rgba(1,62,55,0.5)', marginBottom: '18px', maxWidth: '320px', marginX: 'auto' }}>
+            <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', marginBottom: '18px', maxWidth: '320px', marginX: 'auto' }}>
               Our certified senior optometrists conduct a 12-step computerized vision exam using Zeiss optical instrumentation.
             </p>
 
             <button
               type="button"
               className="btn-primary-pill w-100"
-              style={{ height: '52px', fontSize: '15px', fontWeight: '900', background: 'linear-gradient(135deg, #A94A4A, #013E37)', boxShadow: '0 0 24px rgba(1,62,55,0.5)' }}
+              style={{ height: '52px', fontSize: '15px', fontWeight: '900', background: 'linear-gradient(135deg, #A94A4A, #013E37)', boxShadow: '0 0 24px 
+    param($m)
+    $opacity = $m.Groups[1].Value
+    "rgba(11,31,28,0.$opacity)"
+  ' }}
               onClick={() => {
                 showToast(`🏥 Pre-selecting ${activeStore.name} for your clinic appointment...`);
                 setTimeout(() => {

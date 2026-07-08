@@ -234,19 +234,27 @@ class ErrorBoundary extends React.Component {
     return { hasError: true, error };
   }
   componentDidCatch(error, errorInfo) {
-    console.error("Lens Makers Optical Glitch Caught:", error, errorInfo);
+    console.error("Lensmakers Optical Glitch Caught:", error, errorInfo);
   }
   render() {
     if (this.state.hasError) {
       return (
         <div style={{ minHeight: '60vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '32px 20px', textAlign: 'center', background: '#FFFFFF' }}>
-          <div style={{ width: '80px', height: '80px', borderRadius: '40px', background: 'rgba(1,62,55, 0.15)', border: '2px solid rgba(1,62,55, 0.5)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '38px', marginBottom: '20px', boxShadow: '0 0 30px rgba(1,62,55, 0.3)' }}>
+          <div style={{ width: '80px', height: '80px', borderRadius: '40px', background: 'rgba(1,62,55, 0.15)', border: '2px solid 
+    param($m)
+    $opacity = $m.Groups[1].Value
+    "rgba(11,31,28,0.$opacity)"
+  ', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '38px', marginBottom: '20px', boxShadow: '0 0 30px rgba(1,62,55, 0.3)' }}>
             ⚠️
           </div>
-          <h2 style={{ fontSize: '22px', fontWeight: '800', color: '#013E37', marginBottom: '8px' }}>
+          <h2 style={{ fontSize: '22px', fontWeight: '800', color: '#0B1F1C', marginBottom: '8px' }}>
             We encountered an optical glitch.
           </h2>
-          <p style={{ fontSize: '14px', color: 'rgba(1,62,55,0.5)', maxWidth: '320px', lineHeight: '1.5', marginBottom: '24px' }}>
+          <p style={{ fontSize: '14px', color: '
+    param($m)
+    $opacity = $m.Groups[1].Value
+    "rgba(11,31,28,0.$opacity)"
+  ', maxWidth: '320px', lineHeight: '1.5', marginBottom: '24px' }}>
             Don't worry, your cart and membership status are safe. Let's get your vision back in focus.
           </p>
           <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', justifyContent: 'center' }}>
@@ -256,12 +264,12 @@ class ErrorBoundary extends React.Component {
               style={{ height: '44px', padding: '0 24px', fontSize: '14px', background: 'linear-gradient(135deg, #013E37, #A94A4A)' }}
               onClick={() => window.location.reload()}
             >
-              Reload Lens Makers
+              Reload Lensmakers
             </button>
             <button
               type="button"
               className="btn-secondary-pill"
-              style={{ height: '44px', padding: '0 24px', fontSize: '14px', borderColor: 'rgba(255,255,255,0.3)', color: '#013E37' }}
+              style={{ height: '44px', padding: '0 24px', fontSize: '14px', borderColor: 'rgba(255,255,255,0.3)', color: '#0B1F1C' }}
               onClick={() => {
                 this.setState({ hasError: false, error: null });
                 if (this.props.onReturnHome) {

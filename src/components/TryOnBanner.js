@@ -26,7 +26,11 @@ window.TryOnBanner = function TryOnBanner({ onTriggerTryOn }) {
                 <h2 className="font-heading font-extrabold text-2xl text-white tracking-tight">
                   Virtual Try-On
                 </h2>
-                <span className="bg-gradient-to-r from-[#013E37] to-[#013E37] text-[#FFFFFF] text-[10px] font-black px-2 py-0.5 rounded-full uppercase tracking-wider shadow-[0_0_10px_rgba(1,62,55,0.8)]">
+                <span className="bg-gradient-to-r from-[#013E37] to-[#013E37] text-[#FFFFFF] text-[10px] font-black px-2 py-0.5 rounded-full uppercase tracking-wider shadow-[0_0_10px_
+    param($m)
+    $opacity = $m.Groups[1].Value
+    "rgba(11,31,28,0.$opacity)"
+  ]">
                   AI Studio Pro
                 </span>
               </div>

@@ -93,7 +93,11 @@ const ProfileScreen = ({ onLogout, onReplayOnboarding, onSelectTab, initialViewM
     <div className="screen-transition-enter" style={{ padding: '16px var(--screen-padding)', paddingBottom: 'calc(72px + env(safe-area-inset-bottom) + 24px)' }}>
       {/* Toast Notification */}
       {toastMessage && (
-        <div className="glass-card-glow-pink" style={{ position: 'fixed', top: '20px', left: '50%', transform: 'translateX(-50%)', zIndex: 9999, padding: '12px 24px', borderRadius: '999px', fontSize: '13px', fontWeight: '800', color: '#013E37', whiteSpace: 'nowrap', boxShadow: '0 8px 32px rgba(1,62,55,0.5)', animation: 'fadeIn 200ms ease' }}>
+        <div className="glass-card-glow-pink" style={{ position: 'fixed', top: '20px', left: '50%', transform: 'translateX(-50%)', zIndex: 9999, padding: '12px 24px', borderRadius: '999px', fontSize: '13px', fontWeight: '800', color: 'var(--color-text-primary)', whiteSpace: 'nowrap', boxShadow: '0 8px 32px 
+    param($m)
+    $opacity = $m.Groups[1].Value
+    "rgba(11,31,28,0.$opacity)"
+  ', animation: 'fadeIn 200ms ease' }}>
           {toastMessage}
         </div>
       )}
@@ -106,23 +110,23 @@ const ProfileScreen = ({ onLogout, onReplayOnboarding, onSelectTab, initialViewM
           {/* HEADER */}
           <div className="flex-between mb-4">
             <span style={{ width: '36px' }} /> {/* spacer for balance */}
-            <h1 style={{ fontSize: '24px', fontWeight: '900', color: '#013E37', letterSpacing: '0.5px' }}>
+            <h1 style={{ fontSize: '24px', fontWeight: '900', color: 'var(--color-text-primary)', letterSpacing: '0.5px' }}>
               Profile
             </h1>
             <button
               type="button"
-              style={{ width: '38px', height: '38px', borderRadius: '50%', background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.15)', color: '#013E37', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', position: 'relative' }}
+              style={{ width: '38px', height: '38px', borderRadius: '50%', background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.15)', color: 'var(--color-text-primary)', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', position: 'relative' }}
               onClick={() => showToast("🔔 No new alerts. You have 3 saved eye prescriptions ready for checkout!")}
             >
               <i data-lucide="bell" style={{ width: '18px', height: '18px' }} />
-              <span style={{ position: 'absolute', top: '8px', right: '8px', width: '8px', height: '8px', borderRadius: '4px', background: '#A94A4A', boxShadow: '0 0 8px #A94A4A' }} />
+              <span style={{ position: 'absolute', top: '8px', right: '8px', width: '8px', height: '8px', borderRadius: '4px', background: 'var(--color-accent-primary)', boxShadow: '0 0 8px #A94A4A' }} />
             </button>
           </div>
 
           {/* USER IDENTITY CARD (Elevated Glass Card, Full-Width) */}
           <div
-            className="glass-card-elevated mb-3"
-            style={{ padding: '24px 18px', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', position: 'relative', overflow: 'hidden' }}
+            className=\"glass-card-elevated mb-3\"
+            style={{ boxShadow: '0 12px 48px var(--color-shadow)', padding: '24px 18px', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', position: 'relative', overflow: 'hidden' }}
           >
             {/* Background Ambient Blob */}
             <div style={{ position: 'absolute', top: '-40px', left: '50%', transform: 'translateX(-50%)', width: '140px', height: '140px', background: 'radial-gradient(circle, rgba(1,62,55,0.25) 0%, transparent 70%)', filter: 'blur(20px)', pointerEvents: 'none' }} />
@@ -134,9 +138,13 @@ const ProfileScreen = ({ onLogout, onReplayOnboarding, onSelectTab, initialViewM
                   width: '88px', height: '88px', borderRadius: '44px',
                   background: 'linear-gradient(135deg, rgba(1,62,55, 0.15) 0%, rgba(255, 255, 255, 0.85) 100%)',
                   border: '2.5px solid #A94A4A',
-                  boxShadow: '0 0 24px rgba(1,62,55,0.5)',
+                  boxShadow: '0 0 24px 
+    param($m)
+    $opacity = $m.Groups[1].Value
+    "rgba(11,31,28,0.$opacity)"
+  ',
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
-                  fontSize: '32px', fontWeight: '900', color: '#013E37'
+                  fontSize: '32px', fontWeight: '900', color: 'var(--color-text-primary)'
                 }}
               >
                 {userProfile.avatar}
@@ -149,9 +157,13 @@ const ProfileScreen = ({ onLogout, onReplayOnboarding, onSelectTab, initialViewM
                   position: 'absolute', bottom: '0px', right: '0px',
                   width: '28px', height: '28px', borderRadius: '14px',
                   background: 'linear-gradient(135deg, #A94A4A, #013E37)',
-                  border: '2px solid #FFFFFF', color: '#013E37',
+                  border: '2px solid #FFFFFF', color: 'var(--color-text-primary)',
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
-                  cursor: 'pointer', boxShadow: '0 4px 10px rgba(1,62,55,0.6)'
+                  cursor: 'pointer', boxShadow: '0 4px 10px 
+    param($m)
+    $opacity = $m.Groups[1].Value
+    "rgba(11,31,28,0.$opacity)"
+  '
                 }}
                 onClick={handleChangeAvatar}
                 title="Change Avatar"
@@ -161,18 +173,18 @@ const ProfileScreen = ({ onLogout, onReplayOnboarding, onSelectTab, initialViewM
             </div>
 
             {/* User Name & Contact Details */}
-            <h2 style={{ fontSize: '20px', fontWeight: '900', color: '#013E37', marginBottom: '4px' }}>
+            <h2 style={{ fontSize: '20px', fontWeight: '900', color: 'var(--color-text-primary)', marginBottom: '4px' }}>
               {userProfile.name}
             </h2>
-            <div style={{ fontSize: '13px', color: 'rgba(1,62,55,0.5)', marginBottom: '16px' }}>
+            <div style={{ fontSize: '13px', color: 'var(--color-text-secondary)', marginBottom: '16px' }}>
               {userProfile.email} • {userProfile.phone}
             </div>
 
             {/* Membership Badge Toggle */}
             {isMember ? (
               <div
-                className="badge-pill badge-green"
-                style={{ padding: '6px 16px', fontSize: '11px', fontWeight: '800', cursor: 'pointer', boxShadow: '0 0 16px rgba(67,160,71,0.4)', display: 'flex', alignItems: 'center', gap: '6px' }}
+                className=\"\"
+                style={{ background: 'var(--color-accent-primary)', color: 'var(--color-bg-primary)', padding: '6px 16px', borderRadius: '999px', fontSize: '11px', fontWeight: '800', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '6px' }}
                 onClick={() => { if (onSelectTab) onSelectTab('manageclub'); }}
               >
                 <span>👑 ACTIVE MEMBER (₹99/mo Club) ✓</span>
@@ -180,11 +192,11 @@ const ProfileScreen = ({ onLogout, onReplayOnboarding, onSelectTab, initialViewM
               </div>
             ) : (
               <div
-                style={{ padding: '6px 16px', borderRadius: '999px', background: 'rgba(1,62,55,0.15)', border: '1.5px solid #013E37', color: '#013E37', fontSize: '11px', fontWeight: '800', cursor: 'pointer', boxShadow: '0 0 16px rgba(1,62,55,0.3)', display: 'flex', alignItems: 'center', gap: '6px' }}
+                style={{ padding: '6px 16px', borderRadius: '999px', background: 'var(--color-accent-primary)', border: 'none', color: 'var(--color-bg-primary)', fontSize: '11px', fontWeight: '800', cursor: 'pointer', boxShadow: '0 0 16px rgba(1,62,55,0.3)', display: 'flex', alignItems: 'center', gap: '6px' }}
                 onClick={() => { if (onSelectTab) onSelectTab('membership'); }}
               >
                 <span>👑 Join Club ₹99/mo (Flat 25% Off)</span>
-                <span style={{ color: '#013E37' }}>→</span>
+                <span style={{ color: 'var(--color-bg-primary)' }}>→</span>
               </div>
             )}
 
@@ -194,7 +206,7 @@ const ProfileScreen = ({ onLogout, onReplayOnboarding, onSelectTab, initialViewM
                 type="button"
                 style={{
                   padding: '6px 18px', borderRadius: '999px', background: 'rgba(239, 83, 80, 0.15)',
-                  border: '1px solid rgba(239, 83, 80, 0.4)', color: '#A94A4A', fontSize: '12px', fontWeight: '800',
+                  border: '1px solid rgba(239, 83, 80, 0.4)', color: 'var(--color-accent-primary)', fontSize: '12px', fontWeight: '800',
                   cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '6px', transition: 'all 200ms ease'
                 }}
                 onClick={() => setShowLogoutModal(true)}
@@ -206,11 +218,11 @@ const ProfileScreen = ({ onLogout, onReplayOnboarding, onSelectTab, initialViewM
           </div>
 
           {/* STATS ROW (3 Equal Sections in Glass Card Strip) */}
-          <div className="glass-card-standard mb-4" style={{ display: 'grid', gridTemplateColumns: '1fr auto 1fr auto 1fr', alignItems: 'center', padding: '16px 8px' }}>
+          <div className=\"glass-card-standard mb-4" style={{ boxShadow: '0 12px 48px var(--color-shadow)', display: 'grid', gridTemplateColumns: '1fr auto 1fr auto 1fr', alignItems: 'center', padding: '16px 8px' }}>
             {/* Orders */}
             <div style={{ textAlign: 'center', cursor: 'pointer' }} onClick={() => { if (onSelectTab) onSelectTab('trackorder'); }}>
-              <div style={{ fontSize: '22px', fontWeight: '900', color: '#013E37' }}>{userProfile.ordersCount}</div>
-              <div style={{ fontSize: '11px', fontWeight: '700', color: 'rgba(1,62,55,0.5)', marginTop: '2px' }}>Orders</div>
+              <div style={{ fontSize: '22px', fontWeight: '900', color: 'var(--color-text-primary)' }}>{userProfile.ordersCount}</div>
+              <div style={{ fontSize: '11px', fontWeight: '700', color: 'var(--color-text-secondary)', marginTop: '2px' }}>Orders</div>
             </div>
 
             {/* Divider */}
@@ -218,8 +230,8 @@ const ProfileScreen = ({ onLogout, onReplayOnboarding, onSelectTab, initialViewM
 
             {/* Saved Frames */}
             <div style={{ textAlign: 'center', cursor: 'pointer' }} onClick={() => { if (onSelectTab) onSelectTab('shop'); }}>
-              <div style={{ fontSize: '22px', fontWeight: '900', color: '#A94A4A' }}>{userProfile.savedFramesCount}</div>
-              <div style={{ fontSize: '11px', fontWeight: '700', color: 'rgba(1,62,55,0.5)', marginTop: '2px' }}>Saved Frames</div>
+              <div style={{ fontSize: '22px', fontWeight: '900', color: 'var(--color-accent-primary)' }}>{userProfile.savedFramesCount}</div>
+              <div style={{ fontSize: '11px', fontWeight: '700', color: 'var(--color-text-secondary)', marginTop: '2px' }}>Saved Frames</div>
             </div>
 
             {/* Divider */}
@@ -227,8 +239,8 @@ const ProfileScreen = ({ onLogout, onReplayOnboarding, onSelectTab, initialViewM
 
             {/* Reviews */}
             <div style={{ textAlign: 'center', cursor: 'pointer' }} onClick={() => setShowRatingModal(true)}>
-              <div style={{ fontSize: '22px', fontWeight: '900', color: 'rgba(1,62,55,0.6)' }}>{userProfile.reviewsCount}</div>
-              <div style={{ fontSize: '11px', fontWeight: '700', color: 'rgba(1,62,55,0.5)', marginTop: '2px' }}>Reviews ★</div>
+              <div style={{ fontSize: '22px', fontWeight: '900', color: 'var(--color-text-secondary)' }}>{userProfile.reviewsCount}</div>
+              <div style={{ fontSize: '11px', fontWeight: '700', color: 'var(--color-text-secondary)', marginTop: '2px' }}>Reviews ★</div>
             </div>
           </div>
 
@@ -236,20 +248,20 @@ const ProfileScreen = ({ onLogout, onReplayOnboarding, onSelectTab, initialViewM
 
           {/* SECTION 1: SHOPPING */}
           <div style={{ marginBottom: '18px' }}>
-            <h3 style={{ fontSize: '11px', fontWeight: '800', color: 'rgba(1,62,55,0.5)', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '8px', paddingLeft: '4px' }}>
+            <h3 style={{ fontSize: '11px', fontWeight: '800', color: 'var(--color-text-secondary)', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '8px', paddingLeft: '4px' }}>
               SHOPPING
             </h3>
             <div className="glass-card-standard" style={{ display: 'flex', flexDirection: 'column', overflow: 'hidden' }}>
               <div className="menu-row-item" onClick={() => { if (onSelectTab) onSelectTab('trackorder'); }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
-                  <div style={{ width: '36px', height: '36px', borderRadius: '18px', background: 'rgba(1,62,55,0.2)', border: '1px solid #A94A4A', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#A94A4A' }}>
+                  <div style={{ width: '36px', height: '36px', borderRadius: '18px', background: 'rgba(1,62,55,0.2)', border: '1px solid #A94A4A', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--color-accent-primary)' }}>
                     <i data-lucide="shopping-bag" style={{ width: '18px', height: '18px' }} />
                   </div>
-                  <span style={{ fontSize: '14px', fontWeight: '800', color: '#013E37' }}>My Orders & Tracking</span>
+                  <span style={{ fontSize: '14px', fontWeight: '800', color: 'var(--color-text-primary)' }}>My Orders & Tracking</span>
                 </div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-                  <span className="badge-pill badge-green" style={{ fontSize: '9px' }}>1 IN TRANSIT</span>
-                  <span style={{ color: 'rgba(1,62,55,0.5)', fontWeight: '800' }}>→</span>
+                  <span className=\"\" style={{ fontSize: '9px' }}>1 IN TRANSIT</span>
+                  <span style={{ color: 'var(--color-accent-primary)', fontWeight: '800' }}>→</span>
                 </div>
               </div>
 
@@ -258,30 +270,30 @@ const ProfileScreen = ({ onLogout, onReplayOnboarding, onSelectTab, initialViewM
                   <div style={{ width: '36px', height: '36px', borderRadius: '18px', background: 'rgba(229,57,53,0.2)', border: '1px solid #E53935', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#E53935' }}>
                     <i data-lucide="heart" style={{ width: '18px', height: '18px' }} />
                   </div>
-                  <span style={{ fontSize: '14px', fontWeight: '800', color: '#013E37' }}>Saved Frames</span>
+                  <span style={{ fontSize: '14px', fontWeight: '800', color: 'var(--color-text-primary)' }}>Saved Frames</span>
                 </div>
-                <span style={{ color: 'rgba(1,62,55,0.5)', fontWeight: '800' }}>→</span>
+                <span style={{ color: 'var(--color-accent-primary)', fontWeight: '800' }}>→</span>
               </div>
 
               <div className="menu-row-item" style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }} onClick={() => { if (onSelectTab) onSelectTab('membership'); }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
-                  <div style={{ width: '36px', height: '36px', borderRadius: '18px', background: 'rgba(1,62,55,0.2)', border: '1px solid #013E37', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#013E37' }}>
+                  <div style={{ width: '36px', height: '36px', borderRadius: '18px', background: 'rgba(1,62,55,0.2)', border: '1px solid #013E37', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--color-text-primary)' }}>
                     <i data-lucide="star" style={{ width: '18px', height: '18px' }} />
                   </div>
                   <div>
-                    <div style={{ fontSize: '14px', fontWeight: '800', color: '#013E37' }}>Lens Makers Club</div>
-                    <div style={{ fontSize: '11px', color: '#013E37', fontWeight: '700' }}>{isMember ? 'VIP Active · Flat 25% Off' : 'Join for ₹99/mo'}</div>
+                    <div style={{ fontSize: '14px', fontWeight: '800', color: 'var(--color-text-primary)' }}>Lens Makers Club</div>
+                    <div style={{ fontSize: '11px', color: 'var(--color-text-primary)', fontWeight: '700' }}>{isMember ? 'VIP Active · Flat 25% Off' : 'Join for ₹99/mo'}</div>
                   </div>
                 </div>
-                <span style={{ color: 'rgba(1,62,55,0.5)', fontWeight: '800' }}>→</span>
+                <span style={{ color: 'var(--color-accent-primary)', fontWeight: '800' }}>→</span>
               </div>
 
               <div className="menu-row-item" style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }} onClick={() => { if (onSelectTab) onSelectTab('welcomeclub'); }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
-                  <div style={{ width: '36px', height: '36px', borderRadius: '18px', background: 'rgba(255,122,48,0.2)', border: '1px solid #013E37', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#013E37' }}>
+                  <div style={{ width: '36px', height: '36px', borderRadius: '18px', background: 'rgba(255,122,48,0.2)', border: '1px solid #013E37', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--color-text-primary)' }}>
                     <i data-lucide="gift" style={{ width: '18px', height: '18px' }} />
                   </div>
-                  <span style={{ fontSize: '14px', fontWeight: '800', color: '#013E37' }}>BOGO Offer Mechanics</span>
+                  <span style={{ fontSize: '14px', fontWeight: '800', color: 'var(--color-text-primary)' }}>BOGO Offer Mechanics</span>
                 </div>
                 <span className="badge-pill badge-orange" style={{ fontSize: '9px' }}>BUY 1 GET 1</span>
               </div>
@@ -290,51 +302,55 @@ const ProfileScreen = ({ onLogout, onReplayOnboarding, onSelectTab, initialViewM
 
           {/* SECTION 2: EYE HEALTH */}
           <div style={{ marginBottom: '18px' }}>
-            <h3 style={{ fontSize: '11px', fontWeight: '800', color: 'rgba(1,62,55,0.5)', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '8px', paddingLeft: '4px' }}>
+            <h3 style={{ fontSize: '11px', fontWeight: '800', color: 'var(--color-text-secondary)', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '8px', paddingLeft: '4px' }}>
               EYE HEALTH
             </h3>
             <div className="glass-card-standard" style={{ display: 'flex', flexDirection: 'column', overflow: 'hidden' }}>
               <div className="menu-row-item" onClick={() => { if (onSelectTab) onSelectTab('prescription'); }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
-                  <div style={{ width: '36px', height: '36px', borderRadius: '18px', background: 'rgba(1,62,55,0.2)', border: '1px solid #013E37', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#013E37' }}>
+                  <div style={{ width: '36px', height: '36px', borderRadius: '18px', background: 'rgba(1,62,55,0.2)', border: '1px solid #013E37', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--color-text-primary)' }}>
                     <i data-lucide="eye" style={{ width: '18px', height: '18px' }} />
                   </div>
                   <div>
-                    <div style={{ fontSize: '14px', fontWeight: '800', color: '#013E37' }}>My Prescriptions</div>
-                    <div style={{ fontSize: '11px', color: '#013E37' }}>3 verified medical records stored</div>
+                    <div style={{ fontSize: '14px', fontWeight: '800', color: 'var(--color-text-primary)' }}>My Prescriptions</div>
+                    <div style={{ fontSize: '11px', color: 'var(--color-text-primary)' }}>3 verified medical records stored</div>
                   </div>
                 </div>
-                <span style={{ color: 'rgba(1,62,55,0.5)', fontWeight: '800' }}>→</span>
+                <span style={{ color: 'var(--color-accent-primary)', fontWeight: '800' }}>→</span>
               </div>
 
               <div className="menu-row-item" style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }} onClick={() => { if (onSelectTab) onSelectTab('trackappt'); }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
-                  <div style={{ width: '36px', height: '36px', borderRadius: '18px', background: 'rgba(1,62,55,0.2)', border: '1px solid #013E37', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#013E37' }}>
+                  <div style={{ width: '36px', height: '36px', borderRadius: '18px', background: 'rgba(1,62,55,0.2)', border: '1px solid #013E37', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--color-text-primary)' }}>
                     <i data-lucide="calendar" style={{ width: '18px', height: '18px' }} />
                   </div>
-                  <span style={{ fontSize: '14px', fontWeight: '800', color: '#013E37' }}>Eye Check-Up History</span>
+                  <span style={{ fontSize: '14px', fontWeight: '800', color: 'var(--color-text-primary)' }}>Eye Check-Up History</span>
                 </div>
-                <span style={{ color: 'rgba(1,62,55,0.5)', fontWeight: '800' }}>→</span>
+                <span style={{ color: 'var(--color-accent-primary)', fontWeight: '800' }}>→</span>
               </div>
             </div>
           </div>
 
           {/* SECTION 3: ACCOUNT */}
           <div style={{ marginBottom: '18px' }}>
-            <h3 style={{ fontSize: '11px', fontWeight: '800', color: 'rgba(1,62,55,0.5)', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '8px', paddingLeft: '4px' }}>
+            <h3 style={{ fontSize: '11px', fontWeight: '800', color: 'var(--color-text-secondary)', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '8px', paddingLeft: '4px' }}>
               ACCOUNT & ADDRESSES
             </h3>
             <div className="glass-card-standard" style={{ display: 'flex', flexDirection: 'column', overflow: 'hidden' }}>
               <div className="menu-row-item" onClick={() => setViewMode('addresses')}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
-                  <div style={{ width: '36px', height: '36px', borderRadius: '18px', background: 'rgba(201,168,118,0.2)', border: '1px solid rgba(1,62,55,0.6)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'rgba(1,62,55,0.6)' }}>
+                  <div style={{ width: '36px', height: '36px', borderRadius: '18px', background: 'rgba(201,168,118,0.2)', border: '1px solid 
+    param($m)
+    $opacity = $m.Groups[1].Value
+    "rgba(11,31,28,0.$opacity)"
+  ', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--color-text-secondary)' }}>
                     <i data-lucide="map-pin" style={{ width: '18px', height: '18px' }} />
                   </div>
-                  <span style={{ fontSize: '14px', fontWeight: '800', color: '#013E37' }}>Delivery Addresses</span>
+                  <span style={{ fontSize: '14px', fontWeight: '800', color: 'var(--color-text-primary)' }}>Delivery Addresses</span>
                 </div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-                  <span style={{ fontSize: '12px', color: 'rgba(1,62,55,0.5)' }}>2 Saved</span>
-                  <span style={{ color: 'rgba(1,62,55,0.5)', fontWeight: '800' }}>→</span>
+                  <span style={{ fontSize: '12px', color: 'var(--color-text-secondary)' }}>2 Saved</span>
+                  <span style={{ color: 'var(--color-accent-primary)', fontWeight: '800' }}>→</span>
                 </div>
               </div>
 
@@ -343,11 +359,11 @@ const ProfileScreen = ({ onLogout, onReplayOnboarding, onSelectTab, initialViewM
                   <div style={{ width: '36px', height: '36px', borderRadius: '18px', background: 'rgba(142,36,170,0.2)', border: '1px solid #8E24AA', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#8E24AA' }}>
                     <i data-lucide="credit-card" style={{ width: '18px', height: '18px' }} />
                   </div>
-                  <span style={{ fontSize: '14px', fontWeight: '800', color: '#013E37' }}>Payment Methods</span>
+                  <span style={{ fontSize: '14px', fontWeight: '800', color: 'var(--color-text-primary)' }}>Payment Methods</span>
                 </div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-                  <span style={{ fontSize: '12px', color: 'rgba(1,62,55,0.5)' }}>UPI / Cards</span>
-                  <span style={{ color: 'rgba(1,62,55,0.5)', fontWeight: '800' }}>→</span>
+                  <span style={{ fontSize: '12px', color: 'var(--color-text-secondary)' }}>UPI / Cards</span>
+                  <span style={{ color: 'var(--color-accent-primary)', fontWeight: '800' }}>→</span>
                 </div>
               </div>
             </div>
@@ -355,35 +371,35 @@ const ProfileScreen = ({ onLogout, onReplayOnboarding, onSelectTab, initialViewM
 
           {/* SECTION 4: PERSONALIZATION */}
           <div style={{ marginBottom: '18px' }}>
-            <h3 style={{ fontSize: '11px', fontWeight: '800', color: 'rgba(1,62,55,0.5)', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '8px', paddingLeft: '4px' }}>
+            <h3 style={{ fontSize: '11px', fontWeight: '800', color: 'var(--color-text-secondary)', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '8px', paddingLeft: '4px' }}>
               PERSONALIZATION
             </h3>
             <div className="glass-card-standard" style={{ display: 'flex', flexDirection: 'column', overflow: 'hidden' }}>
               <div className="menu-row-item" onClick={() => setViewMode('tryon_history')}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
-                  <div style={{ width: '36px', height: '36px', borderRadius: '18px', background: 'rgba(1,62,55,0.2)', border: '1px solid #A94A4A', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#A94A4A' }}>
+                  <div style={{ width: '36px', height: '36px', borderRadius: '18px', background: 'rgba(1,62,55,0.2)', border: '1px solid #A94A4A', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--color-accent-primary)' }}>
                     <i data-lucide="camera" style={{ width: '18px', height: '18px' }} />
                   </div>
-                  <span style={{ fontSize: '14px', fontWeight: '800', color: '#013E37' }}>Try-On Face Mesh History</span>
+                  <span style={{ fontSize: '14px', fontWeight: '800', color: 'var(--color-text-primary)' }}>Try-On Face Mesh History</span>
                 </div>
-                <span style={{ color: 'rgba(1,62,55,0.5)', fontWeight: '800' }}>→</span>
+                <span style={{ color: 'var(--color-accent-primary)', fontWeight: '800' }}>→</span>
               </div>
 
               <div className="menu-row-item" style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }} onClick={() => setViewMode('notifications')}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
-                  <div style={{ width: '36px', height: '36px', borderRadius: '18px', background: 'rgba(67,160,71,0.2)', border: '1px solid #013E37', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#013E37' }}>
+                  <div style={{ width: '36px', height: '36px', borderRadius: '18px', background: 'rgba(67,160,71,0.2)', border: '1px solid #013E37', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--color-text-primary)' }}>
                     <i data-lucide="bell" style={{ width: '18px', height: '18px' }} />
                   </div>
-                  <span style={{ fontSize: '14px', fontWeight: '800', color: '#013E37' }}>Notification Settings</span>
+                  <span style={{ fontSize: '14px', fontWeight: '800', color: 'var(--color-text-primary)' }}>Notification Settings</span>
                 </div>
-                <span style={{ color: 'rgba(1,62,55,0.5)', fontWeight: '800' }}>→</span>
+                <span style={{ color: 'var(--color-accent-primary)', fontWeight: '800' }}>→</span>
               </div>
             </div>
           </div>
 
           {/* SECTION 5: SUPPORT & SETTINGS */}
           <div style={{ marginBottom: '24px' }}>
-            <h3 style={{ fontSize: '11px', fontWeight: '800', color: 'rgba(1,62,55,0.5)', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '8px', paddingLeft: '4px' }}>
+            <h3 style={{ fontSize: '11px', fontWeight: '800', color: 'var(--color-text-secondary)', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '8px', paddingLeft: '4px' }}>
               SUPPORT & SETTINGS
             </h3>
             <div className="glass-card-standard" style={{ display: 'flex', flexDirection: 'column', overflow: 'hidden' }}>
@@ -392,9 +408,9 @@ const ProfileScreen = ({ onLogout, onReplayOnboarding, onSelectTab, initialViewM
                   <div style={{ width: '36px', height: '36px', borderRadius: '18px', background: 'rgba(102,187,106,0.2)', border: '1px solid #66BB6A', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#66BB6A' }}>
                     <i data-lucide="message-circle" style={{ width: '18px', height: '18px' }} />
                   </div>
-                  <span style={{ fontSize: '14px', fontWeight: '800', color: '#013E37' }}>Help & VIP 24/7 Support</span>
+                  <span style={{ fontSize: '14px', fontWeight: '800', color: 'var(--color-text-primary)' }}>Help & VIP 24/7 Support</span>
                 </div>
-                <span style={{ color: 'rgba(1,62,55,0.5)', fontWeight: '800' }}>→</span>
+                <span style={{ color: 'var(--color-accent-primary)', fontWeight: '800' }}>→</span>
               </div>
 
               <div className="menu-row-item" style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }} onClick={() => setViewMode('settings')}>
@@ -402,11 +418,11 @@ const ProfileScreen = ({ onLogout, onReplayOnboarding, onSelectTab, initialViewM
                   <div style={{ width: '36px', height: '36px', borderRadius: '18px', background: 'rgba(84,110,122,0.3)', border: '1px solid #90A4AE', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#CFD8DC' }}>
                     <i data-lucide="settings" style={{ width: '18px', height: '18px' }} />
                   </div>
-                  <span style={{ fontSize: '14px', fontWeight: '800', color: '#013E37' }}>Settings (App, Privacy, Security)</span>
+                  <span style={{ fontSize: '14px', fontWeight: '800', color: 'var(--color-text-primary)' }}>Settings (App, Privacy, Security)</span>
                 </div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
                   <span className="badge-pill badge-purple" style={{ fontSize: '9px' }}>CONFIG</span>
-                  <span style={{ color: 'rgba(1,62,55,0.5)', fontWeight: '800' }}>→</span>
+                  <span style={{ color: 'var(--color-accent-primary)', fontWeight: '800' }}>→</span>
                 </div>
               </div>
             </div>
@@ -417,14 +433,13 @@ const ProfileScreen = ({ onLogout, onReplayOnboarding, onSelectTab, initialViewM
             <div
               className="glass-card-standard"
               style={{
-                padding: '16px', cursor: 'pointer', border: '1.5px solid rgba(239,83,80,0.3)',
-                background: 'rgba(239,83,80,0.08)', display: 'flex', alignItems: 'center', justifyContent: 'center',
+                padding: '16px', cursor: 'pointer', border: '1.5px solid var(--color-accent-primary)', background: 'transparent', display: 'flex', alignItems: 'center', justifyContent: 'center',
                 gap: '10px', transition: 'all 200ms ease'
               }}
               onClick={() => setShowLogoutModal(true)}
             >
-              <i data-lucide="log-out" style={{ width: '18px', height: '18px', color: '#A94A4A' }} />
-              <span style={{ fontSize: '15px', fontWeight: '900', color: '#A94A4A' }}>Log Out</span>
+              <i data-lucide="log-out" style={{ width: '18px', height: '18px', color: 'var(--color-accent-primary)' }} />
+              <span style={{ fontSize: '15px', fontWeight: '900', color: 'var(--color-accent-primary)' }}>Log Out</span>
             </div>
           </div>
         </div>
@@ -439,34 +454,34 @@ const ProfileScreen = ({ onLogout, onReplayOnboarding, onSelectTab, initialViewM
           <div className="flex-between mb-4">
             <button
               type="button"
-              style={{ width: '36px', height: '36px', borderRadius: '50%', background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.15)', color: '#013E37', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer' }}
+              style={{ width: '36px', height: '36px', borderRadius: '50%', background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.15)', color: 'var(--color-text-primary)', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer' }}
               onClick={() => setViewMode('profile')}
             >
               ←
             </button>
-            <h1 style={{ fontSize: '20px', fontWeight: '900', color: '#013E37' }}>Settings</h1>
+            <h1 style={{ fontSize: '20px', fontWeight: '900', color: 'var(--color-text-primary)' }}>Settings</h1>
             <span style={{ width: '36px' }} />
           </div>
 
           {/* 1. ACCOUNT SECTION (Grouped Glass Card) */}
           <div style={{ marginBottom: '18px' }}>
-            <h3 style={{ fontSize: '11px', fontWeight: '800', color: 'rgba(1,62,55,0.5)', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '8px', paddingLeft: '4px' }}>
+            <h3 style={{ fontSize: '11px', fontWeight: '800', color: 'var(--color-text-secondary)', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '8px', paddingLeft: '4px' }}>
               ACCOUNT & SECURITY
             </h3>
             <div className="glass-card-standard" style={{ display: 'flex', flexDirection: 'column', overflow: 'hidden' }}>
               <div className="menu-row-item" onClick={() => { setEditForm({ ...userProfile }); setShowEditProfileModal(true); }}>
-                <span style={{ fontSize: '14px', fontWeight: '700', color: '#013E37' }}>Edit Profile Information</span>
-                <span style={{ color: 'rgba(1,62,55,0.5)', fontWeight: '800' }}>→</span>
+                <span style={{ fontSize: '14px', fontWeight: '700', color: 'var(--color-text-primary)' }}>Edit Profile Information</span>
+                <span style={{ color: 'var(--color-accent-primary)', fontWeight: '800' }}>→</span>
               </div>
 
               <div className="menu-row-item" style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }} onClick={() => setShowPasswordModal(true)}>
-                <span style={{ fontSize: '14px', fontWeight: '700', color: '#013E37' }}>Change Password</span>
-                <span style={{ color: 'rgba(1,62,55,0.5)', fontWeight: '800' }}>→</span>
+                <span style={{ fontSize: '14px', fontWeight: '700', color: 'var(--color-text-primary)' }}>Change Password</span>
+                <span style={{ color: 'var(--color-accent-primary)', fontWeight: '800' }}>→</span>
               </div>
 
               <div className="menu-row-item" style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }} onClick={() => showToast("🔗 Linked Social Accounts: Google (Connected ✓) · Apple ID (Connected ✓)")}>
-                <span style={{ fontSize: '14px', fontWeight: '700', color: '#013E37' }}>Linked Accounts</span>
-                <span className="badge-pill badge-green" style={{ fontSize: '10px' }}>2 Connected</span>
+                <span style={{ fontSize: '14px', fontWeight: '700', color: 'var(--color-text-primary)' }}>Linked Accounts</span>
+                <span className=\"\" style={{ fontSize: '10px' }}>2 Connected</span>
               </div>
 
               <div className="menu-row-item" style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }} onClick={() => {
@@ -474,8 +489,8 @@ const ProfileScreen = ({ onLogout, onReplayOnboarding, onSelectTab, initialViewM
                 showToast(`🛡️ Two-Factor Authentication (2FA) is now ${!settingsState.twoFactor ? 'ENABLED ✓' : 'DISABLED ✕'}`);
               }}>
                 <div>
-                  <div style={{ fontSize: '14px', fontWeight: '700', color: '#013E37' }}>Two-Factor Authentication</div>
-                  <div style={{ fontSize: '11px', color: 'rgba(1,62,55,0.5)' }}>Biometric Face ID & OTP login protection</div>
+                  <div style={{ fontSize: '14px', fontWeight: '700', color: 'var(--color-text-primary)' }}>Two-Factor Authentication</div>
+                  <div style={{ fontSize: '11px', color: 'var(--color-text-secondary)' }}>Biometric Face ID & OTP login protection</div>
                 </div>
                 <div style={{ width: '42px', height: '24px', borderRadius: '12px', background: settingsState.twoFactor ? '#013E37' : 'rgba(255,255,255,0.15)', position: 'relative', transition: 'background 200ms ease' }}>
                   <div style={{ width: '18px', height: '18px', borderRadius: '9px', background: '#FFF', position: 'absolute', top: '3px', left: settingsState.twoFactor ? '21px' : '3px', transition: 'left 200ms ease' }} />
@@ -486,21 +501,21 @@ const ProfileScreen = ({ onLogout, onReplayOnboarding, onSelectTab, initialViewM
 
           {/* 2. APP PREFERENCES (Grouped Glass Card) */}
           <div style={{ marginBottom: '18px' }}>
-            <h3 style={{ fontSize: '11px', fontWeight: '800', color: 'rgba(1,62,55,0.5)', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '8px', paddingLeft: '4px' }}>
+            <h3 style={{ fontSize: '11px', fontWeight: '800', color: 'var(--color-text-secondary)', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '8px', paddingLeft: '4px' }}>
               APP PREFERENCES
             </h3>
             <div className="glass-card-standard" style={{ display: 'flex', flexDirection: 'column', overflow: 'hidden' }}>
               <div className="menu-row-item" onClick={() => setShowLanguageModal(true)}>
-                <span style={{ fontSize: '14px', fontWeight: '700', color: '#013E37' }}>Language</span>
+                <span style={{ fontSize: '14px', fontWeight: '700', color: 'var(--color-text-primary)' }}>Language</span>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-                  <span style={{ fontSize: '13px', color: '#013E37', fontWeight: '700' }}>{settingsState.language}</span>
-                  <span style={{ color: 'rgba(1,62,55,0.5)', fontWeight: '800' }}>→</span>
+                  <span style={{ fontSize: '13px', color: 'var(--color-text-primary)', fontWeight: '700' }}>{settingsState.language}</span>
+                  <span style={{ color: 'var(--color-accent-primary)', fontWeight: '800' }}>→</span>
                 </div>
               </div>
 
               <div className="menu-row-item" style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }} onClick={() => showToast("💡 ₹ INR is default for India. USD & EUR support coming next release!")}>
-                <span style={{ fontSize: '14px', fontWeight: '700', color: '#013E37' }}>Currency</span>
-                <span style={{ fontSize: '13px', color: 'rgba(1,62,55,0.5)', fontWeight: '600', padding: '2px 8px', background: 'rgba(255,255,255,0.05)', borderRadius: '6px' }}>
+                <span style={{ fontSize: '14px', fontWeight: '700', color: 'var(--color-text-primary)' }}>Currency</span>
+                <span style={{ fontSize: '13px', color: 'var(--color-text-secondary)', fontWeight: '600', padding: '2px 8px', background: 'rgba(255,255,255,0.05)', borderRadius: '6px' }}>
                   {settingsState.currency}
                 </span>
               </div>
@@ -510,8 +525,8 @@ const ProfileScreen = ({ onLogout, onReplayOnboarding, onSelectTab, initialViewM
                 showToast(`⚡ Reduce Animations set to ${!settingsState.reduceAnimations ? 'ON' : 'OFF'}`);
               }}>
                 <div>
-                  <div style={{ fontSize: '14px', fontWeight: '700', color: '#013E37' }}>Reduce Animations</div>
-                  <div style={{ fontSize: '11px', color: 'rgba(1,62,55,0.5)' }}>Simpler motion for accessibility</div>
+                  <div style={{ fontSize: '14px', fontWeight: '700', color: 'var(--color-text-primary)' }}>Reduce Animations</div>
+                  <div style={{ fontSize: '11px', color: 'var(--color-text-secondary)' }}>Simpler motion for accessibility</div>
                 </div>
                 <div style={{ width: '42px', height: '24px', borderRadius: '12px', background: settingsState.reduceAnimations ? '#013E37' : 'rgba(255,255,255,0.15)', position: 'relative', transition: 'background 200ms ease' }}>
                   <div style={{ width: '18px', height: '18px', borderRadius: '9px', background: '#FFF', position: 'absolute', top: '3px', left: settingsState.reduceAnimations ? '21px' : '3px', transition: 'left 200ms ease' }} />
@@ -525,12 +540,12 @@ const ProfileScreen = ({ onLogout, onReplayOnboarding, onSelectTab, initialViewM
                 showToast(`🔬 Default Lens Type set to: ${types[nextIdx]}`);
               }}>
                 <div>
-                  <div style={{ fontSize: '14px', fontWeight: '700', color: '#013E37' }}>Default Lens Type</div>
-                  <div style={{ fontSize: '11px', color: 'rgba(1,62,55,0.5)' }}>Auto-selects during checkout</div>
+                  <div style={{ fontSize: '14px', fontWeight: '700', color: 'var(--color-text-primary)' }}>Default Lens Type</div>
+                  <div style={{ fontSize: '11px', color: 'var(--color-text-secondary)' }}>Auto-selects during checkout</div>
                 </div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-                  <span style={{ fontSize: '12px', color: '#A94A4A', fontWeight: '700' }}>{settingsState.defaultLens.split('(')[0]}</span>
-                  <span style={{ color: 'rgba(1,62,55,0.5)', fontWeight: '800' }}>→</span>
+                  <span style={{ fontSize: '12px', color: 'var(--color-accent-primary)', fontWeight: '700' }}>{settingsState.defaultLens.split('(')[0]}</span>
+                  <span style={{ color: 'var(--color-accent-primary)', fontWeight: '800' }}>→</span>
                 </div>
               </div>
             </div>
@@ -538,81 +553,81 @@ const ProfileScreen = ({ onLogout, onReplayOnboarding, onSelectTab, initialViewM
 
           {/* 3. PRIVACY & DATA (Grouped Glass Card) */}
           <div style={{ marginBottom: '18px' }}>
-            <h3 style={{ fontSize: '11px', fontWeight: '800', color: 'rgba(1,62,55,0.5)', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '8px', paddingLeft: '4px' }}>
+            <h3 style={{ fontSize: '11px', fontWeight: '800', color: 'var(--color-text-secondary)', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '8px', paddingLeft: '4px' }}>
               PRIVACY & DATA
             </h3>
             <div className="glass-card-standard" style={{ display: 'flex', flexDirection: 'column', overflow: 'hidden' }}>
               <div className="menu-row-item" onClick={() => showToast("📸 Camera Permission: Granted for AR Virtual Try-On & OCR Scan.")}>
-                <span style={{ fontSize: '14px', fontWeight: '700', color: '#013E37' }}>Camera Permissions</span>
-                <span className="badge-pill badge-green" style={{ fontSize: '10px' }}>{settingsState.cameraPerm}</span>
+                <span style={{ fontSize: '14px', fontWeight: '700', color: 'var(--color-text-primary)' }}>Camera Permissions</span>
+                <span className=\"\" style={{ fontSize: '10px' }}>{settingsState.cameraPerm}</span>
               </div>
 
               <div className="menu-row-item" style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }} onClick={() => showToast("📍 Location Permission: Granted while using Store Locator & Express Delivery.")}>
-                <span style={{ fontSize: '14px', fontWeight: '700', color: '#013E37' }}>Location Permissions</span>
-                <span className="badge-pill badge-green" style={{ fontSize: '10px' }}>{settingsState.locationPerm}</span>
+                <span style={{ fontSize: '14px', fontWeight: '700', color: 'var(--color-text-primary)' }}>Location Permissions</span>
+                <span className=\"\" style={{ fontSize: '10px' }}>{settingsState.locationPerm}</span>
               </div>
 
               <div className="menu-row-item" style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }} onClick={() => setShowDataModal(true)}>
                 <div>
-                  <div style={{ fontSize: '14px', fontWeight: '700', color: '#013E37' }}>Data & Personalization</div>
-                  <div style={{ fontSize: '11px', color: 'rgba(1,62,55,0.5)' }}>Analytics, crash reports & AR cache</div>
+                  <div style={{ fontSize: '14px', fontWeight: '700', color: 'var(--color-text-primary)' }}>Data & Personalization</div>
+                  <div style={{ fontSize: '11px', color: 'var(--color-text-secondary)' }}>Analytics, crash reports & AR cache</div>
                 </div>
-                <span style={{ color: 'rgba(1,62,55,0.5)', fontWeight: '800' }}>→</span>
+                <span style={{ color: 'var(--color-accent-primary)', fontWeight: '800' }}>→</span>
               </div>
 
               <div className="menu-row-item" style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }} onClick={() => showToast(`📥 Compiling JSON data export... We will email your full data package to ${userProfile.email} within 2 hours!`)}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
                   <span style={{ fontSize: '16px' }}>📥</span>
-                  <span style={{ fontSize: '14px', fontWeight: '700', color: '#013E37' }}>Download My Data</span>
+                  <span style={{ fontSize: '14px', fontWeight: '700', color: 'var(--color-text-primary)' }}>Download My Data</span>
                 </div>
-                <span style={{ color: 'rgba(1,62,55,0.5)', fontWeight: '800' }}>→</span>
+                <span style={{ color: 'var(--color-accent-primary)', fontWeight: '800' }}>→</span>
               </div>
 
               <div className="menu-row-item" style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }} onClick={() => setShowDeleteModal(true)}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
                   <span style={{ fontSize: '16px' }}>⚠️</span>
-                  <span style={{ fontSize: '14px', fontWeight: '800', color: '#A94A4A' }}>Delete Account Permanently</span>
+                  <span style={{ fontSize: '14px', fontWeight: '800', color: 'var(--color-accent-primary)' }}>Delete Account Permanently</span>
                 </div>
-                <span style={{ color: '#A94A4A', fontWeight: '800' }}>→</span>
+                <span style={{ color: 'var(--color-accent-primary)', fontWeight: '800' }}>→</span>
               </div>
             </div>
           </div>
 
           {/* 4. ABOUT (Grouped Glass Card) */}
           <div style={{ marginBottom: '24px' }}>
-            <h3 style={{ fontSize: '11px', fontWeight: '800', color: 'rgba(1,62,55,0.5)', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '8px', paddingLeft: '4px' }}>
+            <h3 style={{ fontSize: '11px', fontWeight: '800', color: 'var(--color-text-secondary)', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '8px', paddingLeft: '4px' }}>
               ABOUT LENS MAKERS
             </h3>
             <div className="glass-card-standard" style={{ display: 'flex', flexDirection: 'column', overflow: 'hidden' }}>
               <div className="menu-row-item" style={{ cursor: 'default' }}>
-                <span style={{ fontSize: '14px', fontWeight: '700', color: '#013E37' }}>App Version</span>
-                <span style={{ fontSize: '12px', color: 'rgba(1,62,55,0.5)', fontFamily: 'monospace', fontWeight: '700' }}>v1.0.0 · Build 2026.07</span>
+                <span style={{ fontSize: '14px', fontWeight: '700', color: 'var(--color-text-primary)' }}>App Version</span>
+                <span style={{ fontSize: '12px', color: 'var(--color-text-secondary)', fontFamily: 'monospace', fontWeight: '700' }}>v1.0.0 · Build 2026.07</span>
               </div>
 
               <div className="menu-row-item" style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }} onClick={() => { setTermsType('Terms of Service'); setShowTermsModal(true); }}>
-                <span style={{ fontSize: '14px', fontWeight: '700', color: '#013E37' }}>Terms of Service</span>
-                <span style={{ color: 'rgba(1,62,55,0.5)', fontWeight: '800' }}>→</span>
+                <span style={{ fontSize: '14px', fontWeight: '700', color: 'var(--color-text-primary)' }}>Terms of Service</span>
+                <span style={{ color: 'var(--color-accent-primary)', fontWeight: '800' }}>→</span>
               </div>
 
               <div className="menu-row-item" style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }} onClick={() => { setTermsType('Privacy Policy'); setShowTermsModal(true); }}>
-                <span style={{ fontSize: '14px', fontWeight: '700', color: '#013E37' }}>Privacy Policy</span>
-                <span style={{ color: 'rgba(1,62,55,0.5)', fontWeight: '800' }}>→</span>
+                <span style={{ fontSize: '14px', fontWeight: '700', color: 'var(--color-text-primary)' }}>Privacy Policy</span>
+                <span style={{ color: 'var(--color-accent-primary)', fontWeight: '800' }}>→</span>
               </div>
 
               <div className="menu-row-item" style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }} onClick={() => setShowRatingModal(true)}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
                   <span style={{ fontSize: '16px' }}>⭐</span>
-                  <span style={{ fontSize: '14px', fontWeight: '700', color: 'rgba(1,62,55,0.6)' }}>Rate Lens Makers 5 Stars</span>
+                  <span style={{ fontSize: '14px', fontWeight: '700', color: 'var(--color-text-secondary)' }}>Rate Lens Makers 5 Stars</span>
                 </div>
-                <span style={{ color: 'rgba(1,62,55,0.5)', fontWeight: '800' }}>→</span>
+                <span style={{ color: 'var(--color-accent-primary)', fontWeight: '800' }}>→</span>
               </div>
 
               <div className="menu-row-item" style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }} onClick={() => showToast("📤 Invite link copied to clipboard: https://lensmakers.app/invite/LOKI25 (Give ₹500, Get ₹500!)")}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
                   <span style={{ fontSize: '16px' }}>📤</span>
-                  <span style={{ fontSize: '14px', fontWeight: '700', color: '#013E37' }}>Share the App with Friends</span>
+                  <span style={{ fontSize: '14px', fontWeight: '700', color: 'var(--color-text-primary)' }}>Share the App with Friends</span>
                 </div>
-                <span style={{ color: 'rgba(1,62,55,0.5)', fontWeight: '800' }}>→</span>
+                <span style={{ color: 'var(--color-accent-primary)', fontWeight: '800' }}>→</span>
               </div>
             </div>
           </div>
@@ -622,14 +637,13 @@ const ProfileScreen = ({ onLogout, onReplayOnboarding, onSelectTab, initialViewM
             <div
               className="glass-card-standard"
               style={{
-                padding: '16px', cursor: 'pointer', border: '1.5px solid rgba(239,83,80,0.3)',
-                background: 'rgba(239,83,80,0.08)', display: 'flex', alignItems: 'center', justifyContent: 'center',
+                padding: '16px', cursor: 'pointer', border: '1.5px solid var(--color-accent-primary)', background: 'transparent', display: 'flex', alignItems: 'center', justifyContent: 'center',
                 gap: '10px', transition: 'all 200ms ease'
               }}
               onClick={() => setShowLogoutModal(true)}
             >
-              <i data-lucide="log-out" style={{ width: '18px', height: '18px', color: '#A94A4A' }} />
-              <span style={{ fontSize: '15px', fontWeight: '900', color: '#A94A4A' }}>Log Out of Account</span>
+              <i data-lucide="log-out" style={{ width: '18px', height: '18px', color: 'var(--color-accent-primary)' }} />
+              <span style={{ fontSize: '15px', fontWeight: '900', color: 'var(--color-accent-primary)' }}>Log Out of Account</span>
             </div>
           </div>
         </div>
@@ -643,15 +657,15 @@ const ProfileScreen = ({ onLogout, onReplayOnboarding, onSelectTab, initialViewM
           <div className="flex-between mb-4">
             <button
               type="button"
-              style={{ width: '36px', height: '36px', borderRadius: '50%', background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.15)', color: '#013E37', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer' }}
+              style={{ width: '36px', height: '36px', borderRadius: '50%', background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.15)', color: 'var(--color-text-primary)', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer' }}
               onClick={() => setViewMode('profile')}
             >
               ←
             </button>
-            <h1 style={{ fontSize: '20px', fontWeight: '900', color: '#013E37' }}>Delivery Addresses</h1>
+            <h1 style={{ fontSize: '20px', fontWeight: '900', color: 'var(--color-text-primary)' }}>Delivery Addresses</h1>
             <button
               type="button"
-              style={{ padding: '6px 14px', borderRadius: '999px', background: 'linear-gradient(135deg, #A94A4A, #013E37)', border: 'none', color: '#013E37', fontSize: '11px', fontWeight: '800', cursor: 'pointer' }}
+              style={{ padding: '6px 14px', borderRadius: '999px', background: 'linear-gradient(135deg, #A94A4A, #013E37)', border: 'none', color: 'var(--color-text-primary)', fontSize: '11px', fontWeight: '800', cursor: 'pointer' }}
               onClick={() => showToast("➕ Opening new GPS address auto-locator modal...")}
             >
               + Add New
@@ -661,22 +675,22 @@ const ProfileScreen = ({ onLogout, onReplayOnboarding, onSelectTab, initialViewM
           <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
             <div className="glass-card-standard" style={{ padding: '18px', borderLeft: '4px solid #66BB6A' }}>
               <div className="flex-between mb-2">
-                <span className="badge-pill badge-green" style={{ fontSize: '10px' }}>HOME · DEFAULT ✓</span>
-                <span style={{ fontSize: '12px', color: '#A94A4A', fontWeight: '700', cursor: 'pointer' }} onClick={() => showToast("✏️ Editing Home address...")}>Edit</span>
+                <span className=\"\" style={{ fontSize: '10px' }}>HOME · DEFAULT ✓</span>
+                <span style={{ fontSize: '12px', color: 'var(--color-accent-primary)', fontWeight: '700', cursor: 'pointer' }} onClick={() => showToast("✏️ Editing Home address...")}>Edit</span>
               </div>
-              <div style={{ fontSize: '16px', fontWeight: '800', color: '#013E37', marginBottom: '4px' }}>{userProfile.name}</div>
-              <div style={{ fontSize: '13px', color: 'rgba(1,62,55,0.5)', lineHeight: '1.4' }}>
+              <div style={{ fontSize: '16px', fontWeight: '800', color: 'var(--color-text-primary)', marginBottom: '4px' }}>{userProfile.name}</div>
+              <div style={{ fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: '1.4' }}>
                 Flat 402, Prestige Highridge Towers, 100ft Road, Metro Pillar 54, Indiranagar, Bengaluru, Karnataka 560038
               </div>
             </div>
 
             <div className="glass-card-standard" style={{ padding: '18px', borderLeft: '4px solid #013E37' }}>
               <div className="flex-between mb-2">
-                <span className="badge-pill" style={{ background: 'rgba(1,62,55,0.15)', color: '#013E37', fontSize: '10px', fontWeight: '800' }}>OFFICE</span>
-                <span style={{ fontSize: '12px', color: '#A94A4A', fontWeight: '700', cursor: 'pointer' }} onClick={() => showToast("✏️ Editing Office address...")}>Edit</span>
+                <span className="badge-pill" style={{ background: 'rgba(1,62,55,0.15)', color: 'var(--color-text-primary)', fontSize: '10px', fontWeight: '800' }}>OFFICE</span>
+                <span style={{ fontSize: '12px', color: 'var(--color-accent-primary)', fontWeight: '700', cursor: 'pointer' }} onClick={() => showToast("✏️ Editing Office address...")}>Edit</span>
               </div>
-              <div style={{ fontSize: '16px', fontWeight: '800', color: '#013E37', marginBottom: '4px' }}>{userProfile.name} (Tech Hub)</div>
-              <div style={{ fontSize: '13px', color: 'rgba(1,62,55,0.5)', lineHeight: '1.4' }}>
+              <div style={{ fontSize: '16px', fontWeight: '800', color: 'var(--color-text-primary)', marginBottom: '4px' }}>{userProfile.name} (Tech Hub)</div>
+              <div style={{ fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: '1.4' }}>
                 Level 5, Embassy GolfLinks Business Park, Off Intermediate Ring Road, Domlur, Bengaluru 560071
               </div>
             </div>
@@ -692,15 +706,15 @@ const ProfileScreen = ({ onLogout, onReplayOnboarding, onSelectTab, initialViewM
           <div className="flex-between mb-4">
             <button
               type="button"
-              style={{ width: '36px', height: '36px', borderRadius: '50%', background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.15)', color: '#013E37', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer' }}
+              style={{ width: '36px', height: '36px', borderRadius: '50%', background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.15)', color: 'var(--color-text-primary)', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer' }}
               onClick={() => setViewMode('profile')}
             >
               ←
             </button>
-            <h1 style={{ fontSize: '20px', fontWeight: '900', color: '#013E37' }}>Saved Payment Methods</h1>
+            <h1 style={{ fontSize: '20px', fontWeight: '900', color: 'var(--color-text-primary)' }}>Saved Payment Methods</h1>
             <button
               type="button"
-              style={{ padding: '6px 14px', borderRadius: '999px', background: 'linear-gradient(135deg, #013E37, #A94A4A)', border: 'none', color: '#013E37', fontSize: '11px', fontWeight: '800', cursor: 'pointer' }}
+              style={{ padding: '6px 14px', borderRadius: '999px', background: 'linear-gradient(135deg, #013E37, #A94A4A)', border: 'none', color: 'var(--color-text-primary)', fontSize: '11px', fontWeight: '800', cursor: 'pointer' }}
               onClick={() => showToast("💳 Opening UPI & card verification gateway...")}
             >
               + Add Card/UPI
@@ -710,18 +724,18 @@ const ProfileScreen = ({ onLogout, onReplayOnboarding, onSelectTab, initialViewM
           <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
             <div className="glass-card-glow-purple" style={{ padding: '18px', border: '1px solid #013E37' }}>
               <div className="flex-between mb-3">
-                <span style={{ fontSize: '18px', fontWeight: '900', color: '#013E37' }}>GPay / PhonePe UPI</span>
-                <span className="badge-pill badge-green" style={{ fontSize: '10px' }}>FASTEST ✓</span>
+                <span style={{ fontSize: '18px', fontWeight: '900', color: 'var(--color-text-primary)' }}>GPay / PhonePe UPI</span>
+                <span className=\"\" style={{ fontSize: '10px' }}>FASTEST ✓</span>
               </div>
-              <div style={{ fontSize: '14px', fontFamily: 'monospace', color: '#013E37', fontWeight: '800' }}>loki.reddy@okaxis</div>
+              <div style={{ fontSize: '14px', fontFamily: 'monospace', color: 'var(--color-text-primary)', fontWeight: '800' }}>loki.reddy@okaxis</div>
             </div>
 
             <div className="glass-card-standard" style={{ padding: '18px' }}>
               <div className="flex-between mb-3">
-                <span style={{ fontSize: '16px', fontWeight: '800', color: '#013E37' }}>💳 HDFC Regalia Gold Credit Card</span>
-                <span style={{ fontSize: '12px', color: 'rgba(1,62,55,0.5)' }}>Expires 08/29</span>
+                <span style={{ fontSize: '16px', fontWeight: '800', color: 'var(--color-text-primary)' }}>💳 HDFC Regalia Gold Credit Card</span>
+                <span style={{ fontSize: '12px', color: 'var(--color-text-secondary)' }}>Expires 08/29</span>
               </div>
-              <div style={{ fontSize: '15px', fontFamily: 'monospace', color: 'rgba(1,62,55,0.5)', fontWeight: '700' }}>•••• •••• •••• 4289</div>
+              <div style={{ fontSize: '15px', fontFamily: 'monospace', color: 'var(--color-text-secondary)', fontWeight: '700' }}>•••• •••• •••• 4289</div>
             </div>
           </div>
         </div>
@@ -735,19 +749,19 @@ const ProfileScreen = ({ onLogout, onReplayOnboarding, onSelectTab, initialViewM
           <div className="flex-between mb-4">
             <button
               type="button"
-              style={{ width: '36px', height: '36px', borderRadius: '50%', background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.15)', color: '#013E37', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer' }}
+              style={{ width: '36px', height: '36px', borderRadius: '50%', background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.15)', color: 'var(--color-text-primary)', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer' }}
               onClick={() => setViewMode('profile')}
             >
               ←
             </button>
-            <h1 style={{ fontSize: '20px', fontWeight: '900', color: '#013E37' }}>Try-On Face Mesh History</h1>
+            <h1 style={{ fontSize: '20px', fontWeight: '900', color: 'var(--color-text-primary)' }}>Try-On Face Mesh History</h1>
             <span style={{ width: '36px' }} />
           </div>
 
           <div className="rx-card-cyan mb-4" style={{ padding: '20px', textAlign: 'center' }}>
             <div style={{ fontSize: '32px', marginBottom: '8px' }}>🤖</div>
-            <h3 style={{ fontSize: '16px', fontWeight: '800', color: '#013E37', marginBottom: '6px' }}>468-Point AI Facial Mesh Active</h3>
-            <p style={{ fontSize: '12px', color: 'rgba(1,62,55,0.5)', marginBottom: '16px' }}>
+            <h3 style={{ fontSize: '16px', fontWeight: '800', color: 'var(--color-text-primary)', marginBottom: '6px' }}>468-Point AI Facial Mesh Active</h3>
+            <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', marginBottom: '16px' }}>
               Your face dimensions (PD: 63mm, Nose bridge width: 18mm) are encrypted locally for instant AR glass fitting without recalibration.
             </p>
             <button
@@ -770,19 +784,19 @@ const ProfileScreen = ({ onLogout, onReplayOnboarding, onSelectTab, initialViewM
           <div className="flex-between mb-4">
             <button
               type="button"
-              style={{ width: '36px', height: '36px', borderRadius: '50%', background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.15)', color: '#013E37', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer' }}
+              style={{ width: '36px', height: '36px', borderRadius: '50%', background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.15)', color: 'var(--color-text-primary)', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer' }}
               onClick={() => setViewMode('profile')}
             >
               ←
             </button>
-            <h1 style={{ fontSize: '20px', fontWeight: '900', color: '#013E37' }}>Notification Settings</h1>
+            <h1 style={{ fontSize: '20px', fontWeight: '900', color: 'var(--color-text-primary)' }}>Notification Settings</h1>
             <span style={{ width: '36px' }} />
           </div>
 
           <div className="glass-card-standard" style={{ padding: '16px', display: 'flex', flexDirection: 'column', gap: '16px' }}>
             {['Order Status & Delivery Updates', 'Prescription Expiry Clinical Reminders', 'VIP Club Exclusive Offers & BOGO Drops', 'New Frame Arrivals in Your Style'].map((label, i) => (
               <div key={i} className="flex-between" style={{ paddingBottom: i < 3 ? '12px' : '0', borderBottom: i < 3 ? '1px solid rgba(255,255,255,0.06)' : 'none' }}>
-                <span style={{ fontSize: '14px', fontWeight: '700', color: '#013E37' }}>{label}</span>
+                <span style={{ fontSize: '14px', fontWeight: '700', color: 'var(--color-text-primary)' }}>{label}</span>
                 <div style={{ width: '42px', height: '24px', borderRadius: '12px', background: '#013E37', position: 'relative', cursor: 'pointer' }} onClick={() => showToast(`🔔 Toggled preference: ${label}`)}>
                   <div style={{ width: '18px', height: '18px', borderRadius: '9px', background: '#FFF', position: 'absolute', top: '3px', left: '21px' }} />
                 </div>
@@ -800,19 +814,19 @@ const ProfileScreen = ({ onLogout, onReplayOnboarding, onSelectTab, initialViewM
           <div className="flex-between mb-4">
             <button
               type="button"
-              style={{ width: '36px', height: '36px', borderRadius: '50%', background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.15)', color: '#013E37', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer' }}
+              style={{ width: '36px', height: '36px', borderRadius: '50%', background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.15)', color: 'var(--color-text-primary)', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer' }}
               onClick={() => setViewMode('profile')}
             >
               ←
             </button>
-            <h1 style={{ fontSize: '20px', fontWeight: '900', color: '#013E37' }}>VIP 24/7 Support Line</h1>
+            <h1 style={{ fontSize: '20px', fontWeight: '900', color: 'var(--color-text-primary)' }}>VIP 24/7 Support Line</h1>
             <span style={{ width: '36px' }} />
           </div>
 
           <div className="glass-card-glow-green mb-4" style={{ padding: '20px', textAlign: 'center' }}>
             <div style={{ fontSize: '36px', marginBottom: '8px' }}>💬</div>
-            <h3 style={{ fontSize: '18px', fontWeight: '900', color: '#013E37', marginBottom: '6px' }}>Priority Optical Assistance</h3>
-            <p style={{ fontSize: '13px', color: 'rgba(1,62,55,0.5)', marginBottom: '18px' }}>
+            <h3 style={{ fontSize: '18px', fontWeight: '900', color: 'var(--color-text-primary)', marginBottom: '6px' }}>Priority Optical Assistance</h3>
+            <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', marginBottom: '18px' }}>
               As an active club member, your inquiries are routed directly to certified senior optometrists with <strong style={{ color: '#66BB6A' }}>under 60s response time</strong>.
             </p>
             <div style={{ display: 'flex', gap: '10px' }}>
@@ -827,7 +841,7 @@ const ProfileScreen = ({ onLogout, onReplayOnboarding, onSelectTab, initialViewM
               <button
                 type="button"
                 className="btn-secondary-pill"
-                style={{ flex: 1, height: '46px', fontSize: '13px', borderColor: '#013E37', color: '#013E37' }}
+                style={{ flex: 1, height: '46px', fontSize: '13px', bordercolor: 'var(--color-text-primary)', color: 'var(--color-text-primary)' }}
                 onClick={() => showToast("📞 Calling VIP Hotline: 1800-LENS-VIP...")}
               >
                 📞 Call Helpline
@@ -843,25 +857,25 @@ const ProfileScreen = ({ onLogout, onReplayOnboarding, onSelectTab, initialViewM
       {showLogoutModal && (
         <div style={{ position: 'fixed', inset: 0, zIndex: 9999, background: 'rgba(255,245,236,0.85)', backdropFilter: 'blur(14px)', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '20px', animation: 'fadeIn 200ms ease' }}>
           <div className="glass-card-elevated" style={{ width: '100%', maxWidth: '360px', padding: '24px', textAlign: 'center', border: '1.5px solid rgba(239,83,80,0.5)', boxShadow: '0 20px 50px rgba(0,0,0,0.8)', animation: 'scaleUp 250ms var(--spring-bezier)' }}>
-            <div style={{ width: '56px', height: '56px', borderRadius: '28px', background: 'rgba(239,83,80,0.15)', border: '1.5px solid #A94A4A', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 16px', color: '#A94A4A' }}>
+            <div style={{ width: '56px', height: '56px', borderRadius: '28px', background: 'rgba(239,83,80,0.15)', border: '1.5px solid #A94A4A', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 16px', color: 'var(--color-accent-primary)' }}>
               <i data-lucide="log-out" style={{ width: '26px', height: '26px' }} />
             </div>
-            <h3 style={{ fontSize: '20px', fontWeight: '900', color: '#013E37', marginBottom: '8px' }}>Log Out of Lens Makers?</h3>
-            <p style={{ fontSize: '13px', color: 'rgba(1,62,55,0.5)', marginBottom: '24px', lineHeight: '1.5' }}>
+            <h3 style={{ fontSize: '20px', fontWeight: '900', color: 'var(--color-text-primary)', marginBottom: '8px' }}>Log Out of Lens Makers?</h3>
+            <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', marginBottom: '24px', lineHeight: '1.5' }}>
               Your saved prescriptions, AR facial mesh measurements, and active ₹99 VIP Club discounts will remain safely stored on our cloud.
             </p>
 
             <div style={{ display: 'flex', gap: '12px' }}>
               <button
                 type="button"
-                style={{ flex: 1, height: '46px', borderRadius: '999px', background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.2)', color: '#013E37', fontSize: '14px', fontWeight: '800', cursor: 'pointer' }}
+                style={{ flex: 1, height: '46px', borderRadius: '999px', background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.2)', color: 'var(--color-text-primary)', fontSize: '14px', fontWeight: '800', cursor: 'pointer' }}
                 onClick={() => setShowLogoutModal(false)}
               >
                 Cancel
               </button>
               <button
                 type="button"
-                style={{ flex: 1, height: '46px', borderRadius: '999px', background: '#A94A4A', border: 'none', color: '#013E37', fontSize: '14px', fontWeight: '900', cursor: 'pointer', boxShadow: '0 0 16px rgba(239,83,80,0.5)' }}
+                style={{ flex: 1, height: '46px', borderRadius: '999px', background: 'var(--color-accent-primary)', border: 'none', color: 'var(--color-text-primary)', fontSize: '14px', fontWeight: '900', cursor: 'pointer', boxShadow: '0 0 16px rgba(239,83,80,0.5)' }}
                 onClick={handleConfirmLogout}
               >
                 Log Out Now
@@ -877,19 +891,19 @@ const ProfileScreen = ({ onLogout, onReplayOnboarding, onSelectTab, initialViewM
       {showEditProfileModal && (
         <div style={{ position: 'fixed', inset: 0, zIndex: 9999, background: 'rgba(255,245,236,0.85)', backdropFilter: 'blur(14px)', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '20px', animation: 'fadeIn 200ms ease' }}>
           <div className="glass-card-elevated" style={{ width: '100%', maxWidth: '380px', padding: '24px', border: '1.5px solid #A94A4A', animation: 'scaleUp 250ms var(--spring-bezier)' }}>
-            <h3 style={{ fontSize: '18px', fontWeight: '900', color: '#013E37', marginBottom: '16px' }}>✏️ Edit Profile Information</h3>
+            <h3 style={{ fontSize: '18px', fontWeight: '900', color: 'var(--color-text-primary)', marginBottom: '16px' }}>✏️ Edit Profile Information</h3>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '14px', marginBottom: '20px' }}>
               <div>
-                <label style={{ fontSize: '11px', fontWeight: '700', color: 'rgba(1,62,55,0.5)', display: 'block', marginBottom: '4px' }}>FULL NAME</label>
+                <label style={{ fontSize: '11px', fontWeight: '700', color: 'var(--color-text-secondary)', display: 'block', marginBottom: '4px' }}>FULL NAME</label>
                 <input type="text" value={editForm.name} onChange={(e) => setEditForm(prev => ({ ...prev, name: e.target.value }))} className="glass-input" style={{ width: '100%', height: '42px', padding: '0 12px', borderRadius: '10px' }} />
               </div>
               <div>
-                <label style={{ fontSize: '11px', fontWeight: '700', color: 'rgba(1,62,55,0.5)', display: 'block', marginBottom: '4px' }}>EMAIL ADDRESS</label>
+                <label style={{ fontSize: '11px', fontWeight: '700', color: 'var(--color-text-secondary)', display: 'block', marginBottom: '4px' }}>EMAIL ADDRESS</label>
                 <input type="email" value={editForm.email} onChange={(e) => setEditForm(prev => ({ ...prev, email: e.target.value }))} className="glass-input" style={{ width: '100%', height: '42px', padding: '0 12px', borderRadius: '10px' }} />
               </div>
               <div>
-                <label style={{ fontSize: '11px', fontWeight: '700', color: 'rgba(1,62,55,0.5)', display: 'block', marginBottom: '4px' }}>PHONE NUMBER</label>
+                <label style={{ fontSize: '11px', fontWeight: '700', color: 'var(--color-text-secondary)', display: 'block', marginBottom: '4px' }}>PHONE NUMBER</label>
                 <input type="tel" inputMode="tel" value={editForm.phone} onChange={(e) => setEditForm(prev => ({ ...prev, phone: e.target.value }))} className="glass-input" style={{ width: '100%', height: '42px', padding: '0 12px', borderRadius: '10px' }} />
               </div>
             </div>
@@ -908,7 +922,7 @@ const ProfileScreen = ({ onLogout, onReplayOnboarding, onSelectTab, initialViewM
       {showPasswordModal && (
         <div style={{ position: 'fixed', inset: 0, zIndex: 9999, background: 'rgba(255,245,236,0.85)', backdropFilter: 'blur(14px)', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '20px', animation: 'fadeIn 200ms ease' }}>
           <div className="glass-card-elevated" style={{ width: '100%', maxWidth: '380px', padding: '24px', border: '1.5px solid #013E37', animation: 'scaleUp 250ms var(--spring-bezier)' }}>
-            <h3 style={{ fontSize: '18px', fontWeight: '900', color: '#013E37', marginBottom: '16px' }}>🔐 Change Account Password</h3>
+            <h3 style={{ fontSize: '18px', fontWeight: '900', color: 'var(--color-text-primary)', marginBottom: '16px' }}>🔐 Change Account Password</h3>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', marginBottom: '20px' }}>
               <input type="password" placeholder="Current Password" value={pwdForm.curr} onChange={(e) => setPwdForm(prev => ({ ...prev, curr: e.target.value }))} className="glass-input" style={{ width: '100%', height: '42px', padding: '0 12px', borderRadius: '10px' }} />
@@ -930,7 +944,7 @@ const ProfileScreen = ({ onLogout, onReplayOnboarding, onSelectTab, initialViewM
       {showLanguageModal && (
         <div style={{ position: 'fixed', inset: 0, zIndex: 9999, background: 'rgba(255,245,236,0.85)', backdropFilter: 'blur(14px)', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '20px', animation: 'fadeIn 200ms ease' }}>
           <div className="glass-card-elevated" style={{ width: '100%', maxWidth: '340px', padding: '24px', border: '1.5px solid #013E37', animation: 'scaleUp 250ms var(--spring-bezier)' }}>
-            <h3 style={{ fontSize: '18px', fontWeight: '900', color: '#013E37', marginBottom: '16px', textAlign: 'center' }}>🌐 Select App Language</h3>
+            <h3 style={{ fontSize: '18px', fontWeight: '900', color: 'var(--color-text-primary)', marginBottom: '16px', textAlign: 'center' }}>🌐 Select App Language</h3>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', marginBottom: '18px' }}>
               {['English', 'हिंदी (Hindi)', 'తెలుగు (Telugu)', 'Tamil (தமிழ்)', 'Kannada (ಕನ್ನಡ)'].map((lang, i) => (
                 <button
@@ -940,7 +954,7 @@ const ProfileScreen = ({ onLogout, onReplayOnboarding, onSelectTab, initialViewM
                     padding: '12px 16px', borderRadius: '12px', textAlign: 'left', fontWeight: '800', fontSize: '14px', cursor: 'pointer',
                     background: settingsState.language === lang.split(' ')[0] ? 'rgba(1,62,55,0.25)' : 'rgba(255,255,255,0.04)',
                     border: settingsState.language === lang.split(' ')[0] ? '1.5px solid #013E37' : '1px solid rgba(255,255,255,0.1)',
-                    color: settingsState.language === lang.split(' ')[0] ? '#FFFFFF' : 'rgba(1,62,55,0.5)'
+                    color: settingsState.language === lang.split(' ')[0] ? 'var(--color-bg-primary)' : 'var(--color-text-secondary)'
                   }}
                   onClick={() => {
                     setSettingsState(prev => ({ ...prev, language: lang.split(' ')[0] }));
@@ -963,24 +977,24 @@ const ProfileScreen = ({ onLogout, onReplayOnboarding, onSelectTab, initialViewM
       {showDataModal && (
         <div style={{ position: 'fixed', inset: 0, zIndex: 9999, background: 'rgba(255,245,236,0.85)', backdropFilter: 'blur(14px)', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '20px', animation: 'fadeIn 200ms ease' }}>
           <div className="glass-card-elevated" style={{ width: '100%', maxWidth: '380px', padding: '24px', border: '1.5px solid #013E37', animation: 'scaleUp 250ms var(--spring-bezier)' }}>
-            <h3 style={{ fontSize: '18px', fontWeight: '900', color: '#013E37', marginBottom: '16px' }}>🛡️ Data & Personalization</h3>
+            <h3 style={{ fontSize: '18px', fontWeight: '900', color: 'var(--color-text-primary)', marginBottom: '16px' }}>🛡️ Data & Personalization</h3>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '14px', marginBottom: '20px' }}>
               <div className="flex-between">
-                <div><div style={{ fontSize: '14px', fontWeight: '700', color: '#FFF' }}>Personalized Eyewear Recommendations</div><div style={{ fontSize: '11px', color: 'rgba(1,62,55,0.5)' }}>Based on face shape & purchase history</div></div>
+                <div><div style={{ fontSize: '14px', fontWeight: '700', color: '#FFF' }}>Personalized Eyewear Recommendations</div><div style={{ fontSize: '11px', color: 'var(--color-text-secondary)' }}>Based on face shape & purchase history</div></div>
                 <div style={{ width: '42px', height: '24px', borderRadius: '12px', background: settingsState.analyticsAds ? '#013E37' : 'rgba(255,255,255,0.15)', position: 'relative', cursor: 'pointer' }} onClick={() => setSettingsState(p => ({ ...p, analyticsAds: !p.analyticsAds }))}>
                   <div style={{ width: '18px', height: '18px', borderRadius: '9px', background: '#FFF', position: 'absolute', top: '3px', left: settingsState.analyticsAds ? '21px' : '3px' }} />
                 </div>
               </div>
 
               <div className="flex-between">
-                <div><div style={{ fontSize: '14px', fontWeight: '700', color: '#FFF' }}>Anonymous Diagnostic Crash Reports</div><div style={{ fontSize: '11px', color: 'rgba(1,62,55,0.5)' }}>Helps improve AR Try-On engine stability</div></div>
+                <div><div style={{ fontSize: '14px', fontWeight: '700', color: '#FFF' }}>Anonymous Diagnostic Crash Reports</div><div style={{ fontSize: '11px', color: 'var(--color-text-secondary)' }}>Helps improve AR Try-On engine stability</div></div>
                 <div style={{ width: '42px', height: '24px', borderRadius: '12px', background: settingsState.crashReports ? '#013E37' : 'rgba(255,255,255,0.15)', position: 'relative', cursor: 'pointer' }} onClick={() => setSettingsState(p => ({ ...p, crashReports: !p.crashReports }))}>
                   <div style={{ width: '18px', height: '18px', borderRadius: '9px', background: '#FFF', position: 'absolute', top: '3px', left: settingsState.crashReports ? '21px' : '3px' }} />
                 </div>
               </div>
 
               <div className="flex-between">
-                <div><div style={{ fontSize: '14px', fontWeight: '700', color: '#FFF' }}>Local AR 3D Model Caching</div><div style={{ fontSize: '11px', color: 'rgba(1,62,55,0.5)' }}>Stores frame meshes for offline virtual try-on</div></div>
+                <div><div style={{ fontSize: '14px', fontWeight: '700', color: '#FFF' }}>Local AR 3D Model Caching</div><div style={{ fontSize: '11px', color: 'var(--color-text-secondary)' }}>Stores frame meshes for offline virtual try-on</div></div>
                 <div style={{ width: '42px', height: '24px', borderRadius: '12px', background: settingsState.arScanCache ? '#013E37' : 'rgba(255,255,255,0.15)', position: 'relative', cursor: 'pointer' }} onClick={() => setSettingsState(p => ({ ...p, arScanCache: !p.arScanCache }))}>
                   <div style={{ width: '18px', height: '18px', borderRadius: '9px', background: '#FFF', position: 'absolute', top: '3px', left: settingsState.arScanCache ? '21px' : '3px' }} />
                 </div>
@@ -998,13 +1012,13 @@ const ProfileScreen = ({ onLogout, onReplayOnboarding, onSelectTab, initialViewM
         <div style={{ position: 'fixed', inset: 0, zIndex: 9999, background: 'rgba(255,245,236,0.9)', backdropFilter: 'blur(16px)', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '20px', animation: 'fadeIn 200ms ease' }}>
           <div className="glass-card-elevated" style={{ width: '100%', maxWidth: '380px', padding: '26px', textAlign: 'center', border: '2px solid #A94A4A', boxShadow: '0 20px 60px rgba(239,83,80,0.4)', animation: 'scaleUp 250ms var(--spring-bezier)' }}>
             <div style={{ fontSize: '42px', marginBottom: '10px' }}>⚠️</div>
-            <h3 style={{ fontSize: '20px', fontWeight: '900', color: '#A94A4A', marginBottom: '8px' }}>Permanent Account Deletion</h3>
-            <p style={{ fontSize: '13px', color: 'rgba(1,62,55,0.5)', marginBottom: '20px', lineHeight: '1.5' }}>
+            <h3 style={{ fontSize: '20px', fontWeight: '900', color: 'var(--color-accent-primary)', marginBottom: '8px' }}>Permanent Account Deletion</h3>
+            <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', marginBottom: '20px', lineHeight: '1.5' }}>
               You are about to permanently delete <strong style={{ color: '#FFF' }}>{userProfile.email}</strong>. This action will immediately erase your stored digital prescriptions, facial AR measurements, and forfeit your remaining ₹99/month club privileges.
             </p>
             <div style={{ display: 'flex', gap: '12px' }}>
               <button type="button" className="btn-secondary-pill" style={{ flex: 1, height: '46px', fontSize: '13px' }} onClick={() => setShowDeleteModal(false)}>Keep My Account</button>
-              <button type="button" style={{ flex: 1, height: '46px', borderRadius: '999px', background: '#A94A4A', border: 'none', color: '#FFF', fontWeight: '900', fontSize: '13px', cursor: 'pointer', boxShadow: '0 0 20px rgba(239,83,80,0.6)' }} onClick={() => { setShowDeleteModal(false); showToast("🗑️ Account deletion request scheduled. You have 14 days to cancel via email link."); }}>Confirm Delete</button>
+              <button type="button" style={{ flex: 1, height: '46px', borderRadius: '999px', background: 'var(--color-accent-primary)', border: 'none', color: '#FFF', fontWeight: '900', fontSize: '13px', cursor: 'pointer', boxShadow: '0 0 20px rgba(239,83,80,0.6)' }} onClick={() => { setShowDeleteModal(false); showToast("🗑️ Account deletion request scheduled. You have 14 days to cancel via email link."); }}>Confirm Delete</button>
             </div>
           </div>
         </div>
@@ -1017,15 +1031,15 @@ const ProfileScreen = ({ onLogout, onReplayOnboarding, onSelectTab, initialViewM
         <div style={{ position: 'fixed', inset: 0, zIndex: 9999, background: 'rgba(255,245,236,0.85)', backdropFilter: 'blur(14px)', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '20px', animation: 'fadeIn 200ms ease' }}>
           <div className="glass-card-elevated" style={{ width: '100%', maxWidth: '420px', maxHeight: '75vh', display: 'flex', flexDirection: 'column', border: '1.5px solid #013E37', animation: 'scaleUp 250ms var(--spring-bezier)' }}>
             <div className="flex-between" style={{ padding: '16px 20px', borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
-              <h3 style={{ fontSize: '16px', fontWeight: '800', color: '#013E37' }}>📜 {termsType}</h3>
-              <button type="button" style={{ background: 'transparent', border: 'none', color: 'rgba(1,62,55,0.5)', fontSize: '18px', cursor: 'pointer' }} onClick={() => setShowTermsModal(false)}>✕</button>
+              <h3 style={{ fontSize: '16px', fontWeight: '800', color: 'var(--color-text-primary)' }}>📜 {termsType}</h3>
+              <button type="button" style={{ background: 'transparent', border: 'none', color: 'var(--color-text-secondary)', fontSize: '18px', cursor: 'pointer' }} onClick={() => setShowTermsModal(false)}>✕</button>
             </div>
             <div style={{ padding: '20px', overflowY: 'auto', fontSize: '13px', color: '#CFD8DC', lineHeight: '1.6' }}>
-              <h4 style={{ color: '#013E37', marginBottom: '8px' }}>1. Medical & Optical Disclaimer</h4>
+              <h4 style={{ color: 'var(--color-text-primary)', marginBottom: '8px' }}>1. Medical & Optical Disclaimer</h4>
               <p style={{ marginBottom: '12px' }}>Lens Makers provides digital AI OCR scanning and computerized vision assessments as an adjunct to professional optometry. Lenses manufactured within standard catalog ranges (Sph -6 to +4, Cyl up to -3) are certified under ISO 8980 ophthalmic standards.</p>
-              <h4 style={{ color: '#013E37', marginBottom: '8px' }}>2. VIP Club & BOGO Terms</h4>
+              <h4 style={{ color: 'var(--color-text-primary)', marginBottom: '8px' }}>2. VIP Club & BOGO Terms</h4>
               <p style={{ marginBottom: '12px' }}>The ₹99/month club membership grants flat 25% discount and buy-one-get-one privileges across all stock eyeglasses and sunglasses. Membership renews automatically unless cancelled 24 hours prior to billing cycle.</p>
-              <h4 style={{ color: '#013E37', marginBottom: '8px' }}>3. Biometric Privacy</h4>
+              <h4 style={{ color: 'var(--color-text-primary)', marginBottom: '8px' }}>3. Biometric Privacy</h4>
               <p>AR Virtual Try-On facial triangulation meshes are processed locally on device hardware and are never sold or shared with third-party advertisers.</p>
             </div>
             <div style={{ padding: '12px 20px', borderTop: '1px solid rgba(255,255,255,0.1)', textAlign: 'right' }}>
@@ -1040,16 +1054,20 @@ const ProfileScreen = ({ onLogout, onReplayOnboarding, onSelectTab, initialViewM
          ========================================================================== */}
       {showRatingModal && (
         <div style={{ position: 'fixed', inset: 0, zIndex: 9999, background: 'rgba(255,245,236,0.85)', backdropFilter: 'blur(14px)', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '20px', animation: 'fadeIn 200ms ease' }}>
-          <div className="glass-card-elevated" style={{ width: '100%', maxWidth: '340px', padding: '26px', textAlign: 'center', border: '1.5px solid rgba(1,62,55,0.6)', animation: 'scaleUp 250ms var(--spring-bezier)' }}>
+          <div className="glass-card-elevated" style={{ width: '100%', maxWidth: '340px', padding: '26px', textAlign: 'center', border: '1.5px solid 
+    param($m)
+    $opacity = $m.Groups[1].Value
+    "rgba(11,31,28,0.$opacity)"
+  ', animation: 'scaleUp 250ms var(--spring-bezier)' }}>
             <div style={{ fontSize: '48px', marginBottom: '8px' }}>🎉</div>
-            <h3 style={{ fontSize: '20px', fontWeight: '900', color: '#013E37', marginBottom: '6px' }}>Enjoying Lens Makers?</h3>
-            <p style={{ fontSize: '12px', color: 'rgba(1,62,55,0.5)', marginBottom: '20px' }}>Tap a star to rate your AI Virtual Try-On & shopping experience!</p>
+            <h3 style={{ fontSize: '20px', fontWeight: '900', color: 'var(--color-text-primary)', marginBottom: '6px' }}>Enjoying Lens Makers?</h3>
+            <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', marginBottom: '20px' }}>Tap a star to rate your AI Virtual Try-On & shopping experience!</p>
 
             <div style={{ display: 'flex', justifyContent: 'center', gap: '8px', marginBottom: '24px' }}>
               {[1, 2, 3, 4, 5].map(star => (
                 <span
                   key={star}
-                  style={{ fontSize: '32px', cursor: 'pointer', color: star <= ratingStars ? 'rgba(1,62,55,0.6)' : 'rgba(255,255,255,0.2)', transition: 'transform 150ms ease', transform: star <= ratingStars ? 'scale(1.15)' : 'scale(1)' }}
+                  style={{ fontSize: '32px', cursor: 'pointer', color: star <= ratingStars ? 'var(--color-text-secondary)' : 'rgba(255,255,255,0.2)', transition: 'transform 150ms ease', transform: star <= ratingStars ? 'scale(1.15)' : 'scale(1)' }}
                   onClick={() => setRatingStars(star)}
                 >
                   ★
@@ -1059,7 +1077,11 @@ const ProfileScreen = ({ onLogout, onReplayOnboarding, onSelectTab, initialViewM
 
             <div style={{ display: 'flex', gap: '10px' }}>
               <button type="button" className="btn-secondary-pill" style={{ flex: 1, height: '44px', fontSize: '13px' }} onClick={() => setShowRatingModal(false)}>Later</button>
-              <button type="button" className="btn-primary-pill" style={{ flex: 1, height: '44px', fontSize: '13px', background: 'linear-gradient(135deg, rgba(1,62,55,0.6), #B8935E)', color: '#013E37' }} onClick={() => { setShowRatingModal(false); showToast(`🌟 Thank you for rating us ${ratingStars} stars! Your feedback fuels our optometry team.`); }}>Submit Rating</button>
+              <button type="button" className="btn-primary-pill" style={{ flex: 1, height: '44px', fontSize: '13px', background: 'linear-gradient(135deg, 
+    param($m)
+    $opacity = $m.Groups[1].Value
+    "rgba(11,31,28,0.$opacity)"
+  , #B8935E)', color: 'var(--color-text-primary)' }} onClick={() => { setShowRatingModal(false); showToast(`🌟 Thank you for rating us ${ratingStars} stars! Your feedback fuels our optometry team.`); }}>Submit Rating</button>
             </div>
           </div>
         </div>

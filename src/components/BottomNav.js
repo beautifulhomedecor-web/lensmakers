@@ -1,10 +1,9 @@
-// Bottom Navigation Bar Component — Section 6 (Solid Pure White Dock with 1px solid #EAEAEA)
+// Bottom Navigation Bar Component — Pure White Dock, Deep Green-Black Text
 const { useState, useEffect } = React;
 
 const BottomNav = ({ activeTab, onSelectTab, cartCount = 2 }) => {
   const [pressedTabId, setPressedTabId] = useState(null);
 
-  // Map sub-routes / detail screens to their primary navigation tab per Section 6
   const getMainTabId = (route) => {
     if (['home', 'stores', 'eyetest', 'membership', 'welcomeclub', 'manageclub', 'tryon'].includes(route)) return 'home';
     if (['shop', 'explore', 'category'].includes(route)) return 'explore';
@@ -16,16 +15,14 @@ const BottomNav = ({ activeTab, onSelectTab, cartCount = 2 }) => {
 
   const activeMainTab = getMainTabId(activeTab);
 
-  // 5 Flat Navigation Items per Section 6
   const tabs = [
-    { id: 'home', label: 'Home', icon: 'home' },
-    { id: 'explore', label: 'Explore', icon: 'compass' },
-    { id: 'wishlist', label: 'Wishlist', icon: 'heart' },
-    { id: 'orders', label: 'Orders', icon: 'shopping-bag', badge: cartCount > 0 ? cartCount : 2 },
-    { id: 'profile', label: 'Profile', icon: 'user' },
+    { id: 'home',    label: 'Home',     icon: 'home' },
+    { id: 'explore', label: 'Explore',  icon: 'compass' },
+    { id: 'wishlist',label: 'Wishlist', icon: 'heart' },
+    { id: 'orders',  label: 'Orders',   icon: 'shopping-bag', badge: cartCount > 0 ? cartCount : 2 },
+    { id: 'profile', label: 'Profile',  icon: 'user' },
   ];
 
-  // Create Lucide icons whenever activeMainTab changes
   useEffect(() => {
     if (window.lucide && window.lucide.createIcons) {
       window.lucide.createIcons();
@@ -39,10 +36,9 @@ const BottomNav = ({ activeTab, onSelectTab, cartCount = 2 }) => {
     setPressedTabId(tabId);
     setTimeout(() => setPressedTabId(null), 250);
     if (onSelectTab) {
-      // Map display tab back to internal screen routing
       if (tabId === 'explore') onSelectTab('shop');
       else if (tabId === 'orders') onSelectTab('cart');
-      else if (tabId === 'wishlist') onSelectTab('profile');
+      else if (tabId === 'wishlist') onSelectTab('wishlist');
       else onSelectTab(tabId);
     }
   };
@@ -51,11 +47,11 @@ const BottomNav = ({ activeTab, onSelectTab, cartCount = 2 }) => {
     <nav
       className="bottom-nav nav-visible dark-anchor"
       style={{
-        background: 'rgba(255,255,255,0.96)',
+        background: 'var(--color-glass-surface)',
         backdropFilter: 'blur(20px)',
         WebkitBackdropFilter: 'blur(20px)',
-        borderTop: '1px solid #FFF6DA',
-        boxShadow: '0 -4px 24px rgba(1,62,55,0.06)',
+        borderTop: '1px solid var(--color-glass-border)',
+        boxShadow: '0 -4px 24px var(--color-shadow)',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'space-around',
@@ -92,13 +88,13 @@ const BottomNav = ({ activeTab, onSelectTab, cartCount = 2 }) => {
               position: 'relative'
             }}
           >
-            <div style={{ position: 'relative', display: 'flex', alignItems: 'center', justify: 'center' }}>
+            <div style={{ position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
               <i
                 data-lucide={tab.icon}
                 style={{
                   width: '22px',
                   height: '22px',
-                  color: isActive ? '#013E37' : 'rgba(1, 62, 55, 0.4)',
+                  color: isActive ? 'var(--color-text-primary)' : 'var(--color-text-secondary)',
                   strokeWidth: isActive ? '2.5px' : '1.8px',
                   transition: 'color 200ms ease',
                   transform: 'none',
@@ -111,8 +107,8 @@ const BottomNav = ({ activeTab, onSelectTab, cartCount = 2 }) => {
                     position: 'absolute',
                     top: '-5px',
                     right: '-10px',
-                    background: '#A94A4A',
-                    color: '#FFFFFF',
+                    background: 'var(--color-accent-primary)',
+                    color: 'var(--color-bg-primary)',
                     fontSize: '10px',
                     fontWeight: '900',
                     minWidth: '16px',
@@ -131,11 +127,12 @@ const BottomNav = ({ activeTab, onSelectTab, cartCount = 2 }) => {
                 </span>
               )}
             </div>
+
             <span
               style={{
                 fontSize: '11px',
                 fontWeight: isActive ? '700' : '500',
-                color: isActive ? '#013E37' : 'rgba(1, 62, 55, 0.4)',
+                color: isActive ? 'var(--color-text-primary)' : 'var(--color-text-secondary)',
                 marginTop: '4px',
                 letterSpacing: '0.2px',
                 transition: 'color 200ms ease'
@@ -143,6 +140,21 @@ const BottomNav = ({ activeTab, onSelectTab, cartCount = 2 }) => {
             >
               {tab.label}
             </span>
+
+            {/* Active indicator pill */}
+            {isActive && (
+              <span
+                style={{
+                  position: 'absolute',
+                  bottom: '-4px',
+                  width: '20px',
+                  height: '3px',
+                  borderRadius: '2px',
+                  background: 'var(--color-accent-primary)',
+                  transition: 'opacity 200ms ease'
+                }}
+              />
+            )}
           </div>
         );
       })}

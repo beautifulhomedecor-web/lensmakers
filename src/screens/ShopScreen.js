@@ -1,4 +1,4 @@
-// Shop Screen & PDP Component — Prompt 4 of 10
+﻿// Shop Screen & PDP Component — Prompt 4 of 10
 // Studio-Grade Product Listing Page (PLP) & Product Detail Page (PDP)
 // Apple Liquid Glass UI, Live Total Price Calculation, AR Try-On Launch, Combinable Filtering
 const { useState, useEffect, useMemo } = React;
@@ -22,7 +22,7 @@ const PRODUCTS_DATA = [
     bogo: true,
     sale: false,
     image: '👓',
-    colors: ['#013E37', '#37474F', '#D4AF37'],
+    colors: ['var(--color-accent-primary)', '#37474F', '#D4AF37'],
     specs: { material: 'Beta-Titanium', frameType: 'Rimless', shape: 'Rectangle', weight: '11g (Ultra-light)', lensWidth: '54mm', templeLength: '142mm' },
     desc: 'Crafted from Japanese aerospace-grade beta-titanium, Aerospace Lite weights just 11 grams. Featuring screwless hinges and memory-metal bridges that flex without breaking.'
   },
@@ -64,7 +64,7 @@ const PRODUCTS_DATA = [
     bogo: true,
     sale: true,
     image: '👓',
-    colors: ['#5D4037', '#000000', '#013E37'],
+    colors: ['#5D4037', '#000000', 'var(--color-accent-primary)'],
     specs: { material: 'Swiss TR90 Polymer', frameType: 'Full Rim', shape: 'Round', weight: '16g', lensWidth: '50mm', templeLength: '145mm' },
     desc: 'Ultra-durable Swiss TR90 memory polymer in rich Havana tortoise shell. Resistant to impact, extreme temperatures, and skin oils.'
   },
@@ -85,7 +85,7 @@ const PRODUCTS_DATA = [
     bogo: false,
     sale: false,
     image: '🕶️',
-    colors: ['#212121', '#013E37', '#013E37'],
+    colors: ['#212121', 'var(--color-accent-primary)', 'var(--color-accent-primary)'],
     specs: { material: 'Mazzucchelli Acetate', frameType: 'Full Rim', shape: 'Wayfarer', weight: '28g', lensWidth: '52mm', templeLength: '145mm' },
     desc: 'Hand-polished Mazzucchelli Italian acetate reinforced with internal carbon fiber core wires. Includes anti-reflective inner lens coating.'
   },
@@ -106,7 +106,7 @@ const PRODUCTS_DATA = [
     bogo: true,
     sale: false,
     image: '👓',
-    colors: ['#A94A4A', '#D4AF37', '#013E37'],
+    colors: ['var(--color-accent-primary)', '#D4AF37', 'var(--color-accent-primary)'],
     specs: { material: 'Monel & Stainless', frameType: 'Half Rim', shape: 'Cat Eye', weight: '19g', lensWidth: '53mm', templeLength: '138mm' },
     desc: 'Sophisticated brow-line accentuating cat-eye silhouette with 18k rose gold plating and adjustable hypoallergenic silicone nose pads.'
   },
@@ -148,7 +148,7 @@ const PRODUCTS_DATA = [
     bogo: false,
     sale: false,
     image: '👓',
-    colors: ['#000000', '#5D4037', '#013E37'],
+    colors: ['#000000', '#5D4037', 'var(--color-accent-primary)'],
     specs: { material: 'Acetate & Steel', frameType: 'Half Rim', shape: 'Clubmaster', weight: '25g', lensWidth: '51mm', templeLength: '142mm' },
     desc: 'Mid-century intellectual styling featuring thick acetate upper brow bars anchored to lower metal lens rims.'
   },
@@ -169,7 +169,7 @@ const PRODUCTS_DATA = [
     bogo: true,
     sale: true,
     image: '👓',
-    colors: ['#013E37', '#A94A4A', '#013E37'],
+    colors: ['var(--color-accent-primary)', 'var(--color-accent-primary)', 'var(--color-accent-primary)'],
     specs: { material: '180-deg Bendable TR90', frameType: 'Full Rim', shape: 'Oval', weight: '12g', lensWidth: '46mm', templeLength: '130mm' },
     desc: 'Virtually indestructible 180-degree bendable frames designed specifically for active children. BPA-free, non-toxic, and lightweight.'
   },
@@ -190,7 +190,7 @@ const PRODUCTS_DATA = [
     bogo: false,
     sale: false,
     image: '🕶️',
-    colors: ['#37474F', '#212121', '#013E37'],
+    colors: ['#37474F', '#212121', 'var(--color-accent-primary)'],
     specs: { material: 'Magnesium-Aluminium', frameType: 'Full Rim', shape: 'Square', weight: '21g', lensWidth: '56mm', templeLength: '142mm' },
     desc: 'Precision-machined magnesium-aluminium alloy providing unmatched strength-to-weight ratio. Includes spring hinges and high-contrast TAC lenses.'
   },
@@ -211,7 +211,7 @@ const PRODUCTS_DATA = [
     bogo: true,
     sale: true,
     image: '👁️',
-    colors: ['#013E37'],
+    colors: ['var(--color-accent-primary)'],
     specs: { material: 'Senofilcon A Hydro-Gel', frameType: 'Disposable', shape: 'Spherical', weight: '0.05g', lensWidth: '14.2mm', templeLength: 'N/A' },
     desc: 'Breathable silicone hydrogel daily disposable contact lenses with HYDRACLEAR moisture-lock technology for 16 hours of continuous comfort.'
   }
@@ -313,7 +313,7 @@ const ShopScreen = ({ onSelectTab }) => {
 
   // Card Interactive States
   const [wishlist, setWishlist] = useState(['101', '409']); // demo default saved
-  const [activeColors, setActiveColors] = useState({ '101': '#013E37', '204': '#D4AF37', '305': '#5D4037', '409': '#212121', '512': '#A94A4A', '618': '#D4AF37', '725': '#000000', '831': '#013E37', '944': '#37474F', '1055': '#013E37' });
+  const [activeColors, setActiveColors] = useState({ '101': 'var(--color-accent-primary)', '204': '#D4AF37', '305': '#5D4037', '409': '#212121', '512': 'var(--color-accent-primary)', '618': '#D4AF37', '725': '#000000', '831': 'var(--color-accent-primary)', '944': '#37474F', '1055': 'var(--color-accent-primary)' });
 
   // PDP (Product Detail Page) State
   const [pdpItem, setPdpItem] = useState(null);
@@ -478,18 +478,18 @@ const ShopScreen = ({ onSelectTab }) => {
           <div className="flex-between" style={{ padding: '16px var(--screen-padding) 8px' }}>
             <div>
               <span className="badge-pill badge-pink mb-1">CATALOG & FILTERS</span>
-              <h1 style={{ fontSize: '24px', fontWeight: '800', color: '#013E37', letterSpacing: '-0.5px' }}>
+              <h1 style={{ fontSize: '24px', fontWeight: '800', color: 'var(--color-text-primary)', letterSpacing: '-0.5px' }}>
                 {selectedCategory === 'All' ? 'Lens Makers Shop' : selectedCategory}
               </h1>
             </div>
             <div style={{ display: 'flex', gap: '10px' }}>
               <button
                 type="button"
-                style={{ width: '40px', height: '40px', borderRadius: '50%', background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.15)', color: 'rgba(1,62,55,0.5)', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer' }}
+                style={{ width: '40px', height: '40px', borderRadius: '50%', background: 'rgba(255,255,255,0.08)', border: '1px solid var(--color-glass-border)', color: 'var(--color-text-secondary)', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer' }}
                 onClick={() => setShowFilterSheet(true)}
                 title="Open Filters"
               >
-                <i data-lucide="sliders" style={{ width: '18px', height: '18px', color: '#013E37' }} />
+                <i data-lucide="sliders" style={{ width: '18px', height: '18px', color: 'var(--color-text-primary)' }} />
               </button>
             </div>
           </div>
@@ -504,10 +504,14 @@ const ShopScreen = ({ onSelectTab }) => {
                   type="button"
                   style={{
                     padding: '8px 18px', borderRadius: '999px', fontSize: '13px', fontWeight: '700', flexShrink: 0,
-                    background: isActive ? 'linear-gradient(135deg, #A94A4A 0%, #013E37 100%)' : 'rgba(255,240,224, 0.65)',
-                    color: isActive ? '#FFFFFF' : 'rgba(1,62,55,0.5)',
+                    background: isActive ? 'linear-gradient(135deg, var(--color-accent-primary) 0%, var(--color-accent-primary) 100%)' : 'rgba(255,240,224, 0.65)',
+                    color: isActive ? 'var(--color-bg-primary)' : '
+
+  ',
                     border: isActive ? 'none' : '1px solid rgba(255, 255, 255, 0.15)',
-                    boxShadow: isActive ? '0 4px 14px rgba(1,62,55, 0.5)' : 'none',
+                    boxShadow: isActive ? '0 4px 14px 
+
+  ' : 'none',
                     cursor: 'pointer', transition: 'all 200ms var(--spring-bezier)'
                   }}
                   onClick={() => setSelectedCategory(cat)}
@@ -520,8 +524,8 @@ const ShopScreen = ({ onSelectTab }) => {
 
           {/* FRAME SHAPE SELECTOR (Below Tabs) */}
           <div style={{ padding: '0 var(--screen-padding) 16px' }}>
-            <div style={{ fontSize: '11px', fontWeight: '700', color: 'rgba(1,62,55,0.5)', textTransform: 'uppercase', letterSpacing: '0.6px', marginBottom: '10px' }}>
-              Filter by Frame Shape {selectedShape && <span style={{ color: '#A94A4A', cursor: 'pointer' }} onClick={() => setSelectedShape(null)}>(Clear ✕)</span>}
+            <div style={{ fontSize: '11px', fontWeight: '700', color: 'var(--color-text-secondary)', textTransform: 'uppercase', letterSpacing: '0.6px', marginBottom: '10px' }}>
+              Filter by Frame Shape {selectedShape && <span style={{ color: 'var(--color-accent-primary)', cursor: 'pointer' }} onClick={() => setSelectedShape(null)}>(Clear ✕)</span>}
             </div>
             <div style={{ display: 'flex', gap: '12px', overflowX: 'auto', paddingBottom: '8px', scrollbarWidth: 'none' }}>
               {FRAME_SHAPES.map((shape) => {
@@ -529,11 +533,11 @@ const ShopScreen = ({ onSelectTab }) => {
                 return (
                   <div
                     key={shape.name}
-                    className={`shape-circle-btn ${isSel ? 'active' : ''}`}
+                    className={`shape-circle-btn ${isSel ? 'active'}`}
                     onClick={() => setSelectedShape(isSel ? null : shape.name)}
                   >
-                    <span style={{ fontSize: '32px', lineHeight: '1', display: 'flex', alignItems: 'center', justifyContent: 'center', color: isSel ? '#A94A4A' : 'rgba(1,62,55,0.5)' }}>{shape.icon}</span>
-                    <span style={{ fontSize: '10px', fontWeight: '700', color: isSel ? '#A94A4A' : 'rgba(1,62,55,0.5)', marginTop: '4px' }}>{shape.name}</span>
+                    <span style={{ fontSize: '32px', lineHeight: '1', display: 'flex', alignItems: 'center', justifyContent: 'center', color: isSel ? 'var(--color-accent-primary)' : 'var(--color-text-secondary)' }}>{shape.icon}</span>
+                    <span style={{ fontSize: '10px', fontWeight: '700', color: isSel ? 'var(--color-accent-primary)' : 'var(--color-text-secondary)', marginTop: '4px' }}>{shape.name}</span>
                   </div>
                 );
               })}
@@ -542,19 +546,19 @@ const ShopScreen = ({ onSelectTab }) => {
 
           {/* SORT ROW */}
           <div className="flex-between" style={{ padding: '4px var(--screen-padding) 14px', borderBottom: '1px solid rgba(255,255,255,0.08)', marginBottom: '16px' }}>
-            <span style={{ fontSize: '13px', color: 'rgba(1,62,55,0.5)', fontWeight: '600' }}>
-              <strong style={{ color: '#013E37' }}>{filteredProducts.length}</strong> frames found
+            <span style={{ fontSize: '13px', color: 'var(--color-text-secondary)', fontWeight: '600' }}>
+              <strong style={{ color: 'var(--color-text-primary)' }}>{filteredProducts.length}</strong> frames found
             </span>
             <button
               type="button"
               style={{
-                padding: '6px 14px', borderRadius: '999px', background: 'rgba(255,240,224, 0.8)', border: '1px solid #FFF6DA',
-                color: '#013E37', fontSize: '12px', fontWeight: '700', display: 'flex', alignItems: 'center', gap: '6px', cursor: 'pointer'
+                padding: '6px 14px', borderRadius: '999px', background: 'rgba(255,240,224, 0.8)', border: '1px solid var(--color-glass-border)',
+                color: 'var(--color-text-primary)', fontSize: '12px', fontWeight: '700', display: 'flex', alignItems: 'center', gap: '6px', cursor: 'pointer'
               }}
               onClick={() => setShowSortSheet(true)}
             >
               <span>Sort: {sortOption}</span>
-              <span style={{ color: '#A94A4A' }}>▾</span>
+              <span style={{ color: 'var(--color-accent-primary)' }}>▾</span>
             </button>
           </div>
 
@@ -562,8 +566,8 @@ const ShopScreen = ({ onSelectTab }) => {
           {filteredProducts.length === 0 ? (
             <div style={{ textAlign: 'center', padding: '60px 20px' }}>
               <span style={{ fontSize: '48px' }}>🔍</span>
-              <h3 style={{ fontSize: '18px', fontWeight: '800', color: '#013E37', marginTop: '16px' }}>No matching eyewear found</h3>
-              <p style={{ fontSize: '13px', color: 'rgba(1,62,55,0.5)', marginTop: '8px' }}>Try relaxing your shape or price filters.</p>
+              <h3 style={{ fontSize: '18px', fontWeight: '800', color: 'var(--color-text-primary)', marginTop: '16px' }}>No matching eyewear found</h3>
+              <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', marginTop: '8px' }}>Try relaxing your shape or price filters.</p>
               <button
                 type="button"
                 className="btn-primary-pill mt-3"
@@ -593,12 +597,12 @@ const ShopScreen = ({ onSelectTab }) => {
                       {/* Discount / BOGO Badges */}
                       <div style={{ position: 'absolute', top: '8px', left: '8px', display: 'flex', flexDirection: 'column', gap: '4px', zIndex: 5 }}>
                         {item.discount && (
-                          <span style={{ background: '#013E37', color: '#013E37', padding: '2px 8px', borderRadius: '999px', fontSize: '10px', fontWeight: '900', boxShadow: '0 2px 6px rgba(0,0,0,0.2)' }}>
+                          <span style={{ background: 'var(--color-accent-primary)', color: 'var(--color-text-primary)', padding: '2px 8px', borderRadius: '999px', fontSize: '10px', fontWeight: '900', boxShadow: '0 2px 6px var(--color-shadow)' }}>
                             {item.discount}
                           </span>
                         )}
                         {(item.bogo || item.price >= 1699) && (
-                          <span style={{ background: '#013E37', color: '#013E37', padding: '2px 8px', borderRadius: '999px', fontSize: '10px', fontWeight: '900', boxShadow: '0 2px 6px rgba(0,0,0,0.2)' }}>
+                          <span style={{ background: 'var(--color-accent-primary)', color: 'var(--color-text-primary)', padding: '2px 8px', borderRadius: '999px', fontSize: '10px', fontWeight: '900', boxShadow: '0 2px 6px var(--color-shadow)' }}>
                             BOGO FREE
                           </span>
                         )}
@@ -607,22 +611,22 @@ const ShopScreen = ({ onSelectTab }) => {
                       {/* Wishlist Heart Button */}
                       <button
                         type="button"
-                        className={`wishlist-circle-btn heart-btn ${isSaved ? 'saved' : ''}`}
+                        className={`wishlist-circle-btn heart-btn ${isSaved ? 'saved'}`}
                         onClick={(e) => handleToggleWishlist(e, item.id)}
                       >
-                        <span className="heart-icon" style={{ fontSize: '16px', color: isSaved ? '#A94A4A' : '#FFFFFF', transition: 'all 200ms ease' }}>
+                        <span className="heart-icon" style={{ fontSize: '16px', color: isSaved ? 'var(--color-accent-primary)' : 'var(--color-bg-primary)', transition: 'all 200ms ease' }}>
                           {isSaved ? '♥' : '♡'}
                         </span>
                       </button>
 
                       {/* Product Visual (Emoji/Thumbnail simulated with tint) */}
-                      <div style={{ fontSize: '64px', filter: `drop-shadow(0 8px 12px rgba(0,0,0,0.15))` }}>
+                      <div style={{ fontSize: '64px', filter: `drop-shadow(0 8px 12px var(--color-shadow))` }}>
                         {item.image}
                       </div>
 
                       {/* Sale Ribbon Corner */}
                       {item.sale && (
-                        <div style={{ position: 'absolute', bottom: '6px', right: '6px', background: 'rgba(1,62,55, 0.15)', color: '#013E37', padding: '2px 6px', borderRadius: '6px', fontSize: '9px', fontWeight: '800' }}>
+                        <div style={{ position: 'absolute', bottom: '6px', right: '6px', background: 'rgba(1,62,55, 0.15)', color: 'var(--color-text-primary)', padding: '2px 6px', borderRadius: '6px', fontSize: '9px', fontWeight: '800' }}>
                           SALE ITEM
                         </div>
                       )}
@@ -631,10 +635,10 @@ const ShopScreen = ({ onSelectTab }) => {
                     {/* BOTTOM INFO AREA */}
                     <div style={{ padding: '14px 14px 16px', display: 'flex', flexDirection: 'column', flex: 1, justifyContent: 'space-between' }}>
                       <div>
-                        <div style={{ fontSize: '10px', fontWeight: '700', color: 'rgba(1,62,55,0.5)', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+                        <div style={{ fontSize: '10px', fontWeight: '700', color: 'var(--color-text-secondary)', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
                           {item.brand}
                         </div>
-                        <h3 style={{ fontSize: '14px', fontWeight: '800', color: '#013E37', margin: '4px 0 8px', lineHeight: '1.3', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden', minHeight: '36px' }}>
+                        <h3 style={{ fontSize: '14px', fontWeight: '800', color: 'var(--color-text-primary)', margin: '4px 0 8px', lineHeight: '1.3', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden', minHeight: '36px' }}>
                           {item.name}
                         </h3>
 
@@ -643,7 +647,7 @@ const ShopScreen = ({ onSelectTab }) => {
                           {item.colors.map((hex, idx) => (
                             <span
                               key={idx}
-                              className={`swatch-dot ${activeColor === hex ? 'selected' : ''}`}
+                              className={`swatch-dot ${activeColor === hex ? 'selected'}`}
                               style={{ background: hex }}
                               onClick={(e) => {
                                 e.stopPropagation();
@@ -661,22 +665,22 @@ const ShopScreen = ({ onSelectTab }) => {
                           {window.userIsMember !== false ? (
                             <>
                               <div style={{ display: 'flex', alignItems: 'baseline', gap: '6px' }}>
-                                <span style={{ fontSize: '16px', fontWeight: '900', color: '#013E37' }}>₹{memberPrice}</span>
-                                <span style={{ fontSize: '12px', color: 'rgba(1,62,55,0.5)', textDecoration: 'line-through' }}>₹{item.price}</span>
+                                <span style={{ fontSize: '16px', fontWeight: '900', color: 'var(--color-text-primary)' }}>₹{memberPrice}</span>
+                                <span style={{ fontSize: '12px', color: 'var(--color-text-secondary)', textDecoration: 'line-through' }}>₹{item.price}</span>
                               </div>
-                              <div style={{ fontSize: '10px', fontWeight: '800', color: '#013E37', background: 'rgba(67,160,71,0.15)', padding: '2px 6px', borderRadius: '4px', display: 'inline-block', marginTop: '2px' }}>
+                              <div style={{ fontSize: '10px', fontWeight: '800', color: 'var(--color-text-primary)', background: 'rgba(67,160,71,0.15)', padding: '2px 6px', borderRadius: '4px', display: 'inline-block', marginTop: '2px' }}>
                                 ★ YOUR VIP PRICE
                               </div>
                             </>
                           ) : (
                             <>
                               <div style={{ display: 'flex', alignItems: 'baseline', gap: '6px' }}>
-                                <span style={{ fontSize: '16px', fontWeight: '900', color: '#013E37' }}>₹{item.price}</span>
+                                <span style={{ fontSize: '16px', fontWeight: '900', color: 'var(--color-text-primary)' }}>₹{item.price}</span>
                                 {item.originalPrice && (
-                                  <span style={{ fontSize: '12px', color: 'rgba(1,62,55,0.5)', textDecoration: 'line-through' }}>₹{item.originalPrice}</span>
+                                  <span style={{ fontSize: '12px', color: 'var(--color-text-secondary)', textDecoration: 'line-through' }}>₹{item.originalPrice}</span>
                                 )}
                               </div>
-                              <div style={{ fontSize: '11px', fontWeight: '700', color: '#013E37', marginTop: '2px' }}>
+                              <div style={{ fontSize: '11px', fontWeight: '700', color: 'var(--color-text-primary)', marginTop: '2px' }}>
                                 Members: ₹{memberPrice}
                               </div>
                             </>
@@ -688,9 +692,11 @@ const ShopScreen = ({ onSelectTab }) => {
                           type="button"
                           style={{
                             width: '34px', height: '34px', borderRadius: '50%',
-                            background: 'linear-gradient(135deg, #A94A4A 0%, #013E37 100%)',
-                            border: 'none', color: '#013E37', display: 'flex', alignItems: 'center', justifyContent: 'center',
-                            cursor: 'pointer', boxShadow: '0 4px 12px rgba(1,62,55,0.4)'
+                            background: 'linear-gradient(135deg, var(--color-accent-primary) 0%, var(--color-accent-primary) 100%)',
+                            border: 'none', color: 'var(--color-text-primary)', display: 'flex', alignItems: 'center', justifyContent: 'center',
+                            cursor: 'pointer', boxShadow: '0 4px 12px 
+
+  '
                           }}
                           onClick={(e) => handleAddToCart(e, item)}
                           title="Add to Cart"
@@ -706,7 +712,7 @@ const ShopScreen = ({ onSelectTab }) => {
           )}
 
           {/* INFINITE SCROLL SUBTLE FOOTER */}
-          <div style={{ textAlign: 'center', paddingBottom: '30px', color: 'rgba(1,62,55,0.5)', fontSize: '13px', fontWeight: '600' }}>
+          <div style={{ textAlign: 'center', paddingBottom: '30px', color: 'var(--color-text-secondary)', fontSize: '13px', fontWeight: '600' }}>
             <span>✨ Showing all {filteredProducts.length} premium frames</span>
           </div>
         </>
@@ -718,10 +724,10 @@ const ShopScreen = ({ onSelectTab }) => {
       {pdpItem && (
         <div className="pdp-full-page">
           {/* BACK + SHARE HEADER */}
-          <div className="flex-between" style={{ padding: '16px var(--screen-padding)', position: 'sticky', top: 0, zIndex: 100, background: 'rgba(255,245,236,0.8)', backdropFilter: 'blur(20px)' }}>
+          <div className="flex-between" style={{ padding: '16px var(--screen-padding)', position: 'sticky', top: 0, zIndex: 100, background: 'var(--color-glass-surface)', backdropFilter: 'blur(20px)' }}>
             <button
               type="button"
-              style={{ width: '40px', height: '40px', borderRadius: '50%', background: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.2)', color: '#013E37', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', fontSize: '18px', fontWeight: 'bold' }}
+              style={{ width: '40px', height: '40px', borderRadius: '50%', background: 'var(--color-glass-surface)', border: '1px solid var(--color-glass-border)', color: 'var(--color-text-primary)', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', fontSize: '18px', fontWeight: 'bold' }}
               onClick={() => setPdpItem(null)}
               title="Back to Catalog"
             >
@@ -735,13 +741,13 @@ const ShopScreen = ({ onSelectTab }) => {
                 style={{ position: 'relative', top: 0, right: 0, width: '40px', height: '40px' }}
                 onClick={(e) => handleToggleWishlist(e, pdpItem.id)}
               >
-                <span style={{ fontSize: '18px', color: wishlist.includes(pdpItem.id) ? '#A94A4A' : '#FFFFFF' }}>
+                <span style={{ fontSize: '18px', color: wishlist.includes(pdpItem.id) ? 'var(--color-accent-primary)' : 'var(--color-bg-primary)' }}>
                   {wishlist.includes(pdpItem.id) ? '♥' : '♡'}
                 </span>
               </button>
               <button
                 type="button"
-                style={{ width: '40px', height: '40px', borderRadius: '50%', background: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.2)', color: '#013E37', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer' }}
+                style={{ width: '40px', height: '40px', borderRadius: '50%', background: 'var(--color-glass-surface)', border: '1px solid var(--color-glass-border)', color: 'var(--color-text-primary)', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer' }}
                 onClick={() => showToast('📤 Share link copied to clipboard!')}
                 title="Share Product"
               >
@@ -755,19 +761,19 @@ const ShopScreen = ({ onSelectTab }) => {
             {/* Top Badges */}
             <div style={{ position: 'absolute', top: '16px', left: '16px', display: 'flex', gap: '8px', zIndex: 5 }}>
               {pdpItem.discount && (
-                <span style={{ background: '#013E37', color: '#013E37', padding: '4px 10px', borderRadius: '999px', fontSize: '11px', fontWeight: '900' }}>
+                <span style={{ background: 'var(--color-accent-primary)', color: 'var(--color-text-primary)', padding: '4px 10px', borderRadius: '999px', fontSize: '11px', fontWeight: '900' }}>
                   {pdpItem.discount}
                 </span>
               )}
               {pdpItem.bogo && (
-                <span style={{ background: '#013E37', color: '#013E37', padding: '4px 10px', borderRadius: '999px', fontSize: '11px', fontWeight: '900' }}>
+                <span style={{ background: 'var(--color-accent-primary)', color: 'var(--color-text-primary)', padding: '4px 10px', borderRadius: '999px', fontSize: '11px', fontWeight: '900' }}>
                   BOGO FREE
                 </span>
               )}
             </div>
 
             {/* Simulated 3D Angle visual (rotates slightly on thumbnail switch) */}
-            <div style={{ fontSize: '130px', filter: 'drop-shadow(0 16px 24px rgba(0,0,0,0.2))', transform: `scale(${1 + pdpActiveThumbIdx * 0.08}) rotate(${pdpActiveThumbIdx * 8}deg)`, transition: 'all 300ms var(--spring-bezier)' }}>
+            <div style={{ fontSize: '130px', filter: 'drop-shadow(0 16px 24px var(--color-shadow))', transform: `scale(${1 + pdpActiveThumbIdx * 0.08}) rotate(${pdpActiveThumbIdx * 8}deg)`, transition: 'all 300ms var(--spring-bezier)' }}>
               {pdpItem.image}
             </div>
 
@@ -778,7 +784,7 @@ const ShopScreen = ({ onSelectTab }) => {
               style={{
                 position: 'absolute', bottom: '16px', right: '16px', zIndex: 10,
                 width: 'auto', height: '42px', borderRadius: '999px', padding: '0 16px',
-                background: 'rgba(1,62,55, 0.2)', border: '1.5px solid #A94A4A',
+                background: 'var(--color-glass-surface)', border: '1.5px solid var(--color-accent-primary)',
                 display: 'flex', alignItems: 'center', gap: '8px', cursor: 'pointer'
               }}
               onClick={() => {
@@ -786,8 +792,8 @@ const ShopScreen = ({ onSelectTab }) => {
                 if (onSelectTab) onSelectTab('tryon');
               }}
             >
-              <i data-lucide="camera" style={{ width: '18px', height: '18px', color: '#A94A4A' }} />
-              <span style={{ fontSize: '13px', fontWeight: '800', color: '#A94A4A' }}>Try in 3D</span>
+              <i data-lucide="camera" style={{ width: '18px', height: '18px', color: 'var(--color-accent-primary)' }} />
+              <span style={{ fontSize: '13px', fontWeight: '800', color: 'var(--color-accent-primary)' }}>Try in 3D</span>
             </button>
           </div>
 
@@ -797,9 +803,11 @@ const ShopScreen = ({ onSelectTab }) => {
               <div
                 key={idx}
                 style={{
-                  width: '56px', height: '56px', borderRadius: '10px', background: '#FFFFFF',
-                  border: `2.5px solid ${pdpActiveThumbIdx === idx ? '#A94A4A' : 'transparent'}`,
-                  boxShadow: pdpActiveThumbIdx === idx ? '0 0 12px rgba(1,62,55,0.6)' : '0 2px 8px rgba(0,0,0,0.3)',
+                  width: '56px', height: '56px', borderRadius: '10px', background: 'var(--color-bg-primary)',
+                  border: `2.5px solid ${pdpActiveThumbIdx === idx ? 'var(--color-accent-primary)' : 'transparent'}`,
+                  boxShadow: pdpActiveThumbIdx === idx ? '0 0 12px 
+
+  ' : '0 2px 8px var(--color-shadow)',
                   display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer',
                   transition: 'all 200ms ease'
                 }}
@@ -813,32 +821,32 @@ const ShopScreen = ({ onSelectTab }) => {
 
           {/* PRODUCT INFO CARD (Glass surface) */}
           <div className="glass-card-elevated fade-up-item" style={{ margin: '0 var(--screen-padding) 20px', padding: '24px 20px' }}>
-            <div style={{ fontSize: '12px', fontWeight: '700', color: 'rgba(1,62,55,0.5)', textTransform: 'uppercase', letterSpacing: '0.6px' }}>
+            <div style={{ fontSize: '12px', fontWeight: '700', color: 'var(--color-text-secondary)', textTransform: 'uppercase', letterSpacing: '0.6px' }}>
               {pdpItem.brand}
             </div>
-            <h1 style={{ fontSize: '22px', fontWeight: '800', color: '#013E37', margin: '6px 0 10px', letterSpacing: '-0.3px' }}>
+            <h1 style={{ fontSize: '22px', fontWeight: '800', color: 'var(--color-text-primary)', margin: '6px 0 10px', letterSpacing: '-0.3px' }}>
               {pdpItem.name}
             </h1>
 
             {/* Rating Row */}
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '16px', cursor: 'pointer' }} onClick={() => setPdpAccordion('reviews')}>
-              <span style={{ color: 'rgba(1,62,55,0.6)', fontSize: '14px', letterSpacing: '2px' }}>★★★★☆</span>
-              <span style={{ fontSize: '13px', color: 'rgba(1,62,55,0.5)', fontWeight: '600' }}>
-                <strong style={{ color: '#013E37' }}>{pdpItem.rating}</strong> · {pdpItem.reviews} reviews
+              <span style={{ color: 'var(--color-text-secondary)', fontSize: '14px', letterSpacing: '2px' }}>★★★★☆</span>
+              <span style={{ fontSize: '13px', color: 'var(--color-text-secondary)', fontWeight: '600' }}>
+                <strong style={{ color: 'var(--color-text-primary)' }}>{pdpItem.rating}</strong> · {pdpItem.reviews} reviews
               </span>
             </div>
 
             {/* Price Block */}
-            <div style={{ background: 'rgba(255,240,224,0.6)', padding: '16px', borderRadius: '14px', border: '1px solid rgba(255,255,255,0.1)' }}>
+            <div style={{ background: 'var(--color-glass-surface)', padding: '16px', borderRadius: '14px', border: '1px solid var(--color-glass-border)' }}>
               {window.userIsMember !== false ? (
                 <>
                   <div style={{ display: 'flex', alignItems: 'baseline', gap: '10px' }}>
-                    <span style={{ fontSize: '26px', fontWeight: '900', color: '#013E37' }}>₹{Math.round(pdpItem.price * 0.75)}</span>
-                    <span style={{ fontSize: '18px', color: 'rgba(1,62,55,0.5)', textDecoration: 'line-through' }}>₹{pdpItem.price}</span>
+                    <span style={{ fontSize: '26px', fontWeight: '900', color: 'var(--color-text-primary)' }}>₹{Math.round(pdpItem.price * 0.75)}</span>
+                    <span style={{ fontSize: '18px', color: 'var(--color-text-secondary)', textDecoration: 'line-through' }}>₹{pdpItem.price}</span>
                     <span className="badge-pill badge-green" style={{ marginLeft: 'auto' }}>★ YOUR VIP PRICE</span>
                   </div>
-                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginTop: '10px', paddingTop: '10px', borderTop: '1px dashed rgba(255,255,255,0.15)' }}>
-                    <span style={{ fontSize: '13px', fontWeight: '800', color: '#013E37' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginTop: '10px', paddingTop: '10px', borderTop: '1px dashed var(--color-glass-border)' }}>
+                    <span style={{ fontSize: '13px', fontWeight: '800', color: 'var(--color-text-primary)' }}>
                       ⚡ You save ₹{pdpItem.price - Math.round(pdpItem.price * 0.75)} with your VIP Membership!
                     </span>
                   </div>
@@ -846,20 +854,20 @@ const ShopScreen = ({ onSelectTab }) => {
               ) : (
                 <>
                   <div style={{ display: 'flex', alignItems: 'baseline', gap: '10px' }}>
-                    <span style={{ fontSize: '24px', fontWeight: '900', color: '#013E37' }}>₹{pdpItem.price}</span>
+                    <span style={{ fontSize: '24px', fontWeight: '900', color: 'var(--color-text-primary)' }}>₹{pdpItem.price}</span>
                     {pdpItem.originalPrice && (
-                      <span style={{ fontSize: '16px', color: 'rgba(1,62,55,0.5)', textDecoration: 'line-through' }}>₹{pdpItem.originalPrice}</span>
+                      <span style={{ fontSize: '16px', color: 'var(--color-text-secondary)', textDecoration: 'line-through' }}>₹{pdpItem.originalPrice}</span>
                     )}
                     {pdpItem.discount && (
                       <span className="badge-pill badge-orange" style={{ marginLeft: 'auto' }}>{pdpItem.discount}</span>
                     )}
                   </div>
-                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginTop: '10px', paddingTop: '10px', borderTop: '1px dashed rgba(255,255,255,0.15)' }}>
-                    <span style={{ fontSize: '13px', fontWeight: '700', color: '#013E37' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginTop: '10px', paddingTop: '10px', borderTop: '1px dashed var(--color-glass-border)' }}>
+                    <span style={{ fontSize: '13px', fontWeight: '700', color: 'var(--color-text-primary)' }}>
                       ⚡ Members pay ₹{Math.round(pdpItem.price * 0.75)} — Save ₹{pdpItem.price - Math.round(pdpItem.price * 0.75)}
                     </span>
                     <span 
-                      style={{ fontSize: '12px', color: '#013E37', fontWeight: '800', textDecoration: 'underline', cursor: 'pointer' }}
+                      style={{ fontSize: '12px', color: 'var(--color-text-primary)', fontWeight: '800', textDecoration: 'underline', cursor: 'pointer' }}
                       onClick={() => { if (onSelectTab) onSelectTab('membership'); }}
                     >
                       Join for ₹99/mo →
@@ -868,7 +876,7 @@ const ShopScreen = ({ onSelectTab }) => {
                 </>
               )}
               {(pdpItem.bogo || pdpItem.price >= 1699) && (
-                <div style={{ fontSize: '13px', color: '#013E37', fontWeight: '800', marginTop: '10px', padding: '8px 12px', background: 'rgba(67,160,71,0.15)', borderRadius: '8px', border: '1px solid rgba(67,160,71,0.3)', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                <div style={{ fontSize: '13px', color: 'var(--color-text-primary)', fontWeight: '800', marginTop: '10px', padding: '8px 12px', background: 'rgba(67,160,71,0.15)', borderRadius: '8px', border: '1px solid rgba(67,160,71,0.3)', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                   <span>🎁 BOGO ELIGIBLE: Buy this frame & get a 2nd pair FREE!</span>
                   <span style={{ fontSize: '11px', textDecoration: 'underline', cursor: 'pointer' }} onClick={() => { if (onSelectTab) onSelectTab('cart'); }}>See Offer →</span>
                 </div>
@@ -878,8 +886,8 @@ const ShopScreen = ({ onSelectTab }) => {
             {/* COLOR SELECTOR */}
             <div style={{ marginTop: '20px' }}>
               <div className="flex-between" style={{ marginBottom: '10px' }}>
-                <span style={{ fontSize: '13px', color: 'rgba(1,62,55,0.5)', fontWeight: '700' }}>Select Frame Color:</span>
-                <span style={{ fontSize: '12px', color: '#013E37', fontWeight: '600' }}>{pdpActiveColor || pdpItem.colors[0]}</span>
+                <span style={{ fontSize: '13px', color: 'var(--color-text-secondary)', fontWeight: '700' }}>Select Frame Color:</span>
+                <span style={{ fontSize: '12px', color: 'var(--color-text-primary)', fontWeight: '600' }}>{pdpActiveColor || pdpItem.colors[0]}</span>
               </div>
               <div style={{ display: 'flex', gap: '10px' }}>
                 {pdpItem.colors.map((hex, idx) => {
@@ -889,7 +897,7 @@ const ShopScreen = ({ onSelectTab }) => {
                       key={idx}
                       style={{
                         width: '32px', height: '32px', borderRadius: '50%', background: hex,
-                        border: `2px solid ${isSel ? '#FFFFFF' : 'rgba(255,255,255,0.3)'}`,
+                        border: `2px solid ${isSel ? 'var(--color-bg-primary)' : 'rgba(255,255,255,0.3)'}`,
                         boxShadow: isSel ? `0 0 14px ${hex}` : 'none',
                         cursor: 'pointer', transition: 'all 200ms var(--spring-bezier)',
                         transform: isSel ? 'scale(1.15)' : 'scale(1)'
@@ -904,9 +912,9 @@ const ShopScreen = ({ onSelectTab }) => {
             {/* SIZE/FIT SELECTOR */}
             <div style={{ marginTop: '20px' }}>
               <div className="flex-between" style={{ marginBottom: '10px' }}>
-                <span style={{ fontSize: '13px', color: 'rgba(1,62,55,0.5)', fontWeight: '700' }}>Select Fit Size:</span>
+                <span style={{ fontSize: '13px', color: 'var(--color-text-secondary)', fontWeight: '700' }}>Select Fit Size:</span>
                 <span 
-                  style={{ fontSize: '12px', color: '#A94A4A', fontWeight: '700', cursor: 'pointer', textDecoration: 'underline' }}
+                  style={{ fontSize: '12px', color: 'var(--color-accent-primary)', fontWeight: '700', cursor: 'pointer', textDecoration: 'underline' }}
                   onClick={() => showToast('📐 Fit Guide: Standard fits 90% of faces')}
                 >
                   Fit Guide 📏
@@ -921,10 +929,10 @@ const ShopScreen = ({ onSelectTab }) => {
                       type="button"
                       style={{
                         flex: 1, height: '40px', borderRadius: '999px', fontSize: '13px', fontWeight: '700',
-                        background: isSel ? 'linear-gradient(135deg, #A94A4A 0%, #013E37 100%)' : 'rgba(255,240,224,0.6)',
-                        color: isSel ? '#FFFFFF' : 'rgba(1,62,55,0.5)',
-                        border: isSel ? 'none' : '1px solid rgba(255,255,255,0.2)',
-                        boxShadow: isSel ? '0 4px 12px rgba(1,62,55,0.4)' : 'none',
+                        background: isSel ? 'var(--color-accent-primary)' : 'var(--color-glass-surface)',
+                        color: isSel ? 'var(--color-bg-primary)' : 'var(--color-text-secondary)',
+                        border: isSel ? '1px solid var(--color-accent-primary)' : '1px solid var(--color-glass-border)',
+                        boxShadow: isSel ? '0 4px 12px var(--color-shadow)' : 'none',
                         cursor: 'pointer', transition: 'all 200ms var(--spring-bezier)'
                       }}
                       onClick={() => setPdpSelectedFit(fit)}
@@ -939,7 +947,7 @@ const ShopScreen = ({ onSelectTab }) => {
 
           {/* SPECIFICATION MINI-GRID (2x3 Glass Cells) */}
           <div style={{ margin: '0 var(--screen-padding) 24px' }}>
-            <h3 style={{ fontSize: '15px', fontWeight: '800', color: '#013E37', marginBottom: '12px' }}>Technical Specifications</h3>
+            <h3 style={{ fontSize: '15px', fontWeight: '800', color: 'var(--color-text-primary)', marginBottom: '12px' }}>Technical Specifications</h3>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px' }}>
               {[
                 { label: 'Material', value: pdpItem.specs.material, icon: 'shield' },
@@ -950,20 +958,20 @@ const ShopScreen = ({ onSelectTab }) => {
                 { label: 'Temple Length', value: pdpItem.specs.templeLength, icon: 'ruler' }
               ].map((spec, idx) => (
                 <div key={idx} className="glass-card-standard" style={{ padding: '14px', textAlign: 'center' }}>
-                  <div style={{ fontSize: '11px', color: 'rgba(1,62,55,0.5)', fontWeight: '600', marginBottom: '4px' }}>{spec.label}</div>
-                  <div style={{ fontSize: '13px', fontWeight: '800', color: '#013E37' }}>{spec.value}</div>
+                  <div style={{ fontSize: '11px', color: 'var(--color-text-secondary)', fontWeight: '600', marginBottom: '4px' }}>{spec.label}</div>
+                  <div style={{ fontSize: '13px', fontWeight: '800', color: 'var(--color-text-primary)' }}>{spec.value}</div>
                 </div>
               ))}
             </div>
           </div>
 
-          {/* LENS CUSTOMIZATION SECTION (Radio List) */}
+                              {/* LENS CUSTOMIZATION SECTION (Radio List) */}
           <div className="glass-card-elevated" style={{ margin: '0 var(--screen-padding) 24px', padding: '22px 18px' }}>
             <div className="flex-between" style={{ marginBottom: '14px' }}>
-              <h3 style={{ fontSize: '16px', fontWeight: '800', color: '#013E37' }}>Choose Your Lenses</h3>
+              <h3 style={{ fontSize: '16px', fontWeight: '800', color: 'var(--color-text-primary)' }}>Choose Your Lenses</h3>
               <span 
-                style={{ fontSize: '12px', color: '#A94A4A', fontWeight: '700', cursor: 'pointer', textDecoration: 'underline' }}
-                onClick={() => showToast('🔬 Lens Guide: Blue Light filters screen glare!')}
+                style={{ fontSize: '12px', color: 'var(--color-accent-primary)', fontWeight: '700', cursor: 'pointer', textDecoration: 'underline' }}
+                onClick={() => showToast('ðŸ”¬ Lens Guide: Blue Light filters screen glare!')}
               >
                 What's the difference?
               </span>
@@ -974,20 +982,21 @@ const ShopScreen = ({ onSelectTab }) => {
               return (
                 <div
                   key={idx}
-                  className={`lens-radio-row ${isSel ? 'selected' : ''}`}
+                  className={lens-radio-row $\{isSel ? 'selected' : ''\}}
                   onClick={() => setPdpSelectedLensIdx(idx)}
                 >
                   <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                    <div style={{ width: '20px', height: '20px', borderRadius: '50%', border: '2px solid #A94A4A', display: 'flex', alignItems: 'center', justifyContent: 'center', background: isSel ? '#A94A4A' : 'transparent' }}>
-                      {isSel && <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#FFFFFF' }} />}
+                    <div style={{ width: '20px', height: '20px', borderRadius: '50%', border: '2px solid var(--color-accent-primary)', display: 'flex', alignItems: 'center', justifyContent: 'center', background: isSel ? 'var(--color-accent-primary)' : 'transparent' }}>
+                      {isSel && <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: 'var(--color-bg-primary)' }} />}
                     </div>
+
                     <div>
-                      <div style={{ fontSize: '14px', fontWeight: '800', color: '#013E37' }}>{lens.name}</div>
-                      <div style={{ fontSize: '12px', color: 'rgba(1,62,55,0.5)', marginTop: '2px' }}>{lens.desc}</div>
+                      <div style={{ fontSize: '14px', fontWeight: '800', color: 'var(--color-text-primary)' }}>{lens.name}</div>
+                      <div style={{ fontSize: '12px', color: 'var(--color-text-secondary)', marginTop: '2px' }}>{lens.desc}</div>
                     </div>
                   </div>
-                  <div style={{ fontSize: '14px', fontWeight: '800', color: isSel ? '#A94A4A' : '#FFFFFF', whiteSpace: 'nowrap' }}>
-                    {lens.price === 0 ? '+₹0' : `+₹${lens.price}`}
+                  <div style={{ fontSize: '14px', fontWeight: '800', color: isSel ? 'var(--color-accent-primary)' : 'var(--color-text-secondary)', whiteSpace: 'nowrap' }}>
+                    {lens.price === 0 ? '+â‚¹0' : +â‚¹$\{lens.price\}}
                   </div>
                 </div>
               );
@@ -1005,11 +1014,11 @@ const ShopScreen = ({ onSelectTab }) => {
               return (
                 <div key={acc.id} className="glass-card-standard mb-2" style={{ padding: '16px 18px', cursor: 'pointer' }} onClick={() => setPdpAccordion(isOpen ? null : acc.id)}>
                   <div className="flex-between">
-                    <span style={{ fontSize: '14px', fontWeight: '800', color: '#013E37' }}>{acc.title}</span>
-                    <span className={`chevron-rotate ${isOpen ? 'expanded' : ''}`} style={{ color: '#A94A4A', fontWeight: 'bold' }}>▼</span>
+                    <span style={{ fontSize: '14px', fontWeight: '800', color: 'var(--color-text-primary)' }}>{acc.title}</span>
+                    <span className={`chevron-rotate ${isOpen ? 'expanded'}`} style={{ color: 'var(--color-accent-primary)', fontWeight: 'bold' }}>▼</span>
                   </div>
                   {isOpen && (
-                    <p style={{ fontSize: '13px', color: 'rgba(1,62,55,0.5)', lineHeight: '1.6', marginTop: '12px', borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '12px' }}>
+                    <p style={{ fontSize: '13px', color: 'var(--color-text-secondary)', lineHeight: '1.6', marginTop: '12px', borderTop: '1px solid var(--color-glass-border)', paddingTop: '12px' }}>
                       {acc.content}
                     </p>
                   )}
@@ -1021,7 +1030,7 @@ const ShopScreen = ({ onSelectTab }) => {
           {/* REVIEWS SECTION */}
           <div className="glass-card-elevated" style={{ margin: '0 var(--screen-padding) 30px', padding: '24px 20px' }}>
             <div className="flex-between mb-3">
-              <h3 style={{ fontSize: '16px', fontWeight: '800', color: '#013E37' }}>Customer Reviews</h3>
+              <h3 style={{ fontSize: '16px', fontWeight: '800', color: 'var(--color-text-primary)' }}>Customer Reviews</h3>
               <button 
                 type="button" 
                 className="btn-secondary-pill" 
@@ -1032,11 +1041,11 @@ const ShopScreen = ({ onSelectTab }) => {
               </button>
             </div>
 
-            <div style={{ display: 'flex', alignItems: 'center', gap: '20px', marginBottom: '20px', paddingBottom: '16px', borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '20px', marginBottom: '20px', paddingBottom: '16px', borderBottom: '1px solid var(--color-glass-border)' }}>
               <div style={{ textAlign: 'center' }}>
-                <div style={{ fontSize: '36px', fontWeight: '900', color: '#013E37', lineHeight: '1' }}>{pdpItem.rating}</div>
-                <div style={{ color: 'rgba(1,62,55,0.6)', fontSize: '14px', margin: '4px 0' }}>★★★★☆</div>
-                <div style={{ fontSize: '11px', color: 'rgba(1,62,55,0.5)' }}>Based on {pdpItem.reviews} reviews</div>
+                <div style={{ fontSize: '36px', fontWeight: '900', color: 'var(--color-text-primary)', lineHeight: '1' }}>{pdpItem.rating}</div>
+                <div style={{ color: 'var(--color-text-secondary)', fontSize: '14px', margin: '4px 0' }}>★★★★☆</div>
+                <div style={{ fontSize: '11px', color: 'var(--color-text-secondary)' }}>Based on {pdpItem.reviews} reviews</div>
               </div>
 
               {/* Distribution bars */}
@@ -1048,10 +1057,10 @@ const ShopScreen = ({ onSelectTab }) => {
                   { stars: '2★', pct: '1%' },
                   { stars: '1★', pct: '1%' }
                 ].map((bar, idx) => (
-                  <div key={idx} style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '11px', color: 'rgba(1,62,55,0.5)', fontWeight: '700' }}>
+                  <div key={idx} style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '11px', color: 'var(--color-text-secondary)', fontWeight: '700' }}>
                     <span style={{ width: '20px' }}>{bar.stars}</span>
-                    <div style={{ flex: 1, height: '6px', background: 'rgba(255,255,255,0.1)', borderRadius: '3px', overflow: 'hidden' }}>
-                      <div style={{ width: bar.pct, height: '100%', background: 'linear-gradient(90deg, #A94A4A, #013E37)' }} />
+                    <div style={{ flex: 1, height: '6px', background: 'var(--color-glass-border)', borderRadius: '3px', overflow: 'hidden' }}>
+                      <div style={{ width: bar.pct, height: '100%', background: 'linear-gradient(90deg, var(--color-accent-primary), var(--color-accent-primary))' }} />
                     </div>
                     <span style={{ width: '28px', textAlign: 'right' }}>{bar.pct}</span>
                   </div>
@@ -1066,11 +1075,11 @@ const ShopScreen = ({ onSelectTab }) => {
             ].map((rev, idx) => (
               <div key={idx} className="glass-card-standard mb-2" style={{ padding: '14px' }}>
                 <div className="flex-between mb-1">
-                  <span style={{ fontSize: '13px', fontWeight: '800', color: '#013E37' }}>{rev.name}</span>
-                  <span style={{ fontSize: '11px', color: 'rgba(1,62,55,0.5)' }}>{rev.date}</span>
+                  <span style={{ fontSize: '13px', fontWeight: '800', color: 'var(--color-text-primary)' }}>{rev.name}</span>
+                  <span style={{ fontSize: '11px', color: 'var(--color-text-secondary)' }}>{rev.date}</span>
                 </div>
-                <div style={{ color: 'rgba(1,62,55,0.6)', fontSize: '12px', marginBottom: '6px' }}>{rev.stars}</div>
-                <p style={{ fontSize: '12px', color: 'rgba(1,62,55,0.5)', lineHeight: '1.4' }}>{rev.text}</p>
+                <div style={{ color: 'var(--color-text-secondary)', fontSize: '12px', marginBottom: '6px' }}>{rev.stars}</div>
+                <p style={{ fontSize: '12px', color: 'var(--color-text-secondary)', lineHeight: '1.4' }}>{rev.text}</p>
               </div>
             ))}
           </div>
@@ -1078,8 +1087,8 @@ const ShopScreen = ({ onSelectTab }) => {
           {/* RELATED PRODUCTS HORIZONTAL SCROLL */}
           <div style={{ padding: '0 var(--screen-padding) 40px' }}>
             <div className="flex-between mb-2">
-              <h3 style={{ fontSize: '16px', fontWeight: '800', color: '#013E37' }}>You Might Also Like</h3>
-              <span style={{ fontSize: '12px', color: '#A94A4A', fontWeight: '700', cursor: 'pointer' }} onClick={() => setPdpItem(null)}>See All →</span>
+              <h3 style={{ fontSize: '16px', fontWeight: '800', color: 'var(--color-text-primary)' }}>You Might Also Like</h3>
+              <span style={{ fontSize: '12px', color: 'var(--color-accent-primary)', fontWeight: '700', cursor: 'pointer' }} onClick={() => setPdpItem(null)}>See All →</span>
             </div>
             <div style={{ display: 'flex', gap: '12px', overflowX: 'auto', paddingBottom: '12px', scrollbarWidth: 'none' }}>
               {PRODUCTS_DATA.filter((x) => x.id !== pdpItem.id).slice(0, 4).map((rel) => (
@@ -1093,9 +1102,9 @@ const ShopScreen = ({ onSelectTab }) => {
                     <span style={{ fontSize: '48px' }}>{rel.image}</span>
                   </div>
                   <div style={{ padding: '10px' }}>
-                    <div style={{ fontSize: '9px', fontWeight: '700', color: 'rgba(1,62,55,0.5)' }}>{rel.brand}</div>
-                    <div style={{ fontSize: '12px', fontWeight: '800', color: '#013E37', margin: '2px 0 6px', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{rel.name}</div>
-                    <div style={{ fontSize: '14px', fontWeight: '900', color: '#013E37' }}>₹{rel.price}</div>
+                    <div style={{ fontSize: '9px', fontWeight: '700', color: 'var(--color-text-secondary)' }}>{rel.brand}</div>
+                    <div style={{ fontSize: '12px', fontWeight: '800', color: 'var(--color-text-primary)', margin: '2px 0 6px', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{rel.name}</div>
+                    <div style={{ fontSize: '14px', fontWeight: '900', color: 'var(--color-text-primary)' }}>₹{rel.price}</div>
                   </div>
                 </div>
               ))}
@@ -1105,10 +1114,10 @@ const ShopScreen = ({ onSelectTab }) => {
           {/* STICKY LIVE TOTAL PRICE BAR */}
           <div className="pdp-live-price-bar">
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-              <span style={{ fontSize: '12px', color: 'rgba(1,62,55,0.5)', fontWeight: '700' }}>Live Total:</span>
-              <span style={{ fontSize: '18px', fontWeight: '900', color: '#013E37' }}>₹{pdpTotalPrice}</span>
+              <span style={{ fontSize: '12px', color: 'var(--color-text-secondary)', fontWeight: '700' }}>Live Total:</span>
+              <span style={{ fontSize: '18px', fontWeight: '900', color: 'var(--color-text-primary)' }}>₹{pdpTotalPrice}</span>
             </div>
-            <div style={{ fontSize: '11px', fontWeight: '700', color: '#013E37' }}>
+            <div style={{ fontSize: '11px', fontWeight: '700', color: 'var(--color-text-primary)' }}>
               Includes {LENS_OPTIONS[pdpSelectedLensIdx].name.split('(')[0]}
             </div>
           </div>
@@ -1118,7 +1127,7 @@ const ShopScreen = ({ onSelectTab }) => {
             <button
               type="button"
               className="btn-secondary-pill"
-              style={{ flex: 1, height: '52px', fontSize: '15px', fontWeight: '800', border: '1.5px solid #A94A4A', color: '#013E37', background: 'rgba(255,240,224,0.8)' }}
+              style={{ flex: 1, height: '52px', fontSize: '15px', fontWeight: '800', border: '1.5px solid var(--color-accent-primary)', color: 'var(--color-accent-primary)', background: 'var(--color-glass-surface)' }}
               onClick={(e) => {
                 handleAddToCart(e, pdpItem);
                 setAddedBtnState(true);
@@ -1151,9 +1160,9 @@ const ShopScreen = ({ onSelectTab }) => {
           <div className="modal-sheet" onClick={(e) => e.stopPropagation()} style={{ padding: '24px var(--screen-padding) 100px', maxHeight: '85vh', overflowY: 'auto' }}>
             {/* Header */}
             <div className="flex-between mb-3">
-              <h2 style={{ fontSize: '20px', fontWeight: '800', color: '#013E37' }}>Refine Catalog</h2>
+              <h2 style={{ fontSize: '20px', fontWeight: '800', color: 'var(--color-text-primary)' }}>Refine Catalog</h2>
               <span
-                style={{ fontSize: '13px', color: '#A94A4A', fontWeight: '700', cursor: 'pointer' }}
+                style={{ fontSize: '13px', color: 'var(--color-accent-primary)', fontWeight: '700', cursor: 'pointer' }}
                 onClick={() => {
                   setPriceMax(15000);
                   setSelectedMaterials([]);
@@ -1171,14 +1180,14 @@ const ShopScreen = ({ onSelectTab }) => {
             {/* Accordion 1: Price Range */}
             <div className="glass-card-standard mb-2" style={{ padding: '16px' }}>
               <div className="flex-between cursor-pointer" onClick={() => setActiveAccordion(activeAccordion === 'price' ? null : 'price')}>
-                <span style={{ fontSize: '14px', fontWeight: '800', color: '#013E37' }}>Price Range</span>
-                <span className={`chevron-rotate ${activeAccordion === 'price' ? 'expanded' : ''}`} style={{ color: '#A94A4A' }}>▼</span>
+                <span style={{ fontSize: '14px', fontWeight: '800', color: 'var(--color-text-primary)' }}>Price Range</span>
+                <span className={`chevron-rotate ${activeAccordion === 'price' ? 'expanded'}`} style={{ color: 'var(--color-accent-primary)' }}>▼</span>
               </div>
               {activeAccordion === 'price' && (
                 <div style={{ marginTop: '16px' }}>
                   <div className="flex-between mb-1">
-                    <span style={{ fontSize: '12px', color: 'rgba(1,62,55,0.5)' }}>Max Price:</span>
-                    <span style={{ fontSize: '16px', fontWeight: '900', color: '#A94A4A' }}>₹{priceMax}</span>
+                    <span style={{ fontSize: '12px', color: 'var(--color-text-secondary)' }}>Max Price:</span>
+                    <span style={{ fontSize: '16px', fontWeight: '900', color: 'var(--color-accent-primary)' }}>₹{priceMax}</span>
                   </div>
                   <input
                     type="range"
@@ -1187,9 +1196,9 @@ const ShopScreen = ({ onSelectTab }) => {
                     step="100"
                     value={priceMax}
                     onChange={(e) => setPriceMax(parseInt(e.target.value, 10))}
-                    style={{ width: '100%', accentColor: '#A94A4A', cursor: 'pointer' }}
+                    style={{ width: '100%', accentColor: 'var(--color-accent-primary)', cursor: 'pointer' }}
                   />
-                  <div className="flex-between mt-1" style={{ fontSize: '11px', color: 'rgba(1,62,55,0.5)' }}>
+                  <div className="flex-between mt-1" style={{ fontSize: '11px', color: 'var(--color-text-secondary)' }}>
                     <span>₹400 (Min)</span>
                     <span>₹15,000 (Max)</span>
                   </div>
@@ -1200,8 +1209,8 @@ const ShopScreen = ({ onSelectTab }) => {
             {/* Accordion 2: Frame Material */}
             <div className="glass-card-standard mb-2" style={{ padding: '16px' }}>
               <div className="flex-between cursor-pointer" onClick={() => setActiveAccordion(activeAccordion === 'material' ? null : 'material')}>
-                <span style={{ fontSize: '14px', fontWeight: '800', color: '#013E37' }}>Frame Material ({selectedMaterials.length || 'All'})</span>
-                <span className={`chevron-rotate ${activeAccordion === 'material' ? 'expanded' : ''}`} style={{ color: '#A94A4A' }}>▼</span>
+                <span style={{ fontSize: '14px', fontWeight: '800', color: 'var(--color-text-primary)' }}>Frame Material ({selectedMaterials.length || 'All'})</span>
+                <span className={`chevron-rotate ${activeAccordion === 'material' ? 'expanded'}`} style={{ color: 'var(--color-accent-primary)' }}>▼</span>
               </div>
               {activeAccordion === 'material' && (
                 <div style={{ marginTop: '14px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
@@ -1209,8 +1218,10 @@ const ShopScreen = ({ onSelectTab }) => {
                     const checked = selectedMaterials.includes(mat);
                     return (
                       <div key={mat} className="flex-between" style={{ cursor: 'pointer' }} onClick={() => toggleFilterArray(selectedMaterials, setSelectedMaterials, mat)}>
-                        <span style={{ fontSize: '13px', color: checked ? '#FFFFFF' : 'rgba(1,62,55,0.5)', fontWeight: checked ? '700' : '500' }}>{mat}</span>
-                        <div style={{ width: '18px', height: '18px', borderRadius: '4px', background: checked ? '#A94A4A' : 'rgba(255,255,255,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#013E37', fontSize: '11px', fontWeight: 'bold' }}>
+                        <span style={{ fontSize: '13px', color: checked ? 'var(--color-bg-primary)' : 'var(--color-text-secondary)'
+
+  ', fontWeight: checked ? '700' : '500' }}>{mat}</span>
+                        <div style={{ width: '18px', height: '18px', borderRadius: '4px', background: checked ? 'var(--color-accent-primary)' : 'var(--color-glass-border)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--color-text-primary)', fontSize: '11px', fontWeight: 'bold' }}>
                           {checked && '✓'}
                         </div>
                       </div>
@@ -1223,8 +1234,8 @@ const ShopScreen = ({ onSelectTab }) => {
             {/* Accordion 3: Frame Type */}
             <div className="glass-card-standard mb-2" style={{ padding: '16px' }}>
               <div className="flex-between cursor-pointer" onClick={() => setActiveAccordion(activeAccordion === 'type' ? null : 'type')}>
-                <span style={{ fontSize: '14px', fontWeight: '800', color: '#013E37' }}>Frame Type ({selectedTypes.length || 'All'})</span>
-                <span className={`chevron-rotate ${activeAccordion === 'type' ? 'expanded' : ''}`} style={{ color: '#A94A4A' }}>▼</span>
+                <span style={{ fontSize: '14px', fontWeight: '800', color: 'var(--color-text-primary)' }}>Frame Type ({selectedTypes.length || 'All'})</span>
+                <span className={`chevron-rotate ${activeAccordion === 'type' ? 'expanded'}`} style={{ color: 'var(--color-accent-primary)' }}>▼</span>
               </div>
               {activeAccordion === 'type' && (
                 <div style={{ marginTop: '14px', display: 'flex', gap: '8px' }}>
@@ -1236,7 +1247,7 @@ const ShopScreen = ({ onSelectTab }) => {
                         type="button"
                         style={{
                           flex: 1, padding: '8px', borderRadius: '8px', fontSize: '12px', fontWeight: '700',
-                          background: checked ? '#A94A4A' : 'rgba(255,255,255,0.08)', color: '#013E37', border: 'none', cursor: 'pointer'
+                          background: checked ? 'var(--color-accent-primary)' : 'rgba(255,255,255,0.08)', color: 'var(--color-text-primary)', border: 'none', cursor: 'pointer'
                         }}
                         onClick={() => toggleFilterArray(selectedTypes, setSelectedTypes, type)}
                       >
@@ -1251,8 +1262,8 @@ const ShopScreen = ({ onSelectTab }) => {
             {/* Accordion 4: House Brands */}
             <div className="glass-card-standard mb-2" style={{ padding: '16px' }}>
               <div className="flex-between cursor-pointer" onClick={() => setActiveAccordion(activeAccordion === 'brand' ? null : 'brand')}>
-                <span style={{ fontSize: '14px', fontWeight: '800', color: '#013E37' }}>House Brands</span>
-                <span className={`chevron-rotate ${activeAccordion === 'brand' ? 'expanded' : ''}`} style={{ color: '#A94A4A' }}>▼</span>
+                <span style={{ fontSize: '14px', fontWeight: '800', color: 'var(--color-text-primary)' }}>House Brands</span>
+                <span className={`chevron-rotate ${activeAccordion === 'brand' ? 'expanded'}`} style={{ color: 'var(--color-accent-primary)' }}>▼</span>
               </div>
               {activeAccordion === 'brand' && (
                 <div style={{ marginTop: '14px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
@@ -1260,8 +1271,10 @@ const ShopScreen = ({ onSelectTab }) => {
                     const checked = selectedBrands.includes(b);
                     return (
                       <div key={b} className="flex-between" style={{ cursor: 'pointer' }} onClick={() => toggleFilterArray(selectedBrands, setSelectedBrands, b)}>
-                        <span style={{ fontSize: '13px', color: checked ? '#FFFFFF' : 'rgba(1,62,55,0.5)', fontWeight: checked ? '700' : '500' }}>{b}</span>
-                        <div style={{ width: '18px', height: '18px', borderRadius: '4px', background: checked ? '#A94A4A' : 'rgba(255,255,255,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#013E37', fontSize: '11px', fontWeight: 'bold' }}>
+                        <span style={{ fontSize: '13px', color: checked ? 'var(--color-bg-primary)' : 'var(--color-text-secondary)'
+
+  ', fontWeight: checked ? '700' : '500' }}>{b}</span>
+                        <div style={{ width: '18px', height: '18px', borderRadius: '4px', background: checked ? 'var(--color-accent-primary)' : 'var(--color-glass-border)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--color-text-primary)', fontSize: '11px', fontWeight: 'bold' }}>
                           {checked && '✓'}
                         </div>
                       </div>
@@ -1272,8 +1285,8 @@ const ShopScreen = ({ onSelectTab }) => {
             </div>
 
             {/* Sticky Bottom Area of Filter Sheet */}
-            <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, padding: '16px var(--screen-padding)', background: 'rgba(255,245,236,0.95)', borderTop: '1px solid rgba(255,255,255,0.15)', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-              <span style={{ fontSize: '14px', fontWeight: '800', color: '#013E37' }}>
+            <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, padding: '16px var(--screen-padding)', background: 'var(--color-glass-surface)', borderTop: '1px solid var(--color-glass-border)', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+              <span style={{ fontSize: '14px', fontWeight: '800', color: 'var(--color-text-primary)' }}>
                 Matching {filteredProducts.length} frames
               </span>
               <button
@@ -1298,7 +1311,7 @@ const ShopScreen = ({ onSelectTab }) => {
       {showSortSheet && (
         <div className="modal-backdrop screen-transition-enter" onClick={() => setShowSortSheet(false)}>
           <div className="modal-sheet" onClick={(e) => e.stopPropagation()} style={{ padding: '24px var(--screen-padding) 36px' }}>
-            <h2 style={{ fontSize: '18px', fontWeight: '800', color: '#013E37', marginBottom: '16px' }}>Sort Catalog By</h2>
+            <h2 style={{ fontSize: '18px', fontWeight: '800', color: 'var(--color-text-primary)', marginBottom: '16px' }}>Sort Catalog By</h2>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
               {['Popularity', 'Price: Low to High', 'Price: High to Low', 'Newest', 'Best Rated'].map((opt) => {
                 const isSel = sortOption === opt;
@@ -1306,15 +1319,15 @@ const ShopScreen = ({ onSelectTab }) => {
                   <div
                     key={opt}
                     className="glass-card-standard"
-                    style={{ padding: '14px 16px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', cursor: 'pointer', borderColor: isSel ? '#A94A4A' : 'rgba(255,255,255,0.15)' }}
+                    style={{ padding: '14px 16px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', cursor: 'pointer', borderColor: isSel ? 'var(--color-accent-primary)' : 'var(--color-glass-border)' }}
                     onClick={() => {
                       setSortOption(opt);
                       setShowSortSheet(false);
                       showToast(`↕ Sorted by: ${opt}`);
                     }}
                   >
-                    <span style={{ fontSize: '14px', fontWeight: isSel ? '800' : '600', color: isSel ? '#FFFFFF' : 'rgba(1,62,55,0.5)' }}>{opt}</span>
-                    {isSel && <span style={{ color: '#A94A4A', fontSize: '16px', fontWeight: 'bold' }}>●</span>}
+                    <span style={{ fontSize: '14px', fontWeight: isSel ? '800' : '600', color: isSel ? 'var(--color-bg-primary)' : 'var(--color-text-secondary)' }}>{opt}</span>
+                    {isSel && <span style={{ color: 'var(--color-accent-primary)', fontSize: '16px', fontWeight: 'bold' }}>●</span>}
                   </div>
                 );
               })}

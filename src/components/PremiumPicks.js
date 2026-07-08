@@ -4,7 +4,7 @@ window.PremiumPicks = function PremiumPicks({ products, onSelectProduct, onAddTo
   return (
     <section className="px-5 my-8">
       {/* Outer Premium Picks Glass Panel */}
-      <div className="glass-panel p-5 border border-white/15 shadow-2xl relative bg-gradient-to-br from-[#8B5CF6]/15 via-[#013E37]/30 to-[#1E3A6E]/20">
+      <div className="glass-panel p-5 border border-white/15 shadow-2xl relative bg-gradient-to-br from-[#8B5CF6]/15 via-[var(--color-accent-primary)]/30 to-[#1E3A6E]/20">
         
         {/* Background glow highlight */}
         <div className="absolute top-0 right-0 w-48 h-48 bg-[#F97316]/10 rounded-full blur-3xl pointer-events-none"></div>
@@ -32,16 +32,16 @@ window.PremiumPicks = function PremiumPicks({ products, onSelectProduct, onAddTo
               <div 
                 key={prod.id}
                 onClick={() => onSelectProduct(prod)}
-                className="flex-shrink-0 w-64 sm:w-72 glass-panel bg-[#FFFFFF]/80 p-3.5 border border-white/15 hover:border-[#F97316]/50 transition-all card-spring cursor-pointer flex flex-col justify-between group shadow-lg"
+                className="flex-shrink-0 w-64 sm:w-72 glass-panel bg-[var(--color-bg-primary)]/80 p-3.5 border border-white/15 hover:border-[#F97316]/50 transition-all card-spring cursor-pointer flex flex-col justify-between group shadow-lg"
               >
                 {/* Image Container with Badge */}
-                <div className="relative h-40 w-full rounded-2xl overflow-hidden bg-gradient-to-b from-[#013E37]/40 to-[#FFFFFF] mb-3 flex items-center justify-center">
+                <div className="relative h-40 w-full rounded-2xl overflow-hidden bg-gradient-to-b from-[var(--color-accent-primary)]/40 to-[var(--color-bg-primary)] mb-3 flex items-center justify-center">
                   <img 
                     src={prod.image} 
                     alt={prod.name} 
                     className="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-108" 
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#FFFFFF]/80 via-transparent to-transparent"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-bg-primary)]/80 via-transparent to-transparent"></div>
 
                   {/* Shimmering Orange PREMIUM Badge */}
                   <div className="absolute top-2.5 right-2.5 shimmer-badge px-2.5 py-0.5 rounded-full text-[10px] font-extrabold shadow-lg backdrop-blur-md">
@@ -49,7 +49,7 @@ window.PremiumPicks = function PremiumPicks({ products, onSelectProduct, onAddTo
                   </div>
 
                   {/* Quick Try-On Trigger Overlay */}
-                  <div className="absolute bottom-2.5 left-2.5 flex items-center space-x-1.5 px-2 py-1 rounded-lg bg-[#FFFFFF]/90 border border-white/20 text-[10px] font-bold text-[#EC4899] shadow-md">
+                  <div className="absolute bottom-2.5 left-2.5 flex items-center space-x-1.5 px-2 py-1 rounded-lg bg-[var(--color-bg-primary)]/90 border border-white/20 text-[10px] font-bold text-[#EC4899] shadow-md">
                     <svg className="w-3.5 h-3.5 animate-pulse" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" />
