@@ -105,8 +105,8 @@ const Logo = ({ iconOnly = false, size = 36, onClick }) => {
             lineHeight: 1
           }}
         >
-          <span style={{ color: '#000000' }}>lens</span>
-          <span style={{ color: '#000000' }}>makers</span>
+          <span style={{ color: '#0B1F1C' }}>lens</span>
+          <span style={{ color: '#0B1F1C' }}>makers</span>
         </span>
       )}
     </div>

@@ -56,7 +56,7 @@ window.Navbar = function Navbar({ searchQuery, setSearchQuery, onSearchFocus, on
             </svg>
           </div>
           {/* Wordmark */}
-          <span className="font-heading font-extrabold text-2xl tracking-tight text-black flex items-center">
+          <span className="font-heading font-extrabold text-2xl tracking-tight text-[#0B1F1C] flex items-center">
             lensmakers
             <span className="ml-1.5 w-1.5 h-1.5 rounded-full bg-[#A3E635] inline-block animate-pulse"></span>
           </span>
